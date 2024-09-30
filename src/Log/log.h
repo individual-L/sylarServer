@@ -27,6 +27,18 @@ public:
 class LogEvent{
   public:
     typedef std::shared_ptr<LogEvent> ptr;
+
+    std::string getContents(){return m_contents;}
+    const char* getFile() const { return m_file;}
+    int32_t getLine() const { return m_line;}
+    uint32_t getCollapse() const { return m_collapse;}
+    uint32_t getThreadId() const { return m_threadId;}
+    uint32_t getFiberId() const { return m_coroutineId;}
+    uint64_t getTime() const { return m_time;}
+    const std::string& getThreadName() const { return m_threadName;}
+    std::string getContent() const { return m_contents;}
+    std::shared_ptr<Logger> getLogger() const { return m_logger;}
+    LogLevel::Level getLevel() const { return m_level;}
   private:
     //行号
     int32_t m_line = 0;
@@ -64,7 +76,7 @@ class LogFormater{
     class FormaterItem{
       public:
       typedef shared_ptr<FormaterItem> ptr;
-        virtual format(std::ostream os,LogEvent::ptr event) = 0;
+        virtual format(std::ostream& os,LogEvent::ptr event) = 0;
         ~FormaterItem();
 
     };
