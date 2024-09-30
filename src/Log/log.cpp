@@ -54,3 +54,53 @@ bool FileLogAppender::reopen(){
   m_fileStream.open(m_fileName);
   return !!m_fileStream;
 }
+//LogFormater{
+LogFormater::LogFormater(const string & pattern):m_pattern(pattern){}
+
+std::string LogFormater::format(LogEvent::ptr event){
+  std::stringstream ss;
+  for(auto it : m_formatItems){
+    it->format(ss,event);
+  }
+  return ss.str();
+}
+//%xx %xx{xxx} %%
+void LogFormater::init(){
+  //str,fmt,isStrng
+  std::vector<std::tuple<std::string,std::string,int>> vec;
+  std::string str;
+  //size_t表示c中任何对象能达到的最大长度
+  for(size_t i = 0;i < m_pattern.size();++i){
+    if(m_pattern[i] != '%'){
+      str.append(1,m_pattern[i]);
+      continue;
+    }
+    if(i + 1 < m_pattern.size()){
+      if(m_pattern[i + 1] == '%'){
+        str.append(1,'%');
+        continue;
+      }
+    }
+    size_t n = i + 1;
+    size_t begin = i + 1;
+    int status = 0;
+
+    while(n < m_pattern.size()){
+      if(isspace(m_pattern[n])){
+        break;
+      }
+      if(m_pattern[n] == '{'){
+
+      }
+      if(status == 1){
+
+      }
+    }
+  }
+}
+
+
+
+
+
+//}

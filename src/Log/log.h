@@ -2,10 +2,12 @@
 #define LOG_H
 #include<string>
 #include<list>
-#include<stringstream>
+#include<sstream>
 #include<fstream>
 #include<memory>
 #include<iostream>
+#include<vector>
+#include<stdint.h>
 namespace sylar{
 class LogLevel{
 public:
@@ -49,11 +51,29 @@ class LogEvent{
     //日志器
     std::shared_ptr<Logger> m_logger;
 };
-//日志格式化
+//日志格式化，将logevent转化为string
 class LogFormater{
-public:
-  typedef std::shared_ptr<LogFormater> ptr;
-  format(LogEvent::ptr event);
+  public:
+    typedef std::shared_ptr<LogFormater> ptr;
+    //传入格式
+    LogFormater(const string & pattern);
+    //将event传给所有的formatitem，让其输出到stringstream中
+    std::string format(LogEvent::ptr event);
+  private:
+    //日志内容(LogEvent)项格式化
+    class FormaterItem{
+      public:
+      typedef shared_ptr<FormaterItem> ptr;
+        virtual format(std::ostream os,LogEvent::ptr event) = 0;
+        ~FormaterItem();
+
+    };
+    //解析传入的格式
+    void init();
+  private:
+    std::string m_pattern;                           //日志格式
+    std::vector<FormaterItem::ptr> m_formatItems;    
+  
 };
 
 class Logger{ 
