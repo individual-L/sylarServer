@@ -9,6 +9,7 @@
 #include<vector>
 #include<stdint.h>
 namespace sylar{
+class Logger;
 class LogLevel{
 public:
   enum Level{
@@ -28,17 +29,17 @@ class LogEvent{
   public:
     typedef std::shared_ptr<LogEvent> ptr;
 
-    std::string getContents(){return m_contents;}
-    const char* getFile() const { return m_file;}
-    int32_t getLine() const { return m_line;}
-    uint32_t getCollapse() const { return m_collapse;}
-    uint32_t getThreadId() const { return m_threadId;}
-    uint32_t getFiberId() const { return m_coroutineId;}
-    uint64_t getTime() const { return m_time;}
-    const std::string& getThreadName() const { return m_threadName;}
-    std::string getContent() const { return m_contents;}
-    std::shared_ptr<Logger> getLogger() const { return m_logger;}
-    LogLevel::Level getLevel() const { return m_level;}
+    std::string getContents(){return m_contents;};
+    const char* getFile() const { return m_file;};
+    int32_t getLine() const { return m_line;};
+    uint32_t getCollapse() const { return m_collapse;};
+    uint32_t getThreadId() const { return m_threadId;};
+    uint32_t getCoroutineId() const { return m_coroutineId;};
+    uint64_t getTime() const { return m_time;};
+    const std::string& getThreadName() const { return m_threadName;};
+    std::string getContent() const { return m_contents;};
+    std::shared_ptr<Logger> getLogger() const { return m_logger;};
+    LogLevel::Level getLevel() const { return m_level;};
   private:
     //行号
     int32_t m_line = 0;
@@ -70,13 +71,13 @@ class LogFormater{
     //传入格式
     LogFormater(const string & pattern);
     //将event传给所有的formatitem，让其输出到stringstream中
-    std::string format(LogEvent::ptr event);
+    std::string format(std::shared_ptr<Logger> ptr,LogEvent::ptr event);
   private:
     //日志内容(LogEvent)项格式化
     class FormaterItem{
       public:
       typedef shared_ptr<FormaterItem> ptr;
-        virtual format(std::ostream& os,LogEvent::ptr event) = 0;
+        virtual format(std::ostream& os,std::shared_ptr<Logger> ptr,LogEvent::ptr event) = 0;
         ~FormaterItem();
 
     };
@@ -85,7 +86,7 @@ class LogFormater{
   private:
     std::string m_pattern;                           //日志格式
     std::vector<FormaterItem::ptr> m_formatItems;    
-  
+
 };
 
 class Logger{ 
@@ -100,6 +101,7 @@ class Logger{
     void warn(LogEvent::ptr event);
     void error(LogEvent::ptr event);
     void fatal(LogEvent::ptr event);
+    std::string getName(){return m_name;};
   private:
     std::string m_name;
     std::list<LogAppender::ptr> m_appenders;

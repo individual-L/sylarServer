@@ -1,5 +1,6 @@
 #include"log.h"
 #include<tuple>
+#include<time.h>
 namespace sylar{
 
 //LogLevel
@@ -95,10 +96,10 @@ LogFormater::LogFormater(const string & pattern):m_pattern(pattern){
   init();
 }
 
-std::string LogFormater::format(LogEvent::ptr event){
+std::string LogFormater::format(Logger::ptr ptr,LogEvent::ptr event){
   std::stringstream ss;
-  for(auto it : m_formatItems){
-    it->format(ss,event);
+  for(auto& it : m_formatItems){
+    it->format(ss,ptr,event);
   }
   return ss.str();
 }
@@ -205,43 +206,107 @@ void LogFormater::init(){
 
 class MessageFormatItem :public FormaterItem{
   public:
-    
-    void format(std::ostream& os,LogEvent::ptr val)override{
+    MessageFormatItem(const std::string &str = "");
+    void format(std::ostream& os,Logger::ptr ptr,LogEvent::ptr val)override{
       os<<val->m_contents;
     }
 };
 class LevelFormatItem :public FormaterItem{
-
+  public:
+    LevelFormatItem(const std::string & str = "");
+    void format(std::ostream& os,Logger::ptr ptr,LogEvent::ptr val)override{
+      os<<toString(val->getLevel());
+    }
 };
 class NewLineFormatItem :public FormaterItem{
-
+  public:
+    NewLineFormatItem(const std::string & str = "");
+    void format(std::ostream& os,Logger::ptr ptr,LogEvent::ptr val)override{
+      os<<std::endl;
+    }
 };
 class CollapseFormatItem :public FormaterItem{
-
+  public:
+    CollapseFormatItem(const std::string & str = "");
+    void format(std::ostream& os,Logger::ptr ptr,LogEvent::ptr val)override{
+      os<<getCollapse();
+    }
 };
 class NameFormatItem :public FormaterItem{
-
+  public:
+    NameFormatItem(const std::string & str = "");
+    void format(std::ostream& os,Logger::ptr ptr,LogEvent::ptr val)override{
+      os<<ptr->getName();
+    }
 };
 class ThreadNameFormatItem :public FormaterItem{
-
+  public:
+    ThreadNameFormatItem(const std::string & str = "");
+    void format(std::ostream& os,Logger::ptr ptr,LogEvent::ptr val)override{
+      os<<val->getThreadName();
+    }
 };
 class ThreadIdFormatItem :public FormaterItem{
-
+  public:
+    ThreadIdFormatItem(const std::string & str = "");
+    void format(std::ostream& os,Logger::ptr ptr,LogEvent::ptr val)override{
+      os<<val->getThreadId();
+    }
 };
 class DateTimeFormatItem :public FormaterItem{
-
+  public:
+    DateTimeFormatItem(const std::string & str = "%Y-%m-%d %H:%M:%S"):m_format(str){
+      if(m_format.empty()){
+        m_format = "%Y-%m-%d %H:%M:%S";
+      }
+    };
+    void format(std::ostream& os,Logger::ptr ptr,LogEvent::ptr val)override{
+      struct tm tm;
+      time_t ti = val.getTime();
+      localtime_r(&ti,&tm);
+      char buf[64];
+      strftime(buf,sizeof(buf),m_format.c_str(),&tm);
+      os<<buf;
+    }
+  private:
+    std::string m_format;
 };
 class FilenameFormatItem :public FormaterItem{
-
+  public:
+    FilenameFormatItem(const std::string & str = "");
+    void format(std::ostream& os,Logger::ptr ptr,LogEvent::ptr val)override{
+      os<<val->getFile();
+    }
 };
 class LineFormatItem :public FormaterItem{
-
+  public:
+    LineFormatItem(const std::string & str = "");
+    void format(std::ostream& os,Logger::ptr ptr,LogEvent::ptr val)override{
+      os<<val->getLine();
+    }
 };
 class TabFormatItem :public FormaterItem{
-
+  public:
+    TabFormatItem(const std::string & str = "");
+    void format(std::ostream& os,Logger::ptr ptr,LogEvent::ptr val)override{
+      os<<"\t";
+    }
 };
 class CoroutineIdFormatItem :public FormaterItem{
-
+  public:
+    CoroutineIdFormatItem(const std::string & str = "");
+    void format(std::ostream& os,Logger::ptr ptr,LogEvent::ptr val)override{
+      os<<val->getCoroutineId();
+    }
+};
+class StringFormatItem :public FormaterItem{
+  public:
+    StringFormatItem(const std::string & str = ""):m_str(str);
+    void format(std::ostream& os,Logger::ptr ptr,LogEvent::ptr val)override{
+      os<<m_str;
+    }
+  private:
+    std::string m_str = "";
 };
 
 
