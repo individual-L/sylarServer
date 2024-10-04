@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function -shared -Wl,-soname,libgaiya.so -o /home/luo/cplus/sylar/lib/libgaiya.so CMakeFiles/gaiya.dir/src/Log/log.cpp.o 
