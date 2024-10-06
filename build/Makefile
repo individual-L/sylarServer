@@ -31,6 +31,9 @@ default_target: all
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
+# Produce verbose output by default.
+VERBOSE = 1
+
 # Command-line flag to silence nested $(MAKE).
 $(VERBOSE)MAKESILENT = -s
 
@@ -166,6 +169,30 @@ src/Log/log.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Log/log.cpp.s
 .PHONY : src/Log/log.cpp.s
 
+src/Util/util.o: src/Util/util.cpp.o
+.PHONY : src/Util/util.o
+
+# target to build an object file
+src/Util/util.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Util/util.cpp.o
+.PHONY : src/Util/util.cpp.o
+
+src/Util/util.i: src/Util/util.cpp.i
+.PHONY : src/Util/util.i
+
+# target to preprocess a source file
+src/Util/util.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Util/util.cpp.i
+.PHONY : src/Util/util.cpp.i
+
+src/Util/util.s: src/Util/util.cpp.s
+.PHONY : src/Util/util.s
+
+# target to generate assembly for a file
+src/Util/util.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Util/util.cpp.s
+.PHONY : src/Util/util.cpp.s
+
 tester/testLog.o: tester/testLog.cpp.o
 .PHONY : tester/testLog.o
 
@@ -203,6 +230,9 @@ help:
 	@echo "... src/Log/log.o"
 	@echo "... src/Log/log.i"
 	@echo "... src/Log/log.s"
+	@echo "... src/Util/util.o"
+	@echo "... src/Util/util.i"
+	@echo "... src/Util/util.s"
 	@echo "... tester/testLog.o"
 	@echo "... tester/testLog.i"
 	@echo "... tester/testLog.s"

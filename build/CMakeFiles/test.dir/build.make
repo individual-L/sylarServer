@@ -27,6 +27,9 @@
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
+# Produce verbose output by default.
+VERBOSE = 1
+
 # Command-line flag to silence nested $(MAKE).
 $(VERBOSE)MAKESILENT = -s
 
@@ -73,15 +76,15 @@ CMakeFiles/test.dir/tester/testLog.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/tester/testLog.cpp.o: /home/luo/cplus/sylar/tester/testLog.cpp
 CMakeFiles/test.dir/tester/testLog.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luo/cplus/sylar/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test.dir/tester/testLog.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tester/testLog.cpp.o -MF CMakeFiles/test.dir/tester/testLog.cpp.o.d -o CMakeFiles/test.dir/tester/testLog.cpp.o -c /home/luo/cplus/sylar/tester/testLog.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tester/testLog.cpp.o -MF CMakeFiles/test.dir/tester/testLog.cpp.o.d -o CMakeFiles/test.dir/tester/testLog.cpp.o -c /home/luo/cplus/sylar/tester/testLog.cpp
 
 CMakeFiles/test.dir/tester/testLog.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test.dir/tester/testLog.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luo/cplus/sylar/tester/testLog.cpp > CMakeFiles/test.dir/tester/testLog.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luo/cplus/sylar/tester/testLog.cpp > CMakeFiles/test.dir/tester/testLog.cpp.i
 
 CMakeFiles/test.dir/tester/testLog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test.dir/tester/testLog.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luo/cplus/sylar/tester/testLog.cpp -o CMakeFiles/test.dir/tester/testLog.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luo/cplus/sylar/tester/testLog.cpp -o CMakeFiles/test.dir/tester/testLog.cpp.s
 
 # Object files for target test
 test_OBJECTS = \
