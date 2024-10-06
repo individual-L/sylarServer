@@ -1,2 +1,1 @@
-2024-10-04 15:48:56	DEBUG	 hello log	13
-2024-10-04 15:48:56	DEBUG	 hello log	13
+2024-10-06 15:44:19	ERROR	5496	1	/home/luo/cplus/sylar/tester/testLog.cpp	17	hello error world!

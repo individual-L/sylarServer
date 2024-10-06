@@ -1,5 +1,5 @@
-#ifndef LOG_H
-#define LOG_H
+#ifndef __LOG_H__
+#define __LOG_H__
 #include<string>
 #include<list>
 #include<sstream>
@@ -8,7 +8,45 @@
 #include<iostream>
 #include<vector>
 #include<stdint.h>
+#include<stdarg.h>
+#include<map>
+#include<tuple>
+#include<time.h>
+#include<functional>
 namespace gaiya{
+#define LOG_LEVEL_LOGGER(level,logger) \
+  if(logger->getLevel() <= level) \
+    gaiya::LogEventWrap(gaiya::LogEvent::ptr(new gaiya::LogEvent( \
+    logger,level,__FILE__,__LINE__ ,gaiya::GetThreadId() \
+    ,gaiya::GetCoroutineId(),time(0)))).getSS()
+
+#define LOG_DUBUG(logger) \
+  LOG_LEVEL_LOGGER(gaiya::LogLevel::Level::DEBUG,logger)
+#define LOG_INFO(logger) \
+  LOG_LEVEL_LOGGER(gaiya::LogLevel::Level::INFO,logger)
+#define LOG_WARN(logger) \
+  LOG_LEVEL_LOGGER(gaiya::LogLevel::Level::WARN,logger)
+#define LOG_ERROR(logger) \
+  LOG_LEVEL_LOGGER(gaiya::LogLevel::Level::ERROR,logger)
+#define LOG_FATAL(logger) \
+  LOG_LEVEL_LOGGER(gaiya::LogLevel::Level::FATAL,logger)
+
+#define LOG_FMT_LEVEL_LOGGER(level,logger,fmt,...) \
+  if(logger->getLevel() <= level) \
+    gaiya::LogEventWrap(gaiya::LogEvent::ptr(new gaiya::LogEvent( \
+    logger,level,__FILE__,__LINE__ ,gaiya::GetThreadId() \
+    ,gaiya::GetCoroutineId(),time(0)))).getEvent()->format(fmt,__VA_ARGS__)
+
+#define LOG_FMT_DUBUG(logger,fmt,...) \
+  LOG_FMT_LEVEL_LOGGER(gaiya::LogLevel::Level::DEBUG,logger,fmt,__VA_ARGS__)
+#define LOG_FMT_INFO(logger,fmt,...) \
+  LOG_FMT_LEVEL_LOGGER(gaiya::LogLevel::Level::INFO,logger,fmt,__VA_ARGS__)
+#define LOG_FMT_WARN(logger,fmt,...) \
+  LOG_FMT_LEVEL_LOGGER(gaiya::LogLevel::Level::WARN,logger,fmt,__VA_ARGS__)
+#define LOG_FMT_ERROR(logger,fmt,...) \
+  LOG_FMT_LEVEL_LOGGER(gaiya::LogLevel::Level::ERROR,logger,fmt,__VA_ARGS__)
+#define LOG_FMT_FATAL(logger,fmt,...) \
+  LOG_FMT_LEVEL_LOGGER(gaiya::LogLevel::Level::FATAL,logger,fmt,__VA_ARGS__)
 class Logger;
 class LogAppender;
 class LogLevel{
@@ -30,18 +68,32 @@ class LogEvent{
   public:
     typedef std::shared_ptr<LogEvent> ptr;
 
-    std::string getContents(){return m_ss.str();};
+    std::string getContents() const {return m_ss.str();};
+
     const char* getFile() const { return m_file;};
+
     int32_t getLine() const { return m_line;};
-    uint32_t getCollapse() const { return m_collapse;};
+
+    uint32_t getElapse() const { return m_elapse;};
+
     uint32_t getThreadId() const { return m_threadId;};
+
     uint32_t getCoroutineId() const { return m_coroutineId;};
+
     uint64_t getTime() const { return m_time;};
-    std::stringstream& getSS(){return m_ss;};
+
+    std::shared_ptr<Logger> getLogger() const {return m_logger;};
+
+    std::stringstream& getSS()  {return m_ss;};
+
     const std::string& getThreadName() const { return m_threadName;};
-    std::shared_ptr<Logger> getLogger() const { return m_logger;};
+
     LogLevel::Level getLevel() const { return m_level;};
+
     LogEvent(std::shared_ptr<Logger> logger,LogLevel::Level level,const char * file,int32_t line,uint32_t threadId,uint32_t coroutineId,uint64_t time);
+
+    void format(const char * fmt,...);
+    void format(const char * fmt,va_list val);
   private:
     //日志器
     std::shared_ptr<Logger> m_logger;
@@ -58,7 +110,7 @@ class LogEvent{
     //时间戳
     uint64_t m_time = 0;
     //程序启动到现在的毫秒数
-    int32_t m_collapse = 0;
+    int32_t m_elapse = 0;
     //线程名称
     std::string m_threadName;
     //日志内容
@@ -68,13 +120,27 @@ class LogEvent{
 };
 //日志格式化，将logevent转化为string
 class LogFormater{
+  /*
+  m:消息
+  p:日志级别
+  r:累计毫秒数
+  c:日志名称
+  t:线程id
+  n:换行
+  d:时间
+  f:文件名
+  l:行号
+  T:Tab
+  F:协程id
+  N:线程名称
+  */
   public:
     typedef std::shared_ptr<LogFormater> ptr;
     //传入格式%d%T%p%T%m%n(时间，tab，消息级别，消息，换行)
     LogFormater(const std::string & pattern = "%d%T%p%T%m%n");
     //将event传给所有的formatitem，让其输出到stringstream中
     std::string format(LogEvent::ptr event);
-    std::string getPattern(){return m_pattern;};
+    std::string getPattern() const {return m_pattern;};
     //日志内容(LogEvent)项格式化
     class FormaterItem{
       public:
@@ -105,13 +171,23 @@ class Logger{
     void error(LogEvent::ptr event);
     void fatal(LogEvent::ptr event);
     void setLevel(LogLevel::Level level){m_level = level;};
-    LogLevel::Level getLevel(){return m_level;};
-    std::string getName(){return m_name;};
+    LogLevel::Level getLevel() const {return m_level;};
+    std::string getName() const {return m_name;};
   private:
     std::string m_name;
     std::list<std::shared_ptr<LogAppender>> m_appenders;
     LogLevel::Level m_level;
+    LogFormater::ptr m_logformater;
 
+};
+class LogEventWrap{
+public:
+  LogEventWrap(LogEvent::ptr event);
+  ~LogEventWrap();
+  std::stringstream& getSS();
+  LogEvent::ptr getEvent() const{return m_event;};
+private:
+  LogEvent::ptr m_event;
 };
 //日志输出目的地，输出器基类
 class LogAppender{
@@ -123,7 +199,7 @@ class LogAppender{
     void setLogformater(LogFormater::ptr formater){m_logFormater = formater;};
     LogFormater::ptr getLogFormater() const {return m_logFormater;};
     void setLevel(LogLevel::Level level){m_level = level;};
-    LogLevel::Level getLevel(){return m_level;};
+    LogLevel::Level getLevel() const {return m_level;};
   protected:
     LogLevel::Level m_level;
     LogFormater::ptr m_logFormater;
@@ -148,5 +224,24 @@ class FileLogAppender :public LogAppender{
     std::string m_fileName;
     uint64_t m_lastTime = 0;
 };
+class LoggerManager{
+  public:
+    LoggerManager();
+    void init();
+    Logger::ptr getLogger(const std::string& name = "") const ;
+
+    //获取主日志器
+    Logger::ptr getRoot() const {return m_root;};
+
+    // void addLogger(std::string name,Logger::ptr);
+  private:
+    std::map<std::string,Logger::ptr> m_loggers;
+    Logger::ptr m_root; //主日志器
+};
+
+
+
+
 }
+
 #endif

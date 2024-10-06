@@ -1,8 +1,6 @@
 #include"log.h"
-#include<tuple>
-#include<time.h>
-#include<map>
-#include<functional>
+// #include"util.h"
+
 namespace gaiya{
 
 //LogLevel
@@ -58,11 +56,11 @@ class NewLineFormatItem :public LogFormater::FormaterItem{
       os<<std::endl;
     }
 };
-class CollapseFormatItem :public LogFormater::FormaterItem{
+class ElapseFormatItem :public LogFormater::FormaterItem{
   public:
-    CollapseFormatItem(const std::string & str = ""){};
+    ElapseFormatItem(const std::string & str = ""){};
     void format(std::ostream& os,LogEvent::ptr val)override{
-      os<<val->getCollapse();
+      os<<val->getElapse();
     }
 };
 class NameFormatItem :public LogFormater::FormaterItem{
@@ -141,7 +139,7 @@ class StringFormatItem :public LogFormater::FormaterItem{
   private:
     std::string m_str = "";
 };
-
+//classLogEvent
 LogEvent::LogEvent(std::shared_ptr<Logger> logger,LogLevel::Level level
 ,const char * file,int32_t line,uint32_t threadId
 ,uint32_t coroutineId,uint64_t time)
@@ -154,9 +152,31 @@ LogEvent::LogEvent(std::shared_ptr<Logger> logger,LogLevel::Level level
 ,m_time(time){
   
 }
+void LogEvent::format(const char * fmt,...){
+  va_list vl;
+  va_start(vl,fmt);
+  format(fmt,vl);
+  va_end(vl);
+}
+
+void LogEvent::format(const char * fmt,va_list val){
+  char * buf = nullptr;
+  int len = vasprintf(&buf,fmt,val);
+  if(len != -1){
+    m_ss<<std::string(buf,len);
+    free(buf);
+  }
+}
+
 
 //Logger
-Logger::Logger(const std::string name):m_name(name){}
+Logger::Logger(const std::string name)
+  :m_name(name)
+  ,m_level(LogLevel::Level::DEBUG){
+  //时间，日志级别,线程号,协程号,文件路径,行号,消息,回车
+  m_logformater.reset(new gaiya::LogFormater(
+    "%d{%Y-%m-%d %H:%M:%S}%T%p%T%t%T%F%T%f%T%l%T%m%n"));
+}
 void Logger::log (LogLevel::Level level,LogEvent::ptr event){
   if(level >= m_level){
     for(auto it : m_appenders){
@@ -165,6 +185,9 @@ void Logger::log (LogLevel::Level level,LogEvent::ptr event){
   }
 }
 void Logger::addAppenders(LogAppender::ptr appender){
+  if(!appender->getLogFormater()){
+    appender->setLogformater(m_logformater);
+  }
   m_appenders.push_back(appender);
 }
 void Logger::delAppenders(LogAppender::ptr appender){
@@ -221,12 +244,14 @@ bool FileLogAppender::reopen(){
   if(m_fileStream){
     m_fileStream.close();
   }
-  m_fileStream.open(m_fileName);
+  m_fileStream.open(m_fileName,std::ios::app);
   if(!m_fileStream.is_open()){
     exit(1);
   }
   return !!m_fileStream;
 }
+
+
 //LogFormater{
 LogFormater::LogFormater(const std::string & pattern):m_pattern(pattern){
   init();
@@ -270,11 +295,10 @@ void LogFormater::init(){
     pstr.clear();
     fmt.clear();
     while(n < m_pattern.size()){
-      if(isspace(m_pattern[n])){
-        break;
-      }
-      if(m_pattern[n] == '%'){
-        break;
+      if(!status && (!isalpha(m_pattern[n]) && m_pattern[n] != '{'
+              && m_pattern[n] != '}')) {
+          pstr = m_pattern.substr(i + 1, n - i - 1);
+          break;
       }
       if(status == 0){
         if(m_pattern[n] == '{'){
@@ -289,6 +313,7 @@ void LogFormater::init(){
         if(m_pattern[n] == '}'){
           status = 0; //解析完毕
           fmt = m_pattern.substr(begin + 1,n - begin - 1);
+          n++;
           break;
         }
       }
@@ -304,7 +329,9 @@ void LogFormater::init(){
         vec.push_back(std::make_tuple(str,std::string(),0));
         str.clear();
       }
-      pstr = m_pattern.substr(i + 1,n - i - 1);
+      if(pstr.empty()){
+        pstr = m_pattern.substr(i + 1,n - i - 1);
+      }
       vec.push_back(std::make_tuple(pstr,fmt,1));
       i = n - 1;
     }else if(status == 1){
@@ -322,7 +349,7 @@ void LogFormater::init(){
 
     XX(m, MessageFormatItem),           //m:消息
     XX(p, LevelFormatItem),             //p:日志级别
-    XX(r, CollapseFormatItem),            //r:累计毫秒数
+    XX(r, ElapseFormatItem),            //r:累计毫秒数
     XX(c, NameFormatItem),              //c:日志名称
     XX(t, ThreadIdFormatItem),          //t:线程id
     XX(n, NewLineFormatItem),           //n:换行
@@ -335,7 +362,6 @@ void LogFormater::init(){
 #undef XX
   };
   for(auto& it : vec){
-    std::cout<<"(" << std::get<0>(it) <<")  (" <<std::get<1>(it) <<")  (" <<std::get<2>(it) << ")"<<std::endl;
     if(std::get<2>(it) == 0){
       m_formatItems.push_back(FormaterItem::ptr(new StringFormatItem(std::get<0>(it))));
     }else{
@@ -348,14 +374,33 @@ void LogFormater::init(){
       }
     }
   }
-
+}
+//class LogWrap
+LogEventWrap::LogEventWrap(LogEvent::ptr event):m_event(event){}
+LogEventWrap::~LogEventWrap(){
+  m_event->getLogger()->log(m_event->getLevel(),m_event);
+}
+std::stringstream& LogEventWrap::getSS(){
+  return m_event->getSS();
+}
+//class LoggerManager
+LoggerManager::LoggerManager(){
+  m_root.reset(new gaiya::Logger);
+  m_root->addAppenders(LogAppender::ptr(new gaiya::StdLogAppender));
+  gaiya::FileLogAppender::ptr file_appender(new gaiya::FileLogAppender("../tester/log.txt"));
+  gaiya::LogFormater::ptr fmt(new gaiya::LogFormater   
+    ("%d%T%p%T%t%T%F%T%f%T%l%T%m%n"));
+  file_appender->setLogformater(fmt);
+  file_appender->setLevel(gaiya::LogLevel::Level::ERROR);
+  m_root->delAppenders(file_appender);
+}
+void LoggerManager::init(){
 
 }
-
-
-
-
-
+Logger::ptr LoggerManager::getLogger(const std::string& name) const {
+  auto it = m_loggers.find(name);
+  return it != m_loggers.end() ? it->second : m_root;
+}
 
 
 

@@ -1,12 +1,19 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(gaiya)
 
+set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function")
 
-set(LIB_SRC src/Log/log.cpp)
+set(LIB_SRC 
+  src/Util/util.cpp
+  src/Log/log.cpp 
+  )
 add_library(gaiya SHARED ${LIB_SRC})
 add_executable(test tester/testLog.cpp)
-target_include_directories(test PUBLIC ${PROJECT_SOURCE_DIR}/src/Log)
+target_include_directories(test PUBLIC 
+  ${PROJECT_SOURCE_DIR}/src/Log 
+  ${PROJECT_SOURCE_DIR}/src/Util
+  )
 
 #这个命令确保在构建目标之前，先构建它所依赖的其他目标。
 add_dependencies(test gaiya)
