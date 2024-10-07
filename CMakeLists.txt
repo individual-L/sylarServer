@@ -10,6 +10,8 @@ set(LIB_SRC
   )
 add_library(gaiya SHARED ${LIB_SRC})
 add_executable(test tester/testLog.cpp)
+target_include_directories(gaiya PRIVATE ${PROJECT_SOURCE_DIR}/src/Singlem)
+
 target_include_directories(test PUBLIC 
   ${PROJECT_SOURCE_DIR}/src/Log 
   ${PROJECT_SOURCE_DIR}/src/Util

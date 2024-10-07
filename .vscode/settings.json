@@ -48,6 +48,11 @@
     "sstream": "cpp",
     "stdexcept": "cpp",
     "streambuf": "cpp",
-    "typeinfo": "cpp"
+    "typeinfo": "cpp",
+    "cstring": "cpp",
+    "ctime": "cpp",
+    "strstream": "cpp",
+    "source_location": "cpp",
+    "cinttypes": "cpp"
   }
 }

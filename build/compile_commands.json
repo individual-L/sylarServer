@@ -1,13 +1,13 @@
 [
 {
   "directory": "/home/luo/cplus/sylar/build",
-  "command": "/usr/bin/g++ -Dgaiya_EXPORTS   -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -o CMakeFiles/gaiya.dir/src/Util/util.cpp.o -c /home/luo/cplus/sylar/src/Util/util.cpp",
+  "command": "/usr/bin/g++ -Dgaiya_EXPORTS -I/home/luo/cplus/sylar/src/Singlem  -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -o CMakeFiles/gaiya.dir/src/Util/util.cpp.o -c /home/luo/cplus/sylar/src/Util/util.cpp",
   "file": "/home/luo/cplus/sylar/src/Util/util.cpp",
   "output": "CMakeFiles/gaiya.dir/src/Util/util.cpp.o"
 },
 {
   "directory": "/home/luo/cplus/sylar/build",
-  "command": "/usr/bin/g++ -Dgaiya_EXPORTS   -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -o CMakeFiles/gaiya.dir/src/Log/log.cpp.o -c /home/luo/cplus/sylar/src/Log/log.cpp",
+  "command": "/usr/bin/g++ -Dgaiya_EXPORTS -I/home/luo/cplus/sylar/src/Singlem  -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -o CMakeFiles/gaiya.dir/src/Log/log.cpp.o -c /home/luo/cplus/sylar/src/Log/log.cpp",
   "file": "/home/luo/cplus/sylar/src/Log/log.cpp",
   "output": "CMakeFiles/gaiya.dir/src/Log/log.cpp.o"
 },

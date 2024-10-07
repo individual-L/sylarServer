@@ -3,6 +3,7 @@
 
 CMakeFiles/gaiya.dir/src/Log/log.cpp.o: /home/luo/cplus/sylar/src/Log/log.cpp \
   /home/luo/cplus/sylar/src/Log/log.h \
+  /home/luo/cplus/sylar/src/Singlem/singlem.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -426,6 +427,10 @@ CMakeFiles/gaiya.dir/src/Util/util.cpp.o: /home/luo/cplus/sylar/src/Util/util.cp
 
 /usr/include/pthread.h:
 
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
+
+/usr/include/linux/errno.h:
+
 /usr/include/c++/13/bits/fstream.tcc:
 
 /usr/include/c++/13/debug/debug.h:
@@ -433,8 +438,6 @@ CMakeFiles/gaiya.dir/src/Util/util.cpp.o: /home/luo/cplus/sylar/src/Util/util.cp
 /usr/include/c++/13/stdexcept:
 
 /usr/include/c++/13/bits/ostream_insert.h:
-
-/usr/include/c++/13/bits/shared_ptr_base.h:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
@@ -466,24 +469,6 @@ CMakeFiles/gaiya.dir/src/Util/util.cpp.o: /home/luo/cplus/sylar/src/Util/util.cp
 
 /usr/include/asm-generic/errno-base.h:
 
-/usr/include/c++/13/bits/locale_facets.tcc:
-
-/usr/include/c++/13/bits/requires_hosted.h:
-
-/usr/include/features.h:
-
-/usr/include/c++/13/backward/binders.h:
-
-/usr/include/c++/13/bits/stringfwd.h:
-
-/usr/include/c++/13/backward/auto_ptr.h:
-
-/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
-
-/usr/include/c++/13/type_traits:
-
-/home/luo/cplus/sylar/src/Log/log.h:
-
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/c++/13/bits/shared_ptr.h:
@@ -500,11 +485,17 @@ CMakeFiles/gaiya.dir/src/Util/util.cpp.o: /home/luo/cplus/sylar/src/Util/util.cp
 
 /usr/include/c++/13/bits/exception_ptr.h:
 
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
+/usr/include/c++/13/bits/locale_facets.tcc:
 
-/usr/include/c++/13/bits/atomic_base.h:
+/usr/include/c++/13/bits/requires_hosted.h:
 
-/usr/include/c++/13/bits/new_allocator.h:
+/usr/include/features.h:
+
+/usr/include/c++/13/backward/binders.h:
+
+/usr/include/c++/13/bits/stringfwd.h:
+
+/usr/include/c++/13/backward/auto_ptr.h:
 
 /usr/include/c++/13/bits/sstream.tcc:
 
@@ -518,9 +509,25 @@ CMakeFiles/gaiya.dir/src/Util/util.cpp.o: /home/luo/cplus/sylar/src/Util/util.cp
 
 /usr/include/alloca.h:
 
-/usr/include/c++/13/bit:
+/home/luo/cplus/sylar/src/Log/log.h:
 
 /usr/include/c++/13/bits/basic_string.tcc:
+
+/usr/include/c++/13/bit:
+
+/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
+
+/usr/include/c++/13/type_traits:
+
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
+
+/usr/include/c++/13/bits/new_allocator.h:
+
+/usr/include/c++/13/bits/atomic_base.h:
+
+/usr/include/c++/13/bits/shared_ptr_base.h:
+
+/home/luo/cplus/sylar/src/Singlem/singlem.h:
 
 /usr/include/c++/13/ios:
 
@@ -555,6 +562,12 @@ CMakeFiles/gaiya.dir/src/Util/util.cpp.o: /home/luo/cplus/sylar/src/Util/util.cp
 /usr/include/x86_64-linux-gnu/asm/errno.h:
 
 /usr/include/c++/13/bits/atomic_lockfree_defines.h:
+
+/usr/include/c++/13/bits/list.tcc:
+
+/usr/include/c++/13/clocale:
+
+/usr/include/c++/13/bits/allocated_ptr.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
@@ -614,9 +627,9 @@ CMakeFiles/gaiya.dir/src/Util/util.cpp.o: /home/luo/cplus/sylar/src/Util/util.cp
 
 /usr/include/c++/13/bits/std_function.h:
 
-/usr/include/c++/13/bits/std_abs.h:
-
 /usr/include/c++/13/bits/postypes.h:
+
+/usr/include/c++/13/bits/std_abs.h:
 
 /usr/include/c++/13/bits/uses_allocator.h:
 
@@ -677,12 +690,6 @@ CMakeFiles/gaiya.dir/src/Util/util.cpp.o: /home/luo/cplus/sylar/src/Util/util.cp
 /usr/include/c++/13/bits/utility.h:
 
 /usr/include/c++/13/bits/vector.tcc:
-
-/usr/include/c++/13/bits/list.tcc:
-
-/usr/include/c++/13/bits/allocated_ptr.h:
-
-/usr/include/c++/13/clocale:
 
 /usr/include/c++/13/bits/stl_list.h:
 
@@ -755,7 +762,3 @@ CMakeFiles/gaiya.dir/src/Util/util.cpp.o: /home/luo/cplus/sylar/src/Util/util.cp
 /usr/include/c++/13/bits/streambuf.tcc:
 
 /usr/include/endian.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
-
-/usr/include/linux/errno.h:

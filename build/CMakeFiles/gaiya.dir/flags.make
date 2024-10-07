@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = -Dgaiya_EXPORTS
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/luo/cplus/sylar/src/Singlem
 
 CXX_FLAGS =  -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function -g -fPIC
 

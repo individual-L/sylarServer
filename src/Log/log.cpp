@@ -392,7 +392,7 @@ LoggerManager::LoggerManager(){
     ("%d%T%p%T%t%T%F%T%f%T%l%T%m%n"));
   file_appender->setLogformater(fmt);
   file_appender->setLevel(gaiya::LogLevel::Level::ERROR);
-  m_root->delAppenders(file_appender);
+  m_root->addAppenders(file_appender);
 }
 void LoggerManager::init(){
 
@@ -401,7 +401,6 @@ Logger::ptr LoggerManager::getLogger(const std::string& name) const {
   auto it = m_loggers.find(name);
   return it != m_loggers.end() ? it->second : m_root;
 }
-
 
 
 //}
