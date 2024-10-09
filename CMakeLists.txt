@@ -1,20 +1,33 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.10)
 project(gaiya)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function")
 
-set(LIB_SRC 
-  src/Util/util.cpp
-  src/Log/log.cpp 
-  )
-add_library(gaiya SHARED ${LIB_SRC})
-add_executable(test tester/testLog.cpp)
-target_include_directories(gaiya PRIVATE ${PROJECT_SOURCE_DIR}/src/Singlem)
+set(LOG_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Log)
+set(UTIL_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Util)
+set(SINGLEM_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Singlem)
+set(CONFIG_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Config)
 
+set(LIB_SRC 
+  ${UTIL_INCLUDE_DIR}/util.cpp 
+  ${LOG_INCLUDE_DIR}/log.cpp 
+  ${CONFIG_INCLUDE_DIR}/config.h
+  ${SINGLEM_INCLUDE_DIR}/singlem.h
+  )
+
+add_library(gaiya SHARED ${LIB_SRC})
+add_executable(test tester/testConfig.cpp)
+
+target_include_directories(gaiya PUBLIC 
+  ${LOG_INCLUDE_DIR}
+  ${UTIL_INCLUDE_DIR}
+  ${SINGLEM_INCLUDE_DIR}
+  ${CONFIG_INCLUDE_DIR} 
+  )
 target_include_directories(test PUBLIC 
-  ${PROJECT_SOURCE_DIR}/src/Log 
-  ${PROJECT_SOURCE_DIR}/src/Util
+  ${LOG_INCLUDE_DIR}
+  ${UTIL_INCLUDE_DIR}
   )
 
 #这个命令确保在构建目标之前，先构建它所依赖的其他目标。

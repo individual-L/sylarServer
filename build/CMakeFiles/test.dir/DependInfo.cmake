@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/luo/cplus/sylar/tester/testLog.cpp" "CMakeFiles/test.dir/tester/testLog.cpp.o" "gcc" "CMakeFiles/test.dir/tester/testLog.cpp.o.d"
+  "/home/luo/cplus/sylar/tester/testConfig.cpp" "CMakeFiles/test.dir/tester/testConfig.cpp.o" "gcc" "CMakeFiles/test.dir/tester/testConfig.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

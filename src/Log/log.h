@@ -13,7 +13,7 @@
 #include<tuple>
 #include<time.h>
 #include<functional>
-#include"../Singlem/singlem.h"
+#include"singlem.h"
 namespace gaiya{
 #define LOG_LEVEL_LOGGER(level,logger) \
   if(logger->getLevel() <= level) \
@@ -49,7 +49,7 @@ namespace gaiya{
 #define LOG_FMT_FATAL(logger,fmt,...) \
   LOG_FMT_LEVEL_LOGGER(gaiya::LogLevel::Level::FATAL,logger,fmt,__VA_ARGS__)
 
-#define LOG_ROOT() gaiya::LoggersM::getInstance()->getRoot()
+#define LOG_ROOT() gaiya::s_LoggersM::getInstance()->getRoot()
 class Logger;
 class LogAppender;
 class LogLevel{
@@ -243,7 +243,7 @@ class LoggerManager{
 };
 
 
-typedef gaiya::SinglemPtr<LoggerManager> LoggersM;
+typedef gaiya::SinglemPtr<LoggerManager> s_LoggersM;
 
 }
 

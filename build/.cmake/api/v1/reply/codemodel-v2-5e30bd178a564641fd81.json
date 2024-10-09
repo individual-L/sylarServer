@@ -9,7 +9,7 @@
 					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "2.8.3"
+						"string" : "3.10"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -41,14 +41,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "gaiya::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-gaiya-Debug-834467eb6b56f25d2f15.json",
+					"jsonFile" : "target-gaiya-Debug-c533cfd31cb76fb59cd0.json",
 					"name" : "gaiya",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "test::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test-Debug-4333276f92634cfa78b0.json",
+					"jsonFile" : "target-test-Debug-66bef27921694ef7e5a2.json",
 					"name" : "test",
 					"projectIndex" : 0
 				}

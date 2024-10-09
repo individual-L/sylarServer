@@ -1,1 +1,1 @@
-/usr/bin/g++  -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function -g -rdynamic CMakeFiles/test.dir/tester/testLog.cpp.o -o /home/luo/cplus/sylar/bin/test  -Wl,-rpath,/home/luo/cplus/sylar/lib /home/luo/cplus/sylar/lib/libgaiya.so 
+/usr/bin/g++  -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function -g CMakeFiles/test.dir/tester/testConfig.cpp.o -o /home/luo/cplus/sylar/bin/test  -Wl,-rpath,/home/luo/cplus/sylar/lib /home/luo/cplus/sylar/lib/libgaiya.so 

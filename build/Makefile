@@ -193,29 +193,29 @@ src/Util/util.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Util/util.cpp.s
 .PHONY : src/Util/util.cpp.s
 
-tester/testLog.o: tester/testLog.cpp.o
-.PHONY : tester/testLog.o
+tester/testConfig.o: tester/testConfig.cpp.o
+.PHONY : tester/testConfig.o
 
 # target to build an object file
-tester/testLog.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tester/testLog.cpp.o
-.PHONY : tester/testLog.cpp.o
+tester/testConfig.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tester/testConfig.cpp.o
+.PHONY : tester/testConfig.cpp.o
 
-tester/testLog.i: tester/testLog.cpp.i
-.PHONY : tester/testLog.i
+tester/testConfig.i: tester/testConfig.cpp.i
+.PHONY : tester/testConfig.i
 
 # target to preprocess a source file
-tester/testLog.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tester/testLog.cpp.i
-.PHONY : tester/testLog.cpp.i
+tester/testConfig.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tester/testConfig.cpp.i
+.PHONY : tester/testConfig.cpp.i
 
-tester/testLog.s: tester/testLog.cpp.s
-.PHONY : tester/testLog.s
+tester/testConfig.s: tester/testConfig.cpp.s
+.PHONY : tester/testConfig.s
 
 # target to generate assembly for a file
-tester/testLog.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tester/testLog.cpp.s
-.PHONY : tester/testLog.cpp.s
+tester/testConfig.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tester/testConfig.cpp.s
+.PHONY : tester/testConfig.cpp.s
 
 # Help Target
 help:
@@ -233,9 +233,9 @@ help:
 	@echo "... src/Util/util.o"
 	@echo "... src/Util/util.i"
 	@echo "... src/Util/util.s"
-	@echo "... tester/testLog.o"
-	@echo "... tester/testLog.i"
-	@echo "... tester/testLog.s"
+	@echo "... tester/testConfig.o"
+	@echo "... tester/testConfig.i"
+	@echo "... tester/testConfig.s"
 .PHONY : help
 
 

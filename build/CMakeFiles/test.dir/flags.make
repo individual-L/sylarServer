@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/luo/cplus/sylar/src/Log -I/home/luo/cplus/sylar/src/Util
+CXX_INCLUDES = -I/home/luo/cplus/sylar/src/Log -I/home/luo/cplus/sylar/src/Util -I/home/luo/cplus/sylar/src/Singlem -I/home/luo/cplus/sylar/src/Config
 
 CXX_FLAGS =  -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function -g
 
