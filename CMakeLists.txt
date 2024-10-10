@@ -17,7 +17,8 @@ set(LIB_SRC
   )
 
 add_library(gaiya SHARED ${LIB_SRC})
-add_executable(test tester/testConfig.cpp)
+add_executable(testConfig tester/testConfig.cpp)
+# add_executable(testLog tester/testLog.cpp)
 
 target_include_directories(gaiya PUBLIC 
   ${LOG_INCLUDE_DIR}
@@ -25,15 +26,23 @@ target_include_directories(gaiya PUBLIC
   ${SINGLEM_INCLUDE_DIR}
   ${CONFIG_INCLUDE_DIR} 
   )
-target_include_directories(test PUBLIC 
-  ${LOG_INCLUDE_DIR}
-  ${UTIL_INCLUDE_DIR}
-  )
+# target_include_directories(testLog PUBLIC 
+#   ${LOG_INCLUDE_DIR}
+#   ${UTIL_INCLUDE_DIR}
+#   ${CONFIG_INCLUDE_DIR} 
 
+#   )
+# target_include_directories(testConfig PUBLIC 
+# ${LOG_INCLUDE_DIR}
+# ${UTIL_INCLUDE_DIR}
+# ${CONFIG_INCLUDE_DIR} 
+
+# )
 #这个命令确保在构建目标之前，先构建它所依赖的其他目标。
-add_dependencies(test gaiya)
-
-target_link_libraries(test gaiya)
-
+add_dependencies(testConfig gaiya)
+target_link_libraries(testConfig gaiya)
+target_link_libraries(testConfig yaml-cpp)
+# add_dependencies(testLog gaiya)
+# target_link_libraries(testLog gaiya)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

@@ -53,6 +53,17 @@
     "ctime": "cpp",
     "strstream": "cpp",
     "source_location": "cpp",
-    "cinttypes": "cpp"
+    "cinttypes": "cpp",
+    "set": "cpp",
+    "valarray": "cpp",
+    "charconv": "cpp",
+    "chrono": "cpp",
+    "forward_list": "cpp",
+    "unordered_set": "cpp",
+    "ratio": "cpp",
+    "format": "cpp",
+    "iomanip": "cpp",
+    "span": "cpp",
+    "variant": "cpp"
   }
 }

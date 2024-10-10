@@ -1,0 +1,1 @@
+/usr/bin/c++ "CMakeFiles/yaml-cpp-sandbox.dir/sandbox.cpp.o" -o sandbox  -Wl,-rpath,/home/luo/cplus/sylar/tmp/build ../libyaml-cpp.so.0.8.0 

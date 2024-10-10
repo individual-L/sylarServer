@@ -1,0 +1,1 @@
+/usr/bin/c++ "CMakeFiles/yaml-cpp-read.dir/read.cpp.o" -o read  -Wl,-rpath,/home/luo/cplus/sylar/tmp/build ../libyaml-cpp.so.0.8.0 

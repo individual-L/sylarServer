@@ -133,17 +133,17 @@ gaiya/fast:
 .PHONY : gaiya/fast
 
 #=============================================================================
-# Target rules for targets named test
+# Target rules for targets named testConfig
 
 # Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
-.PHONY : test
+testConfig: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testConfig
+.PHONY : testConfig
 
 # fast build rule for target.
-test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
+testConfig/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/build
+.PHONY : testConfig/fast
 
 src/Log/log.o: src/Log/log.cpp.o
 .PHONY : src/Log/log.o
@@ -198,7 +198,7 @@ tester/testConfig.o: tester/testConfig.cpp.o
 
 # target to build an object file
 tester/testConfig.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tester/testConfig.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tester/testConfig.cpp.o
 .PHONY : tester/testConfig.cpp.o
 
 tester/testConfig.i: tester/testConfig.cpp.i
@@ -206,7 +206,7 @@ tester/testConfig.i: tester/testConfig.cpp.i
 
 # target to preprocess a source file
 tester/testConfig.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tester/testConfig.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tester/testConfig.cpp.i
 .PHONY : tester/testConfig.cpp.i
 
 tester/testConfig.s: tester/testConfig.cpp.s
@@ -214,7 +214,7 @@ tester/testConfig.s: tester/testConfig.cpp.s
 
 # target to generate assembly for a file
 tester/testConfig.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tester/testConfig.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tester/testConfig.cpp.s
 .PHONY : tester/testConfig.cpp.s
 
 # Help Target
@@ -226,7 +226,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... gaiya"
-	@echo "... test"
+	@echo "... testConfig"
 	@echo "... src/Log/log.o"
 	@echo "... src/Log/log.i"
 	@echo "... src/Log/log.s"
