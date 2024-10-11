@@ -1,4 +1,4 @@
-#include"log.h"
+#include"log.hpp"
 // #include"util.h"
 
 namespace gaiya{
@@ -385,17 +385,17 @@ std::stringstream& LogEventWrap::getSS(){
 }
 //class LoggerManager
 LoggerManager::LoggerManager(){
+  init();
+}
+void LoggerManager::init(){
   m_root.reset(new gaiya::Logger);
   m_root->addAppenders(LogAppender::ptr(new gaiya::StdLogAppender));
-  gaiya::FileLogAppender::ptr file_appender(new gaiya::FileLogAppender("../tester/log.txt"));
+  gaiya::FileLogAppender::ptr file_appender(new gaiya::FileLogAppender("/home/luo/cplus/sylar/loglist/log.txt"));
   gaiya::LogFormater::ptr fmt(new gaiya::LogFormater   
     ("%d%T%p%T%t%T%F%T%f%T%l%T%m%n"));
   file_appender->setLogformater(fmt);
-  file_appender->setLevel(gaiya::LogLevel::Level::ERROR);
+  file_appender->setLevel(gaiya::LogLevel::Level::DEBUG);
   m_root->addAppenders(file_appender);
-}
-void LoggerManager::init(){
-
 }
 Logger::ptr LoggerManager::getLogger(const std::string& name) const {
   auto it = m_loggers.find(name);

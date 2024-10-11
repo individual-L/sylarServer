@@ -13,7 +13,13 @@
 },
 {
   "directory": "/home/luo/cplus/sylar/build",
-  "command": "/usr/bin/g++  -I/home/luo/cplus/sylar/src/Log -I/home/luo/cplus/sylar/src/Util -I/home/luo/cplus/sylar/src/Singlem -I/home/luo/cplus/sylar/src/Config  -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function -g -o CMakeFiles/testConfig.dir/tester/testConfig.cpp.o -c /home/luo/cplus/sylar/tester/testConfig.cpp",
+  "command": "/usr/bin/g++ -Dgaiya_EXPORTS -I/home/luo/cplus/sylar/src/Log -I/home/luo/cplus/sylar/src/Util -I/home/luo/cplus/sylar/src/Singlem -I/home/luo/cplus/sylar/src/Config  -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -o CMakeFiles/gaiya.dir/src/Config/config.cpp.o -c /home/luo/cplus/sylar/src/Config/config.cpp",
+  "file": "/home/luo/cplus/sylar/src/Config/config.cpp",
+  "output": "CMakeFiles/gaiya.dir/src/Config/config.cpp.o"
+},
+{
+  "directory": "/home/luo/cplus/sylar/build",
+  "command": "/usr/bin/g++  -I/home/luo/cplus/sylar/src/Log -I/home/luo/cplus/sylar/src/Util -I/home/luo/cplus/sylar/src/Config -I/home/luo/cplus/sylar/src/Singlem  -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function -g -o CMakeFiles/testConfig.dir/tester/testConfig.cpp.o -c /home/luo/cplus/sylar/tester/testConfig.cpp",
   "file": "/home/luo/cplus/sylar/tester/testConfig.cpp",
   "output": "CMakeFiles/testConfig.dir/tester/testConfig.cpp.o"
 }

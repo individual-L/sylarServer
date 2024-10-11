@@ -1186,6 +1186,18 @@
 			"value" : "ON"
 		},
 		{
+			"name" : "gaiya_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;yaml-cpp;"
+		},
+		{
 			"name" : "gaiya_SOURCE_DIR",
 			"properties" : 
 			[

@@ -4,9 +4,11 @@
 #include<memory>
 #include<sstream>
 #include<boost/lexical_cast.hpp>
-#include"log.h"
+#include"log.hpp"
 #include<map>
 #include<yaml-cpp/yaml.h>
+#include<utility>
+#include"util.hpp"
 
 namespace gaiya{
 
@@ -20,7 +22,7 @@ class ConfigVarBase{
     virtual ~ConfigVarBase(){}
     std::string getName() const {return m_name;}
     std::string getDescription() const {return m_description;}
-    virtual std::string getTypeName() = 0;
+    virtual std::string getTypeName()const = 0;
     virtual std::string toString() = 0;
     virtual bool fromString(const std::string& str) = 0;
   protected:
@@ -67,19 +69,23 @@ class ConfigVar :public ConfigVarBase{
       return false;
     }
 
-    std::string getTypeName() override {
+    std::string getTypeName() const override {
       return gaiya::TypeName<T>();
     }
-
   private:
     T m_val;
 };
 class Config{
   public:
     typedef std::map<std::string,gaiya::ConfigVarBase::ptr> configVarMap;
+    typedef std::shared_ptr<Config> ptr;
     
+    static void loadYamlFile(const char * file);
+
+    static ConfigVarBase::ptr checkBase(const std::string& base);
+
     template<class T>
-    static typename ConfigVar<T>::ptr lookup(const std::string name,const std::string description,T& val){
+    static typename ConfigVar<T>::ptr lookup(const std::string& name,const std::string& description,T& val){
       auto it = getDatas().find(name);
       if(it != getDatas().end()){
         auto v = std::dynamic_pointer_cast<ConfigVar<T> >(it->second);
@@ -100,8 +106,9 @@ class Config{
       getDatas()[name] = v;
       return v;
     }
+    
     template<class T>
-    static typename ConfigVar<T>::ptr lookup(const std::string name){
+    static typename ConfigVar<T>::ptr lookup(const std::string& name){
       auto it = getDatas().find(name);
       if(it != getDatas().end()){
         auto v = std::dynamic_pointer_cast<ConfigVar<T> >(it->second);
@@ -115,6 +122,7 @@ class Config{
       }
       return nullptr;
     }
+  
   private:
     static configVarMap& getDatas(){
       static configVarMap s_datas;

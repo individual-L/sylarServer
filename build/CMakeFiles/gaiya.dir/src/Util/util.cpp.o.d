@@ -1,6 +1,6 @@
 CMakeFiles/gaiya.dir/src/Util/util.cpp.o: \
  /home/luo/cplus/sylar/src/Util/util.cpp /usr/include/stdc-predef.h \
- /home/luo/cplus/sylar/src/Util/util.h \
+ /home/luo/cplus/sylar/src/Util/util.hpp \
  /usr/include/x86_64-linux-gnu/sys/syscall.h \
  /usr/include/x86_64-linux-gnu/asm/unistd.h \
  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \

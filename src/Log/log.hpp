@@ -13,7 +13,9 @@
 #include<tuple>
 #include<time.h>
 #include<functional>
-#include"singlem.h"
+#include"singlem.hpp"
+#include"util.hpp"
+
 namespace gaiya{
 #define LOG_LEVEL_LOGGER(level,logger) \
   if(logger->getLevel() <= level) \

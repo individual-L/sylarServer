@@ -145,6 +145,30 @@ testConfig/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/build
 .PHONY : testConfig/fast
 
+src/Config/config.o: src/Config/config.cpp.o
+.PHONY : src/Config/config.o
+
+# target to build an object file
+src/Config/config.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Config/config.cpp.o
+.PHONY : src/Config/config.cpp.o
+
+src/Config/config.i: src/Config/config.cpp.i
+.PHONY : src/Config/config.i
+
+# target to preprocess a source file
+src/Config/config.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Config/config.cpp.i
+.PHONY : src/Config/config.cpp.i
+
+src/Config/config.s: src/Config/config.cpp.s
+.PHONY : src/Config/config.s
+
+# target to generate assembly for a file
+src/Config/config.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Config/config.cpp.s
+.PHONY : src/Config/config.cpp.s
+
 src/Log/log.o: src/Log/log.cpp.o
 .PHONY : src/Log/log.o
 
@@ -227,6 +251,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... gaiya"
 	@echo "... testConfig"
+	@echo "... src/Config/config.o"
+	@echo "... src/Config/config.i"
+	@echo "... src/Config/config.s"
 	@echo "... src/Log/log.o"
 	@echo "... src/Log/log.i"
 	@echo "... src/Log/log.s"

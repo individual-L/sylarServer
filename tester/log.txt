@@ -1,3 +1,0 @@
-2024-10-06 15:44:19	ERROR	5496	1	/home/luo/cplus/sylar/tester/testLog.cpp	17	hello error world!
-2024-10-09 10:26:13	ERROR	7945	1	/home/luo/cplus/sylar/tester/testLog.cpp	8	hello error world!
-2024-10-09 10:28:34	ERROR	8096	1	/home/luo/cplus/sylar/tester/testLog.cpp	7	hello error world!

@@ -220,6 +220,9 @@ gaiya_BINARY_DIR:STATIC=/home/luo/cplus/sylar/build
 //Value Computed by CMake
 gaiya_IS_TOP_LEVEL:STATIC=ON
 
+//Dependencies for the target
+gaiya_LIB_DEPENDS:STATIC=general;yaml-cpp;
+
 //Value Computed by CMake
 gaiya_SOURCE_DIR:STATIC=/home/luo/cplus/sylar
 

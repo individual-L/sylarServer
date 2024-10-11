@@ -64,6 +64,17 @@
     "format": "cpp",
     "iomanip": "cpp",
     "span": "cpp",
-    "variant": "cpp"
+    "variant": "cpp",
+    "cfenv": "cpp",
+    "codecvt": "cpp",
+    "complex": "cpp",
+    "condition_variable": "cpp",
+    "mutex": "cpp",
+    "semaphore": "cpp",
+    "shared_mutex": "cpp",
+    "stdfloat": "cpp",
+    "stop_token": "cpp",
+    "thread": "cpp",
+    "typeindex": "cpp"
   }
 }

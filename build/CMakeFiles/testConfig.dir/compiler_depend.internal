@@ -3,10 +3,10 @@
 
 CMakeFiles/testConfig.dir/tester/testConfig.cpp.o
  /home/luo/cplus/sylar/tester/testConfig.cpp
- /home/luo/cplus/sylar/src/Config/config.h
- /home/luo/cplus/sylar/src/Log/log.h
- /home/luo/cplus/sylar/src/Singlem/singlem.h
- /home/luo/cplus/sylar/src/Util/util.h
+ /home/luo/cplus/sylar/src/Config/config.hpp
+ /home/luo/cplus/sylar/src/Log/log.hpp
+ /home/luo/cplus/sylar/src/Singlem/singlem.hpp
+ /home/luo/cplus/sylar/src/Util/util.hpp
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h

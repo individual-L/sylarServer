@@ -1,0 +1,2 @@
+2024-10-11 11:21:29	INFO	10081	1	/home/luo/cplus/sylar/tester/testConfig.cpp	10	start test config
+2024-10-11 11:21:29	INFO	10081	1	/home/luo/cplus/sylar/tester/testConfig.cpp	12	end test config
