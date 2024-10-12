@@ -60,5 +60,10 @@ void Config::loadYamlFile(const char * file){
   }
 }
 
+void Config::visit(std::function<void(ConfigVarBase::ptr)> func){
+  for(auto& it : getDatas()){
+    func(it.second);
+  }
+}
 
 }
