@@ -1,2 +1,95 @@
 2024-10-11 11:21:29	INFO	10081	1	/home/luo/cplus/sylar/tester/testConfig.cpp	10	start test config
 2024-10-11 11:21:29	INFO	10081	1	/home/luo/cplus/sylar/tester/testConfig.cpp	12	end test config
+2024-10-13 10:51:39	INFO	3946	1	/home/luo/cplus/sylar/tester/testConfig.cpp	17	start test config
+2024-10-13 10:51:39	INFO	3946	1	/home/luo/cplus/sylar/tester/testConfig.cpp	10	std::vector<int, std::allocator<int> >
+2024-10-13 10:51:39	INFO	3946	1	/home/luo/cplus/sylar/tester/testConfig.cpp	11	- 1
+- 2
+2024-10-13 10:51:39	INFO	3946	1	/home/luo/cplus/sylar/tester/testConfig.cpp	20	end test config
+2024-10-13 11:00:29	INFO	4439	1	/home/luo/cplus/sylar/tester/testConfig.cpp	21	start test config
+2024-10-13 11:00:29	INFO	4439	1	/home/luo/cplus/sylar/tester/testConfig.cpp	10	std::vector<int, std::allocator<int> >
+2024-10-13 11:00:29	INFO	4439	1	/home/luo/cplus/sylar/tester/testConfig.cpp	14	- 1
+- 2
+2024-10-13 11:00:29	INFO	4439	1	/home/luo/cplus/sylar/tester/testConfig.cpp	24	end test config
+2024-10-13 11:01:12	INFO	4488	1	/home/luo/cplus/sylar/tester/testConfig.cpp	21	start test config
+2024-10-13 11:01:12	INFO	4488	1	/home/luo/cplus/sylar/tester/testConfig.cpp	10	std::vector<int, std::allocator<int> >
+2024-10-13 11:01:12	INFO	4488	1	/home/luo/cplus/sylar/tester/testConfig.cpp	14	- 1
+- 2
+2024-10-13 11:01:12	INFO	4488	1	/home/luo/cplus/sylar/tester/testConfig.cpp	24	end test config
+2024-10-13 11:01:14	INFO	4514	1	/home/luo/cplus/sylar/tester/testConfig.cpp	21	start test config
+2024-10-13 11:01:14	INFO	4514	1	/home/luo/cplus/sylar/tester/testConfig.cpp	10	std::vector<int, std::allocator<int> >
+2024-10-13 11:01:14	INFO	4514	1	/home/luo/cplus/sylar/tester/testConfig.cpp	14	- 1
+- 2
+2024-10-13 11:01:14	INFO	4514	1	/home/luo/cplus/sylar/tester/testConfig.cpp	24	end test config
+2024-10-13 11:01:15	INFO	4529	1	/home/luo/cplus/sylar/tester/testConfig.cpp	21	start test config
+2024-10-13 11:01:15	INFO	4529	1	/home/luo/cplus/sylar/tester/testConfig.cpp	10	std::vector<int, std::allocator<int> >
+2024-10-13 11:01:15	INFO	4529	1	/home/luo/cplus/sylar/tester/testConfig.cpp	14	- 1
+- 2
+2024-10-13 11:01:15	INFO	4529	1	/home/luo/cplus/sylar/tester/testConfig.cpp	24	end test config
+2024-10-13 11:02:31	INFO	4655	1	/home/luo/cplus/sylar/tester/testConfig.cpp	22	start test config
+2024-10-13 11:02:31	INFO	4655	1	/home/luo/cplus/sylar/tester/testConfig.cpp	10	std::vector<int, std::allocator<int> >
+2024-10-13 11:02:31	INFO	4655	1	/home/luo/cplus/sylar/tester/testConfig.cpp	14	- 1
+- 2
+2024-10-13 11:02:31	INFO	4655	1	/home/luo/cplus/sylar/tester/testConfig.cpp	25	end test config
+2024-10-13 11:02:42	INFO	4689	1	/home/luo/cplus/sylar/tester/testConfig.cpp	22	start test config
+2024-10-13 11:02:42	INFO	4689	1	/home/luo/cplus/sylar/tester/testConfig.cpp	10	std::vector<int, std::allocator<int> >
+2024-10-13 11:02:42	INFO	4689	1	/home/luo/cplus/sylar/tester/testConfig.cpp	14	- 1
+- 2
+2024-10-13 11:02:42	INFO	4689	1	/home/luo/cplus/sylar/tester/testConfig.cpp	25	end test config
+2024-10-13 11:02:44	INFO	4708	1	/home/luo/cplus/sylar/tester/testConfig.cpp	22	start test config
+2024-10-13 11:02:44	INFO	4708	1	/home/luo/cplus/sylar/tester/testConfig.cpp	10	std::vector<int, std::allocator<int> >
+2024-10-13 11:02:44	INFO	4708	1	/home/luo/cplus/sylar/tester/testConfig.cpp	14	- 1
+- 2
+2024-10-13 11:02:44	INFO	4708	1	/home/luo/cplus/sylar/tester/testConfig.cpp	25	end test config
+2024-10-13 11:08:03	INFO	5041	1	/home/luo/cplus/sylar/tester/testConfig.cpp	34	start test config
+2024-10-13 11:08:03	INFO	5041	1	/home/luo/cplus/sylar/tester/testConfig.cpp	10	std::vector<int, std::allocator<int> >
+2024-10-13 11:08:03	INFO	5041	1	/home/luo/cplus/sylar/tester/testConfig.cpp	14	- 1
+- 2
+2024-10-13 11:08:03	INFO	5041	1	/home/luo/cplus/sylar/tester/testConfig.cpp	37	end test config
+2024-10-13 11:11:03	INFO	5334	1	/home/luo/cplus/sylar/tester/testConfig.cpp	34	start test config
+2024-10-13 11:11:03	INFO	5334	1	/home/luo/cplus/sylar/tester/testConfig.cpp	10	std::vector<int, std::allocator<int> >
+2024-10-13 11:11:03	INFO	5334	1	/home/luo/cplus/sylar/tester/testConfig.cpp	14	- 1
+- 2
+2024-10-13 11:11:03	INFO	5334	1	/home/luo/cplus/sylar/tester/testConfig.cpp	22	std::set<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >
+2024-10-13 11:11:03	INFO	5334	1	/home/luo/cplus/sylar/tester/testConfig.cpp	26	- hello
+- nihao
+2024-10-13 11:11:03	INFO	5334	1	/home/luo/cplus/sylar/tester/testConfig.cpp	38	end test config
+2024-10-13 11:12:15	INFO	5395	1	/home/luo/cplus/sylar/tester/testConfig.cpp	34	start test config
+2024-10-13 11:12:15	INFO	5395	1	/home/luo/cplus/sylar/tester/testConfig.cpp	10	std::vector<int, std::allocator<int> >
+2024-10-13 11:12:15	INFO	5395	1	/home/luo/cplus/sylar/tester/testConfig.cpp	14	- 1
+- 2
+2024-10-13 11:12:15	INFO	5395	1	/home/luo/cplus/sylar/tester/testConfig.cpp	22	std::set<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >
+2024-10-13 11:12:15	INFO	5395	1	/home/luo/cplus/sylar/tester/testConfig.cpp	26	- hello
+- nihao
+2024-10-13 11:12:15	INFO	5395	1	/home/luo/cplus/sylar/tester/testConfig.cpp	38	end test config
+2024-10-13 11:12:20	INFO	5475	1	/home/luo/cplus/sylar/tester/testConfig.cpp	34	start test config
+2024-10-13 11:12:20	INFO	5475	1	/home/luo/cplus/sylar/tester/testConfig.cpp	10	std::vector<int, std::allocator<int> >
+2024-10-13 11:12:20	INFO	5475	1	/home/luo/cplus/sylar/tester/testConfig.cpp	14	- 1
+- 2
+2024-10-13 11:12:20	INFO	5475	1	/home/luo/cplus/sylar/tester/testConfig.cpp	22	std::set<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >
+2024-10-13 11:12:20	INFO	5475	1	/home/luo/cplus/sylar/tester/testConfig.cpp	26	- hello
+- nihao
+2024-10-13 11:12:20	INFO	5475	1	/home/luo/cplus/sylar/tester/testConfig.cpp	38	end test config
+2024-10-13 11:12:31	INFO	5521	1	/home/luo/cplus/sylar/tester/testConfig.cpp	34	start test config
+2024-10-13 11:12:31	INFO	5521	1	/home/luo/cplus/sylar/tester/testConfig.cpp	10	std::vector<int, std::allocator<int> >
+2024-10-13 11:12:31	INFO	5521	1	/home/luo/cplus/sylar/tester/testConfig.cpp	14	- 1
+- 2
+2024-10-13 11:12:31	INFO	5521	1	/home/luo/cplus/sylar/tester/testConfig.cpp	22	std::set<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >
+2024-10-13 11:12:31	INFO	5521	1	/home/luo/cplus/sylar/tester/testConfig.cpp	26	- hello
+- nihao
+2024-10-13 11:12:31	INFO	5521	1	/home/luo/cplus/sylar/tester/testConfig.cpp	38	end test config
+2024-10-13 11:14:38	INFO	5687	1	/home/luo/cplus/sylar/tester/testConfig.cpp	35	start test config
+2024-10-13 11:14:38	INFO	5687	1	/home/luo/cplus/sylar/tester/testConfig.cpp	10	std::vector<int, std::allocator<int> >
+2024-10-13 11:14:38	INFO	5687	1	/home/luo/cplus/sylar/tester/testConfig.cpp	14	- 1
+- 2
+2024-10-13 11:14:38	INFO	5687	1	/home/luo/cplus/sylar/tester/testConfig.cpp	23	std::set<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >
+2024-10-13 11:14:38	INFO	5687	1	/home/luo/cplus/sylar/tester/testConfig.cpp	27	- hello
+- nihao
+2024-10-13 11:14:38	INFO	5687	1	/home/luo/cplus/sylar/tester/testConfig.cpp	39	end test config
+2024-10-13 11:14:42	INFO	5716	1	/home/luo/cplus/sylar/tester/testConfig.cpp	35	start test config
+2024-10-13 11:14:42	INFO	5716	1	/home/luo/cplus/sylar/tester/testConfig.cpp	10	std::vector<int, std::allocator<int> >
+2024-10-13 11:14:42	INFO	5716	1	/home/luo/cplus/sylar/tester/testConfig.cpp	14	- 1
+- 2
+2024-10-13 11:14:42	INFO	5716	1	/home/luo/cplus/sylar/tester/testConfig.cpp	23	std::set<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >
+2024-10-13 11:14:42	INFO	5716	1	/home/luo/cplus/sylar/tester/testConfig.cpp	27	- hello
+- nihao
+2024-10-13 11:14:42	INFO	5716	1	/home/luo/cplus/sylar/tester/testConfig.cpp	39	end test config

@@ -32,29 +32,35 @@ class ConfigVarBase{
     std::string m_name;
     std::string m_description;
 };
-//S:source(源类型),G:目标类型(destination)
+/*S:source(源类型),G:目标类型(destination)
+实现基本类型的转换(int，string，float等)
+
+*/
 template<class S,class D>
 class lexicalCast{
   public:
-    void operator(const S& s)(){
+    D operator()(const S& s){
       return boost::lexical_cast<D>(s);
     }
 };
 
+/*
+复杂类型的转换(map，set，vector，list)
+*/
 //类型转换模板类特化(YAML string ==> vecotr<T>)
 template<class T>
 class lexicalCast<std::string,std::vector<T>>{
   public:
-    std::vecotr<T> operator(const std::string str)(){
+    std::vector<T> operator()(const std::string str){
       std::stringstream ss;
-      typename std::vecotr<T> res;
-      YAML::Node node = YAML::load(str);
+      typename std::vector<T> res;
+      YAML::Node node = YAML::Load(str);
       for(size_t i = 0;i < node.size();++i){
         ss.str(std::string());
         ss << node[i];
-        res.push_back(lexicalCase<std::string,T>()(ss.str()));
+        res.push_back(lexicalCast<std::string,T>()(ss.str()));
       }
-      return vec;
+      return res;
     }
 };
 
@@ -62,10 +68,10 @@ class lexicalCast<std::string,std::vector<T>>{
 template<class T>
 class lexicalCast<std::vector<T>,std::string>{
   public:
-    void operator(std::vector<T> v)(){
+    std::string operator()(std::vector<T> v){
       YAML::Node node(YAML::NodeType::Sequence);
       for(auto& it : v){
-        node.push_back(YAML::load(lexicalCase<T,std::string>()(it)));
+        node.push_back(YAML::Load(lexicalCast<T,std::string>()(it)));
       }
       std::stringstream ss;
       ss << node;
@@ -77,11 +83,11 @@ class lexicalCast<std::vector<T>,std::string>{
 template<class T>
 class lexicalCast<std::string,std::set<T>>{
   public:
-    std::set<T> operator(const std::string str)(){
+    std::set<T> operator()(const std::string str){
       typename std::set<T> res;
-      YAML::Node node = YAML::load(str);
+      YAML::Node node = YAML::Load(str);
       std::stringstream ss;
-      for(auto& it = node.begin();it != node.end();++it){
+      for(auto it = node.begin();it != node.end();++it){
         ss.str(std::string());
         ss << *(it);
         res.insert(lexicalCast<std::string,T>()(ss.str()));
@@ -94,14 +100,14 @@ class lexicalCast<std::string,std::set<T>>{
 template<class T>
 class lexicalCast<std::set<T>,std::string>{
   public:
-    std::string operator(std::set<T> s)(){
+    std::string operator()(std::set<T> s){
       YAML::Node node(YAML::NodeType::Sequence);
       for(auto& it : s){
-        node.push_back(YAML::load(lexicalCase<T,std::string>()(it)));
+        node.push_back(YAML::Load(lexicalCast<T,std::string>()(it)));
       }
       std::stringstream ss;
       ss << node;
-      return ss;
+      return ss.str();
     }
 };
 
@@ -109,11 +115,11 @@ class lexicalCast<std::set<T>,std::string>{
 template<class T>
 class lexicalCast<std::string,std::map<std::string,T>>{
   public:
-    std::map<std::string,T> operator(const std::string str)(){
+    std::map<std::string,T> operator()(const std::string str){
       typename std::map<std::string,T> res;
-      YAML::Node node = YAML::load(str);
+      YAML::Node node = YAML::Load(str);
       std::stringstream ss;
-      for(auto& it = node.begin();it != node.end();++it){
+      for(auto it = node.begin();it != node.end();++it){
         ss.str(std::string());
         ss << it->second;
         res.insert(std::map<std::string,T>::value_type(it->first.Scalar(),lexicalCast<std::string,T>()(ss.str())));
@@ -126,10 +132,10 @@ class lexicalCast<std::string,std::map<std::string,T>>{
 template<class T>
 class lexicalCast<std::map<std::string,T>,std::string>{
   public:
-    std::string operator(std::map<std::string,T> m)(){
+    std::string operator()(std::map<std::string,T> m){
       YAML::Node node(YAML::NodeType::Map);
       for(auto& it : m){
-        node[it.first] = YAML::load(lexicalCast<T,std::string>()(it.second));
+        node[it.first] = YAML::Load(lexicalCast<T,std::string>()(it.second));
       }
       std::stringstream ss;
       ss << node;
@@ -141,11 +147,11 @@ class lexicalCast<std::map<std::string,T>,std::string>{
 template<class T>
 class lexicalCast<std::unordered_map<std::string,T>,std::string>{
   public:
-    std::unordered_map<std::string,T> operator(const std::string str)(){
+    std::unordered_map<std::string,T> operator()(const std::string str){
       typename std::unordered_map<std::string,T> res;
-      YAML::Node node = YAML::load(str);
+      YAML::Node node = YAML::Load(str);
       std::stringstream ss;
-      for(auto& it = node.begin();it != node.end();++it){
+      for(auto it = node.begin();it != node.end();++it){
         ss.str(std::string());
         ss << it->second;
         res.insert(std::unordered_map<std::string,T>::value_type(it->first.Scalar(),lexicalCast<std::string,T>()(ss.str())));
@@ -158,10 +164,10 @@ class lexicalCast<std::unordered_map<std::string,T>,std::string>{
 template<class T>
 class lexicalCast<std::string,std::unordered_map<std::string,T>>{
   public:
-    std::string operator(std::unordered_map<std::string,T> m)(){
+    std::string operator()(std::unordered_map<std::string,T> m){
       YAML::Node node(YAML::NodeType::Map);
       for(auto& it : m){
-        node[it.first] = YAML::load(lexicalCast<T,std::string>()(it.second));
+        node[it.first] = YAML::Load(lexicalCast<T,std::string>()(it.second));
       }
       std::stringstream ss;
       ss << node;
@@ -173,11 +179,11 @@ class lexicalCast<std::string,std::unordered_map<std::string,T>>{
 template<class T>
 class lexicalCast<std::string,std::unordered_set<T>>{
   public:
-    std::unordered_set<T> operator(const std::string str)(){
+    std::unordered_set<T> operator()(const std::string str){
       typename std::unordered_set<T> res;
-      YAML::Node node = YAML::load(str);
+      YAML::Node node = YAML::Load(str);
       std::stringstream ss;
-      for(auto& it = node.begin();it != node.end();++it){
+      for(auto it = node.begin();it != node.end();++it){
         ss.str(std::string());
         ss << *(it);
         res.insert(lexicalCast<std::string,T>()(ss.str()));
@@ -190,14 +196,14 @@ class lexicalCast<std::string,std::unordered_set<T>>{
 template<class T>
 class lexicalCast<std::unordered_set<T>,std::string>{
   public:
-    std::string operator(std::unordered_set<T> s)(){
+    std::string operator()(std::unordered_set<T> s){
       YAML::Node node(YAML::NodeType::Sequence);
       for(auto& it : s){
-        node.push_back(YAML::load(lexicalCase<T,std::string>()(it)));
+        node.push_back(YAML::Load(lexicalCast<T,std::string>()(it)));
       }
       std::stringstream ss;
       ss << node;
-      return ss;
+      return ss.str();
     }
 };
 
@@ -205,16 +211,16 @@ class lexicalCast<std::unordered_set<T>,std::string>{
 template<class T>
 class lexicalCast<std::string,std::list<T>>{
   public:
-    std::list<T> operator(const std::string str)(){
+    std::list<T> operator()(const std::string str){
       std::stringstream ss;
       typename std::list<T> res;
-      YAML::Node node = YAML::load(str);
+      YAML::Node node = YAML::Load(str);
       for(size_t i = 0;i < node.size();++i){
         ss.str(std::string());
         ss << node[i];
-        res.push_back(lexicalCase<std::string,T>()(ss.str()));
+        res.push_back(lexicalCast<std::string,T>()(ss.str()));
       }
-      return vec;
+      return res;
     }
 };
 
@@ -222,10 +228,10 @@ class lexicalCast<std::string,std::list<T>>{
 template<class T>
 class lexicalCast<std::list<T>,std::string>{
   public:
-    void operator(std::list<T> v)(){
+    std::string operator()(std::list<T> v){
       YAML::Node node(YAML::NodeType::Sequence);
       for(auto& it : v){
-        node.push_back(YAML::load(lexicalCase<T,std::string>()(it)));
+        node.push_back(YAML::Load(lexicalCast<T,std::string>()(it)));
       }
       std::stringstream ss;
       ss << node;
@@ -294,7 +300,7 @@ class Config{
     static ConfigVarBase::ptr checkBase(const std::string& base);
 
     template<class T>
-    static typename ConfigVar<T>::ptr lookup(const std::string& name,const std::string& description,T& val){
+    static typename ConfigVar<T>::ptr lookup(const std::string& name,const std::string& description,T&& val){
       auto it = getDatas().find(name);
       if(it != getDatas().end()){
         auto v = std::dynamic_pointer_cast<ConfigVar<T> >(it->second);
