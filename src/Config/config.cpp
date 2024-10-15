@@ -11,11 +11,11 @@ static void listYamlFile(const std::string prefix,YAML::Node node
       throw std::invalid_argument(prefix);
   }
   allist.push_back(std::make_pair(prefix,node));
-  if(node.IsSequence()){
-    for(size_t i = 0;i < node.size();++i){
-      listYamlFile(prefix,node[i],allist);
-    }
-  }
+  // if(node.IsSequence()){
+  //   for(size_t i = 0;i < node.size();++i){
+  //     listYamlFile(prefix,node[i],allist);
+  //   }
+  // }
   if(node.IsMap()){
     for(auto it = node.begin();it != node.end();++it){
       listYamlFile(prefix.empty() ? it->first.Scalar() 
@@ -37,7 +37,7 @@ ConfigVarBase::ptr Config::checkBase(const std::string& base){
 void Config::loadYamlFile(const char * file){
   std::list<std::pair<std::string,YAML::Node>> allist;
   YAML::Node node = YAML::LoadFile(file);
-  listYamlFile("",node,allist);
+  listYamlFile(std::string(),node,allist);
   for(auto it : allist){
     std::string name = it.first;
     if(name.empty()){
@@ -52,7 +52,7 @@ void Config::loadYamlFile(const char * file){
         val->fromString(it.second.Scalar());
       }else{
         std::stringstream ss;
-        ss<<it.second.Scalar();
+        ss<<it.second;
         val->fromString(ss.str());
       }
     }

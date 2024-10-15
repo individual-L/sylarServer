@@ -52,6 +52,7 @@ namespace gaiya{
   LOG_FMT_LEVEL_LOGGER(gaiya::LogLevel::Level::FATAL,logger,fmt,__VA_ARGS__)
 
 #define LOG_ROOT() gaiya::s_LoggersM::getInstance()->getRoot()
+
 class Logger;
 class LogAppender;
 class LogLevel{

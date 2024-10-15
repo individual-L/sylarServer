@@ -1,4 +1,38 @@
-- 1
-- 2
-- hello
-- nihao
+log:
+  - name: root
+    level: info
+    formater: "%d%T%p%T%t%T%F%T%f%T%l%T%m%n"
+    appender: 
+      - level: debug
+        path: null
+        type: StdLogAppender
+  - name: system
+    level: debug
+    formater: "%d%T%p%T%t%T%F%T%f%T%l%T%m%n"
+    appender: 
+      - level: debug
+        path: ../tester/log.txt
+        type: FileLogAppender
+system:
+  port: "8080"
+  ip: "127.78.90.1"
+  vector:
+    - 11
+    - 22
+    - 33
+  set:
+    - 44
+    - 55
+    - 66
+  map:
+    ip: 123
+    port: 123
+  person:
+    gaiya:
+      name: "gaiya"
+      age: 24
+      sex: true
+    agoru: 
+      name: "agoru"
+      age: 25
+      sex: false

@@ -5,6 +5,7 @@
 #include<sstream>
 #include<boost/lexical_cast.hpp>
 #include"log.hpp"
+#include<string>
 #include<map>
 #include<unordered_map>
 #include<set>
@@ -122,7 +123,7 @@ class lexicalCast<std::string,std::map<std::string,T>>{
       for(auto it = node.begin();it != node.end();++it){
         ss.str(std::string());
         ss << it->second;
-        res.insert(std::map<std::string,T>::value_type(it->first.Scalar(),lexicalCast<std::string,T>()(ss.str())));
+        res.insert(typename std::map<std::string,T>::value_type(it->first.Scalar(),lexicalCast<std::string,T>()(ss.str())));
       }
       return res;
     }
@@ -239,6 +240,54 @@ class lexicalCast<std::list<T>,std::string>{
     }
 };
 
+class Person{
+  public:
+    Person(){}
+    Person(std::string name,int age,bool sex):m_name(name),m_age(age),m_sex(sex){
+    }
+    std::string getName() const {return m_name;}
+    int getAge() const {return m_age;}
+    bool getSex() const {return m_sex;}
+    void setName(const std::string& name){m_name = name;}
+    void setAge(const int& age){m_age = age;}
+    void setSex(const bool& sex){m_sex = sex;}
+    std::string toString(){
+      std::stringstream ss;
+      ss << "name: " << m_name <<" age: " << m_age << " sex: "<< m_sex <<std::endl;
+      return ss.str();
+    }
+  private:
+    std::string m_name;
+    int m_age;
+    bool m_sex;
+};
+
+template<>
+class lexicalCast<std::string,Person>{
+  public:
+    Person operator()(const std::string str){
+      Person p;
+      YAML::Node node = YAML::Load(str);
+      p.setName(node["name"].as<std::string>());
+      p.setAge(node["age"].as<int>());
+      p.setSex(node["sex"].as<bool>());
+      return p;
+    }
+};
+
+template<>
+class lexicalCast<Person,std::string>{
+  public:
+    std::string operator()(Person p){
+      YAML::Node node(YAML::NodeType::Map);
+      node["name"] = YAML::Load(p.getName());
+      node["age"] = YAML::Load(lexicalCast<int,std::string>()(p.getAge()));
+      node["sex"] = YAML::Load(lexicalCast<bool,std::string>()(p.getSex()));
+      std::stringstream ss;
+      ss << node;
+      return ss.str();
+    }
+};
 
 
 template<class T,class FromStr = lexicalCast<std::string,T>
@@ -253,7 +302,7 @@ class ConfigVar :public ConfigVarBase{
 
     }
 
-    const T getValue() const { return m_val; }
+    const T getValue() const { return m_val;}
 
     std::string toString() override {
       try
@@ -276,8 +325,8 @@ class ConfigVar :public ConfigVarBase{
       }
       catch(const std::exception& e)
       {
-        LOG_ERROR(LOG_ROOT())<<"ConfigVar::toString exception" << e.what()
-        << "convert string(" << str << ") to " << typeid(m_val).name();
+        LOG_ERROR(LOG_ROOT())<<"ConfigVar::fromString exception" << e.what()
+        << " convert string(" << str << ") to " << getTypeName();
       }
       return false;
     }
