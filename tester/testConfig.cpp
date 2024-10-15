@@ -54,6 +54,8 @@
     {{"ip",127},{"port",8989}});
     gaiya::ConfigVar<std::map<std::string,gaiya::Person>>::ptr config_person = gaiya::Config::lookup("system.person","class person",std::map<std::string,gaiya::Person>{});
 
+    gaiya::ConfigVar<std::map<std::string,std::vector<gaiya::Person>>>::ptr config_vec_person = gaiya::Config::lookup("system.vec_map","vec_map"
+    ,std::map<std::string,std::vector<gaiya::Person>>{});
 
 #define XX(name,val,change) \
     { \
@@ -80,7 +82,17 @@
     } \
     LOG_INFO(LOG_ROOT())<< #name << " " << #change<<std::endl<< val->toString(); \
     }
-
+#define XX_Vec_Person(name,val,change) \
+    { \
+    auto v = val->getValue(); \
+    for(auto& it : v){ \
+        LOG_INFO(LOG_ROOT())<< #name << " " << #change <<" " << it.first <<": "; \
+        for(auto j : it.second){ \
+            LOG_INFO(LOG_ROOT()) << j.toString(); \
+        } \
+    } \
+    LOG_INFO(LOG_ROOT())<< #name << " " << #change<<std::endl<< val->toString(); \
+    }
 int main(int argc, char** argv){
   try {
       LOG_INFO(LOG_ROOT()) << "start test config";
@@ -89,6 +101,7 @@ int main(int argc, char** argv){
       XX(system.set,config_set,before);
       XX_MAP(system.map,config_map,before);
       XX_Person(system.person,config_person,before);
+      XX_Vec_Person(system.vec_person,config_vec_person,before);
       gaiya::Config::loadYamlFile
         ("/home/luo/cplus/sylar/tester/configTest.yaml");
         
@@ -96,6 +109,7 @@ int main(int argc, char** argv){
       XX(system.set,config_set,after);
       XX_MAP(system.map,config_map,after);
       XX_Person(system.person,config_person,after);
+      XX_Vec_Person(system.vec_person,config_vec_person,after);
       LOG_INFO(LOG_ROOT()) << "end test config";
   } catch (const YAML::BadFile& e) {
       std::cerr << "Error opening file: " << e.what() << std::endl;

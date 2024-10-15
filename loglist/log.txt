@@ -1101,3 +1101,75 @@ gaiya:
   age: 24
   sex: 1
 2024-10-15 11:36:11	INFO	11113	1	/home/luo/cplus/sylar/tester/testConfig.cpp	99	end test config
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	98	start test config
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	100	system.vec before 1
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	100	system.vec before 2
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	100	system.vec before 3
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	100	system.vec before
+- 1
+- 2
+- 3
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	101	system.set before 4
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	101	system.set before 5
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	101	system.set before 6
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	101	system.set before 7
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	101	system.set before
+- 4
+- 5
+- 6
+- 7
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	102	system.map before ip: 127
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	102	system.map before port: 8989
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	102	system.map before
+ip: 127
+port: 8989
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	103	system.person before
+{}
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	104	system.vec_person before
+{}
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	108	system.vec after 11
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	108	system.vec after 22
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	108	system.vec after 33
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	108	system.vec after
+- 11
+- 22
+- 33
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	109	system.set after 44
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	109	system.set after 55
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	109	system.set after 66
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	109	system.set after
+- 44
+- 55
+- 66
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	110	system.map after ip: 123
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	110	system.map after port: 123
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	110	system.map after
+ip: 123
+port: 123
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	111	system.person after agoru: name: agoru age: 25 sex: 0
+
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	111	system.person after gaiya: name: gaiya age: 24 sex: 1
+
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	111	system.person after
+agoru:
+  name: agoru
+  age: 25
+  sex: 0
+gaiya:
+  name: gaiya
+  age: 24
+  sex: 1
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	112	system.vec_person after person: 
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	112	name: gaiya age: 24 sex: 1
+
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	112	name: 1111 age: 11 sex: 1
+
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	112	system.vec_person after
+person:
+  - name: gaiya
+    age: 24
+    sex: 1
+  - name: 1111
+    age: 11
+    sex: 1
+2024-10-15 11:53:12	INFO	2477	1	/home/luo/cplus/sylar/tester/testConfig.cpp	113	end test config

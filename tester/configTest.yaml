@@ -24,6 +24,7 @@ system:
     - 44
     - 55
     - 66
+  list: [1,2,34]
   map:
     ip: 123
     port: 123
@@ -36,3 +37,11 @@ system:
       name: "agoru"
       age: 25
       sex: false
+  vec_map: 
+    person:
+      - name: "gaiya"
+        age: 24
+        sex: true
+      - name: "1111"
+        age: 11
+        sex: true
