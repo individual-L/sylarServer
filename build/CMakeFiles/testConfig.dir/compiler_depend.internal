@@ -4,6 +4,7 @@
 CMakeFiles/testConfig.dir/tester/testConfig.cpp.o
  /home/luo/cplus/sylar/tester/testConfig.cpp
  /home/luo/cplus/sylar/src/Config/config.hpp
+ /home/luo/cplus/sylar/src/Log/log.cpp
  /home/luo/cplus/sylar/src/Log/log.hpp
  /home/luo/cplus/sylar/src/Singlem/singlem.hpp
  /home/luo/cplus/sylar/src/Util/util.hpp

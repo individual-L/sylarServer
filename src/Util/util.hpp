@@ -8,6 +8,8 @@
 #include<cxxabi.h>
 #include<iostream>
 #include<string>
+
+// #include"log.hpp"
 // #include"config.h"
 
 namespace gaiya{

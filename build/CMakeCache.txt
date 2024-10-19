@@ -214,6 +214,15 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Dependencies for the target
+CONFIGLIB_LIB_DEPENDS:STATIC=general;UTILLIB;general;LOGLIB;
+
+//Dependencies for the target
+LOGLIB_LIB_DEPENDS:STATIC=general;UTILLIB;general;CONFIGLIB;general;SINGLEMLIB;
+
+//Dependencies for the target
+UTILLIB_LIB_DEPENDS:STATIC=general;LOGLIB;
+
 //Value Computed by CMake
 gaiya_BINARY_DIR:STATIC=/home/luo/cplus/sylar/build
 

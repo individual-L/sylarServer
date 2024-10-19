@@ -4,7 +4,6 @@
 #include<memory>
 #include<sstream>
 #include<boost/lexical_cast.hpp>
-#include"log.hpp"
 #include<string>
 #include<map>
 #include<unordered_map>
@@ -12,7 +11,11 @@
 #include<unordered_set>
 #include<yaml-cpp/yaml.h>
 #include<utility>
+#include<functional>
+
 #include"util.hpp"
+#include"log.hpp"
+
 
 namespace gaiya{
 
@@ -256,6 +259,13 @@ class Person{
       ss << "name: " << m_name <<" age: " << m_age << " sex: "<< m_sex <<std::endl;
       return ss.str();
     }
+    bool operator== (const Person& right)const{
+      if(this->m_name ==right.getName() && this->m_sex == right.getSex()
+       && this->m_age == right.getAge()){
+        return true;
+       }
+       return false;
+    }
   private:
     std::string m_name;
     int m_age;
@@ -294,6 +304,7 @@ template<class T,class FromStr = lexicalCast<std::string,T>
   ,class toStr = lexicalCast<T,std::string>>
 class ConfigVar :public ConfigVarBase{
   public:
+    typedef std::function<void(const T& oldData,const T& newData)> cb_func;
     typedef std::shared_ptr<ConfigVar<T> > ptr;
     ConfigVar(const std::string name,const std::string description
     ,const T& default_val)
@@ -301,8 +312,6 @@ class ConfigVar :public ConfigVarBase{
     ,m_val(default_val){
 
     }
-
-    const T getValue() const { return m_val;}
 
     std::string toString() override {
       try
@@ -320,7 +329,7 @@ class ConfigVar :public ConfigVarBase{
     bool fromString(const std::string& str) override {
       try
       {
-        m_val = FromStr()(str);
+        setVal(FromStr()(str));
         return true;
       }
       catch(const std::exception& e)
@@ -334,10 +343,36 @@ class ConfigVar :public ConfigVarBase{
     std::string getTypeName() const override {
       return gaiya::TypeName<T>();
     }
-    void setVal(const T& val){m_val = val;}
+    
+    void setVal(const T& val){
+      if(val == m_val){
+        return;
+      }
+      //调用所有的回调函数
+      for(auto it : m_cb_funcs){
+        it.second(m_val,val);
+      }
+      m_val = val;
+      }
 
+    const T getValue() const { return m_val;}
+
+    void addCallBackFunc(const cb_func& func){
+      static uint64_t index;
+      ++index;
+      m_cb_funcs.insert(typename std::map<uint64_t,cb_func>::value_type(index,func));
+    }
+
+    void delCallBackFunc(const uint64_t& i){
+      auto it = m_cb_funcs.find(i);
+      if(it != m_cb_funcs.end()){
+        m_cb_funcs.erase(it);
+      }
+    }
   private:
     T m_val;
+    //当配置文件的参数发生变化时，特定参数调用的回调函数集
+    std::map<uint64_t,cb_func> m_cb_funcs;
 };
 class Config{
   public:
@@ -357,7 +392,7 @@ class Config{
           LOG_INFO(LOG_ROOT())<< "lookup type " << name <<" exist";
           return v;
         }else{
-          LOG_ERROR(LOG_ROOT())<< "lookup name "<<name <<" exist but type not " << TypeName<T>() <<  " map_type is "<< it->second->getTypeName();
+          LOG_ERROR(LOG_ROOT())<< "lookup name "<<name <<" exist but type not " << gaiya::TypeName<T>() <<  " map_type is "<< it->second->getTypeName();
           return nullptr;
         }
       }
@@ -380,7 +415,7 @@ class Config{
           LOG_INFO(LOG_ROOT())<< "lookup type " << name <<" exist";
           return v;
         }else{
-          LOG_ERROR(LOG_ROOT())<< "lookup name "<<name <<" exist but type not " << TypeName<T>() <<  " map_type is "<< it->second->getTypeName();
+          LOG_ERROR(LOG_ROOT())<< "lookup name "<<name <<" exist but type not " << gaiya::TypeName<T>() <<  " map_type is "<< it->second->getTypeName();
           return nullptr;
         }
       }
@@ -395,6 +430,8 @@ class Config{
       return s_datas;
     }
 };
+
+
 
 }
 

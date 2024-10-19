@@ -38,7 +38,10 @@ std::shared_ptr<T> SinglemPtr<T>::instance = nullptr;
 
 template<class T>
 T* Singlem<T>::instance = nullptr;
+
+
+
+
+
 }
-
-
 #endif

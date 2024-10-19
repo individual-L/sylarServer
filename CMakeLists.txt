@@ -36,11 +36,16 @@ target_include_directories(testConfig PUBLIC
 ${LOG_INCLUDE_DIR}
 ${UTIL_INCLUDE_DIR}
 ${CONFIG_INCLUDE_DIR} 
-
+${SINGLEM_INCLUDE_DIR}
 )
-#这个命令确保在构建目标之前，先构建它所依赖的其他目标。
+
 target_link_libraries(gaiya yaml-cpp)
+#这个命令确保在构建目标之前，先构建它所依赖的其他目标。
 add_dependencies(testConfig gaiya)
+
+# 创建一个自定义目标，用于确保 log.cpp 先被编译
+# add_custom_target(singlem_hpp DEPENDS ${SINGLEM_INCLUDE_DIR}/singlem.hpp)
+# add_dependencies(gaiya singlem_hpp)
 target_link_libraries(testConfig gaiya)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

@@ -178,6 +178,70 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: \
  /usr/include/c++/13/bits/erase_if.h /usr/include/c++/13/functional \
  /usr/include/c++/13/bits/std_function.h \
  /home/luo/cplus/sylar/src/Singlem/singlem.hpp \
+ /usr/local/include/yaml-cpp/yaml.h /usr/local/include/yaml-cpp/parser.h \
+ /usr/local/include/yaml-cpp/dll.h /usr/local/include/yaml-cpp/emitter.h \
+ /usr/include/c++/13/cmath /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+ /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+ /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+ /usr/include/c++/13/cstddef /usr/include/c++/13/limits \
+ /usr/local/include/yaml-cpp/binary.h \
+ /usr/local/include/yaml-cpp/emitterdef.h \
+ /usr/local/include/yaml-cpp/emittermanip.h \
+ /usr/local/include/yaml-cpp/null.h \
+ /usr/local/include/yaml-cpp/ostream_wrapper.h \
+ /usr/local/include/yaml-cpp/emitterstyle.h \
+ /usr/local/include/yaml-cpp/stlemitter.h /usr/include/c++/13/set \
+ /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/bits/stl_multiset.h \
+ /usr/local/include/yaml-cpp/exceptions.h \
+ /usr/local/include/yaml-cpp/mark.h \
+ /usr/local/include/yaml-cpp/noexcept.h \
+ /usr/local/include/yaml-cpp/traits.h /usr/include/c++/13/utility \
+ /usr/include/c++/13/bits/stl_relops.h \
+ /usr/local/include/yaml-cpp/node/node.h \
+ /usr/local/include/yaml-cpp/node/detail/iterator_fwd.h \
+ /usr/local/include/yaml-cpp/node/ptr.h \
+ /usr/local/include/yaml-cpp/node/type.h \
+ /usr/local/include/yaml-cpp/node/impl.h \
+ /usr/local/include/yaml-cpp/node/detail/memory.h \
+ /usr/local/include/yaml-cpp/node/detail/node.h \
+ /usr/local/include/yaml-cpp/node/detail/node_ref.h \
+ /usr/local/include/yaml-cpp/node/detail/node_data.h \
+ /usr/local/include/yaml-cpp/node/detail/node_iterator.h \
+ /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
+ /usr/local/include/yaml-cpp/node/iterator.h \
+ /usr/local/include/yaml-cpp/node/detail/iterator.h \
+ /usr/include/c++/13/atomic /usr/local/include/yaml-cpp/node/convert.h \
+ /usr/include/c++/13/array /usr/include/c++/13/compare \
+ /usr/include/c++/13/unordered_map \
+ /usr/include/c++/13/bits/unordered_map.h \
+ /usr/include/c++/13/bits/hashtable.h \
+ /usr/include/c++/13/bits/hashtable_policy.h \
+ /usr/include/c++/13/bits/enable_special_members.h \
+ /usr/include/c++/13/valarray /usr/include/c++/13/algorithm \
+ /usr/include/c++/13/bits/stl_algo.h \
+ /usr/include/c++/13/bits/algorithmfwd.h \
+ /usr/include/c++/13/bits/stl_heap.h \
+ /usr/include/c++/13/bits/uniform_int_dist.h \
+ /usr/include/c++/13/bits/valarray_array.h \
+ /usr/include/c++/13/bits/valarray_array.tcc \
+ /usr/include/c++/13/bits/valarray_before.h \
+ /usr/include/c++/13/bits/slice_array.h \
+ /usr/include/c++/13/bits/valarray_after.h \
+ /usr/include/c++/13/bits/gslice.h \
+ /usr/include/c++/13/bits/gslice_array.h \
+ /usr/include/c++/13/bits/mask_array.h \
+ /usr/include/c++/13/bits/indirect_array.h \
+ /usr/local/include/yaml-cpp/node/detail/impl.h \
+ /usr/local/include/yaml-cpp/node/parse.h \
+ /usr/local/include/yaml-cpp/node/emit.h \
  /home/luo/cplus/sylar/src/Util/util.hpp \
  /usr/include/x86_64-linux-gnu/sys/syscall.h \
  /usr/include/x86_64-linux-gnu/asm/unistd.h \
@@ -191,11 +255,13 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /usr/include/linux/close_range.h /usr/include/c++/13/cxxabi.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/cxxabi_tweaks.h \
+ /home/luo/cplus/sylar/src/Log/log.cpp \
+ /home/luo/cplus/sylar/src/Log/log.hpp \
  /home/luo/cplus/sylar/src/Config/config.hpp \
  /usr/include/boost/lexical_cast.hpp /usr/include/boost/config.hpp \
  /usr/include/boost/config/user.hpp \
  /usr/include/boost/config/detail/select_compiler_config.hpp \
- /usr/include/boost/config/compiler/gcc.hpp /usr/include/c++/13/cstddef \
+ /usr/include/boost/config/compiler/gcc.hpp \
  /usr/include/boost/config/detail/select_stdlib_config.hpp \
  /usr/include/c++/13/version \
  /usr/include/boost/config/stdlib/libstdcpp3.hpp \
@@ -210,7 +276,6 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: \
  /usr/include/boost/detail/workaround.hpp \
  /usr/include/boost/config/workaround.hpp /usr/include/boost/assert.hpp \
  /usr/include/assert.h /usr/include/boost/iterator/iterator_traits.hpp \
- /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
  /usr/include/boost/iterator/iterator_facade.hpp \
  /usr/include/boost/iterator/interoperable.hpp \
  /usr/include/boost/mpl/bool.hpp /usr/include/boost/mpl/bool_fwd.hpp \
@@ -427,7 +492,6 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: \
  /usr/include/boost/range/range_fwd.hpp \
  /usr/include/boost/range/mutable_iterator.hpp \
  /usr/include/boost/range/detail/extract_optional_type.hpp \
- /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
  /usr/include/boost/range/detail/msvc_has_iterator_workaround.hpp \
  /usr/include/boost/range/const_iterator.hpp \
  /usr/include/boost/range/end.hpp \
@@ -465,12 +529,7 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: \
  /usr/include/boost/preprocessor/seq/limits/enum_256.hpp \
  /usr/include/boost/concept/detail/concept_undef.hpp \
  /usr/include/boost/iterator/iterator_concepts.hpp \
- /usr/include/boost/limits.hpp /usr/include/c++/13/limits \
- /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algo.h \
- /usr/include/c++/13/bits/algorithmfwd.h \
- /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/uniform_int_dist.h \
- /usr/include/boost/range/value_type.hpp \
+ /usr/include/boost/limits.hpp /usr/include/boost/range/value_type.hpp \
  /usr/include/boost/range/detail/misc_concept.hpp \
  /usr/include/boost/type_traits/make_unsigned.hpp \
  /usr/include/boost/type_traits/is_signed.hpp /usr/include/c++/13/climits \
@@ -567,16 +626,7 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: \
  /usr/include/boost/mpl/less.hpp \
  /usr/include/boost/mpl/aux_/preprocessed/gcc/less.hpp \
  /usr/include/boost/numeric/conversion/converter_policies.hpp \
- /usr/include/boost/config/no_tr1/cmath.hpp /usr/include/c++/13/cmath \
- /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
- /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
- /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
- /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
- /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
- /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+ /usr/include/boost/config/no_tr1/cmath.hpp \
  /usr/include/boost/numeric/conversion/detail/converter.hpp \
  /usr/include/boost/numeric/conversion/bounds.hpp \
  /usr/include/boost/numeric/conversion/detail/bounds.hpp \
@@ -590,7 +640,6 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: \
  /usr/include/boost/detail/lcast_precision.hpp \
  /usr/include/boost/integer_traits.hpp \
  /usr/include/boost/lexical_cast/detail/widest_char.hpp \
- /usr/include/c++/13/array /usr/include/c++/13/compare \
  /usr/include/boost/array.hpp /usr/include/boost/core/swap.hpp \
  /usr/include/boost/container/container_fwd.hpp \
  /usr/include/boost/container/detail/std_fwd.hpp \
@@ -609,50 +658,5 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: \
  /usr/include/boost/core/cmath.hpp /usr/include/boost/integer.hpp \
  /usr/include/boost/integer_fwd.hpp \
  /usr/include/boost/detail/basic_pointerbuf.hpp \
- /usr/include/c++/13/unordered_map \
- /usr/include/c++/13/bits/unordered_map.h \
- /usr/include/c++/13/bits/hashtable.h \
- /usr/include/c++/13/bits/hashtable_policy.h \
- /usr/include/c++/13/bits/enable_special_members.h \
- /usr/include/c++/13/set /usr/include/c++/13/bits/stl_set.h \
- /usr/include/c++/13/bits/stl_multiset.h \
  /usr/include/c++/13/unordered_set \
- /usr/include/c++/13/bits/unordered_set.h \
- /usr/local/include/yaml-cpp/yaml.h /usr/local/include/yaml-cpp/parser.h \
- /usr/local/include/yaml-cpp/dll.h /usr/local/include/yaml-cpp/emitter.h \
- /usr/local/include/yaml-cpp/binary.h \
- /usr/local/include/yaml-cpp/emitterdef.h \
- /usr/local/include/yaml-cpp/emittermanip.h \
- /usr/local/include/yaml-cpp/null.h \
- /usr/local/include/yaml-cpp/ostream_wrapper.h \
- /usr/local/include/yaml-cpp/emitterstyle.h \
- /usr/local/include/yaml-cpp/stlemitter.h \
- /usr/local/include/yaml-cpp/exceptions.h \
- /usr/local/include/yaml-cpp/mark.h \
- /usr/local/include/yaml-cpp/noexcept.h \
- /usr/local/include/yaml-cpp/traits.h \
- /usr/local/include/yaml-cpp/node/node.h \
- /usr/local/include/yaml-cpp/node/detail/iterator_fwd.h \
- /usr/local/include/yaml-cpp/node/ptr.h \
- /usr/local/include/yaml-cpp/node/type.h \
- /usr/local/include/yaml-cpp/node/impl.h \
- /usr/local/include/yaml-cpp/node/detail/memory.h \
- /usr/local/include/yaml-cpp/node/detail/node.h \
- /usr/local/include/yaml-cpp/node/detail/node_ref.h \
- /usr/local/include/yaml-cpp/node/detail/node_data.h \
- /usr/local/include/yaml-cpp/node/detail/node_iterator.h \
- /usr/local/include/yaml-cpp/node/iterator.h \
- /usr/local/include/yaml-cpp/node/detail/iterator.h \
- /usr/include/c++/13/atomic /usr/local/include/yaml-cpp/node/convert.h \
- /usr/include/c++/13/valarray /usr/include/c++/13/bits/valarray_array.h \
- /usr/include/c++/13/bits/valarray_array.tcc \
- /usr/include/c++/13/bits/valarray_before.h \
- /usr/include/c++/13/bits/slice_array.h \
- /usr/include/c++/13/bits/valarray_after.h \
- /usr/include/c++/13/bits/gslice.h \
- /usr/include/c++/13/bits/gslice_array.h \
- /usr/include/c++/13/bits/mask_array.h \
- /usr/include/c++/13/bits/indirect_array.h \
- /usr/local/include/yaml-cpp/node/detail/impl.h \
- /usr/local/include/yaml-cpp/node/parse.h \
- /usr/local/include/yaml-cpp/node/emit.h
+ /usr/include/c++/13/bits/unordered_set.h

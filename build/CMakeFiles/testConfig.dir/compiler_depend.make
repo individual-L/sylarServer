@@ -3,6 +3,7 @@
 
 CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: /home/luo/cplus/sylar/tester/testConfig.cpp \
   /home/luo/cplus/sylar/src/Config/config.hpp \
+  /home/luo/cplus/sylar/src/Log/log.cpp \
   /home/luo/cplus/sylar/src/Log/log.hpp \
   /home/luo/cplus/sylar/src/Singlem/singlem.hpp \
   /home/luo/cplus/sylar/src/Util/util.hpp \
@@ -987,11 +988,9 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: /home/luo/cplus/sylar/tester/
 
 /usr/include/c++/13/ext/atomicity.h:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h:
+/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
-/usr/include/x86_64-linux-gnu/bits/select.h:
-
-/usr/include/boost/preprocessor/detail/is_binary.hpp:
+/usr/include/c++/13/ext/alloc_traits.h:
 
 /usr/include/boost/preprocessor/detail/check.hpp:
 
@@ -1201,19 +1200,19 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: /home/luo/cplus/sylar/tester/
 
 /usr/include/boost/mpl/aux_/include_preprocessed.hpp:
 
-/usr/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp:
+/usr/include/c++/13/fstream:
 
-/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
+/usr/include/boost/preprocessor/control/while.hpp:
 
-/usr/include/c++/13/ext/alloc_traits.h:
+/usr/include/c++/13/bits/std_function.h:
 
-/usr/include/boost/mpl/aux_/is_msvc_eti_arg.hpp:
+/usr/include/boost/mpl/protect.hpp:
 
-/usr/include/boost/container/detail/std_fwd.hpp:
+/usr/include/boost/preprocessor/facilities/identity.hpp:
 
-/usr/include/boost/range/config.hpp:
+/usr/include/boost/preprocessor/arithmetic/detail/is_maximum_number.hpp:
 
-/usr/include/boost/mpl/aux_/config/nttp.hpp:
+/usr/include/boost/mpl/aux_/has_apply.hpp:
 
 /usr/local/include/yaml-cpp/node/parse.h:
 
@@ -1233,20 +1232,6 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: /home/luo/cplus/sylar/tester/
 
 /usr/include/boost/mpl/aux_/msvc_never_true.hpp:
 
-/usr/include/c++/13/fstream:
-
-/usr/include/boost/preprocessor/control/while.hpp:
-
-/usr/include/c++/13/bits/std_function.h:
-
-/usr/include/boost/mpl/protect.hpp:
-
-/usr/include/boost/preprocessor/facilities/identity.hpp:
-
-/usr/include/boost/preprocessor/arithmetic/detail/is_maximum_number.hpp:
-
-/usr/include/boost/mpl/aux_/has_apply.hpp:
-
 /usr/include/boost/current_function.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
@@ -1260,6 +1245,12 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: /home/luo/cplus/sylar/tester/
 /usr/local/include/yaml-cpp/emitterstyle.h:
 
 /usr/include/boost/type_traits/remove_volatile.hpp:
+
+/usr/include/boost/range/config.hpp:
+
+/usr/include/boost/mpl/aux_/config/nttp.hpp:
+
+/usr/include/boost/container/detail/std_fwd.hpp:
 
 /usr/include/boost/preprocessor/cat.hpp:
 
@@ -1321,18 +1312,6 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: /home/luo/cplus/sylar/tester/
 
 /usr/include/boost/type_traits/is_integral.hpp:
 
-/usr/include/boost/preprocessor/debug/error.hpp:
-
-/usr/local/include/yaml-cpp/node/emit.h:
-
-/usr/include/c++/13/bits/refwrap.h:
-
-/usr/include/boost/detail/select_type.hpp:
-
-/usr/include/boost/mpl/aux_/lambda_support.hpp:
-
-/usr/include/c++/13/exception:
-
 /usr/include/boost/mpl/aux_/preprocessed/gcc/arg.hpp:
 
 /usr/include/boost/preprocessor/comma_if.hpp:
@@ -1341,47 +1320,9 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: /home/luo/cplus/sylar/tester/
 
 /usr/include/boost/type_traits/is_signed.hpp:
 
-/usr/include/boost/mpl/aux_/static_cast.hpp:
-
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
-
-/usr/include/boost/preprocessor/arithmetic/limits/inc_256.hpp:
-
-/usr/include/boost/mpl/aux_/arity.hpp:
-
-/usr/include/boost/iterator/iterator_concepts.hpp:
-
-/usr/include/boost/config/detail/select_platform_config.hpp:
-
-/usr/include/boost/lexical_cast/detail/widest_char.hpp:
-
-/usr/include/boost/preprocessor/control/deduce_d.hpp:
-
-/usr/include/boost/mpl/aux_/config/workaround.hpp:
-
-/usr/include/boost/core/addressof.hpp:
-
-/usr/include/boost/mpl/aux_/common_name_wknd.hpp:
-
-/usr/include/boost/mpl/int.hpp:
-
-/usr/include/boost/preprocessor/seq/limits/enum_256.hpp:
-
 /usr/local/include/yaml-cpp/yaml.h:
 
 /usr/include/boost/mpl/limits/arity.hpp:
-
-/usr/include/boost/preprocessor/array/size.hpp:
-
-/usr/include/boost/numeric/conversion/detail/bounds.hpp:
-
-/usr/include/c++/13/debug/assertions.h:
-
-/usr/include/boost/type_traits/has_right_shift.hpp:
-
-/usr/include/boost/type_traits/is_member_pointer.hpp:
-
-/usr/include/boost/range/concepts.hpp:
 
 /home/luo/cplus/sylar/src/Util/util.hpp:
 
@@ -1403,9 +1344,53 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: /home/luo/cplus/sylar/tester/
 
 /usr/include/boost/lexical_cast.hpp:
 
+/usr/include/boost/core/addressof.hpp:
+
+/usr/include/boost/mpl/aux_/config/workaround.hpp:
+
+/usr/include/boost/mpl/aux_/common_name_wknd.hpp:
+
+/usr/include/boost/mpl/int.hpp:
+
+/usr/include/boost/preprocessor/seq/limits/enum_256.hpp:
+
 /usr/include/boost/concept/detail/general.hpp:
 
 /usr/include/boost/integer_traits.hpp:
+
+/usr/include/boost/mpl/aux_/static_cast.hpp:
+
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/usr/include/boost/preprocessor/arithmetic/limits/inc_256.hpp:
+
+/usr/include/boost/mpl/aux_/arity.hpp:
+
+/usr/include/boost/iterator/iterator_concepts.hpp:
+
+/usr/include/boost/config/detail/select_platform_config.hpp:
+
+/usr/include/boost/lexical_cast/detail/widest_char.hpp:
+
+/usr/include/boost/preprocessor/control/deduce_d.hpp:
+
+/usr/include/boost/preprocessor/array/size.hpp:
+
+/usr/include/boost/numeric/conversion/detail/bounds.hpp:
+
+/usr/include/c++/13/debug/assertions.h:
+
+/usr/include/boost/range/concepts.hpp:
+
+/home/luo/cplus/sylar/src/Log/log.cpp:
+
+/usr/include/boost/preprocessor/variadic/has_opt.hpp:
+
+/usr/include/boost/range/begin.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp:
+
+/usr/include/boost/mpl/aux_/is_msvc_eti_arg.hpp:
 
 /usr/include/asm-generic/errno-base.h:
 
@@ -1430,6 +1415,20 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: /home/luo/cplus/sylar/tester/
 /usr/include/boost/mpl/bind.hpp:
 
 /usr/include/c++/13/bits/hash_bytes.h:
+
+/usr/include/boost/preprocessor/debug/error.hpp:
+
+/usr/local/include/yaml-cpp/node/emit.h:
+
+/usr/include/c++/13/bits/refwrap.h:
+
+/usr/include/boost/detail/select_type.hpp:
+
+/usr/include/boost/mpl/aux_/lambda_support.hpp:
+
+/usr/include/c++/13/exception:
+
+/usr/include/c++/13/bits/valarray_before.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
@@ -1699,8 +1698,6 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: /home/luo/cplus/sylar/tester/
 
 /usr/include/boost/preprocessor/seq/transform.hpp:
 
-/usr/include/c++/13/bits/valarray_before.h:
-
 /usr/include/boost/type_traits/is_complete.hpp:
 
 /usr/include/boost/preprocessor/detail/auto_rec.hpp:
@@ -1716,6 +1713,16 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: /home/luo/cplus/sylar/tester/
 /usr/include/c++/13/bits/gslice.h:
 
 /usr/include/boost/mpl/aux_/full_lambda.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/boost/preprocessor/detail/is_binary.hpp:
+
+/usr/include/boost/type_traits/is_member_pointer.hpp:
+
+/usr/include/boost/type_traits/has_right_shift.hpp:
 
 /usr/include/c++/13/bits/char_traits.h:
 
@@ -1831,9 +1838,9 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: /home/luo/cplus/sylar/tester/
 
 /usr/include/boost/mpl/next.hpp:
 
-/usr/include/c++/13/bits/exception_defines.h:
-
 /usr/include/boost/detail/basic_pointerbuf.hpp:
+
+/usr/include/c++/13/bits/exception_defines.h:
 
 /usr/include/boost/preprocessor/stringize.hpp:
 
@@ -1848,10 +1855,6 @@ CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: /home/luo/cplus/sylar/tester/
 /usr/include/boost/preprocessor/tuple/rem.hpp:
 
 /usr/include/boost/preprocessor/variadic/elem.hpp:
-
-/usr/include/boost/preprocessor/variadic/has_opt.hpp:
-
-/usr/include/boost/range/begin.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
 

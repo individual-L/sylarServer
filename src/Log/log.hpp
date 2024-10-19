@@ -14,9 +14,11 @@
 #include<time.h>
 #include<functional>
 #include"singlem.hpp"
+#include<yaml-cpp/yaml.h>
+
 #include"util.hpp"
 
-namespace gaiya{
+
 #define LOG_LEVEL_LOGGER(level,logger) \
   if(logger->getLevel() <= level) \
     gaiya::LogEventWrap(gaiya::LogEvent::ptr(new gaiya::LogEvent( \
@@ -51,7 +53,15 @@ namespace gaiya{
 #define LOG_FMT_FATAL(logger,fmt,...) \
   LOG_FMT_LEVEL_LOGGER(gaiya::LogLevel::Level::FATAL,logger,fmt,__VA_ARGS__)
 
+
 #define LOG_ROOT() gaiya::s_LoggersM::getInstance()->getRoot()
+
+#define LOG_GET_LOGGER(name) gaiya::s_LoggersM::getInstance()->getLogger(name)
+
+#define lOG_INFO_ROOT() LOG_INFO(LOG_ROOT())
+namespace gaiya{
+
+
 
 class Logger;
 class LogAppender;
@@ -147,6 +157,8 @@ class LogFormater{
     //将event传给所有的formatitem，让其输出到stringstream中
     std::string format(LogEvent::ptr event);
     std::string getPattern() const {return m_pattern;};
+
+    bool isError() const {return m_error;}
     //日志内容(LogEvent)项格式化
     class FormaterItem{
       public:
@@ -161,29 +173,49 @@ class LogFormater{
   private:
     std::string m_pattern;                           //日志格式
     std::vector<FormaterItem::ptr> m_formatItems;    
+    bool m_error = false;
 
 };
+class LoggerManager;
 
-class Logger{ 
+class Logger : public std::enable_shared_from_this<Logger> { 
+  friend class LoggerManager;
   public:
     typedef std::shared_ptr<Logger> ptr;
     Logger(const std:: string name = "root");
+
     void log(LogLevel::Level level,LogEvent::ptr event);
+
     void addAppenders(std::shared_ptr<LogAppender> appender);
     void delAppenders(std::shared_ptr<LogAppender> appender);
+
     void debug(LogEvent::ptr event);
     void info(LogEvent::ptr event);
     void warn(LogEvent::ptr event);
     void error(LogEvent::ptr event);
     void fatal(LogEvent::ptr event);
+
     void setLevel(LogLevel::Level level){m_level = level;};
     LogLevel::Level getLevel() const {return m_level;};
+
     std::string getName() const {return m_name;};
+
+    bool operator < (const Logger& right){
+      return m_name < right.getName();
+    }
+
+    void clearAppenders();
+
+    void setFormater(LogFormater::ptr formater){
+      m_logformater = formater;
+    }
+    std::string toYamlString();
   private:
     std::string m_name;
     std::list<std::shared_ptr<LogAppender>> m_appenders;
     LogLevel::Level m_level;
     LogFormater::ptr m_logformater;
+    Logger::ptr m_root;
 
 };
 class LogEventWrap{
@@ -197,11 +229,13 @@ private:
 };
 //日志输出目的地，输出器基类
 class LogAppender{
+  friend Logger;
   public:
     typedef std::shared_ptr<LogAppender> ptr;
     virtual ~LogAppender(){};
     //写日志，只有级别大于等于此日志器的输出级别时才输出
     virtual void log(LogLevel::Level level,LogEvent::ptr event) = 0;
+    virtual std::string toYamlString() = 0;
     void setLogformater(LogFormater::ptr formater){m_logFormater = formater;};
     LogFormater::ptr getLogFormater() const {return m_logFormater;};
     void setLevel(LogLevel::Level level){m_level = level;};
@@ -209,6 +243,7 @@ class LogAppender{
   protected:
     LogLevel::Level m_level;
     LogFormater::ptr m_logFormater;
+    bool m_hasLogFormater = false;
 
 };
 //控制台输出器
@@ -216,6 +251,8 @@ class StdLogAppender :public LogAppender{
   public:
     typedef std::shared_ptr<StdLogAppender> ptr;
     void log(LogLevel::Level level,LogEvent::ptr event) override;
+    std::string toYamlString() override;
+
 };
 //文件输出器
 class FileLogAppender :public LogAppender{
@@ -223,6 +260,8 @@ class FileLogAppender :public LogAppender{
     FileLogAppender(const std::string& filename);
     typedef std::shared_ptr<FileLogAppender> ptr;
     void log(LogLevel::Level level,LogEvent::ptr event) override;
+    std::string toYamlString() override;
+    
     //重新打开文件，打开成功返回true
     bool reopen();
   private:
@@ -234,19 +273,23 @@ class LoggerManager{
   public:
     LoggerManager();
     void init();
-    Logger::ptr getLogger(const std::string& name = "") const ;
+    Logger::ptr getLogger(const std::string& name = "");
 
     //获取主日志器
-    Logger::ptr getRoot() const {return m_root;};
+    Logger::ptr getRoot() const {return m_root;}
 
-    // void addLogger(std::string name,Logger::ptr);
+    void delLogger(const std::string name);
+
+    std::string toYamlString();
   private:
+    //name为key，不能有相同名称的logger
     std::map<std::string,Logger::ptr> m_loggers;
     Logger::ptr m_root; //主日志器
 };
 
 
 typedef gaiya::SinglemPtr<LoggerManager> s_LoggersM;
+
 
 }
 
