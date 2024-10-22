@@ -6,7 +6,7 @@ log:
       - level: info
         path: null
         type: StdLogAppender
-        format: "%d%T%p%T%t%T%F%T%f%T%l%T%m%n"
+        format: null
       - level: info
         path: /home/luo/cplus/sylar/loglist/log.txt
         type: FileLogAppender

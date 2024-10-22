@@ -144,6 +144,16 @@ class StringFormatItem :public LogFormater::FormaterItem{
   private:
     std::string m_str = "";
 };
+class LoggerNameItem :public LogFormater::FormaterItem{
+  public:
+    LoggerNameItem(const std::string & str = ""):m_str(str){};
+    void format(std::ostream& os,LogEvent::ptr val)override{
+      os<<val->getLogger()->getName();
+    }
+  private:
+    std::string m_str = "";
+};
+
 //classLogEvent
 LogEvent::LogEvent(std::shared_ptr<Logger> logger,LogLevel::Level level
 ,const char * file,int32_t line,uint32_t threadId
@@ -199,10 +209,11 @@ void Logger::log (LogLevel::Level level,LogEvent::ptr event){
 
   }
 }
-void Logger::addAppenders(LogAppender::ptr appender){
-  if(!appender->m_hasLogFormater){
+void Logger::addAppenders(const LogAppender::ptr appender){
+  if(!appender->getLogFormater()){
     appender->setLogformater(m_logformater);
   }
+
   m_appenders.push_back(appender);
 }
 void Logger::delAppenders(LogAppender::ptr appender){
@@ -213,6 +224,36 @@ void Logger::delAppenders(LogAppender::ptr appender){
     }
   }
 }
+
+void Logger::setFormater(const std::string pattern){
+  gaiya::LogFormater::ptr fmt(new gaiya::LogFormater(pattern));
+  //日志格式有问题，使用默认日志格式
+  if(!(fmt->isError())){
+    setFormater(fmt);
+  }else{
+    LOG_ERROR(LOG_ROOT()) << "invaild error,formater pattern is invaild";
+    throw std::invalid_argument("formater pattern is invaild");
+  }
+}
+
+void Logger::setFormater(const LogFormater::ptr fmt){
+  m_logformater = fmt;
+  for(auto& it :m_appenders){
+    if(!(it->m_hasLogFormater)){
+      lOG_INFO_ROOT() << "add formater";
+      m_logformater = fmt;
+    }
+  }
+}
+
+void LogAppender::setLogformater(const LogFormater::ptr formater){
+  m_logFormater = formater;
+  if(m_logFormater){
+    m_hasLogFormater = true;
+  }else{
+    m_hasLogFormater = false;
+  }
+};
 void Logger::debug(LogEvent::ptr event){
   log(LogLevel::Level::DEBUG,event);
 }
@@ -233,8 +274,8 @@ void Logger::fatal(LogEvent::ptr event){
 
 }
 void StdLogAppender::log(LogLevel::Level level,LogEvent::ptr event){
-  if(!m_logFormater){
-    m_logFormater = LogFormater::ptr(new LogFormater());
+  if(!m_hasLogFormater){
+    lOG_INFO_ROOT() << "StdLogAppender::log not logformater";
   }
   if(level >= m_level){
     std::cout<<m_logFormater->format(event);
@@ -375,6 +416,7 @@ void LogFormater::init(){
     XX(T, TabFormatItem),               //T:Tab
     XX(F, CoroutineIdFormatItem),           //F:协程id
     XX(N, ThreadNameFormatItem),        //N:线程名称
+    XX(ln,LoggerNameItem)
 #undef XX
   };
   for(auto& it : vec){
@@ -407,6 +449,7 @@ void LoggerManager::init(){
   m_root.reset(new gaiya::Logger);
   m_root->addAppenders(LogAppender::ptr(new gaiya::StdLogAppender));
 
+  m_loggers[m_root->getName()] = m_root;
 }
 
 Logger::ptr LoggerManager::getLogger(const std::string& name) {
@@ -504,7 +547,9 @@ class lexicalCast<std::string,LogAppenderConfig>{
       }
 
       if(node["format"].IsDefined()){
-        res.m_format = node["format"].as<std::string>();
+        if(!(node["format"].IsNull())){
+          res.m_format = node["format"].as<std::string>();
+        }
       }else{
         LOG_ERROR(LOG_ROOT()) << "lexicalCast<std::string,LogAppenderConfig>" << "node.format is invaild,node[\"format\"] = " <<node["format"];
         throw std::logic_error("node.format is invaild");    
@@ -597,8 +642,7 @@ class lexicalCast<LoggerConfig,std::string>{
     }
 };
 
-gaiya::ConfigVar<std::set<gaiya::LoggerConfig>>::ptr config_loggers = 
-  gaiya::Config::lookup("log","日志器的配置参数",std::set<gaiya::LoggerConfig>{});
+gaiya::ConfigVar<std::set<gaiya::LoggerConfig>>::ptr config_loggers =   gaiya::Config::lookup("log","日志器的配置参数",std::set<gaiya::LoggerConfig>{});
 
 // 全局静态变量在程序启动时，也就是main函数执行之前就会被初始化
 class Configloggerinit{
@@ -606,8 +650,8 @@ class Configloggerinit{
     Configloggerinit(){
       config_loggers->addCallBackFunc([](const std::set<gaiya::LoggerConfig>& oldD
       ,const std::set<gaiya::LoggerConfig>& newD)->void{
-        LOG_INFO(LOG_ROOT()) << "logger_configuration changed";
         //检测是否有新的Logger配置参数
+
         for(auto& it : newD){
           auto val = oldD.find(it);
           gaiya::Logger::ptr logger;
@@ -623,14 +667,7 @@ class Configloggerinit{
             }
           }
           logger->clearAppenders();
-
           logger->setLevel(it.m_level);
-
-          gaiya::LogFormater::ptr fmt(new gaiya::LogFormater(it.m_logformat));
-          //日志格式有问题，使用默认日志格式
-          if(!(fmt->isError())){
-            logger->setFormater(fmt);
-          }
 
           for(auto& app : it.m_appenders){
             gaiya::LogAppender::ptr appender;
@@ -640,7 +677,7 @@ class Configloggerinit{
               appender.reset(new gaiya::StdLogAppender());
             }
             appender->setLevel(app.m_level);
-            if(!app.m_format.empty()){
+            if(!(app.m_format.empty())){
               gaiya::LogFormater::ptr fmt(new gaiya::LogFormater(app.m_format));
 
               if(!(fmt->isError())){
@@ -648,6 +685,12 @@ class Configloggerinit{
               }
             }
             logger->addAppenders(appender);
+          }
+
+          gaiya::LogFormater::ptr fmt(new gaiya::LogFormater(it.m_logformat));
+          //日志格式有问题，使用默认日志格式
+          if(!(fmt->isError())){
+            logger->setFormater(fmt);
           }
         }
         //检测是否需要删除旧值
@@ -670,7 +713,7 @@ static Configloggerinit config_logger_init;
 std::string LoggerManager::toYamlString() {
     YAML::Node node;
     for(auto& i : m_loggers) {
-        node.push_back(YAML::Load(i.second->toYamlString()));
+        node["log"].push_back(YAML::Load(i.second->toYamlString()));
     }
     std::stringstream ss;
     ss << node;

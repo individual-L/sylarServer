@@ -91,10 +91,16 @@ void testFunc(){
 }
 
 void testLogConfig(){
+    
+    lOG_INFO_ROOT() <<std::endl << gaiya::s_LoggersM::getInstance()->toYamlString();
     gaiya::Config::loadYamlFile("/home/luo/cplus/sylar/tester/configTest.yaml");
 
-    LOG_INFO(LOG_GET_LOGGER("master")) << "master logger activated";
 
+    LOG_INFO(LOG_GET_LOGGER("master")) <<std::endl << gaiya::s_LoggersM::getInstance()->toYamlString();
+
+    LOG_M()->getLogger("master")->setFormater("%d%T%ln%T%p%T%t%T%F%T%f%T%l%T%m%n");
+    
+    LOG_INFO(LOG_GET_LOGGER("master")) <<std::endl << gaiya::s_LoggersM::getInstance()->toYamlString();
 }
 
 int main(int argc, char** argv){

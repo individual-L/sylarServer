@@ -53,6 +53,7 @@
 #define LOG_FMT_FATAL(logger,fmt,...) \
   LOG_FMT_LEVEL_LOGGER(gaiya::LogLevel::Level::FATAL,logger,fmt,__VA_ARGS__)
 
+#define LOG_M() gaiya::s_LoggersM::getInstance()
 
 #define LOG_ROOT() gaiya::s_LoggersM::getInstance()->getRoot()
 
@@ -186,7 +187,7 @@ class Logger : public std::enable_shared_from_this<Logger> {
 
     void log(LogLevel::Level level,LogEvent::ptr event);
 
-    void addAppenders(std::shared_ptr<LogAppender> appender);
+    void addAppenders(const std::shared_ptr<LogAppender> appender);
     void delAppenders(std::shared_ptr<LogAppender> appender);
 
     void debug(LogEvent::ptr event);
@@ -206,9 +207,8 @@ class Logger : public std::enable_shared_from_this<Logger> {
 
     void clearAppenders();
 
-    void setFormater(LogFormater::ptr formater){
-      m_logformater = formater;
-    }
+    void setFormater(const std::string );
+    void setFormater(const LogFormater::ptr );
     std::string toYamlString();
   private:
     std::string m_name;
@@ -229,14 +229,14 @@ private:
 };
 //日志输出目的地，输出器基类
 class LogAppender{
-  friend Logger;
+  friend class Logger;
   public:
     typedef std::shared_ptr<LogAppender> ptr;
     virtual ~LogAppender(){};
     //写日志，只有级别大于等于此日志器的输出级别时才输出
     virtual void log(LogLevel::Level level,LogEvent::ptr event) = 0;
     virtual std::string toYamlString() = 0;
-    void setLogformater(LogFormater::ptr formater){m_logFormater = formater;};
+    void setLogformater(const LogFormater::ptr formater);
     LogFormater::ptr getLogFormater() const {return m_logFormater;};
     void setLevel(LogLevel::Level level){m_level = level;};
     LogLevel::Level getLevel() const {return m_level;};

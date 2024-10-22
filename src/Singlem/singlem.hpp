@@ -1,4 +1,3 @@
-
 #ifndef __SINGLEM_H__
 #define __SINGLEM_H__
 
