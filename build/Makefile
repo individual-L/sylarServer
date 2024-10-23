@@ -169,6 +169,30 @@ src/Config/config.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Config/config.cpp.s
 .PHONY : src/Config/config.cpp.s
 
+src/Lock/Lock.o: src/Lock/Lock.cpp.o
+.PHONY : src/Lock/Lock.o
+
+# target to build an object file
+src/Lock/Lock.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Lock/Lock.cpp.o
+.PHONY : src/Lock/Lock.cpp.o
+
+src/Lock/Lock.i: src/Lock/Lock.cpp.i
+.PHONY : src/Lock/Lock.i
+
+# target to preprocess a source file
+src/Lock/Lock.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Lock/Lock.cpp.i
+.PHONY : src/Lock/Lock.cpp.i
+
+src/Lock/Lock.s: src/Lock/Lock.cpp.s
+.PHONY : src/Lock/Lock.s
+
+# target to generate assembly for a file
+src/Lock/Lock.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Lock/Lock.cpp.s
+.PHONY : src/Lock/Lock.cpp.s
+
 src/Log/log.o: src/Log/log.cpp.o
 .PHONY : src/Log/log.o
 
@@ -192,6 +216,30 @@ src/Log/log.s: src/Log/log.cpp.s
 src/Log/log.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Log/log.cpp.s
 .PHONY : src/Log/log.cpp.s
+
+src/Thread/Thread.o: src/Thread/Thread.cpp.o
+.PHONY : src/Thread/Thread.o
+
+# target to build an object file
+src/Thread/Thread.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Thread/Thread.cpp.o
+.PHONY : src/Thread/Thread.cpp.o
+
+src/Thread/Thread.i: src/Thread/Thread.cpp.i
+.PHONY : src/Thread/Thread.i
+
+# target to preprocess a source file
+src/Thread/Thread.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Thread/Thread.cpp.i
+.PHONY : src/Thread/Thread.cpp.i
+
+src/Thread/Thread.s: src/Thread/Thread.cpp.s
+.PHONY : src/Thread/Thread.s
+
+# target to generate assembly for a file
+src/Thread/Thread.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Thread/Thread.cpp.s
+.PHONY : src/Thread/Thread.cpp.s
 
 src/Util/util.o: src/Util/util.cpp.o
 .PHONY : src/Util/util.o
@@ -254,9 +302,15 @@ help:
 	@echo "... src/Config/config.o"
 	@echo "... src/Config/config.i"
 	@echo "... src/Config/config.s"
+	@echo "... src/Lock/Lock.o"
+	@echo "... src/Lock/Lock.i"
+	@echo "... src/Lock/Lock.s"
 	@echo "... src/Log/log.o"
 	@echo "... src/Log/log.i"
 	@echo "... src/Log/log.s"
+	@echo "... src/Thread/Thread.o"
+	@echo "... src/Thread/Thread.i"
+	@echo "... src/Thread/Thread.s"
 	@echo "... src/Util/util.o"
 	@echo "... src/Util/util.i"
 	@echo "... src/Util/util.s"

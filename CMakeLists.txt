@@ -11,12 +11,17 @@ set(LOG_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Log)
 set(UTIL_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Util)
 set(SINGLEM_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Singlem)
 set(CONFIG_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Config)
+set(LOCK_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Lock)
+set(THREAD_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Thread)
 
 set(LIB_SRC 
   ${UTIL_INCLUDE_DIR}/util.cpp 
   ${LOG_INCLUDE_DIR}/log.cpp 
   ${CONFIG_INCLUDE_DIR}/config.cpp
   ${SINGLEM_INCLUDE_DIR}/singlem.hpp
+  ${LOCK_INCLUDE_DIR}/Lock.cpp
+  ${LOCK_INCLUDE_DIR}/Noncopyable.hpp
+  ${THREAD_INCLUDE_DIR}/Thread.cpp
   )
 
 add_library(gaiya SHARED ${LIB_SRC})
@@ -28,6 +33,8 @@ target_include_directories(gaiya PUBLIC
   ${UTIL_INCLUDE_DIR}
   ${SINGLEM_INCLUDE_DIR}
   ${CONFIG_INCLUDE_DIR} 
+  ${LOCK_INCLUDE_DIR}
+  ${THREAD_INCLUDE_DIR}
   )
 # target_include_directories(testLog PUBLIC 
 #   ${LOG_INCLUDE_DIR}

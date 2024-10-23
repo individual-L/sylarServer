@@ -22,6 +22,7 @@ class Semaphore :public Noncopyable{
     sem_t m_semaphore;
 };
 
+//互斥量模板类
 template<class T>
 class ScopeLockM{
   public:

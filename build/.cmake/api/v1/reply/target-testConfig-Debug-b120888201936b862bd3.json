@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/luo/cplus/gaiya/lib/libgaiya.so"
+			"path" : "/home/luo/cplus/gaiya/bin/testConfig"
 		}
 	],
 	"backtrace" : 1,
@@ -10,8 +10,9 @@
 	{
 		"commands" : 
 		[
-			"add_library",
+			"add_executable",
 			"target_link_libraries",
+			"add_dependencies",
 			"add_definitions",
 			"target_include_directories"
 		],
@@ -27,25 +28,37 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 22,
+				"line" : 28,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 45,
+				"line" : 59,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 52,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 9,
+				"line" : 54,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 26,
+				"line" : 9,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 45,
 				"parent" : 0
 			}
 		]
@@ -56,66 +69,89 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -ggdb -Wall -rdynamic  -std=c++17 -Wno-deprecated -Werror -Wno-unused-function -g -fPIC"
+					"fragment" : " -ggdb -Wall -rdynamic  -std=c++17 -Wno-deprecated -Werror -Wno-unused-function -g"
 				}
 			],
 			"defines" : 
 			[
 				{
-					"backtrace" : 3,
+					"backtrace" : 5,
 					"define" : "RELATIVE_PATH=\"/home/luo/cplus/gaiya\""
-				},
-				{
-					"define" : "gaiya_EXPORTS"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 4,
+					"backtrace" : 6,
 					"path" : "/home/luo/cplus/gaiya/src/Log"
 				},
 				{
-					"backtrace" : 4,
+					"backtrace" : 6,
 					"path" : "/home/luo/cplus/gaiya/src/Util"
 				},
 				{
-					"backtrace" : 4,
+					"backtrace" : 6,
+					"path" : "/home/luo/cplus/gaiya/src/Config"
+				},
+				{
+					"backtrace" : 6,
 					"path" : "/home/luo/cplus/gaiya/src/Singlem"
 				},
 				{
-					"backtrace" : 4,
-					"path" : "/home/luo/cplus/gaiya/src/Config"
+					"backtrace" : 2,
+					"path" : "/home/luo/cplus/gaiya/src/Lock"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/luo/cplus/gaiya/src/Thread"
 				}
 			],
 			"language" : "CXX",
 			"sourceIndexes" : 
 			[
-				0,
-				1,
-				2
+				0
 			]
 		}
 	],
-	"id" : "gaiya::@6890427a1f51a3e7e1df",
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 4,
+			"id" : "gaiya::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "testConfig::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
 			{
+				"fragment" : "-ggdb -Wall -rdynamic  -std=c++17 -Wno-deprecated -Werror -Wno-unused-function -g",
+				"role" : "flags"
+			},
+			{
 				"fragment" : "",
 				"role" : "flags"
 			},
 			{
+				"fragment" : "-Wl,-rpath,/home/luo/cplus/gaiya/lib",
+				"role" : "libraries"
+			},
+			{
 				"backtrace" : 2,
+				"fragment" : "/home/luo/cplus/gaiya/lib/libgaiya.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
 				"fragment" : "-lyaml-cpp",
 				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "gaiya",
-	"nameOnDisk" : "libgaiya.so",
+	"name" : "testConfig",
+	"nameOnDisk" : "testConfig",
 	"paths" : 
 	{
 		"build" : ".",
@@ -127,16 +163,7 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0,
-				1,
-				2
-			]
-		},
-		{
-			"name" : "Header Files",
-			"sourceIndexes" : 
-			[
-				3
+				0
 			]
 		}
 	],
@@ -145,26 +172,9 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/Util/util.cpp",
+			"path" : "tester/testConfig.cpp",
 			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/Log/log.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/Config/config.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "src/Singlem/singlem.hpp",
-			"sourceGroupIndex" : 1
 		}
 	],
-	"type" : "SHARED_LIBRARY"
+	"type" : "EXECUTABLE"
 }

@@ -3,8 +3,12 @@ file(REMOVE_RECURSE
   "/home/luo/cplus/gaiya/lib/libgaiya.so"
   "CMakeFiles/gaiya.dir/src/Config/config.cpp.o"
   "CMakeFiles/gaiya.dir/src/Config/config.cpp.o.d"
+  "CMakeFiles/gaiya.dir/src/Lock/Lock.cpp.o"
+  "CMakeFiles/gaiya.dir/src/Lock/Lock.cpp.o.d"
   "CMakeFiles/gaiya.dir/src/Log/log.cpp.o"
   "CMakeFiles/gaiya.dir/src/Log/log.cpp.o.d"
+  "CMakeFiles/gaiya.dir/src/Thread/Thread.cpp.o"
+  "CMakeFiles/gaiya.dir/src/Thread/Thread.cpp.o.d"
   "CMakeFiles/gaiya.dir/src/Util/util.cpp.o"
   "CMakeFiles/gaiya.dir/src/Util/util.cpp.o.d"
 )
