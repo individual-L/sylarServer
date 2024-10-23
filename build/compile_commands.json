@@ -1,26 +1,26 @@
 [
 {
-  "directory": "/home/luo/cplus/sylar/build",
-  "command": "/usr/bin/g++ -Dgaiya_EXPORTS -I/home/luo/cplus/sylar/src/Log -I/home/luo/cplus/sylar/src/Util -I/home/luo/cplus/sylar/src/Singlem -I/home/luo/cplus/sylar/src/Config  -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -o CMakeFiles/gaiya.dir/src/Util/util.cpp.o -c /home/luo/cplus/sylar/src/Util/util.cpp",
-  "file": "/home/luo/cplus/sylar/src/Util/util.cpp",
+  "directory": "/home/luo/cplus/gaiya/build",
+  "command": "/usr/bin/c++ -DRELATIVE_PATH=\\\"/home/luo/cplus/gaiya\\\" -Dgaiya_EXPORTS -I/home/luo/cplus/gaiya/src/Log -I/home/luo/cplus/gaiya/src/Util -I/home/luo/cplus/gaiya/src/Singlem -I/home/luo/cplus/gaiya/src/Config  -ggdb -Wall -rdynamic  -std=c++17 -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -o CMakeFiles/gaiya.dir/src/Util/util.cpp.o -c /home/luo/cplus/gaiya/src/Util/util.cpp",
+  "file": "/home/luo/cplus/gaiya/src/Util/util.cpp",
   "output": "CMakeFiles/gaiya.dir/src/Util/util.cpp.o"
 },
 {
-  "directory": "/home/luo/cplus/sylar/build",
-  "command": "/usr/bin/g++ -Dgaiya_EXPORTS -I/home/luo/cplus/sylar/src/Log -I/home/luo/cplus/sylar/src/Util -I/home/luo/cplus/sylar/src/Singlem -I/home/luo/cplus/sylar/src/Config  -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -o CMakeFiles/gaiya.dir/src/Log/log.cpp.o -c /home/luo/cplus/sylar/src/Log/log.cpp",
-  "file": "/home/luo/cplus/sylar/src/Log/log.cpp",
+  "directory": "/home/luo/cplus/gaiya/build",
+  "command": "/usr/bin/c++ -DRELATIVE_PATH=\\\"/home/luo/cplus/gaiya\\\" -Dgaiya_EXPORTS -I/home/luo/cplus/gaiya/src/Log -I/home/luo/cplus/gaiya/src/Util -I/home/luo/cplus/gaiya/src/Singlem -I/home/luo/cplus/gaiya/src/Config  -ggdb -Wall -rdynamic  -std=c++17 -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -o CMakeFiles/gaiya.dir/src/Log/log.cpp.o -c /home/luo/cplus/gaiya/src/Log/log.cpp",
+  "file": "/home/luo/cplus/gaiya/src/Log/log.cpp",
   "output": "CMakeFiles/gaiya.dir/src/Log/log.cpp.o"
 },
 {
-  "directory": "/home/luo/cplus/sylar/build",
-  "command": "/usr/bin/g++ -Dgaiya_EXPORTS -I/home/luo/cplus/sylar/src/Log -I/home/luo/cplus/sylar/src/Util -I/home/luo/cplus/sylar/src/Singlem -I/home/luo/cplus/sylar/src/Config  -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -o CMakeFiles/gaiya.dir/src/Config/config.cpp.o -c /home/luo/cplus/sylar/src/Config/config.cpp",
-  "file": "/home/luo/cplus/sylar/src/Config/config.cpp",
+  "directory": "/home/luo/cplus/gaiya/build",
+  "command": "/usr/bin/c++ -DRELATIVE_PATH=\\\"/home/luo/cplus/gaiya\\\" -Dgaiya_EXPORTS -I/home/luo/cplus/gaiya/src/Log -I/home/luo/cplus/gaiya/src/Util -I/home/luo/cplus/gaiya/src/Singlem -I/home/luo/cplus/gaiya/src/Config  -ggdb -Wall -rdynamic  -std=c++17 -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -o CMakeFiles/gaiya.dir/src/Config/config.cpp.o -c /home/luo/cplus/gaiya/src/Config/config.cpp",
+  "file": "/home/luo/cplus/gaiya/src/Config/config.cpp",
   "output": "CMakeFiles/gaiya.dir/src/Config/config.cpp.o"
 },
 {
-  "directory": "/home/luo/cplus/sylar/build",
-  "command": "/usr/bin/g++  -I/home/luo/cplus/sylar/src/Log -I/home/luo/cplus/sylar/src/Util -I/home/luo/cplus/sylar/src/Config -I/home/luo/cplus/sylar/src/Singlem  -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function -g -o CMakeFiles/testConfig.dir/tester/testConfig.cpp.o -c /home/luo/cplus/sylar/tester/testConfig.cpp",
-  "file": "/home/luo/cplus/sylar/tester/testConfig.cpp",
+  "directory": "/home/luo/cplus/gaiya/build",
+  "command": "/usr/bin/c++ -DRELATIVE_PATH=\\\"/home/luo/cplus/gaiya\\\" -I/home/luo/cplus/gaiya/src/Log -I/home/luo/cplus/gaiya/src/Util -I/home/luo/cplus/gaiya/src/Config -I/home/luo/cplus/gaiya/src/Singlem  -ggdb -Wall -rdynamic  -std=c++17 -Wno-deprecated -Werror -Wno-unused-function -g -o CMakeFiles/testConfig.dir/tester/testConfig.cpp.o -c /home/luo/cplus/gaiya/tester/testConfig.cpp",
+  "file": "/home/luo/cplus/gaiya/tester/testConfig.cpp",
   "output": "CMakeFiles/testConfig.dir/tester/testConfig.cpp.o"
 }
 ]

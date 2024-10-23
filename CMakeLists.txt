@@ -2,8 +2,11 @@ cmake_minimum_required(VERSION 3.10)
 project(gaiya)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
-set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function")
+set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -ggdb -Wall -rdynamic  -std=c++17 -Wno-deprecated -Werror -Wno-unused-function")
 
+# include (cmake/utils.cmake)
+
+add_definitions(-DRELATIVE_PATH="${CMAKE_CURRENT_SOURCE_DIR}")
 set(LOG_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Log)
 set(UTIL_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Util)
 set(SINGLEM_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Singlem)

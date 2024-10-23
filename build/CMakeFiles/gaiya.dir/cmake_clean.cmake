@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/luo/cplus/sylar/lib/libgaiya.pdb"
-  "/home/luo/cplus/sylar/lib/libgaiya.so"
+  "/home/luo/cplus/gaiya/lib/libgaiya.pdb"
+  "/home/luo/cplus/gaiya/lib/libgaiya.so"
   "CMakeFiles/gaiya.dir/src/Config/config.cpp.o"
   "CMakeFiles/gaiya.dir/src/Config/config.cpp.o.d"
   "CMakeFiles/gaiya.dir/src/Log/log.cpp.o"

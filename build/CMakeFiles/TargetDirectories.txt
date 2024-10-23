@@ -1,4 +1,4 @@
-/home/luo/cplus/sylar/build/CMakeFiles/gaiya.dir
-/home/luo/cplus/sylar/build/CMakeFiles/testConfig.dir
-/home/luo/cplus/sylar/build/CMakeFiles/edit_cache.dir
-/home/luo/cplus/sylar/build/CMakeFiles/rebuild_cache.dir
+/home/luo/cplus/gaiya/build/CMakeFiles/gaiya.dir
+/home/luo/cplus/gaiya/build/CMakeFiles/testConfig.dir
+/home/luo/cplus/gaiya/build/CMakeFiles/edit_cache.dir
+/home/luo/cplus/gaiya/build/CMakeFiles/rebuild_cache.dir

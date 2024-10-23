@@ -3,6 +3,7 @@
 #include"log.cpp"
 #include"util.hpp"
 #include"config.hpp"
+#include<filesystem>
 #include<yaml-cpp/yaml.h>
 
 
@@ -75,7 +76,7 @@ void testFunc(){
         XX_Person(system.person,config_person,before);
         XX_Vec_Person(system.vec_person,config_vec_person,before);
         gaiya::Config::loadYamlFile
-            ("/home/luo/cplus/sylar/tester/configTest.yaml");
+            ("/home/luo/cplus/gaiya/tester/configTest.yaml");
             
         XX(system.vec,config_vec,after);
         XX(system.set,config_set,after);
@@ -90,21 +91,26 @@ void testFunc(){
     }
 }
 
-void testLogConfig(){
+// void testLogConfig(){
     
-    lOG_INFO_ROOT() <<std::endl << gaiya::s_LoggersM::getInstance()->toYamlString();
-    gaiya::Config::loadYamlFile("/home/luo/cplus/sylar/tester/configTest.yaml");
+//     lOG_INFO_ROOT() <<std::endl << gaiya::s_LoggersM::getInstance()->toYamlString();
+//     gaiya::Config::loadYamlFile("/home/luo/cplus/gaiya/tester/configTest.yaml");
 
+//     LOG_INFO(LOG_GET_LOGGER("master")) << gaiya::s_LoggersM::getInstance()->toYamlString();
 
-    LOG_INFO(LOG_GET_LOGGER("master")) <<std::endl << gaiya::s_LoggersM::getInstance()->toYamlString();
-
-    LOG_M()->getLogger("master")->setFormater("%d%T%ln%T%p%T%t%T%F%T%f%T%l%T%m%n");
+//     LOG_M()->getLogger("master")->setFormater("%d%T%ln%T%p%T%t%T%F%T%f%T%l%T%m%n");
     
-    LOG_INFO(LOG_GET_LOGGER("master")) <<std::endl << gaiya::s_LoggersM::getInstance()->toYamlString();
-}
+//     LOG_INFO(LOG_GET_LOGGER("master")) <<std::endl << gaiya::s_LoggersM::getInstance()->toYamlString();
+
+
+
+// }
 
 int main(int argc, char** argv){
     // testFunc();
-    testLogConfig();
+    // testLogConfig();
+    gaiya::Config::loadYamlFile("/home/luo/cplus/gaiya/tester/configTest.yaml");
+    LOG_INFO(LOG_GET_LOGGER("master")) << GET_RELATEIVE ;
+
     return 1;
 }

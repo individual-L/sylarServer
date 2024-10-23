@@ -156,7 +156,7 @@ class LoggerNameItem :public LogFormater::FormaterItem{
 
 //classLogEvent
 LogEvent::LogEvent(std::shared_ptr<Logger> logger,LogLevel::Level level
-,const char * file,int32_t line,uint32_t threadId
+,const std::filesystem::path file,int32_t line,uint32_t threadId
 ,uint32_t coroutineId,uint64_t time)
 :m_logger(logger)
 ,m_level(level)
@@ -651,7 +651,6 @@ class Configloggerinit{
       config_loggers->addCallBackFunc([](const std::set<gaiya::LoggerConfig>& oldD
       ,const std::set<gaiya::LoggerConfig>& newD)->void{
         //检测是否有新的Logger配置参数
-
         for(auto& it : newD){
           auto val = oldD.find(it);
           gaiya::Logger::ptr logger;

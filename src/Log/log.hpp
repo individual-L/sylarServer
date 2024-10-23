@@ -13,6 +13,7 @@
 #include<tuple>
 #include<time.h>
 #include<functional>
+#include<filesystem>
 #include"singlem.hpp"
 #include<yaml-cpp/yaml.h>
 
@@ -22,7 +23,7 @@
 #define LOG_LEVEL_LOGGER(level,logger) \
   if(logger->getLevel() <= level) \
     gaiya::LogEventWrap(gaiya::LogEvent::ptr(new gaiya::LogEvent( \
-    logger,level,__FILE__,__LINE__ ,gaiya::GetThreadId() \
+    logger,level,GET_RELATEIVE,__LINE__ ,gaiya::GetThreadId() \
     ,gaiya::GetCoroutineId(),time(0)))).getSS()
 
 #define LOG_DUBUG(logger) \
@@ -87,7 +88,7 @@ class LogEvent{
 
     std::string getContents() const {return m_ss.str();};
 
-    const char* getFile() const { return m_file;};
+    std::filesystem::path getFile() const { return m_file;};
 
     int32_t getLine() const { return m_line;};
 
@@ -107,7 +108,7 @@ class LogEvent{
 
     LogLevel::Level getLevel() const { return m_level;};
 
-    LogEvent(std::shared_ptr<Logger> logger,LogLevel::Level level,const char * file,int32_t line,uint32_t threadId,uint32_t coroutineId,uint64_t time);
+    LogEvent(std::shared_ptr<Logger> logger,LogLevel::Level level,std::filesystem::path file,int32_t line,uint32_t threadId,uint32_t coroutineId,uint64_t time);
 
     void format(const char * fmt,...);
     void format(const char * fmt,va_list val);
@@ -117,7 +118,7 @@ class LogEvent{
     //日志级别
     LogLevel::Level m_level;
     //文件名
-    const char * m_file = nullptr;
+    const std::filesystem::path m_file;
     //行号
     int32_t m_line = 0;
     //线程ID

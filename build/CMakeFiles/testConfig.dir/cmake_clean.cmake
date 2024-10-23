@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/luo/cplus/sylar/bin/testConfig"
-  "/home/luo/cplus/sylar/bin/testConfig.pdb"
+  "/home/luo/cplus/gaiya/bin/testConfig"
+  "/home/luo/cplus/gaiya/bin/testConfig.pdb"
   "CMakeFiles/testConfig.dir/tester/testConfig.cpp.o"
   "CMakeFiles/testConfig.dir/tester/testConfig.cpp.o.d"
 )

@@ -1,1 +1,0 @@
-/usr/bin/g++  -ggdb -Wall -rdynamic  -std=c++11 -Wno-deprecated -Werror -Wno-unused-function -g CMakeFiles/testLog.dir/tester/testLog.cpp.o -o /home/luo/cplus/sylar/bin/testLog 
