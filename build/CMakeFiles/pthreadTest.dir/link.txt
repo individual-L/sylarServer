@@ -1,0 +1,1 @@
+/usr/bin/c++  -ggdb -Wall -rdynamic  -std=c++17 -Wno-deprecated -Werror -Wno-unused-function -g CMakeFiles/pthreadTest.dir/tester/testThread.cpp.o -o /home/luo/cplus/gaiya/bin/pthreadTest  -Wl,-rpath,/home/luo/cplus/gaiya/lib /home/luo/cplus/gaiya/lib/libgaiya.so -lyaml-cpp 

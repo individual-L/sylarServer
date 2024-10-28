@@ -133,17 +133,17 @@ gaiya/fast:
 .PHONY : gaiya/fast
 
 #=============================================================================
-# Target rules for targets named testConfig
+# Target rules for targets named testThread
 
 # Build rule for target.
-testConfig: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testConfig
-.PHONY : testConfig
+testThread: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testThread
+.PHONY : testThread
 
 # fast build rule for target.
-testConfig/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/build
-.PHONY : testConfig/fast
+testThread/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testThread.dir/build.make CMakeFiles/testThread.dir/build
+.PHONY : testThread/fast
 
 src/Config/config.o: src/Config/config.cpp.o
 .PHONY : src/Config/config.o
@@ -169,29 +169,29 @@ src/Config/config.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Config/config.cpp.s
 .PHONY : src/Config/config.cpp.s
 
-src/Lock/Lock.o: src/Lock/Lock.cpp.o
-.PHONY : src/Lock/Lock.o
+src/Lock/lock.o: src/Lock/lock.cpp.o
+.PHONY : src/Lock/lock.o
 
 # target to build an object file
-src/Lock/Lock.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Lock/Lock.cpp.o
-.PHONY : src/Lock/Lock.cpp.o
+src/Lock/lock.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Lock/lock.cpp.o
+.PHONY : src/Lock/lock.cpp.o
 
-src/Lock/Lock.i: src/Lock/Lock.cpp.i
-.PHONY : src/Lock/Lock.i
+src/Lock/lock.i: src/Lock/lock.cpp.i
+.PHONY : src/Lock/lock.i
 
 # target to preprocess a source file
-src/Lock/Lock.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Lock/Lock.cpp.i
-.PHONY : src/Lock/Lock.cpp.i
+src/Lock/lock.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Lock/lock.cpp.i
+.PHONY : src/Lock/lock.cpp.i
 
-src/Lock/Lock.s: src/Lock/Lock.cpp.s
-.PHONY : src/Lock/Lock.s
+src/Lock/lock.s: src/Lock/lock.cpp.s
+.PHONY : src/Lock/lock.s
 
 # target to generate assembly for a file
-src/Lock/Lock.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Lock/Lock.cpp.s
-.PHONY : src/Lock/Lock.cpp.s
+src/Lock/lock.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Lock/lock.cpp.s
+.PHONY : src/Lock/lock.cpp.s
 
 src/Log/log.o: src/Log/log.cpp.o
 .PHONY : src/Log/log.o
@@ -217,29 +217,29 @@ src/Log/log.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Log/log.cpp.s
 .PHONY : src/Log/log.cpp.s
 
-src/Thread/Thread.o: src/Thread/Thread.cpp.o
-.PHONY : src/Thread/Thread.o
+src/Thread/thread.o: src/Thread/thread.cpp.o
+.PHONY : src/Thread/thread.o
 
 # target to build an object file
-src/Thread/Thread.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Thread/Thread.cpp.o
-.PHONY : src/Thread/Thread.cpp.o
+src/Thread/thread.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Thread/thread.cpp.o
+.PHONY : src/Thread/thread.cpp.o
 
-src/Thread/Thread.i: src/Thread/Thread.cpp.i
-.PHONY : src/Thread/Thread.i
+src/Thread/thread.i: src/Thread/thread.cpp.i
+.PHONY : src/Thread/thread.i
 
 # target to preprocess a source file
-src/Thread/Thread.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Thread/Thread.cpp.i
-.PHONY : src/Thread/Thread.cpp.i
+src/Thread/thread.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Thread/thread.cpp.i
+.PHONY : src/Thread/thread.cpp.i
 
-src/Thread/Thread.s: src/Thread/Thread.cpp.s
-.PHONY : src/Thread/Thread.s
+src/Thread/thread.s: src/Thread/thread.cpp.s
+.PHONY : src/Thread/thread.s
 
 # target to generate assembly for a file
-src/Thread/Thread.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Thread/Thread.cpp.s
-.PHONY : src/Thread/Thread.cpp.s
+src/Thread/thread.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Thread/thread.cpp.s
+.PHONY : src/Thread/thread.cpp.s
 
 src/Util/util.o: src/Util/util.cpp.o
 .PHONY : src/Util/util.o
@@ -265,29 +265,29 @@ src/Util/util.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Util/util.cpp.s
 .PHONY : src/Util/util.cpp.s
 
-tester/testConfig.o: tester/testConfig.cpp.o
-.PHONY : tester/testConfig.o
+tester/testThread.o: tester/testThread.cpp.o
+.PHONY : tester/testThread.o
 
 # target to build an object file
-tester/testConfig.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tester/testConfig.cpp.o
-.PHONY : tester/testConfig.cpp.o
+tester/testThread.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testThread.dir/build.make CMakeFiles/testThread.dir/tester/testThread.cpp.o
+.PHONY : tester/testThread.cpp.o
 
-tester/testConfig.i: tester/testConfig.cpp.i
-.PHONY : tester/testConfig.i
+tester/testThread.i: tester/testThread.cpp.i
+.PHONY : tester/testThread.i
 
 # target to preprocess a source file
-tester/testConfig.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tester/testConfig.cpp.i
-.PHONY : tester/testConfig.cpp.i
+tester/testThread.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testThread.dir/build.make CMakeFiles/testThread.dir/tester/testThread.cpp.i
+.PHONY : tester/testThread.cpp.i
 
-tester/testConfig.s: tester/testConfig.cpp.s
-.PHONY : tester/testConfig.s
+tester/testThread.s: tester/testThread.cpp.s
+.PHONY : tester/testThread.s
 
 # target to generate assembly for a file
-tester/testConfig.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tester/testConfig.cpp.s
-.PHONY : tester/testConfig.cpp.s
+tester/testThread.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testThread.dir/build.make CMakeFiles/testThread.dir/tester/testThread.cpp.s
+.PHONY : tester/testThread.cpp.s
 
 # Help Target
 help:
@@ -298,25 +298,25 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... gaiya"
-	@echo "... testConfig"
+	@echo "... testThread"
 	@echo "... src/Config/config.o"
 	@echo "... src/Config/config.i"
 	@echo "... src/Config/config.s"
-	@echo "... src/Lock/Lock.o"
-	@echo "... src/Lock/Lock.i"
-	@echo "... src/Lock/Lock.s"
+	@echo "... src/Lock/lock.o"
+	@echo "... src/Lock/lock.i"
+	@echo "... src/Lock/lock.s"
 	@echo "... src/Log/log.o"
 	@echo "... src/Log/log.i"
 	@echo "... src/Log/log.s"
-	@echo "... src/Thread/Thread.o"
-	@echo "... src/Thread/Thread.i"
-	@echo "... src/Thread/Thread.s"
+	@echo "... src/Thread/thread.o"
+	@echo "... src/Thread/thread.i"
+	@echo "... src/Thread/thread.s"
 	@echo "... src/Util/util.o"
 	@echo "... src/Util/util.i"
 	@echo "... src/Util/util.s"
-	@echo "... tester/testConfig.o"
-	@echo "... tester/testConfig.i"
-	@echo "... tester/testConfig.s"
+	@echo "... tester/testThread.o"
+	@echo "... tester/testThread.i"
+	@echo "... tester/testThread.s"
 .PHONY : help
 
 

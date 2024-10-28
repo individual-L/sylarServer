@@ -26,8 +26,9 @@ static void listYamlFile(const std::string prefix,YAML::Node node
 }
 
 ConfigVarBase::ptr Config::checkBase(const std::string& base){
-  auto it = getDatas().find(base);
-  if(it != getDatas().end()){
+  MutexType::ReadLock lock(GetMutex());
+  auto it = GetDatas().find(base);
+  if(it != GetDatas().end()){
     return it->second;
   }
   return nullptr;
@@ -60,10 +61,12 @@ void Config::loadYamlFile(const char * file){
   }
 }
 
-void Config::visit(std::function<void(ConfigVarBase::ptr)> func){
-  for(auto& it : getDatas()){
-    func(it.second);
-  }
-}
+// void Config::visit(std::function<void(ConfigVarBase::ptr)> func){
+//   MutexType::ReadLock lock(GetMutex());
+//   configVarMap& m = GetDatas();
+//   for(auto& it : m){
+//     func(it.second);
+//   }
+// }
 
 }

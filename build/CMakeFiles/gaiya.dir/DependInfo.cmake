@@ -9,9 +9,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/luo/cplus/gaiya/src/Config/config.cpp" "CMakeFiles/gaiya.dir/src/Config/config.cpp.o" "gcc" "CMakeFiles/gaiya.dir/src/Config/config.cpp.o.d"
-  "/home/luo/cplus/gaiya/src/Lock/Lock.cpp" "CMakeFiles/gaiya.dir/src/Lock/Lock.cpp.o" "gcc" "CMakeFiles/gaiya.dir/src/Lock/Lock.cpp.o.d"
+  "/home/luo/cplus/gaiya/src/Lock/lock.cpp" "CMakeFiles/gaiya.dir/src/Lock/lock.cpp.o" "gcc" "CMakeFiles/gaiya.dir/src/Lock/lock.cpp.o.d"
   "/home/luo/cplus/gaiya/src/Log/log.cpp" "CMakeFiles/gaiya.dir/src/Log/log.cpp.o" "gcc" "CMakeFiles/gaiya.dir/src/Log/log.cpp.o.d"
-  "/home/luo/cplus/gaiya/src/Thread/Thread.cpp" "CMakeFiles/gaiya.dir/src/Thread/Thread.cpp.o" "gcc" "CMakeFiles/gaiya.dir/src/Thread/Thread.cpp.o.d"
+  "/home/luo/cplus/gaiya/src/Thread/thread.cpp" "CMakeFiles/gaiya.dir/src/Thread/thread.cpp.o" "gcc" "CMakeFiles/gaiya.dir/src/Thread/thread.cpp.o.d"
   "/home/luo/cplus/gaiya/src/Util/util.cpp" "CMakeFiles/gaiya.dir/src/Util/util.cpp.o" "gcc" "CMakeFiles/gaiya.dir/src/Util/util.cpp.o.d"
   )
 

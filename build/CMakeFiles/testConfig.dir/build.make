@@ -72,28 +72,28 @@ include CMakeFiles/testConfig.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/testConfig.dir/flags.make
 
-CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: CMakeFiles/testConfig.dir/flags.make
-CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: /home/luo/cplus/gaiya/tester/testConfig.cpp
-CMakeFiles/testConfig.dir/tester/testConfig.cpp.o: CMakeFiles/testConfig.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testConfig.dir/tester/testConfig.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/testConfig.dir/tester/testConfig.cpp.o -MF CMakeFiles/testConfig.dir/tester/testConfig.cpp.o.d -o CMakeFiles/testConfig.dir/tester/testConfig.cpp.o -c /home/luo/cplus/gaiya/tester/testConfig.cpp
+CMakeFiles/testConfig.dir/tester/pthreadTest.cpp.o: CMakeFiles/testConfig.dir/flags.make
+CMakeFiles/testConfig.dir/tester/pthreadTest.cpp.o: /home/luo/cplus/gaiya/tester/pthreadTest.cpp
+CMakeFiles/testConfig.dir/tester/pthreadTest.cpp.o: CMakeFiles/testConfig.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testConfig.dir/tester/pthreadTest.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/testConfig.dir/tester/pthreadTest.cpp.o -MF CMakeFiles/testConfig.dir/tester/pthreadTest.cpp.o.d -o CMakeFiles/testConfig.dir/tester/pthreadTest.cpp.o -c /home/luo/cplus/gaiya/tester/pthreadTest.cpp
 
-CMakeFiles/testConfig.dir/tester/testConfig.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/testConfig.dir/tester/testConfig.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luo/cplus/gaiya/tester/testConfig.cpp > CMakeFiles/testConfig.dir/tester/testConfig.cpp.i
+CMakeFiles/testConfig.dir/tester/pthreadTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/testConfig.dir/tester/pthreadTest.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luo/cplus/gaiya/tester/pthreadTest.cpp > CMakeFiles/testConfig.dir/tester/pthreadTest.cpp.i
 
-CMakeFiles/testConfig.dir/tester/testConfig.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/testConfig.dir/tester/testConfig.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luo/cplus/gaiya/tester/testConfig.cpp -o CMakeFiles/testConfig.dir/tester/testConfig.cpp.s
+CMakeFiles/testConfig.dir/tester/pthreadTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/testConfig.dir/tester/pthreadTest.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luo/cplus/gaiya/tester/pthreadTest.cpp -o CMakeFiles/testConfig.dir/tester/pthreadTest.cpp.s
 
 # Object files for target testConfig
 testConfig_OBJECTS = \
-"CMakeFiles/testConfig.dir/tester/testConfig.cpp.o"
+"CMakeFiles/testConfig.dir/tester/pthreadTest.cpp.o"
 
 # External object files for target testConfig
 testConfig_EXTERNAL_OBJECTS =
 
-/home/luo/cplus/gaiya/bin/testConfig: CMakeFiles/testConfig.dir/tester/testConfig.cpp.o
+/home/luo/cplus/gaiya/bin/testConfig: CMakeFiles/testConfig.dir/tester/pthreadTest.cpp.o
 /home/luo/cplus/gaiya/bin/testConfig: CMakeFiles/testConfig.dir/build.make
 /home/luo/cplus/gaiya/bin/testConfig: /home/luo/cplus/gaiya/lib/libgaiya.so
 /home/luo/cplus/gaiya/bin/testConfig: CMakeFiles/testConfig.dir/link.txt

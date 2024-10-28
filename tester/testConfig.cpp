@@ -18,15 +18,15 @@ void testFunc(){
 
     gaiya::ConfigVar<std::map<std::string,int>>::ptr config_map =  gaiya::Config::lookup("system.map","map",std::map<std::string,int>
     {{"ip",127},{"port",8989}});
-    gaiya::ConfigVar<std::map<std::string,gaiya::Person>>::ptr config_person = gaiya::Config::lookup("system.person","class person",std::map<std::string,gaiya::Person>{{"nihao",{}}});
+    // gaiya::ConfigVar<std::map<std::string,gaiya::Person>>::ptr config_person = gaiya::Config::lookup("system.person","class person",std::map<std::string,gaiya::Person>{{"nihao",{}}});
 
-    gaiya::ConfigVar<std::map<std::string,std::vector<gaiya::Person>>>::ptr config_vec_person = gaiya::Config::lookup("system.vec_map","vec_map"
-    ,std::map<std::string,std::vector<gaiya::Person>>{});
+    // gaiya::ConfigVar<std::map<std::string,std::vector<gaiya::Person>>>::ptr config_vec_person = gaiya::Config::lookup("system.vec_map","vec_map"
+    // ,std::map<std::string,std::vector<gaiya::Person>>{});
 
-    config_person->addCallBackFunc([](std::map<std::string,gaiya::Person> oldDatas,std::map<std::string,gaiya::Person> newDatas)->void{
-        LOG_INFO(LOG_ROOT())<<"oldDatas: " << oldDatas.size() <<" newdata: " << newDatas.size();
-    }
-    );
+    // config_person->addCallBackFunc([](std::map<std::string,gaiya::Person> oldDatas,std::map<std::string,gaiya::Person> newDatas)->void{
+    //     LOG_INFO(LOG_ROOT())<<"oldDatas: " << oldDatas.size() <<" newdata: " << newDatas.size();
+    // }
+    // );
 
 
 #define XX(name,val,change) \
@@ -73,16 +73,16 @@ void testFunc(){
         XX(system.vec,config_vec,before);
         XX(system.set,config_set,before);
         XX_MAP(system.map,config_map,before);
-        XX_Person(system.person,config_person,before);
-        XX_Vec_Person(system.vec_person,config_vec_person,before);
+        // XX_Person(system.person,config_person,before);
+        // XX_Vec_Person(system.vec_person,config_vec_person,before);
         gaiya::Config::loadYamlFile
             ("/home/luo/cplus/gaiya/tester/configTest.yaml");
             
         XX(system.vec,config_vec,after);
         XX(system.set,config_set,after);
         XX_MAP(system.map,config_map,after);
-        XX_Person(system.person,config_person,after);
-        XX_Vec_Person(system.vec_person,config_vec_person,after);
+        // XX_Person(system.person,config_person,after);
+        // XX_Vec_Person(system.vec_person,config_vec_person,after);
         LOG_INFO(LOG_ROOT()) << "end test config";
     } catch (const YAML::BadFile& e) {
         std::cerr << "Error opening file: " << e.what() << std::endl;

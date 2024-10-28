@@ -15,7 +15,7 @@
 
 #include"util.hpp"
 #include"log.hpp"
-
+#include"lock.hpp"
 
 namespace gaiya{
 
@@ -243,67 +243,68 @@ class lexicalCast<std::list<T>,std::string>{
     }
 };
 
-class Person{
-  public:
-    Person(){}
-    Person(std::string name,int age,bool sex):m_name(name),m_age(age),m_sex(sex){
-    }
-    std::string getName() const {return m_name;}
-    int getAge() const {return m_age;}
-    bool getSex() const {return m_sex;}
-    void setName(const std::string& name){m_name = name;}
-    void setAge(const int& age){m_age = age;}
-    void setSex(const bool& sex){m_sex = sex;}
-    std::string toString(){
-      std::stringstream ss;
-      ss << "name: " << m_name <<" age: " << m_age << " sex: "<< m_sex <<std::endl;
-      return ss.str();
-    }
-    bool operator== (const Person& right)const{
-      if(this->m_name ==right.getName() && this->m_sex == right.getSex()
-       && this->m_age == right.getAge()){
-        return true;
-       }
-       return false;
-    }
-  private:
-    std::string m_name;
-    int m_age;
-    bool m_sex;
-};
+// class Person{
+//   public:
+//     Person(){}
+//     Person(std::string name,int age,bool sex):m_name(name),m_age(age),m_sex(sex){
+//     }
+//     std::string getName() const {return m_name;}
+//     int getAge() const {return m_age;}
+//     bool getSex() const {return m_sex;}
+//     void setName(const std::string& name){m_name = name;}
+//     void setAge(const int& age){m_age = age;}
+//     void setSex(const bool& sex){m_sex = sex;}
+//     std::string toString(){
+//       std::stringstream ss;
+//       ss << "name: " << m_name <<" age: " << m_age << " sex: "<< m_sex <<std::endl;
+//       return ss.str();
+//     }
+//     bool operator== (const Person& right)const{
+//       if(this->m_name ==right.getName() && this->m_sex == right.getSex()
+//        && this->m_age == right.getAge()){
+//         return true;
+//        }
+//        return false;
+//     }
+//   private:
+//     std::string m_name;
+//     int m_age;
+//     bool m_sex;
+// };
 
-template<>
-class lexicalCast<std::string,Person>{
-  public:
-    Person operator()(const std::string str){
-      Person p;
-      YAML::Node node = YAML::Load(str);
-      p.setName(node["name"].as<std::string>());
-      p.setAge(node["age"].as<int>());
-      p.setSex(node["sex"].as<bool>());
-      return p;
-    }
-};
+// template<>
+// class lexicalCast<std::string,Person>{
+//   public:
+//     Person operator()(const std::string str){
+//       Person p;
+//       YAML::Node node = YAML::Load(str);
+//       p.setName(node["name"].as<std::string>());
+//       p.setAge(node["age"].as<int>());
+//       p.setSex(node["sex"].as<bool>());
+//       return p;
+//     }
+// };
 
-template<>
-class lexicalCast<Person,std::string>{
-  public:
-    std::string operator()(Person p){
-      YAML::Node node(YAML::NodeType::Map);
-      node["name"] = YAML::Load(p.getName());
-      node["age"] = YAML::Load(lexicalCast<int,std::string>()(p.getAge()));
-      node["sex"] = YAML::Load(lexicalCast<bool,std::string>()(p.getSex()));
-      std::stringstream ss;
-      ss << node;
-      return ss.str();
-    }
-};
+// template<>
+// class lexicalCast<Person,std::string>{
+//   public:
+//     std::string operator()(Person p){
+//       YAML::Node node(YAML::NodeType::Map);
+//       node["name"] = YAML::Load(p.getName());
+//       node["age"] = YAML::Load(lexicalCast<int,std::string>()(p.getAge()));
+//       node["sex"] = YAML::Load(lexicalCast<bool,std::string>()(p.getSex()));
+//       std::stringstream ss;
+//       ss << node;
+//       return ss.str();
+//     }
+// };
 
 
 template<class T,class FromStr = lexicalCast<std::string,T>
   ,class toStr = lexicalCast<T,std::string>>
 class ConfigVar :public ConfigVarBase{
   public:
+    typedef gaiya::RWMutex MutexType;
     typedef std::function<void(const T& oldData,const T& newData)> cb_func;
     typedef std::shared_ptr<ConfigVar<T> > ptr;
     ConfigVar(const std::string name,const std::string description
@@ -316,6 +317,7 @@ class ConfigVar :public ConfigVarBase{
     std::string toString() override {
       try
       {
+        MutexType::ReadLock lock(m_mutex);
         return toStr()(m_val);
       }
       catch(const std::exception& e)
@@ -345,39 +347,55 @@ class ConfigVar :public ConfigVarBase{
     }
     
     void setVal(const T& val){
-      if(val == m_val){
-        return;
+      {
+        MutexType::ReadLock lock(m_mutex);
+        if(val == m_val){
+          return;
+        }
+        //调用所有的回调函数
+        for(auto it : m_cb_funcs){
+          it.second(m_val,val);
+        }
       }
-      //调用所有的回调函数
-      for(auto it : m_cb_funcs){
-        it.second(m_val,val);
-      }
+      MutexType::WriteLock lock(m_mutex);
       m_val = val;
       }
 
-    const T getValue() const { return m_val;}
+    const T getValue(){ 
+      MutexType::ReadLock lock(m_mutex);
+      return m_val;
+    }
 
     void addCallBackFunc(const cb_func& func){
       static uint64_t index;
+      MutexType::WriteLock lock(m_mutex);
       ++index;
       m_cb_funcs.insert(typename std::map<uint64_t,cb_func>::value_type(index,func));
     }
 
     void delCallBackFunc(const uint64_t& i){
       auto it = m_cb_funcs.find(i);
+      MutexType::WriteLock lock(m_mutex);
       if(it != m_cb_funcs.end()){
         m_cb_funcs.erase(it);
       }
+    }
+    void clearCallBackFunc(){
+      MutexType::WriteLock lock(m_mutex);
+      m_cb_funcs.clear();
     }
   private:
     T m_val;
     //当配置文件的参数发生变化时，特定参数调用的回调函数集
     std::map<uint64_t,cb_func> m_cb_funcs;
+    MutexType m_mutex;
 };
 class Config{
   public:
     typedef std::map<std::string,gaiya::ConfigVarBase::ptr> configVarMap;
     typedef std::shared_ptr<Config> ptr;
+    typedef gaiya::RWMutex MutexType;
+
     
     static void loadYamlFile(const char * file);
 
@@ -385,8 +403,9 @@ class Config{
 
     template<class T>
     static typename ConfigVar<T>::ptr lookup(const std::string& name,const std::string& description,T&& val){
-      auto it = getDatas().find(name);
-      if(it != getDatas().end()){
+      MutexType::WriteLock lock(GetMutex());
+      auto it = GetDatas().find(name);
+      if(it != GetDatas().end()){
         auto v = std::dynamic_pointer_cast<ConfigVar<T> >(it->second);
         if(v){
           LOG_INFO(LOG_ROOT())<< "lookup type " << name <<" exist";
@@ -402,14 +421,15 @@ class Config{
         throw std::invalid_argument(name);
       }
       typename ConfigVar<T>::ptr v(new ConfigVar<T>(name,description,val));
-      getDatas()[name] = v;
+      GetDatas()[name] = v;
       return v;
     }
     
     template<class T>
     static typename ConfigVar<T>::ptr lookup(const std::string& name){
-      auto it = getDatas().find(name);
-      if(it != getDatas().end()){
+      MutexType::ReadLock lock(GetMutex());
+      auto it = GetDatas().find(name);
+      if(it != GetDatas().end()){
         auto v = std::dynamic_pointer_cast<ConfigVar<T> >(it->second);
         if(v){
           LOG_INFO(LOG_ROOT())<< "lookup type " << name <<" exist";
@@ -423,9 +443,13 @@ class Config{
     }
   
 
-    static void visit(std::function<void(ConfigVarBase::ptr)> func);
+    // static void visit(std::function<void(ConfigVarBase::ptr)> func);
   private:
-    static configVarMap& getDatas(){
+    static MutexType& GetMutex(){
+      static MutexType s_mutex;
+      return s_mutex;
+    }
+    static configVarMap& GetDatas(){
       static configVarMap s_datas;
       return s_datas;
     }

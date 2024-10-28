@@ -1,6 +1,6 @@
-log:
+logs:
   - name: "master"
-    level: debug
+    level: info
     format: "%d%T%ln%T%p%T%t%T%F%T%f%T%l%T%m%n"
     appenders: 
       - level: info
@@ -8,10 +8,6 @@ log:
         type: StdLogAppender
         format: null
       - level: info
-        path: /home/luo/cplus/gaiya/loglist/log.txt
+        path: log.txt
         type: FileLogAppender
         format: "%d%T%ln%T%p%T%t%T%F%T%f%T%l%T%m%n"
-  # - name: system
-  #   level: debug
-  #   formater: "%d%T%p%T%t%T%F%T%f%T%l%T%m%n"
-  #   appender: 

@@ -1,4 +1,5 @@
 #ifndef __LOG_H__
+
 #define __LOG_H__
 #include<string>
 #include<list>
@@ -14,11 +15,13 @@
 #include<time.h>
 #include<functional>
 #include<filesystem>
-#include"singlem.hpp"
 #include<yaml-cpp/yaml.h>
 
+#include"lock.hpp"
 #include"util.hpp"
+#include"singlem.hpp"
 
+#define GET_RELATEIVE gaiya::getRelativePath(__FILE__)
 
 #define LOG_LEVEL_LOGGER(level,logger) \
   if(logger->getLevel() <= level) \
@@ -26,7 +29,7 @@
     logger,level,GET_RELATEIVE,__LINE__ ,gaiya::GetThreadId() \
     ,gaiya::GetCoroutineId(),time(0)))).getSS()
 
-#define LOG_DUBUG(logger) \
+#define LOG_DEBUG(logger) \
   LOG_LEVEL_LOGGER(gaiya::LogLevel::Level::DEBUG,logger)
 #define LOG_INFO(logger) \
   LOG_LEVEL_LOGGER(gaiya::LogLevel::Level::INFO,logger)
@@ -71,8 +74,8 @@ class LogLevel{
 public:
   enum Level{
     UNKNOW = 0,
-    DEBUG = 1,
-    INFO = 2,
+    INFO = 1,
+    DEBUG = 2,
     WARN = 3,
     ERROR = 4,
     FATAL = 5
@@ -158,6 +161,7 @@ class LogFormater{
     LogFormater(const std::string & pattern = "%d%T%p%T%m%n");
     //将event传给所有的formatitem，让其输出到stringstream中
     std::string format(LogEvent::ptr event);
+    std::ostream& format(std::ostream& ofs,LogEvent::ptr event);
     std::string getPattern() const {return m_pattern;};
 
     bool isError() const {return m_error;}
@@ -177,12 +181,14 @@ class LogFormater{
     std::vector<FormaterItem::ptr> m_formatItems;    
     bool m_error = false;
 
+
 };
 class LoggerManager;
 
 class Logger : public std::enable_shared_from_this<Logger> { 
   friend class LoggerManager;
   public:
+    typedef gaiya::SpinMutex MutexType;
     typedef std::shared_ptr<Logger> ptr;
     Logger(const std:: string name = "root");
 
@@ -217,6 +223,7 @@ class Logger : public std::enable_shared_from_this<Logger> {
     LogLevel::Level m_level;
     LogFormater::ptr m_logformater;
     Logger::ptr m_root;
+    MutexType m_mutex;
 
 };
 class LogEventWrap{
@@ -233,19 +240,22 @@ class LogAppender{
   friend class Logger;
   public:
     typedef std::shared_ptr<LogAppender> ptr;
+    typedef gaiya::SpinMutex MutexType;
+
+
     virtual ~LogAppender(){};
     //写日志，只有级别大于等于此日志器的输出级别时才输出
     virtual void log(LogLevel::Level level,LogEvent::ptr event) = 0;
     virtual std::string toYamlString() = 0;
     void setLogformater(const LogFormater::ptr formater);
-    LogFormater::ptr getLogFormater() const {return m_logFormater;};
+    LogFormater::ptr getLogFormater();
     void setLevel(LogLevel::Level level){m_level = level;};
     LogLevel::Level getLevel() const {return m_level;};
   protected:
     LogLevel::Level m_level;
     LogFormater::ptr m_logFormater;
     bool m_hasLogFormater = false;
-
+    MutexType m_mutex;
 };
 //控制台输出器
 class StdLogAppender :public LogAppender{
@@ -272,6 +282,7 @@ class FileLogAppender :public LogAppender{
 };
 class LoggerManager{
   public:
+    typedef gaiya::SpinMutex MutexType;
     LoggerManager();
     void init();
     Logger::ptr getLogger(const std::string& name = "");
@@ -286,6 +297,7 @@ class LoggerManager{
     //name为key，不能有相同名称的logger
     std::map<std::string,Logger::ptr> m_loggers;
     Logger::ptr m_root; //主日志器
+    MutexType m_mutex;
 };
 
 

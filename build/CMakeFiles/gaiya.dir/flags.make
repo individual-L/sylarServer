@@ -6,5 +6,5 @@ CXX_DEFINES = -DRELATIVE_PATH=\"/home/luo/cplus/gaiya\" -Dgaiya_EXPORTS
 
 CXX_INCLUDES = -I/home/luo/cplus/gaiya/src/Log -I/home/luo/cplus/gaiya/src/Util -I/home/luo/cplus/gaiya/src/Singlem -I/home/luo/cplus/gaiya/src/Config -I/home/luo/cplus/gaiya/src/Lock -I/home/luo/cplus/gaiya/src/Thread
 
-CXX_FLAGS =  -ggdb -Wall -rdynamic  -std=c++17 -Wno-deprecated -Werror -Wno-unused-function -g -fPIC
+CXX_FLAGS =  -ggdb -lstdc++fs -Wall -rdynamic  -std=c++17 -Wno-deprecated -Werror -Wno-unused-function -g -fPIC
 

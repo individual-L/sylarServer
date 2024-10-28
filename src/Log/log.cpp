@@ -194,11 +194,13 @@ Logger::Logger(const std::string name)
 }
 
 void Logger::clearAppenders(){
+  MutexType::Lock lock(m_mutex);
   m_appenders.clear();
 }
 
 void Logger::log (LogLevel::Level level,LogEvent::ptr event){
   if(level >= m_level){
+    MutexType::Lock lock(m_mutex);
     if(!m_appenders.empty()){
       for(auto& it : m_appenders){
         it->log(level,event);
@@ -210,13 +212,17 @@ void Logger::log (LogLevel::Level level,LogEvent::ptr event){
   }
 }
 void Logger::addAppenders(const LogAppender::ptr appender){
+  MutexType::Lock lock(m_mutex);
   if(!appender->getLogFormater()){
-    appender->setLogformater(m_logformater);
+    MutexType::Lock alock(appender->m_mutex);
+    lOG_INFO_ROOT() << "add formater";
+    appender->m_logFormater = m_logformater;
   }
 
   m_appenders.push_back(appender);
 }
 void Logger::delAppenders(LogAppender::ptr appender){
+  MutexType::Lock lock(m_mutex);
   for(auto it = m_appenders.begin();it != m_appenders.end();it++){
     if(*it == appender){
       m_appenders.erase(it);
@@ -226,6 +232,7 @@ void Logger::delAppenders(LogAppender::ptr appender){
 }
 
 void Logger::setFormater(const std::string pattern){
+  //此函数并没有修改formater成员变量，故不需要加锁
   gaiya::LogFormater::ptr fmt(new gaiya::LogFormater(pattern));
   //日志格式有问题，使用默认日志格式
   if(!(fmt->isError())){
@@ -237,16 +244,19 @@ void Logger::setFormater(const std::string pattern){
 }
 
 void Logger::setFormater(const LogFormater::ptr fmt){
+  MutexType::Lock lock(m_mutex);
   m_logformater = fmt;
   for(auto& it :m_appenders){
+    //每个日志输出目的地可能被多个线程共享和修改，因此需要保护其内部状态的一致性。这里的锁是针对每个目的地对象的，与Logger对象的锁是独立的。
+    MutexType::Lock alock(it->m_mutex);
     if(!(it->m_hasLogFormater)){
-      lOG_INFO_ROOT() << "add formater";
       m_logformater = fmt;
     }
   }
 }
 
 void LogAppender::setLogformater(const LogFormater::ptr formater){
+  MutexType::Lock lock(m_mutex);
   m_logFormater = formater;
   if(m_logFormater){
     m_hasLogFormater = true;
@@ -254,6 +264,12 @@ void LogAppender::setLogformater(const LogFormater::ptr formater){
     m_hasLogFormater = false;
   }
 };
+LogFormater::ptr LogAppender::getLogFormater(){
+  MutexType::Lock lock(m_mutex);
+  return m_logFormater;
+};
+
+
 void Logger::debug(LogEvent::ptr event){
   log(LogLevel::Level::DEBUG,event);
 }
@@ -274,15 +290,16 @@ void Logger::fatal(LogEvent::ptr event){
 
 }
 void StdLogAppender::log(LogLevel::Level level,LogEvent::ptr event){
-  if(!m_hasLogFormater){
-    lOG_INFO_ROOT() << "StdLogAppender::log not logformater";
-  }
+  //防止两个日志输出到一起
+  MutexType::Lock lock(m_mutex);
   if(level >= m_level){
     std::cout<<m_logFormater->format(event);
   }
 }
 FileLogAppender::FileLogAppender(const std::string& filename)
 :m_fileName(filename){
+  std::filesystem::path p = std::filesystem::current_path().parent_path();
+  m_fileName = p.string() + "/loglist/"+ m_fileName;
   reopen();
 }
 
@@ -293,10 +310,14 @@ void FileLogAppender::log(LogLevel::Level level,LogEvent::ptr event){
       reopen();
       m_lastTime = now;
     }
-    m_fileStream<<m_logFormater->format(event);
+    //防止两个日志输出到一起
+    MutexType::Lock lock(m_mutex);
+    m_logFormater->format(m_fileStream,event);
   }
 }
+
 bool FileLogAppender::reopen(){
+  MutexType::Lock lock(m_mutex);
   if(m_fileStream){
     m_fileStream.close();
   }
@@ -320,6 +341,13 @@ std::string LogFormater::format(LogEvent::ptr event){
   }
   return ss.str();
 }
+std::ostream& LogFormater::format(std::ostream& ofs,LogEvent::ptr event){
+  for(auto it : m_formatItems){
+    it->format(ofs,event);
+  }
+  return ofs;
+}
+
 
 //%xx %xx{xxx} %%
 void LogFormater::init(){
@@ -435,6 +463,7 @@ void LogFormater::init(){
 }
 //class LogWrap
 LogEventWrap::LogEventWrap(LogEvent::ptr event):m_event(event){}
+
 LogEventWrap::~LogEventWrap(){
   m_event->getLogger()->log(m_event->getLevel(),m_event);
 }
@@ -447,12 +476,14 @@ LoggerManager::LoggerManager(){
 }
 void LoggerManager::init(){
   m_root.reset(new gaiya::Logger);
-  m_root->addAppenders(LogAppender::ptr(new gaiya::StdLogAppender));
-
+  LogAppender::ptr stdappender(new gaiya::StdLogAppender);
+  stdappender->setLogformater(m_root->m_logformater);
+  m_root->addAppenders(stdappender);
   m_loggers[m_root->getName()] = m_root;
 }
 
 Logger::ptr LoggerManager::getLogger(const std::string& name) {
+  MutexType::Lock lock(m_mutex);
   auto it = m_loggers.find(name);
 
   if(it != m_loggers.end()){
@@ -467,6 +498,7 @@ Logger::ptr LoggerManager::getLogger(const std::string& name) {
 }
 
 void LoggerManager::delLogger(const std::string name){
+  MutexType::Lock lock(m_mutex);
   auto it = m_loggers.find(name);
   if(it != m_loggers.end()){
     m_loggers.erase(it);
@@ -642,7 +674,7 @@ class lexicalCast<LoggerConfig,std::string>{
     }
 };
 
-gaiya::ConfigVar<std::set<gaiya::LoggerConfig>>::ptr config_loggers =   gaiya::Config::lookup("log","日志器的配置参数",std::set<gaiya::LoggerConfig>{});
+gaiya::ConfigVar<std::set<gaiya::LoggerConfig>>::ptr config_loggers =   gaiya::Config::lookup("logs","日志器的配置参数",std::set<gaiya::LoggerConfig>{});
 
 // 全局静态变量在程序启动时，也就是main函数执行之前就会被初始化
 class Configloggerinit{
@@ -668,6 +700,12 @@ class Configloggerinit{
           logger->clearAppenders();
           logger->setLevel(it.m_level);
 
+          gaiya::LogFormater::ptr fmt(new gaiya::LogFormater(it.m_logformat));
+          //日志格式有问题，则使用默认日志格式
+          if(!(fmt->isError())){
+            logger->setFormater(fmt);
+          }
+
           for(auto& app : it.m_appenders){
             gaiya::LogAppender::ptr appender;
             if(app.m_type == 1){
@@ -686,11 +724,8 @@ class Configloggerinit{
             logger->addAppenders(appender);
           }
 
-          gaiya::LogFormater::ptr fmt(new gaiya::LogFormater(it.m_logformat));
-          //日志格式有问题，使用默认日志格式
-          if(!(fmt->isError())){
-            logger->setFormater(fmt);
-          }
+
+
         }
         //检测是否需要删除旧值
         for(auto&  it : oldD){
@@ -710,15 +745,17 @@ class Configloggerinit{
 static Configloggerinit config_logger_init;
 
 std::string LoggerManager::toYamlString() {
+    MutexType::Lock lock(m_mutex);
     YAML::Node node;
     for(auto& i : m_loggers) {
-        node["log"].push_back(YAML::Load(i.second->toYamlString()));
+        node["logs"].push_back(YAML::Load(i.second->toYamlString()));
     }
     std::stringstream ss;
     ss << node;
     return ss.str();
 }
 std::string StdLogAppender::toYamlString(){
+  MutexType::Lock lock(m_mutex);
   YAML::Node node;
   node["type"] = "StdLogAppender";
   if(m_level != LogLevel::UNKNOW) {
@@ -734,6 +771,7 @@ std::string StdLogAppender::toYamlString(){
 }
 
 std::string FileLogAppender::toYamlString(){
+  MutexType::Lock lock(m_mutex);
   YAML::Node node;
   node["type"] = "FileLogAppender";
   if(m_level != LogLevel::UNKNOW) {
@@ -749,6 +787,7 @@ std::string FileLogAppender::toYamlString(){
 }
 
 std::string Logger::toYamlString(){
+  MutexType::Lock lock(m_mutex);
   YAML::Node node;
   node["name"] = m_name;
   if(m_level != LogLevel::UNKNOW) {

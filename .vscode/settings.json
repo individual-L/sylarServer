@@ -78,6 +78,8 @@
     "typeindex": "cpp",
     "ios": "cpp",
     "filesystem": "cpp",
-    "any": "cpp"
+    "any": "cpp",
+    "csetjmp": "cpp",
+    "csignal": "cpp"
   }
 }
