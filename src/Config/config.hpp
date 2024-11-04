@@ -418,6 +418,7 @@ class Config{
 
       if(name.find_first_not_of("qwertyuiopasdfghjklzxcvbnm._1234567890")
        != std::string::npos){
+        LOG_ERROR(LOG_ROOT()) << "configuration parameter have upper word";
         throw std::invalid_argument(name);
       }
       typename ConfigVar<T>::ptr v(new ConfigVar<T>(name,description,val));

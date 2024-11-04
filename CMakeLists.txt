@@ -12,6 +12,8 @@ set(SINGLEM_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Singlem)
 set(CONFIG_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Config)
 set(LOCK_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Lock)
 set(THREAD_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Thread)
+set(THREAD_COROUTINE_DIR ${PROJECT_SOURCE_DIR}/src/Coroutine)
+
 
 set(LIB_SRC 
   ${UTIL_INCLUDE_DIR}/util.cpp 
@@ -21,44 +23,32 @@ set(LIB_SRC
   ${LOCK_INCLUDE_DIR}/lock.cpp
   ${LOCK_INCLUDE_DIR}/Noncopyable.hpp
   ${THREAD_INCLUDE_DIR}/thread.cpp
-  )
-
-
-add_library(gaiya SHARED ${LIB_SRC})
-add_executable(testThread tester/testThread.cpp)
-# add_executable(testLog tester/testLog.cpp)
-
-
-target_include_directories(gaiya PUBLIC 
+  ${THREAD_COROUTINE_DIR}/coroutine.cpp
+)
+include_directories(
   ${LOG_INCLUDE_DIR}
   ${UTIL_INCLUDE_DIR}
   ${SINGLEM_INCLUDE_DIR}
   ${CONFIG_INCLUDE_DIR} 
   ${LOCK_INCLUDE_DIR}
   ${THREAD_INCLUDE_DIR}
-  )
-# target_include_directories(testLog PUBLIC 
-#   ${LOG_INCLUDE_DIR}
-#   ${UTIL_INCLUDE_DIR}
-#   ${CONFIG_INCLUDE_DIR} 
-
-#   )
-target_include_directories(testThread PUBLIC 
-${LOG_INCLUDE_DIR}
-${UTIL_INCLUDE_DIR}
-${CONFIG_INCLUDE_DIR} 
-${SINGLEM_INCLUDE_DIR}
-${THREAD_INCLUDE_DIR}
+  ${THREAD_COROUTINE_DIR}
 )
-
+add_library(gaiya SHARED ${LIB_SRC})
 target_link_libraries(gaiya yaml-cpp)
-#这个命令确保在构建目标之前，先构建它所依赖的其他目标。
-add_dependencies(testThread gaiya)
+# add_executable(testThread tester/testThread.cpp)
+# add_dependencies(testThread gaiya)
+# target_link_libraries(testThread gaiya)
 
-# 创建一个自定义目标，用于确保 log.cpp 先被编译
-# add_custom_target(singlem_hpp DEPENDS ${SINGLEM_INCLUDE_DIR}/singlem.hpp)
-# add_dependencies(gaiya singlem_hpp)
-target_link_libraries(testThread gaiya)
+# add_executable(testLog tester/testLog.cpp)
+# add_dependencies(testLog gaiya)
+# target_link_libraries(testLog gaiya)
+
+add_executable(testCoroutine tester/testCoroutine.cpp)
+add_dependencies(testCoroutine gaiya)
+target_link_libraries(testCoroutine gaiya)
+
+#这个命令确保在构建目标之前，先构建它所依赖的其他目标。
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

@@ -187,7 +187,7 @@ void LogEvent::format(const char * fmt,va_list val){
 //Logger
 Logger::Logger(const std::string name)
   :m_name(name)
-  ,m_level(LogLevel::Level::DEBUG){
+  ,m_level(LogLevel::Level::INFO){
   //时间，日志级别,线程号,协程号,文件路径,行号,消息,回车
   m_logformater.reset(new gaiya::LogFormater(
     "%d{%Y-%m-%d %H:%M:%S}%T%p%T%t%T%F%T%f%T%l%T%m%n"));

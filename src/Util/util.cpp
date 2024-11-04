@@ -1,18 +1,36 @@
 #include"util.hpp"
+#include"coroutine.hpp"
 
 namespace gaiya{
 
-// inline std::string getRelativePath(std::filesystem::path p){
-//     // 文件路径：/home/luo/cplus
-//     std::filesystem::path current_file = std::filesystem::current_path().parent_path() ; 
+gaiya::Logger::ptr logger = LOG_ROOT();
 
-//     //目标文件
-//     std::filesystem::path target_file = p; 
+void backTrace(std::vector<std::string>& bt,const int size,const int skip){
+  void ** buff = (void **) malloc(sizeof(void*) * size);
+  int n = ::backtrace(buff,size);
+  char ** strings = ::backtrace_symbols(buff,n);
 
-//     // 计算目标文件p与项目路径的相对路径
-//     std::filesystem::path relative_path = target_file.lexically_relative(current_file.parent_path()); 
-//     return relative_path;
-// }
+  if(strings == nullptr){
+    LOG_ERROR(logger) << "backtrace_symbols error";
+    std::cerr << "backtrace_symbols";
+  }
+  for(int i = skip;i < n;++i){
+    bt.push_back(strings[i]);
+  }
+  free(buff);
+  free(strings);
+}
+
+std::string backTraceToString(const int size,const int skip,const std::string& prefix){
+  std::vector<std::string> bt;
+  backTrace(bt,size,skip);
+  std::stringstream ss;
+  ss <<std::endl;
+  for(auto& it : bt){
+    ss << prefix << it <<std::endl;
+  }
+  return ss.str();
+}
 
 
 pid_t GetThreadId(){
@@ -20,7 +38,7 @@ pid_t GetThreadId(){
 }
 
 int32_t GetCoroutineId(){
-  return 1;
+  return gaiya::Coroutine::GetCurId();
 }
 
 }

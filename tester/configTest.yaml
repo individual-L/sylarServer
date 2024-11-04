@@ -11,3 +11,5 @@ logs:
         path: log.txt
         type: FileLogAppender
         format: "%d%T%ln%T%p%T%t%T%F%T%f%T%l%T%m%n"
+coroutine:
+  stacksize: 131072

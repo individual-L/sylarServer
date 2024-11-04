@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = /home/luo/cplus/gaiya/build
 
 # The main recursive "all" target.
 all: CMakeFiles/gaiya.dir/all
-all: CMakeFiles/testThread.dir/all
+all: CMakeFiles/testCoroutine.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -76,7 +76,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/gaiya.dir/clean
-clean: CMakeFiles/testThread.dir/clean
+clean: CMakeFiles/testCoroutine.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -86,12 +86,12 @@ clean: CMakeFiles/testThread.dir/clean
 CMakeFiles/gaiya.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target gaiya"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target gaiya"
 .PHONY : CMakeFiles/gaiya.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/gaiya.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/gaiya.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 0
 .PHONY : CMakeFiles/gaiya.dir/rule
@@ -106,30 +106,30 @@ CMakeFiles/gaiya.dir/clean:
 .PHONY : CMakeFiles/gaiya.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/testThread.dir
+# Target rules for target CMakeFiles/testCoroutine.dir
 
 # All Build rule for target.
-CMakeFiles/testThread.dir/all: CMakeFiles/gaiya.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testThread.dir/build.make CMakeFiles/testThread.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testThread.dir/build.make CMakeFiles/testThread.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=7,8 "Built target testThread"
-.PHONY : CMakeFiles/testThread.dir/all
+CMakeFiles/testCoroutine.dir/all: CMakeFiles/gaiya.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testCoroutine.dir/build.make CMakeFiles/testCoroutine.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testCoroutine.dir/build.make CMakeFiles/testCoroutine.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=8,9 "Built target testCoroutine"
+.PHONY : CMakeFiles/testCoroutine.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/testThread.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 8
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/testThread.dir/all
+CMakeFiles/testCoroutine.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/testCoroutine.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 0
-.PHONY : CMakeFiles/testThread.dir/rule
+.PHONY : CMakeFiles/testCoroutine.dir/rule
 
 # Convenience name for target.
-testThread: CMakeFiles/testThread.dir/rule
-.PHONY : testThread
+testCoroutine: CMakeFiles/testCoroutine.dir/rule
+.PHONY : testCoroutine
 
 # clean rule for target.
-CMakeFiles/testThread.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testThread.dir/build.make CMakeFiles/testThread.dir/clean
-.PHONY : CMakeFiles/testThread.dir/clean
+CMakeFiles/testCoroutine.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testCoroutine.dir/build.make CMakeFiles/testCoroutine.dir/clean
+.PHONY : CMakeFiles/testCoroutine.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

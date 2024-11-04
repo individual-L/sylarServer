@@ -133,17 +133,17 @@ gaiya/fast:
 .PHONY : gaiya/fast
 
 #=============================================================================
-# Target rules for targets named testThread
+# Target rules for targets named testCoroutine
 
 # Build rule for target.
-testThread: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testThread
-.PHONY : testThread
+testCoroutine: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testCoroutine
+.PHONY : testCoroutine
 
 # fast build rule for target.
-testThread/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testThread.dir/build.make CMakeFiles/testThread.dir/build
-.PHONY : testThread/fast
+testCoroutine/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testCoroutine.dir/build.make CMakeFiles/testCoroutine.dir/build
+.PHONY : testCoroutine/fast
 
 src/Config/config.o: src/Config/config.cpp.o
 .PHONY : src/Config/config.o
@@ -168,6 +168,30 @@ src/Config/config.s: src/Config/config.cpp.s
 src/Config/config.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Config/config.cpp.s
 .PHONY : src/Config/config.cpp.s
+
+src/Coroutine/coroutine.o: src/Coroutine/coroutine.cpp.o
+.PHONY : src/Coroutine/coroutine.o
+
+# target to build an object file
+src/Coroutine/coroutine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.o
+.PHONY : src/Coroutine/coroutine.cpp.o
+
+src/Coroutine/coroutine.i: src/Coroutine/coroutine.cpp.i
+.PHONY : src/Coroutine/coroutine.i
+
+# target to preprocess a source file
+src/Coroutine/coroutine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.i
+.PHONY : src/Coroutine/coroutine.cpp.i
+
+src/Coroutine/coroutine.s: src/Coroutine/coroutine.cpp.s
+.PHONY : src/Coroutine/coroutine.s
+
+# target to generate assembly for a file
+src/Coroutine/coroutine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.s
+.PHONY : src/Coroutine/coroutine.cpp.s
 
 src/Lock/lock.o: src/Lock/lock.cpp.o
 .PHONY : src/Lock/lock.o
@@ -265,29 +289,29 @@ src/Util/util.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Util/util.cpp.s
 .PHONY : src/Util/util.cpp.s
 
-tester/testThread.o: tester/testThread.cpp.o
-.PHONY : tester/testThread.o
+tester/testCoroutine.o: tester/testCoroutine.cpp.o
+.PHONY : tester/testCoroutine.o
 
 # target to build an object file
-tester/testThread.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testThread.dir/build.make CMakeFiles/testThread.dir/tester/testThread.cpp.o
-.PHONY : tester/testThread.cpp.o
+tester/testCoroutine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testCoroutine.dir/build.make CMakeFiles/testCoroutine.dir/tester/testCoroutine.cpp.o
+.PHONY : tester/testCoroutine.cpp.o
 
-tester/testThread.i: tester/testThread.cpp.i
-.PHONY : tester/testThread.i
+tester/testCoroutine.i: tester/testCoroutine.cpp.i
+.PHONY : tester/testCoroutine.i
 
 # target to preprocess a source file
-tester/testThread.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testThread.dir/build.make CMakeFiles/testThread.dir/tester/testThread.cpp.i
-.PHONY : tester/testThread.cpp.i
+tester/testCoroutine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testCoroutine.dir/build.make CMakeFiles/testCoroutine.dir/tester/testCoroutine.cpp.i
+.PHONY : tester/testCoroutine.cpp.i
 
-tester/testThread.s: tester/testThread.cpp.s
-.PHONY : tester/testThread.s
+tester/testCoroutine.s: tester/testCoroutine.cpp.s
+.PHONY : tester/testCoroutine.s
 
 # target to generate assembly for a file
-tester/testThread.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testThread.dir/build.make CMakeFiles/testThread.dir/tester/testThread.cpp.s
-.PHONY : tester/testThread.cpp.s
+tester/testCoroutine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testCoroutine.dir/build.make CMakeFiles/testCoroutine.dir/tester/testCoroutine.cpp.s
+.PHONY : tester/testCoroutine.cpp.s
 
 # Help Target
 help:
@@ -298,10 +322,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... gaiya"
-	@echo "... testThread"
+	@echo "... testCoroutine"
 	@echo "... src/Config/config.o"
 	@echo "... src/Config/config.i"
 	@echo "... src/Config/config.s"
+	@echo "... src/Coroutine/coroutine.o"
+	@echo "... src/Coroutine/coroutine.i"
+	@echo "... src/Coroutine/coroutine.s"
 	@echo "... src/Lock/lock.o"
 	@echo "... src/Lock/lock.i"
 	@echo "... src/Lock/lock.s"
@@ -314,9 +341,9 @@ help:
 	@echo "... src/Util/util.o"
 	@echo "... src/Util/util.i"
 	@echo "... src/Util/util.s"
-	@echo "... tester/testThread.o"
-	@echo "... tester/testThread.i"
-	@echo "... tester/testThread.s"
+	@echo "... tester/testCoroutine.o"
+	@echo "... tester/testCoroutine.i"
+	@echo "... tester/testCoroutine.s"
 .PHONY : help
 
 

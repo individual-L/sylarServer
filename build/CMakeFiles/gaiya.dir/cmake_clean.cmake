@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "/home/luo/cplus/gaiya/lib/libgaiya.so"
   "CMakeFiles/gaiya.dir/src/Config/config.cpp.o"
   "CMakeFiles/gaiya.dir/src/Config/config.cpp.o.d"
+  "CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.o"
+  "CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.o.d"
   "CMakeFiles/gaiya.dir/src/Lock/lock.cpp.o"
   "CMakeFiles/gaiya.dir/src/Lock/lock.cpp.o.d"
   "CMakeFiles/gaiya.dir/src/Log/log.cpp.o"

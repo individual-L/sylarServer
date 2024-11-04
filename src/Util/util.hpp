@@ -9,13 +9,20 @@
 #include<iostream>
 #include<filesystem>
 #include<string>
+#include<vector>
+#include<execinfo.h>
 
+#include"log.hpp"
 
 namespace gaiya{
 
 pid_t GetThreadId();
 
 int32_t GetCoroutineId();
+
+void backTrace(std::vector<std::string> &bt,const int size,const int skip);
+
+std::string backTraceToString(const int size = 64,const int skip = 2,const std::string& prefix = "     ");
 
 
 inline std::string getRelativePath(std::filesystem::path p){
@@ -41,7 +48,7 @@ std::string TypeName(){
   }else{
     std::cerr<<"demangle fail with status " << status << std::endl;
   }
-  return nullptr;
+  return {};
 }
 
 

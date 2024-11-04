@@ -80,6 +80,8 @@
     "filesystem": "cpp",
     "any": "cpp",
     "csetjmp": "cpp",
-    "csignal": "cpp"
+    "csignal": "cpp",
+    "stacktrace": "cpp",
+    "*.ipp": "cpp"
   }
 }

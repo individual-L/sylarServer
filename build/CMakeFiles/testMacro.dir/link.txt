@@ -1,0 +1,1 @@
+/usr/bin/c++  -ggdb -lstdc++fs -Wall -rdynamic  -std=c++17 -Wno-deprecated -Werror -Wno-unused-function CMakeFiles/testMacro.dir/tester/testMacro.cpp.o -o /home/luo/cplus/gaiya/bin/testMacro  -Wl,-rpath,/home/luo/cplus/gaiya/lib /home/luo/cplus/gaiya/lib/libgaiya.so -lyaml-cpp 
