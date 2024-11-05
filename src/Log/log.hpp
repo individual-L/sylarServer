@@ -27,7 +27,7 @@
   if(logger->getLevel() <= level) \
     gaiya::LogEventWrap(gaiya::LogEvent::ptr(new gaiya::LogEvent( \
     logger,level,GET_RELATEIVE,__LINE__ ,gaiya::GetThreadId() \
-    ,gaiya::GetCoroutineId(),time(0)))).getSS()
+    ,gaiya::GetThreadName(),gaiya::GetCoroutineId(),time(0)))).getSS()
 
 #define LOG_DEBUG(logger) \
   LOG_LEVEL_LOGGER(gaiya::LogLevel::Level::DEBUG,logger)
@@ -43,7 +43,7 @@
 #define LOG_FMT_LEVEL_LOGGER(level,logger,fmt,...) \
   if(logger->getLevel() <= level) \
     gaiya::LogEventWrap(gaiya::LogEvent::ptr(new gaiya::LogEvent( \
-    logger,level,__FILE__,__LINE__ ,gaiya::GetThreadId() \
+    logger,level,__FILE__,__LINE__ ,gaiya::GetThreadId(),gaiya::GetThreadName() \
     ,gaiya::GetCoroutineId(),time(0)))).getEvent()->format(fmt,__VA_ARGS__)
 
 #define LOG_FMT_DUBUG(logger,fmt,...) \
@@ -111,7 +111,7 @@ class LogEvent{
 
     LogLevel::Level getLevel() const { return m_level;};
 
-    LogEvent(std::shared_ptr<Logger> logger,LogLevel::Level level,std::filesystem::path file,int32_t line,uint32_t threadId,uint32_t coroutineId,uint64_t time);
+    LogEvent(std::shared_ptr<Logger> logger,LogLevel::Level level,std::filesystem::path file,int32_t line,uint32_t threadId,std::string threadName,uint32_t coroutineId,uint64_t time);
 
     void format(const char * fmt,...);
     void format(const char * fmt,va_list val);

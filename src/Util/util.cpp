@@ -1,5 +1,6 @@
 #include"util.hpp"
 #include"coroutine.hpp"
+#include"thread.hpp"
 
 namespace gaiya{
 
@@ -40,5 +41,10 @@ pid_t GetThreadId(){
 int32_t GetCoroutineId(){
   return gaiya::Coroutine::GetCurId();
 }
+
+std::string GetThreadName(){
+  return gaiya::Thread::GetName();
+}
+
 
 }

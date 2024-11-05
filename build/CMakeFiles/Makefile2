@@ -86,12 +86,12 @@ clean: CMakeFiles/testCoroutine.dir/clean
 CMakeFiles/gaiya.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target gaiya"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target gaiya"
 .PHONY : CMakeFiles/gaiya.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/gaiya.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/gaiya.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 0
 .PHONY : CMakeFiles/gaiya.dir/rule
@@ -112,12 +112,12 @@ CMakeFiles/gaiya.dir/clean:
 CMakeFiles/testCoroutine.dir/all: CMakeFiles/gaiya.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/testCoroutine.dir/build.make CMakeFiles/testCoroutine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/testCoroutine.dir/build.make CMakeFiles/testCoroutine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=8,9 "Built target testCoroutine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=9,10 "Built target testCoroutine"
 .PHONY : CMakeFiles/testCoroutine.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/testCoroutine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/testCoroutine.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 0
 .PHONY : CMakeFiles/testCoroutine.dir/rule

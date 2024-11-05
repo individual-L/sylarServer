@@ -13,6 +13,7 @@ set(CONFIG_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Config)
 set(LOCK_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Lock)
 set(THREAD_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Thread)
 set(THREAD_COROUTINE_DIR ${PROJECT_SOURCE_DIR}/src/Coroutine)
+set(THREAD_SCHEDULER_DIR ${PROJECT_SOURCE_DIR}/src/Scheduler)
 
 
 set(LIB_SRC 
@@ -24,6 +25,7 @@ set(LIB_SRC
   ${LOCK_INCLUDE_DIR}/Noncopyable.hpp
   ${THREAD_INCLUDE_DIR}/thread.cpp
   ${THREAD_COROUTINE_DIR}/coroutine.cpp
+  ${THREAD_SCHEDULER_DIR}/scheduler.cpp
 )
 include_directories(
   ${LOG_INCLUDE_DIR}
@@ -33,6 +35,7 @@ include_directories(
   ${LOCK_INCLUDE_DIR}
   ${THREAD_INCLUDE_DIR}
   ${THREAD_COROUTINE_DIR}
+  ${THREAD_SCHEDULER_DIR}
 )
 add_library(gaiya SHARED ${LIB_SRC})
 target_link_libraries(gaiya yaml-cpp)

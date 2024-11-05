@@ -3,12 +3,13 @@
 namespace gaiya{
 static gaiya::Logger::ptr logger = LOG_GET_LOGGER("master");
 
+//为了避免id相同，此非线程独有
 static std::atomic<uint64_t> s_coroutine_id = 0;
 static std::atomic<uint64_t> s_coroutine_count = 0;
 
-//每个线程拥有的主协程的指针
+//每个线程拥有的主协程的指针,外部没有，故设置为智能指针对象
 static thread_local gaiya::Coroutine::ptr s_threadCoroutine_ptr = nullptr;
-//每个线程当前正在执行的协程指针
+//每个线程当前正在执行的协程指针，通常外部存在一个智能指针对象，可以通过shared_from_this()获取，所有不需要在设置一个智能指针对象
 static thread_local gaiya::Coroutine* s_curCoroutine = nullptr;
 
 gaiya::ConfigVar<uint32_t>::ptr config_stackSize = gaiya::Config::lookup<uint32_t>("coroutine.stacksize","coroutine stack size",1024 * 128);

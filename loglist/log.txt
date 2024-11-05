@@ -427,3 +427,903 @@
 2024-11-04 20:45:20	master	INFO	14927	1	"gaiya/tester/testCoroutine.cpp"	36	coroutine test end
 2024-11-04 20:45:20	master	INFO	14927	1	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 1 total: 1
 2024-11-04 20:45:20	master	INFO	14927	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 0
+2024-11-05 14:54:14	master	INFO	2830	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 14:54:14	master	INFO	2830	0	"gaiya/tester/testCoroutine.cpp"	21	coroutine test start
+2024-11-05 14:54:14	master	INFO	2830	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2024-11-05 14:54:14	master	INFO	2830	0	"gaiya/tester/testCoroutine.cpp"	25	swapIn1
+2024-11-05 14:54:14	master	INFO	2830	1	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 14:54:14	master	INFO	2830	1	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 14:54:14	master	INFO	2830	0	"gaiya/tester/testCoroutine.cpp"	28	swapIn2
+2024-11-05 14:54:14	master	INFO	2830	1	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 14:54:14	master	INFO	2830	0	"gaiya/tester/testCoroutine.cpp"	32	swapIn3
+2024-11-05 14:54:14	master	INFO	2830	1	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 14:54:14	master	INFO	2830	1	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 14:54:14	master	INFO	2830	1	"gaiya/tester/testCoroutine.cpp"	35	1 use_count: 2
+2024-11-05 14:54:14	master	INFO	2830	1	"gaiya/tester/testCoroutine.cpp"	36	coroutine test end
+2024-11-05 14:54:14	master	INFO	2830	1	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 1 total: 1
+2024-11-05 14:54:14	master	INFO	2830	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 0
+2024-11-05 14:55:00	master	INFO	2931	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 14:55:00	master	INFO	2931	0	"gaiya/tester/testCoroutine.cpp"	21	coroutine test start
+2024-11-05 14:55:00	master	INFO	2931	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2024-11-05 14:55:00	master	INFO	2931	0	"gaiya/tester/testCoroutine.cpp"	25	swapIn1
+2024-11-05 14:55:00	master	INFO	2931	1	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 14:55:00	master	INFO	2931	1	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 14:55:00	master	INFO	2931	0	"gaiya/tester/testCoroutine.cpp"	28	swapIn2
+2024-11-05 14:55:00	master	INFO	2931	1	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 14:55:00	master	INFO	2931	0	"gaiya/tester/testCoroutine.cpp"	32	swapIn3
+2024-11-05 14:55:00	master	INFO	2931	1	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 14:55:00	master	INFO	2931	1	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 14:55:00	master	INFO	2931	1	"gaiya/tester/testCoroutine.cpp"	35	1 use_count: 2
+2024-11-05 14:55:00	master	INFO	2931	1	"gaiya/tester/testCoroutine.cpp"	36	coroutine test end
+2024-11-05 14:55:00	master	INFO	2931	1	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 1 total: 1
+2024-11-05 14:55:00	master	INFO	2931	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 0
+2024-11-05 14:57:06	master	INFO	3236	UNKONWN	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 14:57:06	master	INFO	3236	UNKONWN	0	"gaiya/tester/testCoroutine.cpp"	21	coroutine test start
+2024-11-05 14:57:06	master	INFO	3236	UNKONWN	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2024-11-05 14:57:06	master	INFO	3236	UNKONWN	0	"gaiya/tester/testCoroutine.cpp"	25	swapIn1
+2024-11-05 14:57:06	master	INFO	3236	UNKONWN	1	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 14:57:06	master	INFO	3236	UNKONWN	1	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 14:57:06	master	INFO	3236	UNKONWN	0	"gaiya/tester/testCoroutine.cpp"	28	swapIn2
+2024-11-05 14:57:06	master	INFO	3236	UNKONWN	1	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 14:57:06	master	INFO	3236	UNKONWN	0	"gaiya/tester/testCoroutine.cpp"	32	swapIn3
+2024-11-05 14:57:06	master	INFO	3236	UNKONWN	1	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 14:57:06	master	INFO	3236	UNKONWN	1	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 14:57:06	master	INFO	3236	UNKONWN	1	"gaiya/tester/testCoroutine.cpp"	35	1 use_count: 2
+2024-11-05 14:57:06	master	INFO	3236	UNKONWN	1	"gaiya/tester/testCoroutine.cpp"	36	coroutine test end
+2024-11-05 14:57:06	master	INFO	3236	UNKONWN	1	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 1 total: 1
+2024-11-05 14:57:06	master	INFO	3236	UNKONWN	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 0
+2024-11-05 15:07:22	master	INFO	3831	UNKONWN	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:07:22	master	INFO	3832	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2024-11-05 15:07:22	master	INFO	3832	thread_1	0	"gaiya/tester/testCoroutine.cpp"	19	swapIn 1
+2024-11-05 15:12:13	master	INFO	4109	UNKONWN	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:12:13	master	INFO	4110	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2024-11-05 15:12:13	master	INFO	4110	thread_1	0	"gaiya/tester/testCoroutine.cpp"	19	swapIn 1
+2024-11-05 15:13:38	master	INFO	4366	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:13:38	master	INFO	4366	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2024-11-05 15:13:38	master	INFO	4366	thread_1	0	"gaiya/tester/testCoroutine.cpp"	21	swapIn 1
+2024-11-05 15:13:38	master	INFO	4366	thread_1	1	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:13:38	master	INFO	4366	thread_1	1	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:13:38	master	INFO	4366	thread_1	0	"gaiya/tester/testCoroutine.cpp"	24	swapIn 2
+2024-11-05 15:13:38	master	INFO	4366	thread_1	1	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:13:38	master	INFO	4366	thread_1	0	"gaiya/tester/testCoroutine.cpp"	28	swapIn 3
+2024-11-05 15:13:38	master	INFO	4366	thread_1	1	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:13:38	master	INFO	4366	thread_1	1	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:13:38	master	INFO	4366	thread_1	1	"gaiya/tester/testCoroutine.cpp"	31	1 use_count: 2
+2024-11-05 15:13:38	master	INFO	4366	thread_1	1	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 1 total: 3
+2024-11-05 15:13:38	master	INFO	4366	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 2
+2024-11-05 15:13:38	master	INFO	4367	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:13:38	master	INFO	4367	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 2 coroutine count: 3
+2024-11-05 15:13:38	master	INFO	4367	thread_2	0	"gaiya/tester/testCoroutine.cpp"	21	swapIn 1
+2024-11-05 15:13:38	master	INFO	4367	thread_2	2	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:13:38	master	INFO	4367	thread_2	2	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:13:38	master	INFO	4367	thread_2	0	"gaiya/tester/testCoroutine.cpp"	24	swapIn 2
+2024-11-05 15:13:38	master	INFO	4367	thread_2	2	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:13:38	master	INFO	4367	thread_2	0	"gaiya/tester/testCoroutine.cpp"	28	swapIn 3
+2024-11-05 15:13:38	master	INFO	4367	thread_2	2	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:13:38	master	INFO	4367	thread_2	2	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:13:38	master	INFO	4367	thread_2	2	"gaiya/tester/testCoroutine.cpp"	31	2 use_count: 2
+2024-11-05 15:13:38	master	INFO	4367	thread_2	2	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 2 total: 4
+2024-11-05 15:13:38	master	INFO	4367	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 3
+2024-11-05 15:13:38	master	INFO	4370	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:13:38	master	INFO	4370	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 3 coroutine count: 4
+2024-11-05 15:13:38	master	INFO	4370	thread_5	0	"gaiya/tester/testCoroutine.cpp"	21	swapIn 1
+2024-11-05 15:13:38	master	INFO	4370	thread_5	3	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:13:38	master	INFO	4370	thread_5	3	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:13:38	master	INFO	4370	thread_5	0	"gaiya/tester/testCoroutine.cpp"	24	swapIn 2
+2024-11-05 15:13:38	master	INFO	4370	thread_5	3	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:13:38	master	INFO	4370	thread_5	0	"gaiya/tester/testCoroutine.cpp"	28	swapIn 3
+2024-11-05 15:13:38	master	INFO	4370	thread_5	3	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:13:38	master	INFO	4370	thread_5	3	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:13:38	master	INFO	4370	thread_5	3	"gaiya/tester/testCoroutine.cpp"	31	3 use_count: 2
+2024-11-05 15:13:38	master	INFO	4370	thread_5	3	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 3 total: 3
+2024-11-05 15:13:38	master	INFO	4370	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 2
+2024-11-05 15:13:38	master	INFO	4368	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:13:38	master	INFO	4368	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 4 coroutine count: 3
+2024-11-05 15:13:38	master	INFO	4368	thread_3	0	"gaiya/tester/testCoroutine.cpp"	21	swapIn 1
+2024-11-05 15:13:38	master	INFO	4368	thread_3	4	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:13:38	master	INFO	4368	thread_3	4	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:13:38	master	INFO	4368	thread_3	0	"gaiya/tester/testCoroutine.cpp"	24	swapIn 2
+2024-11-05 15:13:38	master	INFO	4368	thread_3	4	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:13:38	master	INFO	4368	thread_3	0	"gaiya/tester/testCoroutine.cpp"	28	swapIn 3
+2024-11-05 15:13:38	master	INFO	4368	thread_3	4	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:13:38	master	INFO	4368	thread_3	4	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:13:38	master	INFO	4368	thread_3	4	"gaiya/tester/testCoroutine.cpp"	31	4 use_count: 2
+2024-11-05 15:13:38	master	INFO	4368	thread_3	4	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 4 total: 2
+2024-11-05 15:13:38	master	INFO	4368	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:13:38	master	INFO	4369	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:13:38	master	INFO	4369	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 5 coroutine count: 2
+2024-11-05 15:13:38	master	INFO	4369	thread_4	0	"gaiya/tester/testCoroutine.cpp"	21	swapIn 1
+2024-11-05 15:13:38	master	INFO	4369	thread_4	5	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:13:38	master	INFO	4369	thread_4	5	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:13:38	master	INFO	4369	thread_4	0	"gaiya/tester/testCoroutine.cpp"	24	swapIn 2
+2024-11-05 15:13:38	master	INFO	4369	thread_4	5	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:13:38	master	INFO	4369	thread_4	0	"gaiya/tester/testCoroutine.cpp"	28	swapIn 3
+2024-11-05 15:13:38	master	INFO	4369	thread_4	5	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:13:38	master	INFO	4369	thread_4	5	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:13:38	master	INFO	4369	thread_4	5	"gaiya/tester/testCoroutine.cpp"	31	5 use_count: 2
+2024-11-05 15:13:38	master	INFO	4369	thread_4	5	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 5 total: 1
+2024-11-05 15:13:38	master	INFO	4369	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 0
+2024-11-05 15:13:49	master	INFO	4481	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 1
+2024-11-05 15:13:49	master	INFO	4481	thread_1	0	"gaiya/tester/testCoroutine.cpp"	20	swapIn 1
+2024-11-05 15:17:08	master	INFO	4581	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 1
+2024-11-05 15:17:08	master	INFO	4581	thread_1	0	"gaiya/tester/testCoroutine.cpp"	20	swapIn 1
+2024-11-05 15:17:21	master	INFO	4725	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:17:21	master	INFO	4725	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2024-11-05 15:17:21	master	INFO	4725	thread_1	0	"gaiya/tester/testCoroutine.cpp"	22	swapIn 1
+2024-11-05 15:17:21	master	INFO	4725	thread_1	1	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:17:21	master	INFO	4725	thread_1	1	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:17:21	master	INFO	4725	thread_1	0	"gaiya/tester/testCoroutine.cpp"	25	swapIn 2
+2024-11-05 15:17:21	master	INFO	4725	thread_1	1	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:17:21	master	INFO	4725	thread_1	0	"gaiya/tester/testCoroutine.cpp"	29	swapIn 3
+2024-11-05 15:17:21	master	INFO	4725	thread_1	1	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:17:21	master	INFO	4725	thread_1	1	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:17:21	master	INFO	4725	thread_1	1	"gaiya/tester/testCoroutine.cpp"	32	1 use_count: 2
+2024-11-05 15:17:21	master	INFO	4725	thread_1	1	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 1 total: 2
+2024-11-05 15:17:21	master	INFO	4725	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:17:21	master	INFO	4727	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:17:21	master	INFO	4727	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 2 coroutine count: 3
+2024-11-05 15:17:21	master	INFO	4727	thread_3	0	"gaiya/tester/testCoroutine.cpp"	22	swapIn 1
+2024-11-05 15:17:21	master	INFO	4727	thread_3	2	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:17:21	master	INFO	4727	thread_3	2	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:17:21	master	INFO	4727	thread_3	0	"gaiya/tester/testCoroutine.cpp"	25	swapIn 2
+2024-11-05 15:17:21	master	INFO	4727	thread_3	2	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:17:21	master	INFO	4727	thread_3	0	"gaiya/tester/testCoroutine.cpp"	29	swapIn 3
+2024-11-05 15:17:21	master	INFO	4727	thread_3	2	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:17:21	master	INFO	4727	thread_3	2	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:17:21	master	INFO	4727	thread_3	2	"gaiya/tester/testCoroutine.cpp"	32	2 use_count: 2
+2024-11-05 15:17:21	master	INFO	4727	thread_3	2	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 2 total: 4
+2024-11-05 15:17:21	master	INFO	4727	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 3
+2024-11-05 15:17:21	master	INFO	4728	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:17:21	master	INFO	4728	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 3 coroutine count: 4
+2024-11-05 15:17:21	master	INFO	4728	thread_4	0	"gaiya/tester/testCoroutine.cpp"	22	swapIn 1
+2024-11-05 15:17:21	master	INFO	4728	thread_4	3	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:17:21	master	INFO	4728	thread_4	3	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:17:21	master	INFO	4728	thread_4	0	"gaiya/tester/testCoroutine.cpp"	25	swapIn 2
+2024-11-05 15:17:21	master	INFO	4728	thread_4	3	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:17:21	master	INFO	4728	thread_4	0	"gaiya/tester/testCoroutine.cpp"	29	swapIn 3
+2024-11-05 15:17:21	master	INFO	4728	thread_4	3	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:17:21	master	INFO	4728	thread_4	3	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:17:21	master	INFO	4728	thread_4	3	"gaiya/tester/testCoroutine.cpp"	32	3 use_count: 2
+2024-11-05 15:17:21	master	INFO	4728	thread_4	3	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 3 total: 3
+2024-11-05 15:17:21	master	INFO	4728	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 2
+2024-11-05 15:17:21	master	INFO	4726	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:17:21	master	INFO	4726	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 4 coroutine count: 3
+2024-11-05 15:17:21	master	INFO	4726	thread_2	0	"gaiya/tester/testCoroutine.cpp"	22	swapIn 1
+2024-11-05 15:17:21	master	INFO	4726	thread_2	4	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:17:21	master	INFO	4726	thread_2	4	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:17:21	master	INFO	4726	thread_2	0	"gaiya/tester/testCoroutine.cpp"	25	swapIn 2
+2024-11-05 15:17:21	master	INFO	4726	thread_2	4	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:17:21	master	INFO	4726	thread_2	0	"gaiya/tester/testCoroutine.cpp"	29	swapIn 3
+2024-11-05 15:17:21	master	INFO	4726	thread_2	4	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:17:21	master	INFO	4726	thread_2	4	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:17:21	master	INFO	4726	thread_2	4	"gaiya/tester/testCoroutine.cpp"	32	4 use_count: 2
+2024-11-05 15:17:21	master	INFO	4726	thread_2	4	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 4 total: 2
+2024-11-05 15:17:21	master	INFO	4726	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:17:21	master	INFO	4729	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:17:21	master	INFO	4729	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 5 coroutine count: 2
+2024-11-05 15:17:21	master	INFO	4729	thread_5	0	"gaiya/tester/testCoroutine.cpp"	22	swapIn 1
+2024-11-05 15:17:21	master	INFO	4729	thread_5	5	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:17:21	master	INFO	4729	thread_5	5	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:17:21	master	INFO	4729	thread_5	0	"gaiya/tester/testCoroutine.cpp"	25	swapIn 2
+2024-11-05 15:17:21	master	INFO	4729	thread_5	5	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:17:21	master	INFO	4729	thread_5	0	"gaiya/tester/testCoroutine.cpp"	29	swapIn 3
+2024-11-05 15:17:21	master	INFO	4729	thread_5	5	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:17:21	master	INFO	4729	thread_5	5	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:17:21	master	INFO	4729	thread_5	5	"gaiya/tester/testCoroutine.cpp"	32	5 use_count: 2
+2024-11-05 15:17:21	master	INFO	4729	thread_5	5	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 5 total: 1
+2024-11-05 15:17:21	master	INFO	4729	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 0
+2024-11-05 15:18:37	master	INFO	4777	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:18:37	master	INFO	4779	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:18:37	master	INFO	4779	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 2 coroutine count: 5
+2024-11-05 15:18:37	master	INFO	4779	thread_3	0	"gaiya/tester/testCoroutine.cpp"	22	swapIn 1
+2024-11-05 15:18:37	master	INFO	4779	thread_3	2	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:18:37	master	INFO	4779	thread_3	2	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:18:37	master	INFO	4779	thread_3	0	"gaiya/tester/testCoroutine.cpp"	25	swapIn 2
+2024-11-05 15:18:37	master	INFO	4779	thread_3	2	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:18:37	master	INFO	4779	thread_3	0	"gaiya/tester/testCoroutine.cpp"	29	swapIn 3
+2024-11-05 15:18:37	master	INFO	4779	thread_3	2	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:18:37	master	INFO	4779	thread_3	2	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:18:37	master	INFO	4779	thread_3	2	"gaiya/tester/testCoroutine.cpp"	32	2 use_count: 2
+2024-11-05 15:18:37	master	INFO	4779	thread_3	2	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 2 total: 4
+2024-11-05 15:18:37	master	INFO	4779	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 3
+2024-11-05 15:18:37	master	INFO	4780	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:18:37	master	INFO	4780	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2024-11-05 15:18:37	master	INFO	4780	thread_4	0	"gaiya/tester/testCoroutine.cpp"	22	swapIn 1
+2024-11-05 15:18:37	master	INFO	4780	thread_4	3	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:18:37	master	INFO	4780	thread_4	3	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:18:37	master	INFO	4780	thread_4	0	"gaiya/tester/testCoroutine.cpp"	25	swapIn 2
+2024-11-05 15:18:37	master	INFO	4780	thread_4	3	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:18:37	master	INFO	4780	thread_4	0	"gaiya/tester/testCoroutine.cpp"	29	swapIn 3
+2024-11-05 15:18:37	master	INFO	4780	thread_4	3	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:18:37	master	INFO	4780	thread_4	3	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:18:37	master	INFO	4780	thread_4	3	"gaiya/tester/testCoroutine.cpp"	32	3 use_count: 2
+2024-11-05 15:18:37	master	INFO	4780	thread_4	3	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 3 total: 5
+2024-11-05 15:18:37	master	INFO	4780	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 4
+2024-11-05 15:18:37	master	INFO	4778	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:18:37	master	INFO	4778	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 4 coroutine count: 5
+2024-11-05 15:18:37	master	INFO	4778	thread_2	0	"gaiya/tester/testCoroutine.cpp"	22	swapIn 1
+2024-11-05 15:18:37	master	INFO	4778	thread_2	4	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:18:37	master	INFO	4778	thread_2	4	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:18:37	master	INFO	4778	thread_2	0	"gaiya/tester/testCoroutine.cpp"	25	swapIn 2
+2024-11-05 15:18:37	master	INFO	4778	thread_2	4	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:18:37	master	INFO	4778	thread_2	0	"gaiya/tester/testCoroutine.cpp"	29	swapIn 3
+2024-11-05 15:18:37	master	INFO	4778	thread_2	4	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:18:37	master	INFO	4778	thread_2	4	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:18:37	master	INFO	4778	thread_2	4	"gaiya/tester/testCoroutine.cpp"	32	4 use_count: 2
+2024-11-05 15:18:37	master	INFO	4778	thread_2	4	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 4 total: 4
+2024-11-05 15:18:37	master	INFO	4778	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 3
+2024-11-05 15:18:37	master	INFO	4777	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 4
+2024-11-05 15:18:37	master	INFO	4777	thread_1	0	"gaiya/tester/testCoroutine.cpp"	22	swapIn 1
+2024-11-05 15:18:37	master	INFO	4777	thread_1	1	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:18:37	master	INFO	4777	thread_1	1	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:18:37	master	INFO	4777	thread_1	0	"gaiya/tester/testCoroutine.cpp"	25	swapIn 2
+2024-11-05 15:18:37	master	INFO	4777	thread_1	1	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:18:37	master	INFO	4777	thread_1	0	"gaiya/tester/testCoroutine.cpp"	29	swapIn 3
+2024-11-05 15:18:37	master	INFO	4777	thread_1	1	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:18:37	master	INFO	4777	thread_1	1	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:18:37	master	INFO	4777	thread_1	1	"gaiya/tester/testCoroutine.cpp"	32	1 use_count: 2
+2024-11-05 15:18:37	master	INFO	4777	thread_1	1	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 1 total: 2
+2024-11-05 15:18:37	master	INFO	4777	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:18:37	master	INFO	4781	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:18:37	master	INFO	4781	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 5 coroutine count: 2
+2024-11-05 15:18:37	master	INFO	4781	thread_5	0	"gaiya/tester/testCoroutine.cpp"	22	swapIn 1
+2024-11-05 15:18:37	master	INFO	4781	thread_5	5	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:18:37	master	INFO	4781	thread_5	5	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:18:37	master	INFO	4781	thread_5	0	"gaiya/tester/testCoroutine.cpp"	25	swapIn 2
+2024-11-05 15:18:37	master	INFO	4781	thread_5	5	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:18:37	master	INFO	4781	thread_5	0	"gaiya/tester/testCoroutine.cpp"	29	swapIn 3
+2024-11-05 15:18:37	master	INFO	4781	thread_5	5	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:18:37	master	INFO	4781	thread_5	5	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:18:37	master	INFO	4781	thread_5	5	"gaiya/tester/testCoroutine.cpp"	32	5 use_count: 2
+2024-11-05 15:18:37	master	INFO	4781	thread_5	5	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 5 total: 1
+2024-11-05 15:18:37	master	INFO	4781	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 0
+2024-11-05 15:24:05	master	INFO	5015	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:24:05	master	INFO	5015	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2024-11-05 15:24:05	master	INFO	5015	thread_1	0	"gaiya/tester/testCoroutine.cpp"	22	id:  swapIn 1
+2024-11-05 15:24:05	master	INFO	5015	thread_1	1	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:24:05	master	INFO	5015	thread_1	1	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:24:05	master	INFO	5015	thread_1	0	"gaiya/tester/testCoroutine.cpp"	25	id:  swapIn 2
+2024-11-05 15:24:05	master	INFO	5015	thread_1	1	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:24:05	master	INFO	5015	thread_1	0	"gaiya/tester/testCoroutine.cpp"	29	id:  swapIn 3
+2024-11-05 15:24:05	master	INFO	5015	thread_1	1	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:24:05	master	INFO	5015	thread_1	1	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:24:05	master	INFO	5015	thread_1	1	"gaiya/tester/testCoroutine.cpp"	32	id:  1 use_count: 2
+2024-11-05 15:24:05	master	INFO	5015	thread_1	1	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 1 total: 2
+2024-11-05 15:24:05	master	INFO	5015	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:24:05	master	INFO	5017	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:24:05	master	INFO	5017	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 2 coroutine count: 3
+2024-11-05 15:24:05	master	INFO	5017	thread_3	0	"gaiya/tester/testCoroutine.cpp"	22	:  swapIn 1
+2024-11-05 15:24:05	master	INFO	5017	thread_3	2	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:24:05	master	INFO	5017	thread_3	2	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:24:05	master	INFO	5017	thread_3	0	"gaiya/tester/testCoroutine.cpp"	25	:  swapIn 2
+2024-11-05 15:24:05	master	INFO	5017	thread_3	2	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:24:05	master	INFO	5017	thread_3	0	"gaiya/tester/testCoroutine.cpp"	29	:  swapIn 3
+2024-11-05 15:24:05	master	INFO	5017	thread_3	2	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:24:05	master	INFO	5017	thread_3	2	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:24:05	master	INFO	5017	thread_3	2	"gaiya/tester/testCoroutine.cpp"	32	:  2 use_count: 2
+2024-11-05 15:24:05	master	INFO	5017	thread_3	2	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 2 total: 3
+2024-11-05 15:24:05	master	INFO	5017	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 2
+2024-11-05 15:24:05	master	INFO	5019	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:24:05	master	INFO	5019	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 3 coroutine count: 4
+2024-11-05 15:24:05	master	INFO	5019	thread_5	0	"gaiya/tester/testCoroutine.cpp"	22	 swapIn 1
+2024-11-05 15:24:05	master	INFO	5019	thread_5	3	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:24:05	master	INFO	5019	thread_5	3	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:24:05	master	INFO	5019	thread_5	0	"gaiya/tester/testCoroutine.cpp"	25	 swapIn 2
+2024-11-05 15:24:05	master	INFO	5019	thread_5	3	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:24:05	master	INFO	5019	thread_5	0	"gaiya/tester/testCoroutine.cpp"	29	 swapIn 3
+2024-11-05 15:24:05	master	INFO	5019	thread_5	3	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:24:05	master	INFO	5019	thread_5	3	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:24:05	master	INFO	5019	thread_5	3	"gaiya/tester/testCoroutine.cpp"	32	 3 use_count: 2
+2024-11-05 15:24:05	master	INFO	5019	thread_5	3	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 3 total: 3
+2024-11-05 15:24:05	master	INFO	5019	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 2
+2024-11-05 15:24:05	master	INFO	5016	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:24:05	master	INFO	5016	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 4 coroutine count: 3
+2024-11-05 15:24:05	master	INFO	5016	thread_2	0	"gaiya/tester/testCoroutine.cpp"	22	d:  swapIn 1
+2024-11-05 15:24:05	master	INFO	5016	thread_2	4	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:24:05	master	INFO	5016	thread_2	4	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:24:05	master	INFO	5016	thread_2	0	"gaiya/tester/testCoroutine.cpp"	25	d:  swapIn 2
+2024-11-05 15:24:05	master	INFO	5016	thread_2	4	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:24:05	master	INFO	5016	thread_2	0	"gaiya/tester/testCoroutine.cpp"	29	d:  swapIn 3
+2024-11-05 15:24:05	master	INFO	5016	thread_2	4	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:24:05	master	INFO	5016	thread_2	4	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:24:05	master	INFO	5016	thread_2	4	"gaiya/tester/testCoroutine.cpp"	32	d:  4 use_count: 2
+2024-11-05 15:24:05	master	INFO	5016	thread_2	4	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 4 total: 2
+2024-11-05 15:24:05	master	INFO	5016	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:24:05	master	INFO	5018	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:24:05	master	INFO	5018	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 5 coroutine count: 2
+2024-11-05 15:24:05	master	INFO	5018	thread_4	0	"gaiya/tester/testCoroutine.cpp"	22	  swapIn 1
+2024-11-05 15:24:05	master	INFO	5018	thread_4	5	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:24:05	master	INFO	5018	thread_4	5	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:24:05	master	INFO	5018	thread_4	0	"gaiya/tester/testCoroutine.cpp"	25	  swapIn 2
+2024-11-05 15:24:05	master	INFO	5018	thread_4	5	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:24:05	master	INFO	5018	thread_4	0	"gaiya/tester/testCoroutine.cpp"	29	  swapIn 3
+2024-11-05 15:24:05	master	INFO	5018	thread_4	5	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:24:05	master	INFO	5018	thread_4	5	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:24:05	master	INFO	5018	thread_4	5	"gaiya/tester/testCoroutine.cpp"	32	  5 use_count: 2
+2024-11-05 15:24:05	master	INFO	5018	thread_4	5	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 5 total: 1
+2024-11-05 15:24:05	master	INFO	5018	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 0
+2024-11-05 15:24:53	master	INFO	5054	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:24:53	master	INFO	5054	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2024-11-05 15:24:53	master	INFO	5054	thread_1	0	"gaiya/tester/testCoroutine.cpp"	22	id:  swapIn 1
+2024-11-05 15:24:53	master	INFO	5054	thread_1	1	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:24:53	master	INFO	5054	thread_1	1	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:24:53	master	INFO	5054	thread_1	0	"gaiya/tester/testCoroutine.cpp"	25	id:  swapIn 2
+2024-11-05 15:24:53	master	INFO	5054	thread_1	1	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:24:53	master	INFO	5054	thread_1	0	"gaiya/tester/testCoroutine.cpp"	29	id:  swapIn 3
+2024-11-05 15:24:53	master	INFO	5054	thread_1	1	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:24:53	master	INFO	5054	thread_1	1	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:24:53	master	INFO	5054	thread_1	1	"gaiya/tester/testCoroutine.cpp"	32	id:  1 use_count: 2
+2024-11-05 15:24:53	master	INFO	5054	thread_1	1	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 1 total: 2
+2024-11-05 15:24:53	master	INFO	5054	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:24:53	master	INFO	5056	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:24:53	master	INFO	5056	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 2 coroutine count: 3
+2024-11-05 15:24:53	master	INFO	5056	thread_3	0	"gaiya/tester/testCoroutine.cpp"	22	:  swapIn 1
+2024-11-05 15:24:53	master	INFO	5056	thread_3	2	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:24:53	master	INFO	5056	thread_3	2	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:24:53	master	INFO	5056	thread_3	0	"gaiya/tester/testCoroutine.cpp"	25	:  swapIn 2
+2024-11-05 15:24:53	master	INFO	5056	thread_3	2	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:24:53	master	INFO	5056	thread_3	0	"gaiya/tester/testCoroutine.cpp"	29	:  swapIn 3
+2024-11-05 15:24:53	master	INFO	5056	thread_3	2	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:24:53	master	INFO	5056	thread_3	2	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:24:53	master	INFO	5056	thread_3	2	"gaiya/tester/testCoroutine.cpp"	32	:  2 use_count: 2
+2024-11-05 15:24:53	master	INFO	5056	thread_3	2	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 2 total: 4
+2024-11-05 15:24:53	master	INFO	5056	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 3
+2024-11-05 15:24:53	master	INFO	5055	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:24:53	master	INFO	5055	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 3 coroutine count: 4
+2024-11-05 15:24:53	master	INFO	5055	thread_2	0	"gaiya/tester/testCoroutine.cpp"	22	d:  swapIn 1
+2024-11-05 15:24:53	master	INFO	5055	thread_2	3	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:24:53	master	INFO	5055	thread_2	3	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:24:53	master	INFO	5055	thread_2	0	"gaiya/tester/testCoroutine.cpp"	25	d:  swapIn 2
+2024-11-05 15:24:53	master	INFO	5055	thread_2	3	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:24:53	master	INFO	5055	thread_2	0	"gaiya/tester/testCoroutine.cpp"	29	d:  swapIn 3
+2024-11-05 15:24:53	master	INFO	5055	thread_2	3	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:24:53	master	INFO	5055	thread_2	3	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:24:53	master	INFO	5055	thread_2	3	"gaiya/tester/testCoroutine.cpp"	32	d:  3 use_count: 2
+2024-11-05 15:24:53	master	INFO	5055	thread_2	3	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 3 total: 3
+2024-11-05 15:24:53	master	INFO	5055	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 2
+2024-11-05 15:24:53	master	INFO	5057	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:24:53	master	INFO	5057	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 4 coroutine count: 3
+2024-11-05 15:24:53	master	INFO	5057	thread_4	0	"gaiya/tester/testCoroutine.cpp"	22	  swapIn 1
+2024-11-05 15:24:53	master	INFO	5057	thread_4	4	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:24:53	master	INFO	5057	thread_4	4	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:24:53	master	INFO	5057	thread_4	0	"gaiya/tester/testCoroutine.cpp"	25	  swapIn 2
+2024-11-05 15:24:53	master	INFO	5057	thread_4	4	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:24:53	master	INFO	5057	thread_4	0	"gaiya/tester/testCoroutine.cpp"	29	  swapIn 3
+2024-11-05 15:24:53	master	INFO	5057	thread_4	4	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:24:53	master	INFO	5057	thread_4	4	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:24:53	master	INFO	5057	thread_4	4	"gaiya/tester/testCoroutine.cpp"	32	  4 use_count: 2
+2024-11-05 15:24:53	master	INFO	5057	thread_4	4	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 4 total: 2
+2024-11-05 15:24:53	master	INFO	5057	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:24:53	master	INFO	5058	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:24:53	master	INFO	5058	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 5 coroutine count: 2
+2024-11-05 15:24:53	master	INFO	5058	thread_5	0	"gaiya/tester/testCoroutine.cpp"	22	 swapIn 1
+2024-11-05 15:24:53	master	INFO	5058	thread_5	5	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:24:53	master	INFO	5058	thread_5	5	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:24:53	master	INFO	5058	thread_5	0	"gaiya/tester/testCoroutine.cpp"	25	 swapIn 2
+2024-11-05 15:24:53	master	INFO	5058	thread_5	5	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:24:53	master	INFO	5058	thread_5	0	"gaiya/tester/testCoroutine.cpp"	29	 swapIn 3
+2024-11-05 15:24:53	master	INFO	5058	thread_5	5	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:24:53	master	INFO	5058	thread_5	5	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:24:53	master	INFO	5058	thread_5	5	"gaiya/tester/testCoroutine.cpp"	32	 5 use_count: 2
+2024-11-05 15:24:53	master	INFO	5058	thread_5	5	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 5 total: 1
+2024-11-05 15:24:53	master	INFO	5058	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 0
+2024-11-05 15:26:34	master	INFO	5143	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:26:34	master	INFO	5143	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2024-11-05 15:26:34	master	INFO	5143	thread_1	0	"gaiya/tester/testCoroutine.cpp"	22	id:  swapIn 1
+2024-11-05 15:26:34	master	INFO	5143	thread_1	1	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:26:34	master	INFO	5143	thread_1	1	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:26:34	master	INFO	5143	thread_1	0	"gaiya/tester/testCoroutine.cpp"	25	id:  swapIn 2
+2024-11-05 15:26:34	master	INFO	5143	thread_1	1	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:26:34	master	INFO	5143	thread_1	0	"gaiya/tester/testCoroutine.cpp"	29	id:  swapIn 3
+2024-11-05 15:26:34	master	INFO	5143	thread_1	1	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:26:34	master	INFO	5143	thread_1	1	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:26:34	master	INFO	5143	thread_1	1	"gaiya/tester/testCoroutine.cpp"	32	id:  1 use_count: 2
+2024-11-05 15:26:34	master	INFO	5143	thread_1	1	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 1 total: 2
+2024-11-05 15:26:34	master	INFO	5143	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:26:34	master	INFO	5145	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:26:34	master	INFO	5145	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 2 coroutine count: 3
+2024-11-05 15:26:34	master	INFO	5145	thread_3	0	"gaiya/tester/testCoroutine.cpp"	22	:  swapIn 1
+2024-11-05 15:26:34	master	INFO	5145	thread_3	2	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:26:34	master	INFO	5145	thread_3	2	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:26:34	master	INFO	5145	thread_3	0	"gaiya/tester/testCoroutine.cpp"	25	:  swapIn 2
+2024-11-05 15:26:34	master	INFO	5145	thread_3	2	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:26:34	master	INFO	5145	thread_3	0	"gaiya/tester/testCoroutine.cpp"	29	:  swapIn 3
+2024-11-05 15:26:34	master	INFO	5145	thread_3	2	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:26:34	master	INFO	5145	thread_3	2	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:26:34	master	INFO	5145	thread_3	2	"gaiya/tester/testCoroutine.cpp"	32	:  2 use_count: 2
+2024-11-05 15:26:34	master	INFO	5145	thread_3	2	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 2 total: 4
+2024-11-05 15:26:34	master	INFO	5145	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 3
+2024-11-05 15:26:34	master	INFO	5144	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:26:34	master	INFO	5144	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 3 coroutine count: 4
+2024-11-05 15:26:34	master	INFO	5144	thread_2	0	"gaiya/tester/testCoroutine.cpp"	22	d:  swapIn 1
+2024-11-05 15:26:34	master	INFO	5144	thread_2	3	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:26:34	master	INFO	5144	thread_2	3	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:26:34	master	INFO	5144	thread_2	0	"gaiya/tester/testCoroutine.cpp"	25	d:  swapIn 2
+2024-11-05 15:26:34	master	INFO	5144	thread_2	3	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:26:34	master	INFO	5144	thread_2	0	"gaiya/tester/testCoroutine.cpp"	29	d:  swapIn 3
+2024-11-05 15:26:34	master	INFO	5144	thread_2	3	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:26:34	master	INFO	5144	thread_2	3	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:26:34	master	INFO	5144	thread_2	3	"gaiya/tester/testCoroutine.cpp"	32	d:  3 use_count: 2
+2024-11-05 15:26:34	master	INFO	5144	thread_2	3	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 3 total: 3
+2024-11-05 15:26:34	master	INFO	5144	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 2
+2024-11-05 15:26:34	master	INFO	5147	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:26:34	master	INFO	5147	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 4 coroutine count: 3
+2024-11-05 15:26:34	master	INFO	5147	thread_5	0	"gaiya/tester/testCoroutine.cpp"	22	 swapIn 1
+2024-11-05 15:26:34	master	INFO	5147	thread_5	4	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:26:34	master	INFO	5147	thread_5	4	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:26:34	master	INFO	5147	thread_5	0	"gaiya/tester/testCoroutine.cpp"	25	 swapIn 2
+2024-11-05 15:26:34	master	INFO	5147	thread_5	4	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:26:34	master	INFO	5147	thread_5	0	"gaiya/tester/testCoroutine.cpp"	29	 swapIn 3
+2024-11-05 15:26:34	master	INFO	5147	thread_5	4	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:26:34	master	INFO	5147	thread_5	4	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:26:34	master	INFO	5147	thread_5	4	"gaiya/tester/testCoroutine.cpp"	32	 4 use_count: 2
+2024-11-05 15:26:34	master	INFO	5147	thread_5	4	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 4 total: 2
+2024-11-05 15:26:34	master	INFO	5147	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:26:34	master	INFO	5146	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:26:34	master	INFO	5146	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 5 coroutine count: 2
+2024-11-05 15:26:34	master	INFO	5146	thread_4	0	"gaiya/tester/testCoroutine.cpp"	22	  swapIn 1
+2024-11-05 15:26:34	master	INFO	5146	thread_4	5	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:26:34	master	INFO	5146	thread_4	5	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:26:34	master	INFO	5146	thread_4	0	"gaiya/tester/testCoroutine.cpp"	25	  swapIn 2
+2024-11-05 15:26:34	master	INFO	5146	thread_4	5	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:26:34	master	INFO	5146	thread_4	0	"gaiya/tester/testCoroutine.cpp"	29	  swapIn 3
+2024-11-05 15:26:34	master	INFO	5146	thread_4	5	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:26:34	master	INFO	5146	thread_4	5	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:26:34	master	INFO	5146	thread_4	5	"gaiya/tester/testCoroutine.cpp"	32	  5 use_count: 2
+2024-11-05 15:26:34	master	INFO	5146	thread_4	5	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 5 total: 1
+2024-11-05 15:26:34	master	INFO	5146	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 0
+2024-11-05 15:27:04	master	INFO	5260	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:27:04	master	INFO	5260	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2024-11-05 15:27:04	master	INFO	5260	thread_1	0	"gaiya/tester/testCoroutine.cpp"	22	i d:  swapIn 1
+2024-11-05 15:27:04	master	INFO	5260	thread_1	1	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:27:04	master	INFO	5260	thread_1	1	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:27:04	master	INFO	5260	thread_1	0	"gaiya/tester/testCoroutine.cpp"	25	id:  swapIn 2
+2024-11-05 15:27:04	master	INFO	5260	thread_1	1	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:27:04	master	INFO	5260	thread_1	0	"gaiya/tester/testCoroutine.cpp"	29	id:  swapIn 3
+2024-11-05 15:27:04	master	INFO	5260	thread_1	1	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:27:04	master	INFO	5260	thread_1	1	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:27:04	master	INFO	5260	thread_1	1	"gaiya/tester/testCoroutine.cpp"	32	id:  1 use_count: 2
+2024-11-05 15:27:04	master	INFO	5260	thread_1	1	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 1 total: 3
+2024-11-05 15:27:04	master	INFO	5260	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 2
+2024-11-05 15:27:04	master	INFO	5263	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:27:04	master	INFO	5263	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2024-11-05 15:27:04	master	INFO	5263	thread_4	0	"gaiya/tester/testCoroutine.cpp"	22	:  swapIn 1
+2024-11-05 15:27:04	master	INFO	5263	thread_4	2	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:27:04	master	INFO	5263	thread_4	2	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:27:04	master	INFO	5263	thread_4	0	"gaiya/tester/testCoroutine.cpp"	25	  swapIn 2
+2024-11-05 15:27:04	master	INFO	5263	thread_4	2	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:27:04	master	INFO	5263	thread_4	0	"gaiya/tester/testCoroutine.cpp"	29	  swapIn 3
+2024-11-05 15:27:04	master	INFO	5263	thread_4	2	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:27:04	master	INFO	5263	thread_4	2	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:27:04	master	INFO	5263	thread_4	2	"gaiya/tester/testCoroutine.cpp"	32	  2 use_count: 2
+2024-11-05 15:27:04	master	INFO	5263	thread_4	2	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 2 total: 4
+2024-11-05 15:27:04	master	INFO	5263	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 3
+2024-11-05 15:27:04	master	INFO	5264	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:27:04	master	INFO	5264	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 3 coroutine count: 4
+2024-11-05 15:27:04	master	INFO	5264	thread_5	0	"gaiya/tester/testCoroutine.cpp"	22	  swapIn 1
+2024-11-05 15:27:04	master	INFO	5264	thread_5	3	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:27:04	master	INFO	5264	thread_5	3	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:27:04	master	INFO	5264	thread_5	0	"gaiya/tester/testCoroutine.cpp"	25	 swapIn 2
+2024-11-05 15:27:04	master	INFO	5264	thread_5	3	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:27:04	master	INFO	5264	thread_5	0	"gaiya/tester/testCoroutine.cpp"	29	 swapIn 3
+2024-11-05 15:27:04	master	INFO	5264	thread_5	3	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:27:04	master	INFO	5264	thread_5	3	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:27:04	master	INFO	5264	thread_5	3	"gaiya/tester/testCoroutine.cpp"	32	 3 use_count: 2
+2024-11-05 15:27:04	master	INFO	5264	thread_5	3	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 3 total: 3
+2024-11-05 15:27:04	master	INFO	5264	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 2
+2024-11-05 15:27:04	master	INFO	5261	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:27:04	master	INFO	5261	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 4 coroutine count: 3
+2024-11-05 15:27:04	master	INFO	5261	thread_2	0	"gaiya/tester/testCoroutine.cpp"	22	 d:  swapIn 1
+2024-11-05 15:27:04	master	INFO	5261	thread_2	4	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:27:04	master	INFO	5261	thread_2	4	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:27:04	master	INFO	5261	thread_2	0	"gaiya/tester/testCoroutine.cpp"	25	d:  swapIn 2
+2024-11-05 15:27:04	master	INFO	5261	thread_2	4	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:27:04	master	INFO	5261	thread_2	0	"gaiya/tester/testCoroutine.cpp"	29	d:  swapIn 3
+2024-11-05 15:27:04	master	INFO	5261	thread_2	4	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:27:04	master	INFO	5261	thread_2	4	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:27:04	master	INFO	5261	thread_2	4	"gaiya/tester/testCoroutine.cpp"	32	d:  4 use_count: 2
+2024-11-05 15:27:04	master	INFO	5261	thread_2	4	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 4 total: 2
+2024-11-05 15:27:04	master	INFO	5261	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:27:04	master	INFO	5262	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:27:04	master	INFO	5262	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 5 coroutine count: 2
+2024-11-05 15:27:04	master	INFO	5262	thread_3	0	"gaiya/tester/testCoroutine.cpp"	22	d:  swapIn 1
+2024-11-05 15:27:04	master	INFO	5262	thread_3	5	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:27:04	master	INFO	5262	thread_3	5	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:27:04	master	INFO	5262	thread_3	0	"gaiya/tester/testCoroutine.cpp"	25	:  swapIn 2
+2024-11-05 15:27:04	master	INFO	5262	thread_3	5	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:27:04	master	INFO	5262	thread_3	0	"gaiya/tester/testCoroutine.cpp"	29	:  swapIn 3
+2024-11-05 15:27:04	master	INFO	5262	thread_3	5	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:27:04	master	INFO	5262	thread_3	5	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:27:04	master	INFO	5262	thread_3	5	"gaiya/tester/testCoroutine.cpp"	32	:  5 use_count: 2
+2024-11-05 15:27:04	master	INFO	5262	thread_3	5	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 5 total: 1
+2024-11-05 15:27:04	master	INFO	5262	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 0
+2024-11-05 15:27:42	master	INFO	5384	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:27:42	master	INFO	5384	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2024-11-05 15:27:42	master	INFO	5384	thread_1	0	"gaiya/tester/testCoroutine.cpp"	22	id:  swapIn 1
+2024-11-05 15:27:42	master	INFO	5384	thread_1	1	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:27:42	master	INFO	5384	thread_1	1	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:27:42	master	INFO	5384	thread_1	0	"gaiya/tester/testCoroutine.cpp"	25	id:  swapIn 2
+2024-11-05 15:27:42	master	INFO	5384	thread_1	1	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:27:42	master	INFO	5384	thread_1	0	"gaiya/tester/testCoroutine.cpp"	29	id:  swapIn 3
+2024-11-05 15:27:42	master	INFO	5384	thread_1	1	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:27:42	master	INFO	5384	thread_1	1	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:27:42	master	INFO	5384	thread_1	1	"gaiya/tester/testCoroutine.cpp"	32	id:  1 use_count: 2
+2024-11-05 15:27:42	master	INFO	5384	thread_1	1	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 1 total: 4
+2024-11-05 15:27:42	master	INFO	5384	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 3
+2024-11-05 15:27:42	master	INFO	5385	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:27:42	master	INFO	5385	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2024-11-05 15:27:42	master	INFO	5385	thread_2	0	"gaiya/tester/testCoroutine.cpp"	22	d:  swapIn 1
+2024-11-05 15:27:42	master	INFO	5385	thread_2	2	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:27:42	master	INFO	5385	thread_2	2	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:27:42	master	INFO	5385	thread_2	0	"gaiya/tester/testCoroutine.cpp"	25	d:  swapIn 2
+2024-11-05 15:27:42	master	INFO	5385	thread_2	2	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:27:42	master	INFO	5385	thread_2	0	"gaiya/tester/testCoroutine.cpp"	29	d:  swapIn 3
+2024-11-05 15:27:42	master	INFO	5385	thread_2	2	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:27:42	master	INFO	5385	thread_2	2	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:27:42	master	INFO	5385	thread_2	2	"gaiya/tester/testCoroutine.cpp"	32	d:  2 use_count: 2
+2024-11-05 15:27:42	master	INFO	5385	thread_2	2	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 2 total: 3
+2024-11-05 15:27:42	master	INFO	5385	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 2
+2024-11-05 15:27:42	master	INFO	5387	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:27:42	master	INFO	5387	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 3 coroutine count: 3
+2024-11-05 15:27:42	master	INFO	5387	thread_4	0	"gaiya/tester/testCoroutine.cpp"	22	  swapIn 1
+2024-11-05 15:27:42	master	INFO	5387	thread_4	3	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:27:42	master	INFO	5387	thread_4	3	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:27:42	master	INFO	5387	thread_4	0	"gaiya/tester/testCoroutine.cpp"	25	  swapIn 2
+2024-11-05 15:27:42	master	INFO	5387	thread_4	3	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:27:42	master	INFO	5387	thread_4	0	"gaiya/tester/testCoroutine.cpp"	29	  swapIn 3
+2024-11-05 15:27:42	master	INFO	5387	thread_4	3	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:27:42	master	INFO	5387	thread_4	3	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:27:42	master	INFO	5387	thread_4	3	"gaiya/tester/testCoroutine.cpp"	32	  3 use_count: 2
+2024-11-05 15:27:42	master	INFO	5387	thread_4	3	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 3 total: 3
+2024-11-05 15:27:42	master	INFO	5387	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 2
+2024-11-05 15:27:42	master	INFO	5386	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:27:42	master	INFO	5386	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 4 coroutine count: 3
+2024-11-05 15:27:42	master	INFO	5386	thread_3	0	"gaiya/tester/testCoroutine.cpp"	22	:  swapIn 1
+2024-11-05 15:27:42	master	INFO	5386	thread_3	4	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:27:42	master	INFO	5386	thread_3	4	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:27:42	master	INFO	5386	thread_3	0	"gaiya/tester/testCoroutine.cpp"	25	:  swapIn 2
+2024-11-05 15:27:42	master	INFO	5386	thread_3	4	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:27:42	master	INFO	5386	thread_3	0	"gaiya/tester/testCoroutine.cpp"	29	:  swapIn 3
+2024-11-05 15:27:42	master	INFO	5386	thread_3	4	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:27:42	master	INFO	5386	thread_3	4	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:27:42	master	INFO	5386	thread_3	4	"gaiya/tester/testCoroutine.cpp"	32	:  4 use_count: 2
+2024-11-05 15:27:42	master	INFO	5386	thread_3	4	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 4 total: 2
+2024-11-05 15:27:42	master	INFO	5386	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:27:42	master	INFO	5388	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:27:42	master	INFO	5388	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 5 coroutine count: 2
+2024-11-05 15:27:42	master	INFO	5388	thread_5	0	"gaiya/tester/testCoroutine.cpp"	22	 swapIn 1
+2024-11-05 15:27:42	master	INFO	5388	thread_5	5	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:27:42	master	INFO	5388	thread_5	5	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:27:42	master	INFO	5388	thread_5	0	"gaiya/tester/testCoroutine.cpp"	25	 swapIn 2
+2024-11-05 15:27:42	master	INFO	5388	thread_5	5	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:27:42	master	INFO	5388	thread_5	0	"gaiya/tester/testCoroutine.cpp"	29	 swapIn 3
+2024-11-05 15:27:42	master	INFO	5388	thread_5	5	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:27:42	master	INFO	5388	thread_5	5	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:27:42	master	INFO	5388	thread_5	5	"gaiya/tester/testCoroutine.cpp"	32	 5 use_count: 2
+2024-11-05 15:27:42	master	INFO	5388	thread_5	5	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 5 total: 1
+2024-11-05 15:27:42	master	INFO	5388	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 0
+2024-11-05 15:28:02	master	INFO	5493	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:28:02	master	INFO	5493	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2024-11-05 15:28:02	master	INFO	5495	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:28:02	master	INFO	5495	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 2 coroutine count: 5
+2024-11-05 15:28:02	master	INFO	5495	thread_3	0	"gaiya/tester/testCoroutine.cpp"	22	  swapIn 1
+2024-11-05 15:28:02	master	INFO	5495	thread_3	2	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:28:02	master	INFO	5495	thread_3	2	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:28:02	master	INFO	5495	thread_3	0	"gaiya/tester/testCoroutine.cpp"	25	  swapIn 2
+2024-11-05 15:28:02	master	INFO	5495	thread_3	2	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:28:02	master	INFO	5495	thread_3	0	"gaiya/tester/testCoroutine.cpp"	29	  swapIn 3
+2024-11-05 15:28:02	master	INFO	5495	thread_3	2	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:28:02	master	INFO	5495	thread_3	2	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:28:02	master	INFO	5495	thread_3	2	"gaiya/tester/testCoroutine.cpp"	32	  2 use_count: 2
+2024-11-05 15:28:02	master	INFO	5495	thread_3	2	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 2 total: 4
+2024-11-05 15:28:02	master	INFO	5495	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 3
+2024-11-05 15:28:02	master	INFO	5494	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:28:02	master	INFO	5494	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2024-11-05 15:28:02	master	INFO	5494	thread_2	0	"gaiya/tester/testCoroutine.cpp"	22	:  swapIn 1
+2024-11-05 15:28:02	master	INFO	5494	thread_2	3	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:28:02	master	INFO	5494	thread_2	3	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:28:02	master	INFO	5494	thread_2	0	"gaiya/tester/testCoroutine.cpp"	25	:  swapIn 2
+2024-11-05 15:28:02	master	INFO	5494	thread_2	3	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:28:02	master	INFO	5494	thread_2	0	"gaiya/tester/testCoroutine.cpp"	29	:  swapIn 3
+2024-11-05 15:28:02	master	INFO	5494	thread_2	3	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:28:02	master	INFO	5494	thread_2	3	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:28:02	master	INFO	5494	thread_2	3	"gaiya/tester/testCoroutine.cpp"	32	:  3 use_count: 2
+2024-11-05 15:28:02	master	INFO	5494	thread_2	3	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 3 total: 5
+2024-11-05 15:28:02	master	INFO	5494	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 4
+2024-11-05 15:28:02	master	INFO	5493	thread_1	0	"gaiya/tester/testCoroutine.cpp"	22	d:  swapIn 1
+2024-11-05 15:28:02	master	INFO	5493	thread_1	1	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:28:02	master	INFO	5493	thread_1	1	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:28:02	master	INFO	5493	thread_1	0	"gaiya/tester/testCoroutine.cpp"	25	d:  swapIn 2
+2024-11-05 15:28:02	master	INFO	5493	thread_1	1	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:28:02	master	INFO	5493	thread_1	0	"gaiya/tester/testCoroutine.cpp"	29	d:  swapIn 3
+2024-11-05 15:28:02	master	INFO	5493	thread_1	1	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:28:02	master	INFO	5493	thread_1	1	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:28:02	master	INFO	5493	thread_1	1	"gaiya/tester/testCoroutine.cpp"	32	d:  1 use_count: 2
+2024-11-05 15:28:02	master	INFO	5493	thread_1	1	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 1 total: 3
+2024-11-05 15:28:02	master	INFO	5493	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 2
+2024-11-05 15:28:02	master	INFO	5496	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:28:02	master	INFO	5496	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 4 coroutine count: 3
+2024-11-05 15:28:02	master	INFO	5496	thread_4	0	"gaiya/tester/testCoroutine.cpp"	22	 swapIn 1
+2024-11-05 15:28:02	master	INFO	5496	thread_4	4	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:28:02	master	INFO	5496	thread_4	4	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:28:02	master	INFO	5496	thread_4	0	"gaiya/tester/testCoroutine.cpp"	25	 swapIn 2
+2024-11-05 15:28:02	master	INFO	5496	thread_4	4	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:28:02	master	INFO	5496	thread_4	0	"gaiya/tester/testCoroutine.cpp"	29	 swapIn 3
+2024-11-05 15:28:02	master	INFO	5496	thread_4	4	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:28:02	master	INFO	5496	thread_4	4	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:28:02	master	INFO	5496	thread_4	4	"gaiya/tester/testCoroutine.cpp"	32	 4 use_count: 2
+2024-11-05 15:28:02	master	INFO	5496	thread_4	4	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 4 total: 2
+2024-11-05 15:28:02	master	INFO	5496	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:28:02	master	INFO	5497	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:28:02	master	INFO	5497	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 5 coroutine count: 2
+2024-11-05 15:28:02	master	INFO	5497	thread_5	0	"gaiya/tester/testCoroutine.cpp"	22	 swapIn 1 swapIn 1
+2024-11-05 15:28:02	master	INFO	5497	thread_5	5	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:28:02	master	INFO	5497	thread_5	5	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:28:02	master	INFO	5497	thread_5	0	"gaiya/tester/testCoroutine.cpp"	25	 swapIn 1 swapIn 2
+2024-11-05 15:28:02	master	INFO	5497	thread_5	5	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:28:02	master	INFO	5497	thread_5	0	"gaiya/tester/testCoroutine.cpp"	29	 swapIn 1 swapIn 3
+2024-11-05 15:28:02	master	INFO	5497	thread_5	5	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:28:02	master	INFO	5497	thread_5	5	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:28:02	master	INFO	5497	thread_5	5	"gaiya/tester/testCoroutine.cpp"	32	 swapIn 1 5 use_count: 2
+2024-11-05 15:28:02	master	INFO	5497	thread_5	5	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 5 total: 1
+2024-11-05 15:28:02	master	INFO	5497	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 0
+2024-11-05 15:28:51	master	INFO	5610	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:28:51	master	INFO	5610	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2024-11-05 15:28:51	master	INFO	5610	thread_1	0	"gaiya/tester/testCoroutine.cpp"	22	id: 1 swapIn 1
+2024-11-05 15:28:51	master	INFO	5610	thread_1	1	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:28:51	master	INFO	5610	thread_1	1	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:28:51	master	INFO	5610	thread_1	0	"gaiya/tester/testCoroutine.cpp"	25	id: 1 swapIn 2
+2024-11-05 15:28:51	master	INFO	5610	thread_1	1	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:28:51	master	INFO	5610	thread_1	0	"gaiya/tester/testCoroutine.cpp"	29	id: 1 swapIn 3
+2024-11-05 15:28:51	master	INFO	5610	thread_1	1	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:28:51	master	INFO	5610	thread_1	1	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:28:51	master	INFO	5610	thread_1	1	"gaiya/tester/testCoroutine.cpp"	32	id: 1 1 use_count: 2
+2024-11-05 15:28:51	master	INFO	5610	thread_1	1	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 1 total: 2
+2024-11-05 15:28:51	master	INFO	5612	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:28:51	master	INFO	5612	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2024-11-05 15:28:51	master	INFO	5612	thread_3	0	"gaiya/tester/testCoroutine.cpp"	22	id: 3 swapIn 1
+2024-11-05 15:28:51	master	INFO	5612	thread_3	2	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:28:51	master	INFO	5612	thread_3	2	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:28:51	master	INFO	5612	thread_3	0	"gaiya/tester/testCoroutine.cpp"	25	id: 3 swapIn 2
+2024-11-05 15:28:51	master	INFO	5612	thread_3	2	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:28:51	master	INFO	5612	thread_3	0	"gaiya/tester/testCoroutine.cpp"	29	id: 3 swapIn 3
+2024-11-05 15:28:51	master	INFO	5612	thread_3	2	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:28:51	master	INFO	5612	thread_3	2	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:28:51	master	INFO	5612	thread_3	2	"gaiya/tester/testCoroutine.cpp"	32	id: 3 2 use_count: 2
+2024-11-05 15:28:51	master	INFO	5612	thread_3	2	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 2 total: 4
+2024-11-05 15:28:51	master	INFO	5612	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 3
+2024-11-05 15:28:51	master	INFO	5614	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:28:51	master	INFO	5614	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 3 coroutine count: 4
+2024-11-05 15:28:51	master	INFO	5614	thread_5	0	"gaiya/tester/testCoroutine.cpp"	22	id: 5 swapIn 1
+2024-11-05 15:28:51	master	INFO	5614	thread_5	3	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:28:51	master	INFO	5614	thread_5	3	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:28:51	master	INFO	5614	thread_5	0	"gaiya/tester/testCoroutine.cpp"	25	id: 5 swapIn 2
+2024-11-05 15:28:51	master	INFO	5614	thread_5	3	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:28:51	master	INFO	5614	thread_5	0	"gaiya/tester/testCoroutine.cpp"	29	id: 5 swapIn 3
+2024-11-05 15:28:51	master	INFO	5614	thread_5	3	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:28:51	master	INFO	5614	thread_5	3	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:28:51	master	INFO	5614	thread_5	3	"gaiya/tester/testCoroutine.cpp"	32	id: 5 3 use_count: 2
+2024-11-05 15:28:51	master	INFO	5614	thread_5	3	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 3 total: 3
+2024-11-05 15:28:51	master	INFO	5614	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 2
+2024-11-05 15:28:51	master	INFO	5613	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:28:51	master	INFO	5613	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 4 coroutine count: 3
+2024-11-05 15:28:51	master	INFO	5613	thread_4	0	"gaiya/tester/testCoroutine.cpp"	22	id: 4 swapIn 1
+2024-11-05 15:28:51	master	INFO	5613	thread_4	4	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:28:51	master	INFO	5613	thread_4	4	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:28:51	master	INFO	5613	thread_4	0	"gaiya/tester/testCoroutine.cpp"	25	id: 4 swapIn 2
+2024-11-05 15:28:51	master	INFO	5613	thread_4	4	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:28:51	master	INFO	5613	thread_4	0	"gaiya/tester/testCoroutine.cpp"	29	id: 4 swapIn 3
+2024-11-05 15:28:51	master	INFO	5613	thread_4	4	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:28:51	master	INFO	5613	thread_4	4	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:28:51	master	INFO	5613	thread_4	4	"gaiya/tester/testCoroutine.cpp"	32	id: 4 4 use_count: 2
+2024-11-05 15:28:51	master	INFO	5613	thread_4	4	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 4 total: 2
+2024-11-05 15:28:51	master	INFO	5613	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:28:51	master	INFO	5610	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 4
+2024-11-05 15:28:51	master	INFO	5611	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:28:51	master	INFO	5611	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 5 coroutine count: 2
+2024-11-05 15:28:51	master	INFO	5611	thread_2	0	"gaiya/tester/testCoroutine.cpp"	22	id: 2 swapIn 1
+2024-11-05 15:28:51	master	INFO	5611	thread_2	5	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:28:51	master	INFO	5611	thread_2	5	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:28:51	master	INFO	5611	thread_2	0	"gaiya/tester/testCoroutine.cpp"	25	id: 2 swapIn 2
+2024-11-05 15:28:51	master	INFO	5611	thread_2	5	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:28:51	master	INFO	5611	thread_2	0	"gaiya/tester/testCoroutine.cpp"	29	id: 2 swapIn 3
+2024-11-05 15:28:51	master	INFO	5611	thread_2	5	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:28:51	master	INFO	5611	thread_2	5	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:28:51	master	INFO	5611	thread_2	5	"gaiya/tester/testCoroutine.cpp"	32	id: 2 5 use_count: 2
+2024-11-05 15:28:51	master	INFO	5611	thread_2	5	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 5 total: 1
+2024-11-05 15:28:51	master	INFO	5611	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 0
+2024-11-05 15:29:41	master	INFO	5644	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:29:41	master	INFO	5644	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2024-11-05 15:29:41	master	INFO	5644	thread_1	0	"gaiya/tester/testCoroutine.cpp"	22	id: 1 swapIn 1
+2024-11-05 15:29:41	master	INFO	5644	thread_1	1	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:29:41	master	INFO	5644	thread_1	1	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:29:41	master	INFO	5644	thread_1	0	"gaiya/tester/testCoroutine.cpp"	25	id: 1 swapIn 2
+2024-11-05 15:29:41	master	INFO	5644	thread_1	1	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:29:41	master	INFO	5644	thread_1	0	"gaiya/tester/testCoroutine.cpp"	29	id: 1 swapIn 3
+2024-11-05 15:29:41	master	INFO	5644	thread_1	1	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:29:41	master	INFO	5644	thread_1	1	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:29:41	master	INFO	5644	thread_1	1	"gaiya/tester/testCoroutine.cpp"	32	id: 1 1 use_count: 2
+2024-11-05 15:29:41	master	INFO	5644	thread_1	1	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 1 total: 2
+2024-11-05 15:29:41	master	INFO	5644	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:29:41	master	INFO	5645	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:29:41	master	INFO	5645	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 2 coroutine count: 3
+2024-11-05 15:29:41	master	INFO	5645	thread_2	0	"gaiya/tester/testCoroutine.cpp"	22	id: 2 swapIn 1
+2024-11-05 15:29:41	master	INFO	5645	thread_2	2	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:29:41	master	INFO	5645	thread_2	2	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:29:41	master	INFO	5645	thread_2	0	"gaiya/tester/testCoroutine.cpp"	25	id: 2 swapIn 2
+2024-11-05 15:29:41	master	INFO	5645	thread_2	2	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:29:41	master	INFO	5645	thread_2	0	"gaiya/tester/testCoroutine.cpp"	29	id: 2 swapIn 3
+2024-11-05 15:29:41	master	INFO	5645	thread_2	2	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:29:41	master	INFO	5645	thread_2	2	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:29:41	master	INFO	5645	thread_2	2	"gaiya/tester/testCoroutine.cpp"	32	id: 2 2 use_count: 2
+2024-11-05 15:29:41	master	INFO	5645	thread_2	2	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 2 total: 2
+2024-11-05 15:29:41	master	INFO	5645	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:29:41	master	INFO	5647	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:29:41	master	INFO	5647	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 3 coroutine count: 3
+2024-11-05 15:29:41	master	INFO	5647	thread_4	0	"gaiya/tester/testCoroutine.cpp"	22	id: 4 swapIn 1
+2024-11-05 15:29:41	master	INFO	5647	thread_4	3	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:29:41	master	INFO	5647	thread_4	3	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:29:41	master	INFO	5647	thread_4	0	"gaiya/tester/testCoroutine.cpp"	25	id: 4 swapIn 2
+2024-11-05 15:29:41	master	INFO	5647	thread_4	3	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:29:41	master	INFO	5647	thread_4	0	"gaiya/tester/testCoroutine.cpp"	29	id: 4 swapIn 3
+2024-11-05 15:29:41	master	INFO	5647	thread_4	3	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:29:41	master	INFO	5647	thread_4	3	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:29:41	master	INFO	5647	thread_4	3	"gaiya/tester/testCoroutine.cpp"	32	id: 4 3 use_count: 2
+2024-11-05 15:29:41	master	INFO	5647	thread_4	3	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 3 total: 2
+2024-11-05 15:29:41	master	INFO	5647	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:29:41	master	INFO	5648	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:29:41	master	INFO	5648	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 4 coroutine count: 3
+2024-11-05 15:29:41	master	INFO	5648	thread_5	0	"gaiya/tester/testCoroutine.cpp"	22	id: 5 swapIn 1
+2024-11-05 15:29:41	master	INFO	5648	thread_5	4	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:29:41	master	INFO	5648	thread_5	4	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:29:41	master	INFO	5648	thread_5	0	"gaiya/tester/testCoroutine.cpp"	25	id: 5 swapIn 2
+2024-11-05 15:29:41	master	INFO	5648	thread_5	4	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:29:41	master	INFO	5648	thread_5	0	"gaiya/tester/testCoroutine.cpp"	29	id: 5 swapIn 3
+2024-11-05 15:29:41	master	INFO	5648	thread_5	4	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:29:41	master	INFO	5648	thread_5	4	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:29:41	master	INFO	5648	thread_5	4	"gaiya/tester/testCoroutine.cpp"	32	id: 5 4 use_count: 2
+2024-11-05 15:29:41	master	INFO	5648	thread_5	4	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 4 total: 2
+2024-11-05 15:29:41	master	INFO	5648	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:29:41	master	INFO	5646	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:29:41	master	INFO	5646	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 5 coroutine count: 2
+2024-11-05 15:29:41	master	INFO	5646	thread_3	0	"gaiya/tester/testCoroutine.cpp"	22	id: 3 swapIn 1
+2024-11-05 15:29:41	master	INFO	5646	thread_3	5	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:29:41	master	INFO	5646	thread_3	5	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:29:41	master	INFO	5646	thread_3	0	"gaiya/tester/testCoroutine.cpp"	25	id: 3 swapIn 2
+2024-11-05 15:29:41	master	INFO	5646	thread_3	5	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:29:41	master	INFO	5646	thread_3	0	"gaiya/tester/testCoroutine.cpp"	29	id: 3 swapIn 3
+2024-11-05 15:29:41	master	INFO	5646	thread_3	5	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:29:41	master	INFO	5646	thread_3	5	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:29:41	master	INFO	5646	thread_3	5	"gaiya/tester/testCoroutine.cpp"	32	id: 3 5 use_count: 2
+2024-11-05 15:29:41	master	INFO	5646	thread_3	5	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 5 total: 1
+2024-11-05 15:29:41	master	INFO	5646	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 0
+2024-11-05 15:30:16	master	INFO	5762	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:30:16	master	INFO	5762	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2024-11-05 15:30:16	master	INFO	5762	thread_1	0	"gaiya/tester/testCoroutine.cpp"	21	id: 1 swapIn 1
+2024-11-05 15:30:16	master	INFO	5762	thread_1	1	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:30:16	master	INFO	5762	thread_1	1	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:30:16	master	INFO	5762	thread_1	0	"gaiya/tester/testCoroutine.cpp"	24	id: 1 swapIn 2
+2024-11-05 15:30:16	master	INFO	5762	thread_1	1	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:30:16	master	INFO	5762	thread_1	0	"gaiya/tester/testCoroutine.cpp"	28	id: 1 swapIn 3
+2024-11-05 15:30:16	master	INFO	5762	thread_1	1	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:30:16	master	INFO	5762	thread_1	1	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:30:16	master	INFO	5762	thread_1	1	"gaiya/tester/testCoroutine.cpp"	31	id: 1 1 use_count: 2
+2024-11-05 15:30:16	master	INFO	5762	thread_1	1	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 1 total: 2
+2024-11-05 15:30:16	master	INFO	5762	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:30:16	master	INFO	5764	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:30:16	master	INFO	5764	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 2 coroutine count: 3
+2024-11-05 15:30:16	master	INFO	5764	thread_3	0	"gaiya/tester/testCoroutine.cpp"	21	id: 3 swapIn 1
+2024-11-05 15:30:16	master	INFO	5764	thread_3	2	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:30:16	master	INFO	5764	thread_3	2	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:30:16	master	INFO	5764	thread_3	0	"gaiya/tester/testCoroutine.cpp"	24	id: 3 swapIn 2
+2024-11-05 15:30:16	master	INFO	5764	thread_3	2	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:30:16	master	INFO	5764	thread_3	0	"gaiya/tester/testCoroutine.cpp"	28	id: 3 swapIn 3
+2024-11-05 15:30:16	master	INFO	5764	thread_3	2	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:30:16	master	INFO	5764	thread_3	2	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:30:16	master	INFO	5764	thread_3	2	"gaiya/tester/testCoroutine.cpp"	31	id: 3 2 use_count: 2
+2024-11-05 15:30:16	master	INFO	5764	thread_3	2	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 2 total: 2
+2024-11-05 15:30:16	master	INFO	5764	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:30:16	master	INFO	5765	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:30:16	master	INFO	5765	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 3 coroutine count: 3
+2024-11-05 15:30:16	master	INFO	5765	thread_4	0	"gaiya/tester/testCoroutine.cpp"	21	id: 4 swapIn 1
+2024-11-05 15:30:16	master	INFO	5765	thread_4	3	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:30:16	master	INFO	5765	thread_4	3	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:30:16	master	INFO	5765	thread_4	0	"gaiya/tester/testCoroutine.cpp"	24	id: 4 swapIn 2
+2024-11-05 15:30:16	master	INFO	5765	thread_4	3	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:30:16	master	INFO	5765	thread_4	0	"gaiya/tester/testCoroutine.cpp"	28	id: 4 swapIn 3
+2024-11-05 15:30:16	master	INFO	5765	thread_4	3	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:30:16	master	INFO	5765	thread_4	3	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:30:16	master	INFO	5765	thread_4	3	"gaiya/tester/testCoroutine.cpp"	31	id: 4 3 use_count: 2
+2024-11-05 15:30:16	master	INFO	5765	thread_4	3	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 3 total: 3
+2024-11-05 15:30:16	master	INFO	5765	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 2
+2024-11-05 15:30:16	master	INFO	5763	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:30:16	master	INFO	5763	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 4 coroutine count: 3
+2024-11-05 15:30:16	master	INFO	5763	thread_2	0	"gaiya/tester/testCoroutine.cpp"	21	id: 2 swapIn 1
+2024-11-05 15:30:16	master	INFO	5763	thread_2	4	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:30:16	master	INFO	5763	thread_2	4	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:30:16	master	INFO	5763	thread_2	0	"gaiya/tester/testCoroutine.cpp"	24	id: 2 swapIn 2
+2024-11-05 15:30:16	master	INFO	5763	thread_2	4	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:30:16	master	INFO	5763	thread_2	0	"gaiya/tester/testCoroutine.cpp"	28	id: 2 swapIn 3
+2024-11-05 15:30:16	master	INFO	5763	thread_2	4	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:30:16	master	INFO	5763	thread_2	4	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:30:16	master	INFO	5763	thread_2	4	"gaiya/tester/testCoroutine.cpp"	31	id: 2 4 use_count: 2
+2024-11-05 15:30:16	master	INFO	5763	thread_2	4	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 4 total: 2
+2024-11-05 15:30:16	master	INFO	5763	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 1
+2024-11-05 15:30:16	master	INFO	5766	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 15:30:16	master	INFO	5766	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 5 coroutine count: 2
+2024-11-05 15:30:16	master	INFO	5766	thread_5	0	"gaiya/tester/testCoroutine.cpp"	21	id: 5 swapIn 1
+2024-11-05 15:30:16	master	INFO	5766	thread_5	5	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 15:30:16	master	INFO	5766	thread_5	5	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 15:30:16	master	INFO	5766	thread_5	0	"gaiya/tester/testCoroutine.cpp"	24	id: 5 swapIn 2
+2024-11-05 15:30:16	master	INFO	5766	thread_5	5	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 15:30:16	master	INFO	5766	thread_5	0	"gaiya/tester/testCoroutine.cpp"	28	id: 5 swapIn 3
+2024-11-05 15:30:16	master	INFO	5766	thread_5	5	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 15:30:16	master	INFO	5766	thread_5	5	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 15:30:16	master	INFO	5766	thread_5	5	"gaiya/tester/testCoroutine.cpp"	31	id: 5 5 use_count: 2
+2024-11-05 15:30:16	master	INFO	5766	thread_5	5	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 5 total: 1
+2024-11-05 15:30:16	master	INFO	5766	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 0
+2024-11-05 21:32:26	master	INFO	5029	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 21:32:26	master	INFO	5029	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 1 coroutine count: 6
+2024-11-05 21:32:26	master	INFO	5029	thread_1	0	"gaiya/tester/testCoroutine.cpp"	21	id: 1 swapIn 1
+2024-11-05 21:32:26	master	INFO	5029	thread_1	1	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 21:32:26	master	INFO	5029	thread_1	1	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 21:32:26	master	INFO	5029	thread_1	0	"gaiya/tester/testCoroutine.cpp"	24	id: 1 swapIn 2
+2024-11-05 21:32:26	master	INFO	5029	thread_1	1	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 21:32:26	master	INFO	5029	thread_1	0	"gaiya/tester/testCoroutine.cpp"	28	id: 1 swapIn 3
+2024-11-05 21:32:26	master	INFO	5029	thread_1	1	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 21:32:26	master	INFO	5029	thread_1	1	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 21:32:26	master	INFO	5029	thread_1	1	"gaiya/tester/testCoroutine.cpp"	31	id: 1 1 use_count: 2
+2024-11-05 21:32:26	master	INFO	5029	thread_1	1	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 1 total: 5
+2024-11-05 21:32:26	master	INFO	5029	thread_1	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 4
+2024-11-05 21:32:26	master	INFO	5033	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 21:32:26	master	INFO	5033	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 2 coroutine count: 5
+2024-11-05 21:32:26	master	INFO	5033	thread_5	0	"gaiya/tester/testCoroutine.cpp"	21	id: 5 swapIn 1
+2024-11-05 21:32:26	master	INFO	5033	thread_5	2	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 21:32:26	master	INFO	5033	thread_5	2	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 21:32:26	master	INFO	5033	thread_5	0	"gaiya/tester/testCoroutine.cpp"	24	id: 5 swapIn 2
+2024-11-05 21:32:26	master	INFO	5033	thread_5	2	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 21:32:26	master	INFO	5033	thread_5	0	"gaiya/tester/testCoroutine.cpp"	28	id: 5 swapIn 3
+2024-11-05 21:32:26	master	INFO	5033	thread_5	2	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 21:32:26	master	INFO	5033	thread_5	2	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 21:32:26	master	INFO	5033	thread_5	2	"gaiya/tester/testCoroutine.cpp"	31	id: 5 2 use_count: 2
+2024-11-05 21:32:26	master	INFO	5033	thread_5	2	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 2 total: 4
+2024-11-05 21:32:26	master	INFO	5033	thread_5	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 3
+2024-11-05 21:32:26	master	INFO	5032	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 21:32:26	master	INFO	5032	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 3 coroutine count: 4
+2024-11-05 21:32:26	master	INFO	5032	thread_4	0	"gaiya/tester/testCoroutine.cpp"	21	id: 4 swapIn 1
+2024-11-05 21:32:26	master	INFO	5032	thread_4	3	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 21:32:26	master	INFO	5032	thread_4	3	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 21:32:26	master	INFO	5032	thread_4	0	"gaiya/tester/testCoroutine.cpp"	24	id: 4 swapIn 2
+2024-11-05 21:32:26	master	INFO	5032	thread_4	3	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 21:32:26	master	INFO	5032	thread_4	0	"gaiya/tester/testCoroutine.cpp"	28	id: 4 swapIn 3
+2024-11-05 21:32:26	master	INFO	5030	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 21:32:26	master	INFO	5030	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 4 coroutine count: 5
+2024-11-05 21:32:26	master	INFO	5030	thread_2	0	"gaiya/tester/testCoroutine.cpp"	21	id: 2 swapIn 1
+2024-11-05 21:32:26	master	INFO	5030	thread_2	4	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 21:32:26	master	INFO	5030	thread_2	4	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 21:32:26	master	INFO	5030	thread_2	0	"gaiya/tester/testCoroutine.cpp"	24	id: 2 swapIn 2
+2024-11-05 21:32:26	master	INFO	5030	thread_2	4	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 21:32:26	master	INFO	5030	thread_2	0	"gaiya/tester/testCoroutine.cpp"	28	id: 2 swapIn 3
+2024-11-05 21:32:26	master	INFO	5030	thread_2	4	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 21:32:26	master	INFO	5030	thread_2	4	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 21:32:26	master	INFO	5030	thread_2	4	"gaiya/tester/testCoroutine.cpp"	31	id: 2 4 use_count: 2
+2024-11-05 21:32:26	master	INFO	5030	thread_2	4	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 4 total: 4
+2024-11-05 21:32:26	master	INFO	5030	thread_2	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 3
+2024-11-05 21:32:26	master	INFO	5031	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	37	Coroutine() coroutine id: 0
+2024-11-05 21:32:26	master	INFO	5031	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	61	Coroutine() Coroutine::m_id: 5 coroutine count: 4
+2024-11-05 21:32:26	master	INFO	5031	thread_3	0	"gaiya/tester/testCoroutine.cpp"	21	id: 3 swapIn 1
+2024-11-05 21:32:26	master	INFO	5031	thread_3	5	"gaiya/tester/testCoroutine.cpp"	7	fun1 start
+2024-11-05 21:32:26	master	INFO	5031	thread_3	5	"gaiya/tester/testCoroutine.cpp"	8	==============================
+2024-11-05 21:32:26	master	INFO	5031	thread_3	0	"gaiya/tester/testCoroutine.cpp"	24	id: 3 swapIn 2
+2024-11-05 21:32:26	master	INFO	5031	thread_3	5	"gaiya/tester/testCoroutine.cpp"	10	==============================
+2024-11-05 21:32:26	master	INFO	5031	thread_3	0	"gaiya/tester/testCoroutine.cpp"	28	id: 3 swapIn 3
+2024-11-05 21:32:26	master	INFO	5031	thread_3	5	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 21:32:26	master	INFO	5031	thread_3	5	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 21:32:26	master	INFO	5031	thread_3	5	"gaiya/tester/testCoroutine.cpp"	31	id: 3 5 use_count: 2
+2024-11-05 21:32:26	master	INFO	5031	thread_3	5	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 5 total: 3
+2024-11-05 21:32:26	master	INFO	5031	thread_3	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 2
+2024-11-05 21:32:26	master	INFO	5032	thread_4	3	"gaiya/tester/testCoroutine.cpp"	12	==============================
+2024-11-05 21:32:26	master	INFO	5032	thread_4	3	"gaiya/tester/testCoroutine.cpp"	13	fun1 end
+2024-11-05 21:32:26	master	INFO	5032	thread_4	3	"gaiya/tester/testCoroutine.cpp"	31	id: 4 3 use_count: 2
+2024-11-05 21:32:26	master	INFO	5032	thread_4	3	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 3 total: 1
+2024-11-05 21:32:26	master	INFO	5032	thread_4	0	"gaiya/src/Coroutine/coroutine.cpp"	82	Coroutine::~Coroutine() id: 0 total: 0

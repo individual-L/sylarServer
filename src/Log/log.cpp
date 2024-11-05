@@ -157,14 +157,15 @@ class LoggerNameItem :public LogFormater::FormaterItem{
 //classLogEvent
 LogEvent::LogEvent(std::shared_ptr<Logger> logger,LogLevel::Level level
 ,const std::filesystem::path file,int32_t line,uint32_t threadId
-,uint32_t coroutineId,uint64_t time)
+,std::string threadName,uint32_t coroutineId,uint64_t time)
 :m_logger(logger)
 ,m_level(level)
 ,m_file(file)
 ,m_line(line)
 ,m_threadId(threadId)
 ,m_coroutineId(coroutineId)
-,m_time(time){
+,m_time(time)
+,m_threadName(threadName){
   
 }
 void LogEvent::format(const char * fmt,...){
@@ -215,7 +216,6 @@ void Logger::addAppenders(const LogAppender::ptr appender){
   MutexType::Lock lock(m_mutex);
   if(!appender->getLogFormater()){
     MutexType::Lock alock(appender->m_mutex);
-    lOG_INFO_ROOT() << "add formater";
     appender->m_logFormater = m_logformater;
   }
 
@@ -443,8 +443,8 @@ void LogFormater::init(){
     XX(l, LineFormatItem),              //l:行号
     XX(T, TabFormatItem),               //T:Tab
     XX(F, CoroutineIdFormatItem),           //F:协程id
-    XX(N, ThreadNameFormatItem),        //N:线程名称
-    XX(ln,LoggerNameItem)
+    XX(tN, ThreadNameFormatItem),        //N:线程名称
+    XX(lN,LoggerNameItem)                //日志器名称
 #undef XX
   };
   for(auto& it : vec){

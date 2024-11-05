@@ -697,4 +697,6 @@ CMakeFiles/gaiya.dir/src/Util/util.cpp.o: \
  /usr/include/boost/detail/basic_pointerbuf.hpp \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
- /home/luo/cplus/gaiya/src/Util/macro.hpp
+ /home/luo/cplus/gaiya/src/Util/macro.hpp \
+ /home/luo/cplus/gaiya/src/Thread/thread.hpp \
+ /home/luo/cplus/gaiya/src/Lock/Noncopyable.hpp

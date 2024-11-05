@@ -63,13 +63,13 @@ class Coroutine :public std::enable_shared_from_this<Coroutine>{
   private:
     Coroutine();
     //协程id
-    size_t m_id = 0;
+    uint64_t m_id = 0;
     //协程函数
     std::function<void()> m_func;
     //协程上下文
     ucontext_t m_context;
     //栈大小
-    size_t m_stackSize = 0;
+    uint64_t m_stackSize = 0;
     //协程栈指针
     void* m_stack = nullptr;
     //协程状态

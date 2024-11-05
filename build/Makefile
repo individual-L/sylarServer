@@ -241,6 +241,30 @@ src/Log/log.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Log/log.cpp.s
 .PHONY : src/Log/log.cpp.s
 
+src/Scheduler/scheduler.o: src/Scheduler/scheduler.cpp.o
+.PHONY : src/Scheduler/scheduler.o
+
+# target to build an object file
+src/Scheduler/scheduler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.o
+.PHONY : src/Scheduler/scheduler.cpp.o
+
+src/Scheduler/scheduler.i: src/Scheduler/scheduler.cpp.i
+.PHONY : src/Scheduler/scheduler.i
+
+# target to preprocess a source file
+src/Scheduler/scheduler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.i
+.PHONY : src/Scheduler/scheduler.cpp.i
+
+src/Scheduler/scheduler.s: src/Scheduler/scheduler.cpp.s
+.PHONY : src/Scheduler/scheduler.s
+
+# target to generate assembly for a file
+src/Scheduler/scheduler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.s
+.PHONY : src/Scheduler/scheduler.cpp.s
+
 src/Thread/thread.o: src/Thread/thread.cpp.o
 .PHONY : src/Thread/thread.o
 
@@ -335,6 +359,9 @@ help:
 	@echo "... src/Log/log.o"
 	@echo "... src/Log/log.i"
 	@echo "... src/Log/log.s"
+	@echo "... src/Scheduler/scheduler.o"
+	@echo "... src/Scheduler/scheduler.i"
+	@echo "... src/Scheduler/scheduler.s"
 	@echo "... src/Thread/thread.o"
 	@echo "... src/Thread/thread.i"
 	@echo "... src/Thread/thread.s"

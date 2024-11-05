@@ -20,6 +20,8 @@ pid_t GetThreadId();
 
 int32_t GetCoroutineId();
 
+std::string GetThreadName();
+
 void backTrace(std::vector<std::string> &bt,const int size,const int skip);
 
 std::string backTraceToString(const int size = 64,const int skip = 2,const std::string& prefix = "     ");
