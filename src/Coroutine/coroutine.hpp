@@ -10,11 +10,13 @@
 #include"log.hpp"
 #include"config.hpp"
 #include"macro.hpp"
+#include"schedule.hpp"
 
 namespace gaiya{
-
+class Scheduler;
 class Coroutine :public std::enable_shared_from_this<Coroutine>{
   public:
+    friend class Scheduler;
     typedef std::shared_ptr<Coroutine> ptr;
     enum State{
       //初始化
@@ -31,7 +33,10 @@ class Coroutine :public std::enable_shared_from_this<Coroutine>{
       EXCEPT
     };
   public:
-    Coroutine(std::function<void()> func,size_t stacksize = 0);
+  /*
+  retnSche 执行完后是否将执行权让给调度协程(反之让给协程所在的线程的主协程)
+  */
+    Coroutine(std::function<void()> func,size_t stacksize = 0,bool retnSche = false);
     ~Coroutine();
 
     //重设写成函数，并重置状态
@@ -41,6 +46,11 @@ class Coroutine :public std::enable_shared_from_this<Coroutine>{
     //将当前协程切换到后台
     void swapOut();
 
+    //将当前线程切换到执行状态，执行的此线程的执行协程
+    void call();
+    //将当前线程切换到后台状态，让给调度协程
+    void back();
+
     size_t getId() const {return m_id;};
 
     State getState() const {return m_state;}; 
@@ -48,17 +58,17 @@ class Coroutine :public std::enable_shared_from_this<Coroutine>{
     public:
       static void MainFunc();
 
-      static void SetCur(Coroutine * ptr);
+      static void SetCurCoro(Coroutine * ptr);
 
-      static Coroutine::ptr GetCur();
+      static Coroutine::ptr GetCurCoro();
 
       static void YieldToReady();
 
       static void YieldToHold();
       
-      static uint64_t GetCoroutineCount();
+      static uint64_t GetCoroCount();
 
-      static uint64_t GetCurId();
+      static uint64_t GetCurCoroId();
 
   private:
     Coroutine();

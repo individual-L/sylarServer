@@ -18,7 +18,8 @@ Thread::Thread(const std::function<void()> cb,const std::string name)
     LOG_ERROR(s_logger) << "pthread_create fail res = " <<res <<"threadName = " << name;
     throw std::logic_error("pthread_create fail"); 
   }
-
+  
+  //等待线程局部变量初始化再返回
   m_sem.wait();
   
 }
@@ -46,6 +47,7 @@ void* Thread::run(void * arg ){
 
   pthread_setname_np(pthread_self(),thread->getName().substr(0,15).c_str());
 
+  //使用临时变量接收函数并执行，执行完成后会自动析构，这样这个线程执行完成后可继续传递函数给此线程
   std::function<void()> cb;
   //防止函数内有智能指针，如果用等于号会增加智能指针的引用次数，此步骤可以减少引用
   cb.swap(thread->m_cb);
