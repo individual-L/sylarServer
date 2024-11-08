@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = /home/luo/cplus/gaiya/build
 
 # The main recursive "all" target.
 all: CMakeFiles/gaiya.dir/all
-all: CMakeFiles/testCoroutine.dir/all
+all: CMakeFiles/testScheduler.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -76,7 +76,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/gaiya.dir/clean
-clean: CMakeFiles/testCoroutine.dir/clean
+clean: CMakeFiles/testScheduler.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -106,30 +106,30 @@ CMakeFiles/gaiya.dir/clean:
 .PHONY : CMakeFiles/gaiya.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/testCoroutine.dir
+# Target rules for target CMakeFiles/testScheduler.dir
 
 # All Build rule for target.
-CMakeFiles/testCoroutine.dir/all: CMakeFiles/gaiya.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testCoroutine.dir/build.make CMakeFiles/testCoroutine.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testCoroutine.dir/build.make CMakeFiles/testCoroutine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=9,10 "Built target testCoroutine"
-.PHONY : CMakeFiles/testCoroutine.dir/all
+CMakeFiles/testScheduler.dir/all: CMakeFiles/gaiya.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testScheduler.dir/build.make CMakeFiles/testScheduler.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testScheduler.dir/build.make CMakeFiles/testScheduler.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=9,10 "Built target testScheduler"
+.PHONY : CMakeFiles/testScheduler.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/testCoroutine.dir/rule: cmake_check_build_system
+CMakeFiles/testScheduler.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/testCoroutine.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/testScheduler.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 0
-.PHONY : CMakeFiles/testCoroutine.dir/rule
+.PHONY : CMakeFiles/testScheduler.dir/rule
 
 # Convenience name for target.
-testCoroutine: CMakeFiles/testCoroutine.dir/rule
-.PHONY : testCoroutine
+testScheduler: CMakeFiles/testScheduler.dir/rule
+.PHONY : testScheduler
 
 # clean rule for target.
-CMakeFiles/testCoroutine.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testCoroutine.dir/build.make CMakeFiles/testCoroutine.dir/clean
-.PHONY : CMakeFiles/testCoroutine.dir/clean
+CMakeFiles/testScheduler.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testScheduler.dir/build.make CMakeFiles/testScheduler.dir/clean
+.PHONY : CMakeFiles/testScheduler.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

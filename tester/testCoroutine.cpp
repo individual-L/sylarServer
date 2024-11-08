@@ -6,16 +6,16 @@ void fun1(){
 
     LOG_INFO(logger) <<"fun1 start";
     LOG_INFO(logger) <<"==============================";
-    gaiya::Coroutine::GetCur()->YieldToReady();
+    gaiya::Coroutine::GetCurCoro()->YieldToReady();
     LOG_INFO(logger) <<"==============================";
-    gaiya::Coroutine::GetCur()->YieldToHold();
+    gaiya::Coroutine::GetCurCoro()->YieldToHold();
     LOG_INFO(logger) <<"==============================";
     LOG_INFO(logger) <<"fun1 end";
 }
 void fun2(int id){
   {
     //获取当前正在执行的协程
-  gaiya::Coroutine::GetCur();
+  gaiya::Coroutine::GetCurCoro();
 
   gaiya::Coroutine::ptr rt(new gaiya::Coroutine(&fun1));
   LOG_INFO(logger) <<"id: "  << id <<" swapIn 1";
@@ -28,7 +28,7 @@ void fun2(int id){
   LOG_INFO(logger) <<"id: " << id <<" swapIn 3";
   rt->swapIn();
 
-  LOG_INFO(logger)<<"id: " << id <<" " << gaiya::Coroutine::GetCurId() <<" use_count: "<< gaiya::Coroutine::GetCur().use_count() ;
+  LOG_INFO(logger)<<"id: " << id <<" " << gaiya::Coroutine::GetCurCoroId() <<" use_count: "<< gaiya::Coroutine::GetCurCoro().use_count() ;
   }
 }
 

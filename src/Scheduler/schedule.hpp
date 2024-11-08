@@ -9,10 +9,6 @@
 #include"thread.hpp"
 #include"lock.hpp"
 #include"coroutine.hpp"
-#include"util.hpp"
-#include"macro.hpp"
-#include"log.hpp"
-
 
 namespace gaiya{
 
@@ -20,7 +16,7 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>{
   public:
   typedef std::shared_ptr<Scheduler> ptr;
   typedef gaiya::Mutex MuteType;
-    Scheduler(uint64_t size = 1,bool useSche = true,const std::string& name = "");
+    Scheduler(uint64_t size = 1,bool useSche = true,const std::string& name = "main");
     virtual ~Scheduler();
 
     const std::string getName() const {return m_name;}
@@ -34,7 +30,7 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>{
 
     //初始化线程池
     void start();
-    //暂停线程池的运转
+    //开启自动关闭，当线程池无活跃线程时，任务队列无任务时，开启自动关闭时就关闭idle协程
     void stop();
 
 
@@ -81,11 +77,10 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>{
   private:
     template<class CorF>
     bool scheduleNonLock(CorF val,uint64_t thread){
-      //队列中是否有任务需要处理
+      //队列是否为空
       bool needToTickle = m_coros.empty();
       CorFType cf(val,thread);
-      if(cf.m_coroutine || cf.m_func){
-        res = true;
+      if(cf.m_coro || cf.m_func){
         m_coros.push_back(cf);
       }
       return needToTickle;
@@ -94,16 +89,21 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>{
     //既可以传入协程，也可以传入函数,让函数以协程的方式调用
     class CorFType{
       public:
-        CorFType(){}
+        CorFType():m_threadId(-1){}
         CorFType(std::function<void()> func,uint64_t thread)
-        :m_func(func)
-        ,m_threadId(thread){
+        :m_threadId(thread)
+        ,m_func(func){
 
         }
         CorFType(gaiya::Coroutine::ptr coro,uint64_t thread)
-        :m_coro(coro)
-        ,m_threadId(thread){
+        :m_threadId(thread)
+        ,m_coro(coro){
 
+        }
+        ~CorFType(){
+          m_func = nullptr;
+          m_threadId = -1;
+          m_coro = nullptr;
         }
         void reset(){
           m_func = nullptr;
@@ -111,9 +111,9 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>{
           m_coro = nullptr;
         }
       public:
+        int m_threadId = -1;
         std::function<void()> m_func;
         //协程指定运行的id
-        uint64_t m_threadId;
         gaiya::Coroutine::ptr m_coro;
     };
   private:
@@ -128,7 +128,7 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>{
     //调度协程
     gaiya::Coroutine::ptr m_masterCoro;
     //调度协程所在的线程id
-    uint32_t m_masterTid;
+    int m_masterTid;
   protected:
     //线程数量
     uint32_t m_threadCount;
@@ -140,7 +140,7 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>{
     //空闲线程数量
     std::atomic<uint32_t> m_idleThreadCount = {0};
     //是否处于激活状态
-    bool m_active = false;
+    bool m_stopping = false;
     //是否自动关闭
     bool m_autoStop = false;
 

@@ -156,19 +156,19 @@ CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luo/cplus/gaiya/src/Coroutine/coroutine.cpp -o CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.s
 
-CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.o: CMakeFiles/gaiya.dir/flags.make
-CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.o: /home/luo/cplus/gaiya/src/Scheduler/scheduler.cpp
-CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.o: CMakeFiles/gaiya.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.o -MF CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.o.d -o CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.o -c /home/luo/cplus/gaiya/src/Scheduler/scheduler.cpp
+CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.o: CMakeFiles/gaiya.dir/flags.make
+CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.o: /home/luo/cplus/gaiya/src/Scheduler/schedule.cpp
+CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.o: CMakeFiles/gaiya.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.o -MF CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.o.d -o CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.o -c /home/luo/cplus/gaiya/src/Scheduler/schedule.cpp
 
-CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luo/cplus/gaiya/src/Scheduler/scheduler.cpp > CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.i
+CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luo/cplus/gaiya/src/Scheduler/schedule.cpp > CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.i
 
-CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luo/cplus/gaiya/src/Scheduler/scheduler.cpp -o CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.s
+CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luo/cplus/gaiya/src/Scheduler/schedule.cpp -o CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.s
 
 # Object files for target gaiya
 gaiya_OBJECTS = \
@@ -178,7 +178,7 @@ gaiya_OBJECTS = \
 "CMakeFiles/gaiya.dir/src/Lock/lock.cpp.o" \
 "CMakeFiles/gaiya.dir/src/Thread/thread.cpp.o" \
 "CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.o" \
-"CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.o"
+"CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.o"
 
 # External object files for target gaiya
 gaiya_EXTERNAL_OBJECTS =
@@ -189,7 +189,7 @@ gaiya_EXTERNAL_OBJECTS =
 /home/luo/cplus/gaiya/lib/libgaiya.so: CMakeFiles/gaiya.dir/src/Lock/lock.cpp.o
 /home/luo/cplus/gaiya/lib/libgaiya.so: CMakeFiles/gaiya.dir/src/Thread/thread.cpp.o
 /home/luo/cplus/gaiya/lib/libgaiya.so: CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.o
-/home/luo/cplus/gaiya/lib/libgaiya.so: CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.o
+/home/luo/cplus/gaiya/lib/libgaiya.so: CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.o
 /home/luo/cplus/gaiya/lib/libgaiya.so: CMakeFiles/gaiya.dir/build.make
 /home/luo/cplus/gaiya/lib/libgaiya.so: CMakeFiles/gaiya.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX shared library /home/luo/cplus/gaiya/lib/libgaiya.so"

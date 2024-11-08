@@ -10,7 +10,6 @@
 #include"log.hpp"
 #include"config.hpp"
 #include"macro.hpp"
-#include"schedule.hpp"
 
 namespace gaiya{
 class Scheduler;

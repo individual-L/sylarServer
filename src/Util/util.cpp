@@ -39,7 +39,7 @@ pid_t GetThreadId(){
 }
 
 int32_t GetCoroutineId(){
-  return gaiya::Coroutine::GetCurId();
+  return gaiya::Coroutine::GetCurCoroId();
 }
 
 std::string GetThreadName(){

@@ -25,7 +25,7 @@ set(LIB_SRC
   ${LOCK_INCLUDE_DIR}/Noncopyable.hpp
   ${THREAD_INCLUDE_DIR}/thread.cpp
   ${THREAD_COROUTINE_DIR}/coroutine.cpp
-  ${THREAD_SCHEDULER_DIR}/scheduler.cpp
+  ${THREAD_SCHEDULER_DIR}/schedule.cpp
 )
 include_directories(
   ${LOG_INCLUDE_DIR}
@@ -47,9 +47,9 @@ target_link_libraries(gaiya yaml-cpp)
 # add_dependencies(testLog gaiya)
 # target_link_libraries(testLog gaiya)
 
-add_executable(testCoroutine tester/testCoroutine.cpp)
-add_dependencies(testCoroutine gaiya)
-target_link_libraries(testCoroutine gaiya)
+add_executable(testScheduler tester/testScheduler.cpp)
+add_dependencies(testScheduler gaiya)
+target_link_libraries(testScheduler gaiya)
 
 #这个命令确保在构建目标之前，先构建它所依赖的其他目标。
 

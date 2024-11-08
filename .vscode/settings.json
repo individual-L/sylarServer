@@ -82,6 +82,8 @@
     "csetjmp": "cpp",
     "csignal": "cpp",
     "stacktrace": "cpp",
-    "*.ipp": "cpp"
+    "*.ipp": "cpp",
+    "future": "cpp",
+    "scoped_allocator": "cpp"
   }
 }

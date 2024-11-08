@@ -133,17 +133,17 @@ gaiya/fast:
 .PHONY : gaiya/fast
 
 #=============================================================================
-# Target rules for targets named testCoroutine
+# Target rules for targets named testScheduler
 
 # Build rule for target.
-testCoroutine: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testCoroutine
-.PHONY : testCoroutine
+testScheduler: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testScheduler
+.PHONY : testScheduler
 
 # fast build rule for target.
-testCoroutine/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testCoroutine.dir/build.make CMakeFiles/testCoroutine.dir/build
-.PHONY : testCoroutine/fast
+testScheduler/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testScheduler.dir/build.make CMakeFiles/testScheduler.dir/build
+.PHONY : testScheduler/fast
 
 src/Config/config.o: src/Config/config.cpp.o
 .PHONY : src/Config/config.o
@@ -241,29 +241,29 @@ src/Log/log.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Log/log.cpp.s
 .PHONY : src/Log/log.cpp.s
 
-src/Scheduler/scheduler.o: src/Scheduler/scheduler.cpp.o
-.PHONY : src/Scheduler/scheduler.o
+src/Scheduler/schedule.o: src/Scheduler/schedule.cpp.o
+.PHONY : src/Scheduler/schedule.o
 
 # target to build an object file
-src/Scheduler/scheduler.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.o
-.PHONY : src/Scheduler/scheduler.cpp.o
+src/Scheduler/schedule.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.o
+.PHONY : src/Scheduler/schedule.cpp.o
 
-src/Scheduler/scheduler.i: src/Scheduler/scheduler.cpp.i
-.PHONY : src/Scheduler/scheduler.i
+src/Scheduler/schedule.i: src/Scheduler/schedule.cpp.i
+.PHONY : src/Scheduler/schedule.i
 
 # target to preprocess a source file
-src/Scheduler/scheduler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.i
-.PHONY : src/Scheduler/scheduler.cpp.i
+src/Scheduler/schedule.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.i
+.PHONY : src/Scheduler/schedule.cpp.i
 
-src/Scheduler/scheduler.s: src/Scheduler/scheduler.cpp.s
-.PHONY : src/Scheduler/scheduler.s
+src/Scheduler/schedule.s: src/Scheduler/schedule.cpp.s
+.PHONY : src/Scheduler/schedule.s
 
 # target to generate assembly for a file
-src/Scheduler/scheduler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Scheduler/scheduler.cpp.s
-.PHONY : src/Scheduler/scheduler.cpp.s
+src/Scheduler/schedule.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.s
+.PHONY : src/Scheduler/schedule.cpp.s
 
 src/Thread/thread.o: src/Thread/thread.cpp.o
 .PHONY : src/Thread/thread.o
@@ -313,29 +313,29 @@ src/Util/util.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Util/util.cpp.s
 .PHONY : src/Util/util.cpp.s
 
-tester/testCoroutine.o: tester/testCoroutine.cpp.o
-.PHONY : tester/testCoroutine.o
+tester/testScheduler.o: tester/testScheduler.cpp.o
+.PHONY : tester/testScheduler.o
 
 # target to build an object file
-tester/testCoroutine.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testCoroutine.dir/build.make CMakeFiles/testCoroutine.dir/tester/testCoroutine.cpp.o
-.PHONY : tester/testCoroutine.cpp.o
+tester/testScheduler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testScheduler.dir/build.make CMakeFiles/testScheduler.dir/tester/testScheduler.cpp.o
+.PHONY : tester/testScheduler.cpp.o
 
-tester/testCoroutine.i: tester/testCoroutine.cpp.i
-.PHONY : tester/testCoroutine.i
+tester/testScheduler.i: tester/testScheduler.cpp.i
+.PHONY : tester/testScheduler.i
 
 # target to preprocess a source file
-tester/testCoroutine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testCoroutine.dir/build.make CMakeFiles/testCoroutine.dir/tester/testCoroutine.cpp.i
-.PHONY : tester/testCoroutine.cpp.i
+tester/testScheduler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testScheduler.dir/build.make CMakeFiles/testScheduler.dir/tester/testScheduler.cpp.i
+.PHONY : tester/testScheduler.cpp.i
 
-tester/testCoroutine.s: tester/testCoroutine.cpp.s
-.PHONY : tester/testCoroutine.s
+tester/testScheduler.s: tester/testScheduler.cpp.s
+.PHONY : tester/testScheduler.s
 
 # target to generate assembly for a file
-tester/testCoroutine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testCoroutine.dir/build.make CMakeFiles/testCoroutine.dir/tester/testCoroutine.cpp.s
-.PHONY : tester/testCoroutine.cpp.s
+tester/testScheduler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testScheduler.dir/build.make CMakeFiles/testScheduler.dir/tester/testScheduler.cpp.s
+.PHONY : tester/testScheduler.cpp.s
 
 # Help Target
 help:
@@ -346,7 +346,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... gaiya"
-	@echo "... testCoroutine"
+	@echo "... testScheduler"
 	@echo "... src/Config/config.o"
 	@echo "... src/Config/config.i"
 	@echo "... src/Config/config.s"
@@ -359,18 +359,18 @@ help:
 	@echo "... src/Log/log.o"
 	@echo "... src/Log/log.i"
 	@echo "... src/Log/log.s"
-	@echo "... src/Scheduler/scheduler.o"
-	@echo "... src/Scheduler/scheduler.i"
-	@echo "... src/Scheduler/scheduler.s"
+	@echo "... src/Scheduler/schedule.o"
+	@echo "... src/Scheduler/schedule.i"
+	@echo "... src/Scheduler/schedule.s"
 	@echo "... src/Thread/thread.o"
 	@echo "... src/Thread/thread.i"
 	@echo "... src/Thread/thread.s"
 	@echo "... src/Util/util.o"
 	@echo "... src/Util/util.i"
 	@echo "... src/Util/util.s"
-	@echo "... tester/testCoroutine.o"
-	@echo "... tester/testCoroutine.i"
-	@echo "... tester/testCoroutine.s"
+	@echo "... tester/testScheduler.o"
+	@echo "... tester/testScheduler.i"
+	@echo "... tester/testScheduler.s"
 .PHONY : help
 
 

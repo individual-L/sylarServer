@@ -1,4 +1,5 @@
 #include"coroutine.hpp"
+#include"schedule.hpp"
 
 namespace gaiya{
 static gaiya::Logger::ptr logger = LOG_GET_LOGGER("master");
@@ -102,7 +103,7 @@ void Coroutine::reset(std::function<void()> func){
     GAIYA_ASSERT2(false,"getcontext");
   }
 
-  m_context.uc_link = nullptr;
+  m_context.uc_link = &(Scheduler::GetMasterCoro()->m_context);
   m_context.uc_stack.ss_sp = m_stack;
   m_context.uc_stack.ss_size = m_stackSize;
 
@@ -114,13 +115,13 @@ void Coroutine::reset(std::function<void()> func){
 void Coroutine::swapIn(){
   SetCurCoro(this);
   GAIYA_ASSERT(m_state != EXECU);
-  m_state = EXECU;
+  m_state = EXECU; 
   if(::swapcontext(&(gaiya::Scheduler::GetMasterCoro()->m_context),&m_context)){
     GAIYA_ASSERT2(false,"swapcontext");
   }
 }
 
-//让出给主协程
+//让出给调度协程
 void Coroutine::swapOut(){
   SetCurCoro(gaiya::Scheduler::GetMasterCoro().get());
 
@@ -181,7 +182,6 @@ void Coroutine::YieldToHold(){
 
   cur->m_state = HOLD;
   cur->swapOut();
-
 }
 
 uint64_t Coroutine::GetCoroCount(){
