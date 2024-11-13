@@ -65,9 +65,10 @@ void Scheduler::start(){
     GAIYA_ASSERT(m_tpool.empty());
 
     m_tpool.resize(m_threadCount);
+    LOG_INFO(logger) <<"size: " << m_threadCount;
     for(uint32_t i = 0;i < m_threadCount;++i){
       m_tpool[i].reset(new Thread(std::bind(&Scheduler::run,this)
-      ,m_name + "_" + std::to_string(i)));
+      ,m_name + "_" + std::to_string(i + 1)));
 
       m_threadIds.push_back(m_tpool[i]->getId());
     }
@@ -109,6 +110,8 @@ void Scheduler::stop(){
     if(!stopping()){
       LOG_INFO(logger) << "masterCoroing...";
       m_masterCoro->call();
+    }else{
+      LOG_INFO(logger) << "调度协程不执行";
     }
   }
 
@@ -135,7 +138,8 @@ void Scheduler::run(){
   if(gaiya::GetThreadId() != m_masterTid){
     t_masterCoro = Coroutine::GetCurCoro().get();
   }
-  Coroutine::ptr idleCoro(new Coroutine(std::bind(&Scheduler::idle,this)));
+  Coroutine::ptr idleCoro(new Coroutine(std::bind(&Scheduler::idle,this),0,true));
+  LOG_INFO(logger) <<"idle coro id: " <<idleCoro->getId();
   Coroutine::ptr coro;
   CorFType corf;
 
@@ -163,7 +167,7 @@ void Scheduler::run(){
       m_coros.erase(it++);
       ++m_activeThreadCount;
       is_active = true;
-      LOG_INFO(logger) <<"get mission";
+      LOG_INFO(logger) <<" get mission";
       break;
       }
     }
@@ -188,17 +192,17 @@ void Scheduler::run(){
       if(coro){
         coro->reset(corf.m_func);
       }else{
-        coro.reset(new Coroutine(corf.m_func));
+        coro.reset(new Coroutine(corf.m_func,0,true));
       }
       corf.reset();  
       coro->swapIn();
       --m_activeThreadCount;
 
-      if(corf.m_coro->getState() == Coroutine::READY){
+      if(coro->getState() == Coroutine::READY){
         schedule(coro);
         coro.reset();
-      }else if(corf.m_coro->getState() == Coroutine::END
-            || corf.m_coro->getState() == Coroutine::EXCEPT){
+      }else if(coro->getState() == Coroutine::END
+            || coro->getState() == Coroutine::EXCEPT){
           coro->reset(nullptr);
       }else{
           coro->m_state = Coroutine::HOLD;
@@ -215,7 +219,6 @@ void Scheduler::run(){
       }
       //进入idle协程
       ++m_idleThreadCount;
-      LOG_INFO(logger) <<"prepare to enter idle coro";
       idleCoro->swapIn();
       --m_idleThreadCount;
 
@@ -227,13 +230,11 @@ void Scheduler::run(){
 void Scheduler::idle(){
   LOG_INFO(logger) <<"idle start";
   while(!stopping()){
-    sleep(3);
-    t_masterCoro->YieldToHold();
+    gaiya::Coroutine::YieldToHold();
   }
 }
 
 bool Scheduler::stopping(){
-  LOG_INFO(logger) << m_autoStop << m_stopping << m_coros.empty() << (m_activeThreadCount == 0);
   MuteType::Lock lock(m_mutex);
   return m_autoStop && m_stopping
         && m_coros.empty() && m_activeThreadCount == 0;

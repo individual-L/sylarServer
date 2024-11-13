@@ -36,7 +36,7 @@ Coroutine::Coroutine()
   m_id = 0;
   s_coro_count += 1;
 
-  LOG_INFO(logger) << "Coroutine() coroutine id: " << m_id;
+  LOG_INFO(logger) << "Thread Main Coroutine() coroutine id: " << m_id;
 
 }
 
@@ -60,8 +60,10 @@ Coroutine::Coroutine(std::function<void()> func,size_t stacksize,bool retnSche)
   //协程结束之后返回到调度器还是此线程的主协程
   if(retnSche){
     m_context.uc_link = &gaiya::Scheduler::GetMasterCoro()->m_context;
+    m_nextCoro = gaiya::Scheduler::GetMasterCoro().get();
   }else{
     m_context.uc_link = &t_threadCoro->m_context;
+    m_nextCoro = t_threadCoro.get();
   }
   ::makecontext(&m_context,&Coroutine::MainFunc,0);
 
@@ -69,6 +71,7 @@ Coroutine::Coroutine(std::function<void()> func,size_t stacksize,bool retnSche)
 }
 Coroutine::~Coroutine(){
   s_coro_count -= 1;
+  LOG_INFO(logger) << "Coroutine::~Coroutine() id: " << m_id << " total: " << s_coro_count;
 
   if(m_stack){
     GAIYA_ASSERT(m_state == INIT
@@ -79,6 +82,7 @@ Coroutine::~Coroutine(){
     GAIYA_ASSERT(m_state == EXECU);
     GAIYA_ASSERT(!m_func);
 
+
     //判断是否为最后一个执行的协程
     Coroutine* cur = t_curCoro;
     if(cur == this){
@@ -86,7 +90,6 @@ Coroutine::~Coroutine(){
     }
 
   }
-  LOG_INFO(logger) << "Coroutine::~Coroutine() id: " << m_id << " total: " << s_coro_count;
 
 }
 
@@ -217,6 +220,6 @@ void Coroutine::MainFunc(){
   // Coroutine * raw_ptr = cur.get();
   // cur.reset();
   // raw_ptr->swapOut();
-
+  SetCurCoro(cur->m_nextCoro);
 }
 }

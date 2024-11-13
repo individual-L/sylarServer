@@ -140,7 +140,7 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>{
     //空闲线程数量
     std::atomic<uint32_t> m_idleThreadCount = {0};
     //是否处于激活状态
-    bool m_stopping = false;
+    bool m_stopping = true;
     //是否自动关闭
     bool m_autoStop = false;
 

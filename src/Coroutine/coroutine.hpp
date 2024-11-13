@@ -83,6 +83,8 @@ class Coroutine :public std::enable_shared_from_this<Coroutine>{
     void* m_stack = nullptr;
     //协程状态
     State m_state = INIT;
+    //下一个协程
+    Coroutine* m_nextCoro;
 
 
 };

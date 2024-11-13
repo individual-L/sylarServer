@@ -1,4 +1,6 @@
 #include"thread.hpp"
+#include<thread>
+
 namespace gaiya{
 
 //线程局部变量
@@ -21,7 +23,7 @@ Thread::Thread(const std::function<void()> cb,const std::string name)
   
   //等待线程局部变量初始化再返回
   m_sem.wait();
-  
+  LOG_INFO(s_logger) <<"thread id: " <<m_id << "initiated ";
 }
 
 Thread::~Thread(){
@@ -95,6 +97,9 @@ Thread* Thread::GetThis(){
     return s_thread;
   }
   return nullptr;
+}
+void Thread::Sleep_for(uint64_t times){
+  std::this_thread::sleep_for(std::chrono::seconds(times));
 }
 
 

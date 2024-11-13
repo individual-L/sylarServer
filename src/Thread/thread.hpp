@@ -30,6 +30,8 @@ class Thread :public Noncopyable{
     //设置当前线程名称
     static void SetName(std::string name);
 
+    static void Sleep_for(uint64_t);
+
     //获取当前线程名称
     static std::string GetName();
 
