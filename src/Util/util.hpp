@@ -4,6 +4,7 @@
 #include<sys/syscall.h>
 #include<unistd.h>
 #include<sys/types.h>
+#include<sys/time.h>
 #include<pthread.h>
 #include<cxxabi.h>
 #include<iostream>
@@ -16,6 +17,12 @@
 
 namespace gaiya{
 
+inline uint64_t GetCurrentTime(){
+  struct timeval tv;
+  gettimeofday(&tv,NULL);
+  return tv.tv_sec * 1000ul + tv.tv_usec / 1000;
+}
+
 pid_t GetThreadId();
 
 int32_t GetCoroutineId();
@@ -25,7 +32,6 @@ std::string GetThreadName();
 void backTrace(std::vector<std::string> &bt,const int size,const int skip);
 
 std::string backTraceToString(const int size = 64,const int skip = 2,const std::string& prefix = "     ");
-
 
 inline std::string getRelativePath(std::filesystem::path p){
     // 文件路径：/home/luo/cplus
@@ -47,11 +53,13 @@ std::string TypeName(){
   if(demangle_name && status == 0){
     return std::string(demangle_name);
     free(demangle_name);
+    free(mangle_name);
   }else{
     std::cerr<<"demangle fail with status " << status << std::endl;
   }
   return {};
 }
+
 
 
 

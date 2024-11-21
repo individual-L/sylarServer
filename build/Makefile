@@ -133,17 +133,17 @@ gaiya/fast:
 .PHONY : gaiya/fast
 
 #=============================================================================
-# Target rules for targets named testScheduler
+# Target rules for targets named testIOmanager
 
 # Build rule for target.
-testScheduler: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testScheduler
-.PHONY : testScheduler
+testIOmanager: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testIOmanager
+.PHONY : testIOmanager
 
 # fast build rule for target.
-testScheduler/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testScheduler.dir/build.make CMakeFiles/testScheduler.dir/build
-.PHONY : testScheduler/fast
+testIOmanager/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testIOmanager.dir/build.make CMakeFiles/testIOmanager.dir/build
+.PHONY : testIOmanager/fast
 
 src/Config/config.o: src/Config/config.cpp.o
 .PHONY : src/Config/config.o
@@ -192,6 +192,30 @@ src/Coroutine/coroutine.s: src/Coroutine/coroutine.cpp.s
 src/Coroutine/coroutine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.s
 .PHONY : src/Coroutine/coroutine.cpp.s
+
+src/IOmanager/iomanager.o: src/IOmanager/iomanager.cpp.o
+.PHONY : src/IOmanager/iomanager.o
+
+# target to build an object file
+src/IOmanager/iomanager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/IOmanager/iomanager.cpp.o
+.PHONY : src/IOmanager/iomanager.cpp.o
+
+src/IOmanager/iomanager.i: src/IOmanager/iomanager.cpp.i
+.PHONY : src/IOmanager/iomanager.i
+
+# target to preprocess a source file
+src/IOmanager/iomanager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/IOmanager/iomanager.cpp.i
+.PHONY : src/IOmanager/iomanager.cpp.i
+
+src/IOmanager/iomanager.s: src/IOmanager/iomanager.cpp.s
+.PHONY : src/IOmanager/iomanager.s
+
+# target to generate assembly for a file
+src/IOmanager/iomanager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/IOmanager/iomanager.cpp.s
+.PHONY : src/IOmanager/iomanager.cpp.s
 
 src/Lock/lock.o: src/Lock/lock.cpp.o
 .PHONY : src/Lock/lock.o
@@ -289,6 +313,30 @@ src/Thread/thread.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Thread/thread.cpp.s
 .PHONY : src/Thread/thread.cpp.s
 
+src/Timer/timer.o: src/Timer/timer.cpp.o
+.PHONY : src/Timer/timer.o
+
+# target to build an object file
+src/Timer/timer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Timer/timer.cpp.o
+.PHONY : src/Timer/timer.cpp.o
+
+src/Timer/timer.i: src/Timer/timer.cpp.i
+.PHONY : src/Timer/timer.i
+
+# target to preprocess a source file
+src/Timer/timer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Timer/timer.cpp.i
+.PHONY : src/Timer/timer.cpp.i
+
+src/Timer/timer.s: src/Timer/timer.cpp.s
+.PHONY : src/Timer/timer.s
+
+# target to generate assembly for a file
+src/Timer/timer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Timer/timer.cpp.s
+.PHONY : src/Timer/timer.cpp.s
+
 src/Util/util.o: src/Util/util.cpp.o
 .PHONY : src/Util/util.o
 
@@ -313,29 +361,29 @@ src/Util/util.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Util/util.cpp.s
 .PHONY : src/Util/util.cpp.s
 
-tester/testScheduler.o: tester/testScheduler.cpp.o
-.PHONY : tester/testScheduler.o
+tester/testIOmanager.o: tester/testIOmanager.cpp.o
+.PHONY : tester/testIOmanager.o
 
 # target to build an object file
-tester/testScheduler.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testScheduler.dir/build.make CMakeFiles/testScheduler.dir/tester/testScheduler.cpp.o
-.PHONY : tester/testScheduler.cpp.o
+tester/testIOmanager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testIOmanager.dir/build.make CMakeFiles/testIOmanager.dir/tester/testIOmanager.cpp.o
+.PHONY : tester/testIOmanager.cpp.o
 
-tester/testScheduler.i: tester/testScheduler.cpp.i
-.PHONY : tester/testScheduler.i
+tester/testIOmanager.i: tester/testIOmanager.cpp.i
+.PHONY : tester/testIOmanager.i
 
 # target to preprocess a source file
-tester/testScheduler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testScheduler.dir/build.make CMakeFiles/testScheduler.dir/tester/testScheduler.cpp.i
-.PHONY : tester/testScheduler.cpp.i
+tester/testIOmanager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testIOmanager.dir/build.make CMakeFiles/testIOmanager.dir/tester/testIOmanager.cpp.i
+.PHONY : tester/testIOmanager.cpp.i
 
-tester/testScheduler.s: tester/testScheduler.cpp.s
-.PHONY : tester/testScheduler.s
+tester/testIOmanager.s: tester/testIOmanager.cpp.s
+.PHONY : tester/testIOmanager.s
 
 # target to generate assembly for a file
-tester/testScheduler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testScheduler.dir/build.make CMakeFiles/testScheduler.dir/tester/testScheduler.cpp.s
-.PHONY : tester/testScheduler.cpp.s
+tester/testIOmanager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testIOmanager.dir/build.make CMakeFiles/testIOmanager.dir/tester/testIOmanager.cpp.s
+.PHONY : tester/testIOmanager.cpp.s
 
 # Help Target
 help:
@@ -346,13 +394,16 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... gaiya"
-	@echo "... testScheduler"
+	@echo "... testIOmanager"
 	@echo "... src/Config/config.o"
 	@echo "... src/Config/config.i"
 	@echo "... src/Config/config.s"
 	@echo "... src/Coroutine/coroutine.o"
 	@echo "... src/Coroutine/coroutine.i"
 	@echo "... src/Coroutine/coroutine.s"
+	@echo "... src/IOmanager/iomanager.o"
+	@echo "... src/IOmanager/iomanager.i"
+	@echo "... src/IOmanager/iomanager.s"
 	@echo "... src/Lock/lock.o"
 	@echo "... src/Lock/lock.i"
 	@echo "... src/Lock/lock.s"
@@ -365,12 +416,15 @@ help:
 	@echo "... src/Thread/thread.o"
 	@echo "... src/Thread/thread.i"
 	@echo "... src/Thread/thread.s"
+	@echo "... src/Timer/timer.o"
+	@echo "... src/Timer/timer.i"
+	@echo "... src/Timer/timer.s"
 	@echo "... src/Util/util.o"
 	@echo "... src/Util/util.i"
 	@echo "... src/Util/util.s"
-	@echo "... tester/testScheduler.o"
-	@echo "... tester/testScheduler.i"
-	@echo "... tester/testScheduler.s"
+	@echo "... tester/testIOmanager.o"
+	@echo "... tester/testIOmanager.i"
+	@echo "... tester/testIOmanager.s"
 .PHONY : help
 
 

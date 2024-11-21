@@ -23,7 +23,7 @@ Thread::Thread(const std::function<void()> cb,const std::string name)
   
   //等待线程局部变量初始化再返回
   m_sem.wait();
-  LOG_INFO(s_logger) <<"thread id: " <<m_id << "initiated ";
+  // LOG_INFO(s_logger) <<"thread id: " <<m_id << " initiated ";
 }
 
 Thread::~Thread(){

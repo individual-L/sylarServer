@@ -12,8 +12,10 @@ set(SINGLEM_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Singlem)
 set(CONFIG_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Config)
 set(LOCK_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Lock)
 set(THREAD_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Thread)
-set(THREAD_COROUTINE_DIR ${PROJECT_SOURCE_DIR}/src/Coroutine)
-set(THREAD_SCHEDULER_DIR ${PROJECT_SOURCE_DIR}/src/Scheduler)
+set(COROUTINE_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Coroutine)
+set(SCHEDULER_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Scheduler)
+set(IOMANAGER_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/IOmanager)
+set(TIMER_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Timer)
 
 
 set(LIB_SRC 
@@ -24,8 +26,10 @@ set(LIB_SRC
   ${LOCK_INCLUDE_DIR}/lock.cpp
   ${LOCK_INCLUDE_DIR}/Noncopyable.hpp
   ${THREAD_INCLUDE_DIR}/thread.cpp
-  ${THREAD_COROUTINE_DIR}/coroutine.cpp
-  ${THREAD_SCHEDULER_DIR}/schedule.cpp
+  ${COROUTINE_INCLUDE_DIR}/coroutine.cpp
+  ${SCHEDULER_INCLUDE_DIR}/schedule.cpp
+  ${IOMANAGER_INCLUDE_DIR}/iomanager.cpp
+  ${TIMER_INCLUDE_DIR}/timer.cpp
 )
 include_directories(
   ${LOG_INCLUDE_DIR}
@@ -34,8 +38,10 @@ include_directories(
   ${CONFIG_INCLUDE_DIR} 
   ${LOCK_INCLUDE_DIR}
   ${THREAD_INCLUDE_DIR}
-  ${THREAD_COROUTINE_DIR}
-  ${THREAD_SCHEDULER_DIR}
+  ${COROUTINE_INCLUDE_DIR}
+  ${SCHEDULER_INCLUDE_DIR}
+  ${IOMANAGER_INCLUDE_DIR}
+  ${TIMER_INCLUDE_DIR}
 )
 add_library(gaiya SHARED ${LIB_SRC})
 target_link_libraries(gaiya yaml-cpp)
@@ -47,9 +53,9 @@ target_link_libraries(gaiya yaml-cpp)
 # add_dependencies(testLog gaiya)
 # target_link_libraries(testLog gaiya)
 
-add_executable(testScheduler tester/testScheduler.cpp)
-add_dependencies(testScheduler gaiya)
-target_link_libraries(testScheduler gaiya)
+add_executable(testIOmanager tester/testIOmanager.cpp)
+add_dependencies(testIOmanager gaiya)
+target_link_libraries(testIOmanager gaiya)
 
 #这个命令确保在构建目标之前，先构建它所依赖的其他目标。
 

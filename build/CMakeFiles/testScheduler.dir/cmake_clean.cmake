@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "/home/luo/cplus/gaiya/bin/testScheduler"
   "/home/luo/cplus/gaiya/bin/testScheduler.pdb"
-  "CMakeFiles/testScheduler.dir/tester/testScheduler.cpp.o"
-  "CMakeFiles/testScheduler.dir/tester/testScheduler.cpp.o.d"
+  "CMakeFiles/testScheduler.dir/tester/testIOmanager.cpp.o"
+  "CMakeFiles/testScheduler.dir/tester/testIOmanager.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

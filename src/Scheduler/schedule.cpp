@@ -22,6 +22,7 @@ Scheduler::Scheduler(uint64_t size,bool useSche,const std::string& name):m_name(
 
     //确保一个线程只有一个调度器
     GAIYA_ASSERT(t_scheduler == nullptr);
+    //如果是子类调用的父类构造函数，那么this指针指向的是子类；否则指向的是正在构造的父类对象
     t_scheduler = this;
 
     m_masterCoro.reset(new gaiya::Coroutine(std::bind(&Scheduler::run,this),0,false));
@@ -65,7 +66,7 @@ void Scheduler::start(){
     GAIYA_ASSERT(m_tpool.empty());
 
     m_tpool.resize(m_threadCount);
-    LOG_INFO(logger) <<"size: " << m_threadCount;
+    // LOG_INFO(logger) <<"size: " << m_threadCount;
     for(uint32_t i = 0;i < m_threadCount;++i){
       m_tpool[i].reset(new Thread(std::bind(&Scheduler::run,this)
       ,m_name + "_" + std::to_string(i + 1)));
@@ -132,14 +133,12 @@ void Scheduler::tickle(){
 }
 
 void Scheduler::run(){
-  LOG_INFO(logger) <<"m_name: " << m_name << " running";
   setThis();
 
   if(gaiya::GetThreadId() != m_masterTid){
     t_masterCoro = Coroutine::GetCurCoro().get();
   }
   Coroutine::ptr idleCoro(new Coroutine(std::bind(&Scheduler::idle,this),0,true));
-  LOG_INFO(logger) <<"idle coro id: " <<idleCoro->getId();
   Coroutine::ptr coro;
   CorFType corf;
 

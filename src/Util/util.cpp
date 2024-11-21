@@ -46,5 +46,4 @@ std::string GetThreadName(){
   return gaiya::Thread::GetName();
 }
 
-
 }

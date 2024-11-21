@@ -36,12 +36,12 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>{
 
     //添加协程或者函数
     template<class CorF>
-    void schedule(CorF val,uint64_t thread = -1){
+    void schedule(CorF&& val,const uint64_t thread = -1){
       //队列中是否有任务需要处理
       bool needToTickle = false;
     {
       MuteType::Lock lock(m_mutex);
-      needToTickle = scheduleNonLock(val,thread);
+      needToTickle = scheduleNonLock(std::forward<CorF>(val),thread);
     }
       if(needToTickle){
         tickle();
@@ -68,18 +68,20 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>{
   protected:
     virtual void tickle();
 
-    virtual void run();
+    void run();
 
     virtual void idle();
 
     virtual bool stopping();
 
+    bool hasThread(){return m_idleThreadCount > 0;};
+
   private:
     template<class CorF>
-    bool scheduleNonLock(CorF val,uint64_t thread){
+    bool scheduleNonLock(CorF&& val,const uint64_t thread){
       //队列是否为空
       bool needToTickle = m_coros.empty();
-      CorFType cf(val,thread);
+      CorFType cf(std::forward<CorF>(val),thread);
       if(cf.m_coro || cf.m_func){
         m_coros.push_back(cf);
       }
@@ -90,14 +92,19 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>{
     class CorFType{
       public:
         CorFType():m_threadId(-1){}
-        CorFType(std::function<void()> func,uint64_t thread)
+        CorFType(std::function<void()>& func,uint64_t thread)
         :m_threadId(thread)
         ,m_func(func){
 
         }
-        CorFType(gaiya::Coroutine::ptr coro,uint64_t thread)
+        CorFType(gaiya::Coroutine::ptr& coro,uint64_t thread)
         :m_threadId(thread)
         ,m_coro(coro){
+
+        }
+        CorFType(std::function<void()>&& func,uint64_t thread)
+        :m_threadId(thread)
+        ,m_func(func){
 
         }
         ~CorFType(){

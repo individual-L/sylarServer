@@ -1,0 +1,196 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "/home/luo/cplus/gaiya/bin/testIOmanager"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries",
+			"add_dependencies",
+			"add_definitions",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 56,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 58,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 47,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 57,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 8,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 34,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " -ggdb -lstdc++fs -Wall -rdynamic  -std=c++17 -Wno-deprecated -Werror -Wno-unused-function -g"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 5,
+					"define" : "RELATIVE_PATH=\"/home/luo/cplus/gaiya\""
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 6,
+					"path" : "/home/luo/cplus/gaiya/src/Log"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/home/luo/cplus/gaiya/src/Util"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/home/luo/cplus/gaiya/src/Singlem"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/home/luo/cplus/gaiya/src/Config"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/home/luo/cplus/gaiya/src/Lock"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/home/luo/cplus/gaiya/src/Thread"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/home/luo/cplus/gaiya/src/Coroutine"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/home/luo/cplus/gaiya/src/Scheduler"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/home/luo/cplus/gaiya/src/IOmanager"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/home/luo/cplus/gaiya/src/Timer"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 4,
+			"id" : "gaiya::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "testIOmanager::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-ggdb -lstdc++fs -Wall -rdynamic  -std=c++17 -Wno-deprecated -Werror -Wno-unused-function -g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/home/luo/cplus/gaiya/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/luo/cplus/gaiya/lib/libgaiya.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-lyaml-cpp",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "testIOmanager",
+	"nameOnDisk" : "testIOmanager",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "tester/testIOmanager.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}
