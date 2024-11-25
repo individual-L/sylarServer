@@ -229,6 +229,7 @@ class Logger : public std::enable_shared_from_this<Logger> {
 class LogEventWrap{
 public:
   LogEventWrap(LogEvent::ptr event);
+  LogEventWrap(){};
   ~LogEventWrap();
   std::stringstream& getSS();
   LogEvent::ptr getEvent() const{return m_event;};

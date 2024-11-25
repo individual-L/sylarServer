@@ -56,7 +56,7 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>{
       {
         MuteType::Lock lock(m_mutex);
         while(begin != end){
-          needToTickle = m_coros.push_back(CorFType(*begin,-1));
+          needToTickle = scheduleNonLock(*begin,-1) || needToTickle;
           ++begin;
         }
       }

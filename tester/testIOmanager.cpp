@@ -31,13 +31,23 @@ void func1(){
   LOG_INFO(logger) <<"func1 end";
 }
 
+gaiya::Timer::ptr tptr = nullptr;
+
 void testFunc(){
   LOG_INFO(logger) <<"test start";
-  gaiya::IOmanager::ptr iomanager(new gaiya::IOmanager(3,false,"test"));
-  iomanager->schedule(func1);
-  iomanager->stop();
+  gaiya::IOmanager::ptr iomanager(new gaiya::IOmanager(2,false,"test"));
+  tptr = iomanager->addTimer(3000,[&](){
+    static int i = 3;
+    // LOG_INFO(logger) <<"timer triggered ---------------- i: " <<i ;
+    if((i--) > 0){
+      tptr->reset(2000,true);
+    }else{
+      tptr->reset(2000,true);
+    }
+  },true);
   LOG_INFO(logger) <<"test end";
 }
+
 int main(){
   gaiya::Config::loadYamlFile("/home/luo/cplus/gaiya/tester/configTest.yaml");
   gaiya::Thread::SetName("main");

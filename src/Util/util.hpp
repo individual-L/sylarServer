@@ -53,7 +53,6 @@ std::string TypeName(){
   if(demangle_name && status == 0){
     return std::string(demangle_name);
     free(demangle_name);
-    free(mangle_name);
   }else{
     std::cerr<<"demangle fail with status " << status << std::endl;
   }

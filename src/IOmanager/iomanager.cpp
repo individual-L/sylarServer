@@ -80,7 +80,7 @@ IOmanager::IOmanager(uint32_t threadSize,bool useSche,const std::string& name)
   m_epfd = ::epoll_create(5000);
   GAIYA_ASSERT(m_epfd > 0);
 
-  int res = ::pipe(m_tickleFds);
+  int res = pipe(m_tickleFds);
   GAIYA_ASSERT(!res)
 
   epoll_event event;
@@ -89,8 +89,10 @@ IOmanager::IOmanager(uint32_t threadSize,bool useSche,const std::string& name)
   event.data.fd = m_tickleFds[0];
 
   //设置此文件描述符为非阻塞模式
-  res = ::fcntl(m_tickleFds[0],F_SETFD,O_NONBLOCK);
-  GAIYA_ASSERT(!res);
+  int flags = fcntl(m_tickleFds[0],F_GETFL,0);
+  flags |= O_NONBLOCK;
+  res = fcntl(m_tickleFds[0],F_SETFL,flags);
+  GAIYA_ASSERT(res != -1);
 
   res = epoll_ctl(m_epfd,EPOLL_CTL_ADD,m_tickleFds[0],&event);
   GAIYA_ASSERT(!res);
@@ -225,40 +227,51 @@ void IOmanager::idle() {
   });
 
   while(true){
+    uint64_t nextTime = getNextTime();
+    if(GAIYA_UNLIKELY(stopping(nextTime))){
+      LOG_INFO(logger) <<"name = " <<getName() <<"idle stoped";
+      break;
+    }
 
     int res = 0;
     do{
       static const int MAX_TIMEOUT = 3000;
-      res = epoll_wait(m_epfd,evs,MAX_EVENTS,MAX_TIMEOUT);
-      LOG_INFO(logger) <<"epoll_wait res = " <<res;
+      if(nextTime != ~0ull){
+        nextTime = nextTime > MAX_TIMEOUT ? MAX_TIMEOUT : nextTime;
+      }else{
+        nextTime = MAX_TIMEOUT;
+      }
+      res = epoll_wait(m_epfd,evs,MAX_EVENTS,(nextTime ? nextTime : 2000));
+      // LOG_INFO(logger) <<"epoll_wait res = " <<res;
+
       //返回0表示发生错误，如果是中断，那就继续执行wait
       if(res < 0 && errno == EINTR){
       }else{
         break;
       }
+
     }while(true);
 
-    
+    std::vector<std::function<void()>> cbs;
+    TimerMng::getTriggerableCB(cbs);
+    for(auto& it : cbs){
+      // LOG_INFO(logger) <<"add timer cb";
+      schedule(std::move(it));
+      cbs.clear();
+    }
+
     for(int i = 0;i < res;++i){
       //触发的事件
       epoll_event& event = evs[i];
-      //
-      LOG_INFO(logger) <<"fd: " <<event.data.fd <<" tirggered ";
       if(event.data.fd == m_tickleFds[0]){
-        LOG_INFO(logger) <<"pipe fd: " <<event.data.fd <<" tirggered ";
+        // LOG_INFO(logger) <<"pipe fd: " <<event.data.fd <<" tirggered " << fcntl(m_tickleFds[0],F_GETFD,0);
         uint8_t ss[256];
-        while(true){
-          int rt = read(m_tickleFds[0],ss,sizeof(ss));
-          LOG_INFO(logger) <<rt <<"----" <<ss;
-          if(rt <= 0){
-            break;
-          }
-        }
+        while(read(m_tickleFds[0],ss,sizeof(ss)) > 0);
         continue;
       }
+      // LOG_INFO(logger) <<"fd: " <<event.data.fd <<" tirggered ";
       FdContext* fd_ctx = (FdContext*)event.data.ptr;
       FdContext::MutexType::Lock lock(fd_ctx->mutex);
-      LOG_INFO(logger) <<"fd: " <<fd_ctx->fd <<" triggered";
       
       int real_event = NONE;
       if(event.events & (EPOLLERR | EPOLLHUP)){
@@ -303,17 +316,26 @@ void IOmanager::idle() {
 }
 
 void IOmanager::tickle() {
-  LOG_INFO(logger) <<" tickle ";
+  // LOG_INFO(logger) <<"IOmanager::tickle()";
   if(!hasThread()){
     return;
   }
-  // int res = write(m_tickleFds[1],"T",1);
-  // GAIYA_ASSERT(res == 1);
+  int res = write(m_tickleFds[1],"T",1);
+  GAIYA_ASSERT(res == 1);
 }
 
+void IOmanager::onTimersInsertedAtFront(){
+  tickle();
+}
 
 bool IOmanager::stopping() {
-  return m_pendingEventCount == 0 && Scheduler::stopping();
+  uint64_t nextTime = 0;
+  return stopping(nextTime);
+}
+bool IOmanager::stopping(uint64_t& nextTime){
+  nextTime = getNextTime();
+  return m_pendingEventCount == 0 && Scheduler::stopping()
+        && nextTime == ~0ull;
 }
 
 bool IOmanager::cancelEvent(int fd, EventType event){

@@ -68,13 +68,6 @@ class ElapseFormatItem :public LogFormater::FormaterItem{
       os<<val->getElapse();
     }
 };
-class NameFormatItem :public LogFormater::FormaterItem{
-  public:
-    NameFormatItem(const std::string & str = ""){};
-    void format(std::ostream& os,LogEvent::ptr val)override{
-      os<< val->getLogger()->getName();
-    }
-};
 class ThreadNameFormatItem :public LogFormater::FormaterItem{
   public:
     ThreadNameFormatItem(const std::string & str = ""){};
@@ -191,7 +184,7 @@ Logger::Logger(const std::string name)
   ,m_level(LogLevel::Level::INFO){
   //时间，日志级别,线程号,协程号,文件路径,行号,消息,回车
   m_logformater.reset(new gaiya::LogFormater(
-    "%d{%Y-%m-%d %H:%M:%S}%T%p%T%t%T%F%T%f%T%l%T%m%n"));
+    "%d{%Y-%m-%d %H:%M:%S}%T%p%T%t%T%C%T%f%T%l%T%m%n"));
 }
 
 void Logger::clearAppenders(){
@@ -435,14 +428,13 @@ void LogFormater::init(){
     XX(m, MessageFormatItem),           //m:消息
     XX(p, LevelFormatItem),             //p:日志级别
     XX(r, ElapseFormatItem),            //r:累计毫秒数
-    XX(c, NameFormatItem),              //c:日志名称
     XX(t, ThreadIdFormatItem),          //t:线程id
     XX(n, NewLineFormatItem),           //n:换行
     XX(d, DateTimeFormatItem),          //d:时间
     XX(f, FilenameFormatItem),          //f:文件名
     XX(l, LineFormatItem),              //l:行号
     XX(T, TabFormatItem),               //T:Tab
-    XX(F, CoroutineIdFormatItem),           //F:协程id
+    XX(C, CoroutineIdFormatItem),           //F:协程id
     XX(tN, ThreadNameFormatItem),        //N:线程名称
     XX(lN,LoggerNameItem)                //日志器名称
 #undef XX

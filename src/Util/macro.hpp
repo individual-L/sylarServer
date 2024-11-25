@@ -11,7 +11,7 @@
 #if defined __GNUC__ || __llvm__
 //告诉编译器!!(x)这个表达式大概率可能等于常量1
 # define GAIYA_LIKELY(x) __builtin_expect(!!(x),1)
-//告诉编译器!!(x)这个表达式大概率可能等于常量1
+//告诉编译器!!(x)这个表达式大概率可能等于常量0
 # define GAIYA_UNLIKELY(x) __builtin_expect(!!(x),0)
 
 #else

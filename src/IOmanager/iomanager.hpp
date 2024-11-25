@@ -1,11 +1,11 @@
 #ifndef __IOMANAGER_H__
 #define __IOMANAGER_H__
 #include"schedule.hpp"
-
+#include"timer.hpp"
 
 namespace gaiya{
 //基于Epoll的IO协程调度器
-class IOmanager :public Scheduler{
+class IOmanager :public Scheduler , public TimerMng{
   public:
     typedef std::shared_ptr<IOmanager> ptr;
     typedef gaiya::RWMutex MutexType;
@@ -35,9 +35,13 @@ class IOmanager :public Scheduler{
 
     bool stopping() override;
 
-    bool stopping(uint64_t timeout);
+    void onTimersInsertedAtFront() override;
+
+    bool stopping(uint64_t& timeout);
 
     void contextResize(size_t size);
+
+
   private:
     struct FdContext{
       typedef Mutex MutexType;
@@ -76,7 +80,6 @@ class IOmanager :public Scheduler{
     int m_epfd = 0;
 
     int m_tickleFds[2];
-
 
     MutexType m_mutex;
 

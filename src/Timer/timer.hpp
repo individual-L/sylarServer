@@ -18,8 +18,7 @@ class Timer :public std::enable_shared_from_this<Timer>{
     bool cancelTimer();
 
     bool reset(uint64_t period,bool from_now);
-
-    bool operator < (const Timer& right);
+    ~Timer();
 
   private:
     bool refresh();
@@ -27,7 +26,6 @@ class Timer :public std::enable_shared_from_this<Timer>{
     Timer(uint64_t period,std::function<void()> cb,bool recur,TimerMng* Mng);
     Timer(uint64_t goTime);
     Timer();
-    ~Timer();
 
   private:
     //回调函数
@@ -40,6 +38,11 @@ class Timer :public std::enable_shared_from_this<Timer>{
     bool m_recur = false;
     //管理器指针
     TimerMng* m_timerMng = nullptr;
+
+    private:
+      struct Compare{
+        bool operator()(const Timer::ptr& lptr,const Timer::ptr& rptr) const;
+      };
 };
 
 class TimerMng{
@@ -51,15 +54,22 @@ class TimerMng{
     Timer::ptr addTimer(uint64_t period,std::function<void()> cb,bool recur);
     Timer::ptr addConditionTimer(uint64_t period,std::function<void()> cb
                                 ,std::weak_ptr<void> weak_cond,bool recur);
-    void getTriggerableCB(std::vector<std::function<void()>>& timers);
+    void getTriggerableCB(std::vector<std::function<void()>>& cbs);
 
+    uint64_t getNextTime();
     bool hasTimer();
   private:
-    bool addTimer(Timer::ptr timer,MutexType::WriteLock lock);
+    void addTimer(Timer::ptr timer,MutexType::WriteLock& lock);
+
+    bool detectClockRollover(uint64_t now_ms);
+  protected:
+    virtual void onTimersInsertedAtFront() = 0;
 
   private:
     MutexType m_mutex;
-    std::set<Timer::ptr> m_timers;
+    std::set<Timer::ptr,Timer::Compare> m_timers;
+    bool m_tickled = false;
+    uint64_t m_previousTime;
 };
 
 }
