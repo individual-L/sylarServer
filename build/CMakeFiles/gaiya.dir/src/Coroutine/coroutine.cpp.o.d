@@ -161,7 +161,8 @@ CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
- /usr/include/linux/close_range.h /usr/include/c++/13/cxxabi.h \
+ /usr/include/linux/close_range.h \
+ /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/c++/13/cxxabi.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/cxxabi_tweaks.h \
  /usr/include/c++/13/bits/cxxabi_forced.h /usr/include/c++/13/iostream \
  /usr/include/c++/13/ostream /usr/include/c++/13/ios \
