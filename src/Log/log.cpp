@@ -732,6 +732,11 @@ class Configloggerinit{
         }
       }
       );
+      std::filesystem::path filePath(__FILE__);
+      filePath = filePath.parent_path().parent_path();
+      //如果以/为开头，他会把filePath设置为 /configTest.yaml
+      filePath.append("configuration.yaml");
+      gaiya::Config::loadYamlFile(filePath.c_str());
     }
 };
 static Configloggerinit config_logger_init;

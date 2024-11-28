@@ -133,17 +133,17 @@ gaiya/fast:
 .PHONY : gaiya/fast
 
 #=============================================================================
-# Target rules for targets named testIOmanager
+# Target rules for targets named testHook
 
 # Build rule for target.
-testIOmanager: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testIOmanager
-.PHONY : testIOmanager
+testHook: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testHook
+.PHONY : testHook
 
 # fast build rule for target.
-testIOmanager/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testIOmanager.dir/build.make CMakeFiles/testIOmanager.dir/build
-.PHONY : testIOmanager/fast
+testHook/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testHook.dir/build.make CMakeFiles/testHook.dir/build
+.PHONY : testHook/fast
 
 src/Config/config.o: src/Config/config.cpp.o
 .PHONY : src/Config/config.o
@@ -192,6 +192,30 @@ src/Coroutine/coroutine.s: src/Coroutine/coroutine.cpp.s
 src/Coroutine/coroutine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.s
 .PHONY : src/Coroutine/coroutine.cpp.s
+
+src/Hook/hook.o: src/Hook/hook.cpp.o
+.PHONY : src/Hook/hook.o
+
+# target to build an object file
+src/Hook/hook.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Hook/hook.cpp.o
+.PHONY : src/Hook/hook.cpp.o
+
+src/Hook/hook.i: src/Hook/hook.cpp.i
+.PHONY : src/Hook/hook.i
+
+# target to preprocess a source file
+src/Hook/hook.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Hook/hook.cpp.i
+.PHONY : src/Hook/hook.cpp.i
+
+src/Hook/hook.s: src/Hook/hook.cpp.s
+.PHONY : src/Hook/hook.s
+
+# target to generate assembly for a file
+src/Hook/hook.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Hook/hook.cpp.s
+.PHONY : src/Hook/hook.cpp.s
 
 src/IOmanager/iomanager.o: src/IOmanager/iomanager.cpp.o
 .PHONY : src/IOmanager/iomanager.o
@@ -361,29 +385,29 @@ src/Util/util.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Util/util.cpp.s
 .PHONY : src/Util/util.cpp.s
 
-tester/testIOmanager.o: tester/testIOmanager.cpp.o
-.PHONY : tester/testIOmanager.o
+tester/testHook.o: tester/testHook.cpp.o
+.PHONY : tester/testHook.o
 
 # target to build an object file
-tester/testIOmanager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testIOmanager.dir/build.make CMakeFiles/testIOmanager.dir/tester/testIOmanager.cpp.o
-.PHONY : tester/testIOmanager.cpp.o
+tester/testHook.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testHook.dir/build.make CMakeFiles/testHook.dir/tester/testHook.cpp.o
+.PHONY : tester/testHook.cpp.o
 
-tester/testIOmanager.i: tester/testIOmanager.cpp.i
-.PHONY : tester/testIOmanager.i
+tester/testHook.i: tester/testHook.cpp.i
+.PHONY : tester/testHook.i
 
 # target to preprocess a source file
-tester/testIOmanager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testIOmanager.dir/build.make CMakeFiles/testIOmanager.dir/tester/testIOmanager.cpp.i
-.PHONY : tester/testIOmanager.cpp.i
+tester/testHook.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testHook.dir/build.make CMakeFiles/testHook.dir/tester/testHook.cpp.i
+.PHONY : tester/testHook.cpp.i
 
-tester/testIOmanager.s: tester/testIOmanager.cpp.s
-.PHONY : tester/testIOmanager.s
+tester/testHook.s: tester/testHook.cpp.s
+.PHONY : tester/testHook.s
 
 # target to generate assembly for a file
-tester/testIOmanager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testIOmanager.dir/build.make CMakeFiles/testIOmanager.dir/tester/testIOmanager.cpp.s
-.PHONY : tester/testIOmanager.cpp.s
+tester/testHook.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testHook.dir/build.make CMakeFiles/testHook.dir/tester/testHook.cpp.s
+.PHONY : tester/testHook.cpp.s
 
 # Help Target
 help:
@@ -394,13 +418,16 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... gaiya"
-	@echo "... testIOmanager"
+	@echo "... testHook"
 	@echo "... src/Config/config.o"
 	@echo "... src/Config/config.i"
 	@echo "... src/Config/config.s"
 	@echo "... src/Coroutine/coroutine.o"
 	@echo "... src/Coroutine/coroutine.i"
 	@echo "... src/Coroutine/coroutine.s"
+	@echo "... src/Hook/hook.o"
+	@echo "... src/Hook/hook.i"
+	@echo "... src/Hook/hook.s"
 	@echo "... src/IOmanager/iomanager.o"
 	@echo "... src/IOmanager/iomanager.i"
 	@echo "... src/IOmanager/iomanager.s"
@@ -422,9 +449,9 @@ help:
 	@echo "... src/Util/util.o"
 	@echo "... src/Util/util.i"
 	@echo "... src/Util/util.s"
-	@echo "... tester/testIOmanager.o"
-	@echo "... tester/testIOmanager.i"
-	@echo "... tester/testIOmanager.s"
+	@echo "... tester/testHook.o"
+	@echo "... tester/testHook.i"
+	@echo "... tester/testHook.s"
 .PHONY : help
 
 

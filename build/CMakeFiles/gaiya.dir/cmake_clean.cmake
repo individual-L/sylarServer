@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/gaiya.dir/src/Config/config.cpp.o.d"
   "CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.o"
   "CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.o.d"
+  "CMakeFiles/gaiya.dir/src/Hook/hook.cpp.o"
+  "CMakeFiles/gaiya.dir/src/Hook/hook.cpp.o.d"
   "CMakeFiles/gaiya.dir/src/IOmanager/iomanager.cpp.o"
   "CMakeFiles/gaiya.dir/src/IOmanager/iomanager.cpp.o.d"
   "CMakeFiles/gaiya.dir/src/Lock/lock.cpp.o"

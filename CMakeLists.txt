@@ -16,6 +16,7 @@ set(COROUTINE_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Coroutine)
 set(SCHEDULER_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Scheduler)
 set(IOMANAGER_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/IOmanager)
 set(TIMER_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Timer)
+set(Hook_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Hook)
 
 
 set(LIB_SRC 
@@ -30,6 +31,7 @@ set(LIB_SRC
   ${SCHEDULER_INCLUDE_DIR}/schedule.cpp
   ${IOMANAGER_INCLUDE_DIR}/iomanager.cpp
   ${TIMER_INCLUDE_DIR}/timer.cpp
+  ${Hook_INCLUDE_DIR}/hook.cpp
 )
 include_directories(
   ${LOG_INCLUDE_DIR}
@@ -42,6 +44,7 @@ include_directories(
   ${SCHEDULER_INCLUDE_DIR}
   ${IOMANAGER_INCLUDE_DIR}
   ${TIMER_INCLUDE_DIR}
+  ${Hook_INCLUDE_DIR}
 )
 add_library(gaiya SHARED ${LIB_SRC})
 target_link_libraries(gaiya yaml-cpp)
@@ -53,9 +56,9 @@ target_link_libraries(gaiya yaml-cpp)
 # add_dependencies(testLog gaiya)
 # target_link_libraries(testLog gaiya)
 
-add_executable(testIOmanager tester/testIOmanager.cpp)
-add_dependencies(testIOmanager gaiya)
-target_link_libraries(testIOmanager gaiya)
+add_executable(testHook tester/testHook.cpp)
+add_dependencies(testHook gaiya)
+target_link_libraries(testHook gaiya)
 
 #这个命令确保在构建目标之前，先构建它所依赖的其他目标。
 

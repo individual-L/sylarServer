@@ -35,7 +35,7 @@ std::string backTraceToString(const int size = 64,const int skip = 2,const std::
 
 inline std::string getRelativePath(std::filesystem::path p){
     // 文件路径：/home/luo/cplus
-    std::filesystem::path current_file = std::filesystem::current_path().parent_path().parent_path() ; 
+    std::filesystem::path current_file = std::filesystem::path(__FILE__).parent_path().parent_path().parent_path();
     //目标文件
     std::filesystem::path target_file = p; 
 

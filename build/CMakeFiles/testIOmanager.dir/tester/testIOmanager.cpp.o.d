@@ -706,6 +706,7 @@ CMakeFiles/testIOmanager.dir/tester/testIOmanager.cpp.o: \
  /home/luo/cplus/gaiya/src/Scheduler/schedule.hpp \
  /home/luo/cplus/gaiya/src/IOmanager/iomanager.hpp \
  /home/luo/cplus/gaiya/src/Timer/timer.hpp \
+ /home/luo/cplus/gaiya/src/Hook/hook.hpp \
  /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
  /usr/include/x86_64-linux-gnu/bits/socket.h \
