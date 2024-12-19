@@ -5,7 +5,6 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -ggdb -lstdc++fs -Wall -rdynamic  -std=c++17 -Wno-deprecated -Werror -Wno-unused-function")
 
 
-add_definitions(-DRELATIVE_PATH="${CMAKE_CURRENT_SOURCE_DIR}")
 set(LOG_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Log)
 set(UTIL_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Util)
 set(SINGLEM_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Singlem)
@@ -32,6 +31,7 @@ set(LIB_SRC
   ${IOMANAGER_INCLUDE_DIR}/iomanager.cpp
   ${TIMER_INCLUDE_DIR}/timer.cpp
   ${Hook_INCLUDE_DIR}/hook.cpp
+  ${Hook_INCLUDE_DIR}/fdMng.cpp
 )
 include_directories(
   ${LOG_INCLUDE_DIR}
@@ -47,7 +47,11 @@ include_directories(
   ${Hook_INCLUDE_DIR}
 )
 add_library(gaiya SHARED ${LIB_SRC})
-target_link_libraries(gaiya yaml-cpp)
+
+# set(LIBS
+#       gaiya
+#       yaml-cpp
+# )
 # add_executable(testThread tester/testThread.cpp)
 # add_dependencies(testThread gaiya)
 # target_link_libraries(testThread gaiya)
@@ -56,9 +60,11 @@ target_link_libraries(gaiya yaml-cpp)
 # add_dependencies(testLog gaiya)
 # target_link_libraries(testLog gaiya)
 
-add_executable(testHook tester/testHook.cpp)
-add_dependencies(testHook gaiya)
-target_link_libraries(testHook gaiya)
+add_executable(testIOmanager tester/testIOmanager.cpp)
+target_link_libraries(testIOmanager pthread)
+target_link_libraries(testIOmanager gaiya)
+target_link_libraries(testIOmanager yaml-cpp)
+add_dependencies(testIOmanager gaiya)
 
 #这个命令确保在构建目标之前，先构建它所依赖的其他目标。
 

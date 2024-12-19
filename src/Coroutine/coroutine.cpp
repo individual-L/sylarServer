@@ -56,19 +56,19 @@ Coroutine::Coroutine(std::function<void()> func,size_t stacksize,bool retnSche)
   
   m_context.uc_stack.ss_sp = m_stack;
   m_context.uc_stack.ss_size = m_stackSize;
+  m_context.uc_link = nullptr;
 
-  //协程结束之后返回到调度器还是此线程的主协程
+  //协程结束之后返回到调度器还是创建此协程的上下文
   if(retnSche){
-    m_context.uc_link = &gaiya::Scheduler::GetMasterCoro()->m_context;
-    m_nextCoro = gaiya::Scheduler::GetMasterCoro().get();
+    ::makecontext(&m_context,&Coroutine::toMasterFunc,0);
   }else{
-    m_context.uc_link = &t_threadCoro->m_context;
-    m_nextCoro = t_threadCoro.get();
+    ::makecontext(&m_context,&Coroutine::toOriginalFunc,0);
+
   }
-  ::makecontext(&m_context,&Coroutine::MainFunc,0);
 
   LOG_INFO(logger) << "Coroutine() Coroutine::m_id: " << m_id <<" coroutine count: " <<s_coro_count;
 }
+
 Coroutine::~Coroutine(){
   s_coro_count -= 1;
   LOG_INFO(logger) << "Coroutine::~Coroutine() id: " << m_id << " total: " << s_coro_count;
@@ -106,19 +106,21 @@ void Coroutine::reset(std::function<void()> func){
     GAIYA_ASSERT2(false,"getcontext");
   }
 
-  m_context.uc_link = &(Scheduler::GetMasterCoro()->m_context);
+  m_context.uc_link = nullptr;
   m_context.uc_stack.ss_sp = m_stack;
   m_context.uc_stack.ss_size = m_stackSize;
-
-  ::makecontext(&m_context,Coroutine::MainFunc ,0);
+  ::makecontext(&m_context,Coroutine::toMasterFunc ,0);
 
   m_state = INIT;
 }
 
 void Coroutine::swapIn(){
+  LOG_INFO(logger) <<"swapIn==> coroId: " <<m_id <<" coroState: "<<m_state;
   SetCurCoro(this);
-  GAIYA_ASSERT(m_state != EXECU);
+  GAIYA_ASSERT2(m_state != EXECU,"coroId: " + std::to_string(m_id));
   m_state = EXECU; 
+  LOG_INFO(logger) <<"swapIn==> coroId: " <<m_id <<" coroState: "<<m_state;
+
   if(::swapcontext(&(gaiya::Scheduler::GetMasterCoro()->m_context),&m_context)){
     GAIYA_ASSERT2(false,"swapcontext");
   }
@@ -126,8 +128,7 @@ void Coroutine::swapIn(){
 
 //让出给调度协程
 void Coroutine::swapOut(){
-  SetCurCoro(gaiya::Scheduler::GetMasterCoro().get());
-
+  SetCurCoro(gaiya::Scheduler::GetMasterCoro());
   if(::swapcontext(&m_context,&(gaiya::Scheduler::GetMasterCoro()->m_context))){
       GAIYA_ASSERT2(false,"swapcontext");
   }
@@ -181,9 +182,11 @@ void Coroutine::YieldToReady(){
 
 void Coroutine::YieldToHold(){
   Coroutine::ptr cur = GetCurCoro();
-  GAIYA_ASSERT(cur->m_state == EXECU);
-
+  GAIYA_ASSERT(cur->getState() == EXECU);
+  LOG_INFO(logger)<<"YieldToHold()===> coroId: "<<cur->getId() <<" coroState: "<<cur->getState()
+                  <<" yield to CoroId: " <<gaiya::Scheduler::GetMasterCoro()->getId() <<" coroState: " <<gaiya::Scheduler::GetMasterCoro()->getState();
   cur->m_state = HOLD;
+
   cur->swapOut();
 }
 
@@ -198,7 +201,7 @@ uint64_t Coroutine::GetCurCoroId(){
   return 0;
 }
 
-void Coroutine::MainFunc(){
+void Coroutine::toMasterFunc(){
   Coroutine::ptr cur = GetCurCoro();
   try{
     cur->m_func();
@@ -207,19 +210,42 @@ void Coroutine::MainFunc(){
   }catch(std::exception& ex){
     cur->m_state = EXCEPT;
     LOG_ERROR(logger) <<"Coroutine::MainFunc() error:" << ex.what() 
-    << "coroutine id: " << cur->getId()
+    << " coroutine id: " << cur->getId()
     <<std::endl
     <<backTraceToString();
   }catch(...){
     cur->m_state = EXCEPT;
     LOG_ERROR(logger) <<"Coroutine::MainFunc() error"
-    << "coroutine id: " << cur->getId()
+    << " coroutine id: " << cur->getId()
     <<std::endl
     <<backTraceToString();
   }
-  // Coroutine * raw_ptr = cur.get();
-  // cur.reset();
-  // raw_ptr->swapOut();
-  SetCurCoro(cur->m_nextCoro);
+  Coroutine * raw_ptr = cur.get();
+  cur.reset();
+  raw_ptr->swapOut();
+}
+
+void Coroutine::toOriginalFunc(){
+  Coroutine::ptr cur = GetCurCoro();
+  try{
+    cur->m_func();
+    cur->m_func = nullptr;
+    cur->m_state = END;
+  }catch(std::exception& ex){
+    cur->m_state = EXCEPT;
+    LOG_ERROR(logger) <<"Coroutine::MainFunc() error:" << ex.what() 
+    << " coroutine id: " << cur->getId()
+    <<std::endl
+    <<backTraceToString();
+  }catch(...){
+    cur->m_state = EXCEPT;
+    LOG_ERROR(logger) <<"Coroutine::MainFunc() error"
+    << " coroutine id: " << cur->getId()
+    <<std::endl
+    <<backTraceToString();
+  }
+  Coroutine * raw_ptr = cur.get();
+  cur.reset();
+  raw_ptr->back();
 }
 }

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/luo/cplus/gaiya/tester/testHook.cpp" "CMakeFiles/testHook.dir/tester/testHook.cpp.o" "gcc" "CMakeFiles/testHook.dir/tester/testHook.cpp.o.d"
+  "/home/luo/cplus/gaiya/tester/testIOmanager.cpp" "CMakeFiles/testHook.dir/tester/testIOmanager.cpp.o" "gcc" "CMakeFiles/testHook.dir/tester/testIOmanager.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

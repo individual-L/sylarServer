@@ -16,17 +16,17 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>{
   public:
   typedef std::shared_ptr<Scheduler> ptr;
   typedef gaiya::Mutex MuteType;
-    Scheduler(uint64_t size = 1,bool useSche = true,const std::string& name = "main");
+    Scheduler(uint64_t size = 1,bool useSche = false,const std::string& name = "main");
     virtual ~Scheduler();
 
     const std::string getName() const {return m_name;}
     //获取协程调度器
-    static Scheduler::ptr GetThis();
+    static Scheduler* GetThis();
     //设置协程调度器为自己
     void setThis();
 
     //获取调度协程
-    static gaiya::Coroutine::ptr GetMasterCoro();
+    static gaiya::Coroutine* GetMasterCoro();
 
     //初始化线程池
     void start();
@@ -36,18 +36,17 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>{
 
     //添加协程或者函数
     template<class CorF>
-    void schedule(CorF&& val,const uint64_t thread = -1){
+    void schedule(CorF val,int thread = -1){
       //队列中是否有任务需要处理
       bool needToTickle = false;
     {
       MuteType::Lock lock(m_mutex);
-      needToTickle = scheduleNonLock(std::forward<CorF>(val),thread);
+      needToTickle = scheduleNonLock(val,thread);
     }
       if(needToTickle){
         tickle();
       }
-    }  
-
+    } 
     //可以协程智能指针数组迭代器，批量调用协程
     template<class CFIterator>
     void schedule(CFIterator begin,CFIterator end){
@@ -56,7 +55,7 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>{
       {
         MuteType::Lock lock(m_mutex);
         while(begin != end){
-          needToTickle = scheduleNonLock(*begin,-1) || needToTickle;
+          needToTickle = scheduleNonLock(&*begin,-1) || needToTickle;
           ++begin;
         }
       }
@@ -78,10 +77,10 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>{
 
   private:
     template<class CorF>
-    bool scheduleNonLock(CorF&& val,const uint64_t thread){
+    bool scheduleNonLock(CorF val,int thread){
       //队列是否为空
       bool needToTickle = m_coros.empty();
-      CorFType cf(std::forward<CorF>(val),thread);
+      CorFType cf(val,thread);
       if(cf.m_coro || cf.m_func){
         m_coros.push_back(cf);
       }
@@ -92,20 +91,23 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>{
     class CorFType{
       public:
         CorFType():m_threadId(-1){}
-        CorFType(std::function<void()>& func,uint64_t thread)
-        :m_threadId(thread)
-        ,m_func(func){
-
-        }
-        CorFType(gaiya::Coroutine::ptr& coro,uint64_t thread)
+        CorFType(gaiya::Coroutine::ptr coro,uint64_t thread)
         :m_threadId(thread)
         ,m_coro(coro){
 
         }
-        CorFType(std::function<void()>&& func,uint64_t thread)
+        CorFType(gaiya::Coroutine::ptr* coro,uint64_t thread)
+        :m_threadId(thread){
+          m_coro.swap(*coro);
+        }
+        CorFType(std::function<void()> func,uint64_t thread)
         :m_threadId(thread)
         ,m_func(func){
 
+        }
+        CorFType(std::function<void()>* func,uint64_t thread)
+        :m_threadId(thread){
+          m_func.swap(*func);
         }
         ~CorFType(){
           m_func = nullptr;

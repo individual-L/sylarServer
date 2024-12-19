@@ -81,7 +81,7 @@ void Thread::join(){
   if(m_thread){
     /*
     第二个参数 void **retval 是一个指向 void 指针的指针，用于存储线程的返回值。
-    会阻塞调用线程，直到m_thread线程执行完成
+    会卡在pthread_join(m_thread,nullptr)处，阻塞调用线程，直到m_thread线程执行完成
     */
     int res = pthread_join(m_thread,nullptr);
     if(res){

@@ -24,6 +24,7 @@ class Timer :public std::enable_shared_from_this<Timer>{
     bool refresh();
 
     Timer(uint64_t period,std::function<void()> cb,bool recur,TimerMng* Mng);
+    //用于与set中的Timer进行比较
     Timer(uint64_t goTime);
     Timer();
 
@@ -51,9 +52,9 @@ class TimerMng{
     typedef RWMutex MutexType;
     TimerMng();
     ~TimerMng();
-    Timer::ptr addTimer(uint64_t period,std::function<void()> cb,bool recur);
+    Timer::ptr addTimer(uint64_t period,std::function<void()> cb,bool recur = false);
     Timer::ptr addConditionTimer(uint64_t period,std::function<void()> cb
-                                ,std::weak_ptr<void> weak_cond,bool recur);
+                                ,std::weak_ptr<void> weak_cond,bool recur = false);
     void getTriggerableCB(std::vector<std::function<void()>>& cbs);
 
     uint64_t getNextTime();

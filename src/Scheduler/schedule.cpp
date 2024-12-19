@@ -2,6 +2,7 @@
 #include"macro.hpp"
 #include"log.hpp"
 #include"util.hpp"
+#include"hook.hpp"
 
 namespace gaiya{
 //当前的协程调度器指针
@@ -42,9 +43,9 @@ Scheduler::~Scheduler(){
     t_scheduler = nullptr;
   }
 }
-Scheduler::ptr Scheduler::GetThis(){
+Scheduler* Scheduler::GetThis(){
   if(t_scheduler){
-    return t_scheduler->shared_from_this();
+    return t_scheduler;
   }
   return nullptr;
 }
@@ -53,8 +54,8 @@ void Scheduler::setThis(){
   t_scheduler = this;
 }
 
-gaiya::Coroutine::ptr Scheduler::GetMasterCoro(){
-  return t_masterCoro->shared_from_this();
+gaiya::Coroutine* Scheduler::GetMasterCoro(){
+  return t_masterCoro;
 }
 void Scheduler::start(){
   {
@@ -81,7 +82,7 @@ void Scheduler::start(){
 }
 
 void Scheduler::stop(){
-  LOG_INFO(logger) << "scheduler stopping";
+  // LOG_INFO(logger) << "scheduler stopping";
   m_autoStop = true;
   if(m_masterCoro 
    && m_threadCount == 0        //只有调度线程
@@ -97,9 +98,9 @@ void Scheduler::stop(){
 
   //是否使用调度协程，使用就必须由创建调度协程的调度器来关闭
   if(m_masterTid != -1){
-    GAIYA_ASSERT(GetThis().get() == this);
+    GAIYA_ASSERT(GetThis() == this);
   }else{
-    GAIYA_ASSERT(GetThis().get() != this);
+    GAIYA_ASSERT(GetThis() != this);
   }
 
   m_stopping = true;
@@ -134,11 +135,12 @@ void Scheduler::tickle(){
 
 void Scheduler::run(){
   setThis();
-
+  gaiya::setThreadHook(true);
   if(gaiya::GetThreadId() != m_masterTid){
     t_masterCoro = Coroutine::GetCurCoro().get();
   }
   Coroutine::ptr idleCoro(new Coroutine(std::bind(&Scheduler::idle,this),0,true));
+  LOG_INFO(logger)<<"idleCoro id: " <<idleCoro->getId();
   Coroutine::ptr coro;
   CorFType corf;
 
@@ -166,7 +168,7 @@ void Scheduler::run(){
       m_coros.erase(it++);
       ++m_activeThreadCount;
       is_active = true;
-      LOG_INFO(logger) <<" get mission";
+      // LOG_INFO(logger) <<" get mission";
       break;
       }
     }
@@ -181,7 +183,7 @@ void Scheduler::run(){
 
       if(corf.m_coro->getState() == Coroutine::READY){
         schedule(corf.m_coro);
-        //如果在执行过程中被抢走了执行权，设置为hold
+        //如果没有执行完或者协程让出来执行权，设置为hold
       }else if(corf.m_coro->getState() != Coroutine::END
             &&corf.m_coro->getState() != Coroutine::EXCEPT){
           corf.m_coro->m_state = Coroutine::HOLD;
@@ -218,8 +220,13 @@ void Scheduler::run(){
       }
       //进入idle协程
       ++m_idleThreadCount;
+      LOG_INFO(logger) <<"enter idleCoro id: " <<idleCoro->getId();
       idleCoro->swapIn();
       --m_idleThreadCount;
+      // if(idleCoro->getState() != gaiya::Coroutine::END 
+      //   && idleCoro->getState() != gaiya::Coroutine::EXCEPT){
+      //     idleCoro->m_state = gaiya::Coroutine::HOLD;
+      // }
 
     }
   }

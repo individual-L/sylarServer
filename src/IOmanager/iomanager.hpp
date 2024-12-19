@@ -14,11 +14,11 @@ class IOmanager :public Scheduler , public TimerMng{
       READ = 0X1,
       WRITE = 0X4,
     };
-    IOmanager(uint32_t threadSize = 1,bool useSche = true,const std::string& name = "main");
+    IOmanager(uint32_t threadSize = 1,bool useSche = false,const std::string& name = "main");
 
     ~IOmanager();
 
-    bool addEvent(int fd,EventType event,std::function<void()> cb);
+    bool addEvent(int fd,EventType event,std::function<void()> cb = nullptr);
 
     bool delEvent(int fd,EventType event);
 

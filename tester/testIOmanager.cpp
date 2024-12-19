@@ -3,32 +3,39 @@
 #include<arpa/inet.h>
 static gaiya::Logger::ptr logger = LOG_GET_LOGGER("master");
 
-int sock = 0;
+gaiya::IOmanager::ptr iom;
 void func1(){
-  LOG_INFO(logger) <<"func1 start";
-  sock = socket(AF_INET,SOCK_STREAM,0);
+  LOG_INFO(logger) <<"fun1 start";
+  int sock = socket(AF_INET,SOCK_STREAM,0);
 
   sockaddr_in addr;
   addr.sin_family = AF_INET;
   addr.sin_port = htons(80);
-  inet_pton(AF_INET,"183.2.172.42",&addr.sin_addr.s_addr);
-  if(!connect(sock,(const sockaddr*)&addr,sizeof(addr))){
-    LOG_INFO(logger) <<sock <<" connected";
-  }else if(errno == EINPROGRESS){
-    //在建立连接中
-    LOG_INFO(logger) <<"errno = EINPROGRESS";
-    gaiya::IOmanager::GetThis()->addEvent(sock,gaiya::IOmanager::READ,[](){
-      LOG_INFO(logger) <<"READ triggered";
-    });
-    gaiya::IOmanager::GetThis()->addEvent(sock,gaiya::IOmanager::WRITE,[&](){
-      LOG_INFO(logger) <<"WRITE triggered";
-      gaiya::IOmanager::GetThis()->cancelEvent(sock,gaiya::IOmanager::READ);
-      close(sock);
-    });
-  }else{
-    LOG_INFO(logger) <<"else: " <<errno <<"(" <<strerror(errno) <<")";
+  inet_pton(AF_INET,"183.2.172.185",&addr.sin_addr.s_addr);
+  int res = connect(sock,(const sockaddr*)&addr,sizeof(addr));
+  LOG_INFO(logger) <<"connect errno: "<<errno <<" translate-> " <<strerror(errno);
+  if(res){
+    return;
   }
-  LOG_INFO(logger) <<"func1 end";
+  const char msg[] = "GET / HTTP/1.0\r\n\r\n";
+  res = send(sock,msg,sizeof(msg),0);
+  LOG_INFO(logger) <<"send errno: "<<errno <<" translate-> " <<strerror(errno);
+
+  std::string buf;
+  buf.resize(4096);
+  size_t len = sizeof(buf);
+  res = recv(sock,&buf[0],len,0);
+
+  LOG_INFO(logger) <<"recv errno: "<<errno<<" translate-> " <<strerror(errno);
+
+  if(res <= 0){
+    return;
+  }
+  buf.resize(res);
+  LOG_INFO(logger) <<"buf: "<<buf;
+  LOG_INFO(logger) <<"fun1 end";
+  return;
+
 }
 
 gaiya::Timer::ptr tptr = nullptr;
@@ -49,8 +56,10 @@ void testFunc(){
 }
 
 int main(){
-  gaiya::Config::loadYamlFile("/home/luo/cplus/gaiya/tester/configTest.yaml");
+  gaiya::Config::loadYamlFile("/home/luo/cplus/gaiya/src/configuration.yaml");
+  LOG_INFO(logger) <<"timeout: " <<gaiya::Config::checkBase("tcp.connect.timeout_ms")->toString();
   gaiya::Thread::SetName("main");
-  testFunc();
+  iom = gaiya::IOmanager::ptr(new gaiya::IOmanager(2));
+  iom->schedule(func1);
   return 1;
 }

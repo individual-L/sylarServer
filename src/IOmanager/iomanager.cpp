@@ -105,10 +105,11 @@ IOmanager::IOmanager(uint32_t threadSize,bool useSche,const std::string& name)
 
 IOmanager::~IOmanager(){
   stop();
+
   close(m_epfd);
+
   close(m_tickleFds[0]);
   close(m_tickleFds[1]);
-
   for(size_t i = 0;i < m_fdctxs.size();++i){
     if(m_fdctxs[i]){
       delete m_fdctxs[i];
@@ -124,9 +125,10 @@ bool IOmanager::addEvent(int fd,EventType event,std::function<void()> cb){
     fd_ctx = m_fdctxs[fd];
     lock.unlock();
   }else{
+    lock.unlock();
+    MutexType::WriteLock lock2(m_mutex);
     contextResize(fd * 1.5);
     fd_ctx = m_fdctxs[fd];
-    lock.unlock();
   }
 
   FdContext::MutexType::Lock lock2(fd_ctx->mutex);
@@ -157,18 +159,17 @@ bool IOmanager::addEvent(int fd,EventType event,std::function<void()> cb){
 
   fd_ctx->events = (EventType)(fd_ctx->events | event);
   FdContext::EventContext& ev_ctx = fd_ctx->getContext(event);
-
   GAIYA_ASSERT(!ev_ctx.scheduler
               &&!ev_ctx.coro
               &&!ev_ctx.cb);
 
-  ev_ctx.scheduler = gaiya::Scheduler::GetThis().get();  
+  ev_ctx.scheduler = gaiya::Scheduler::GetThis();  
   if(cb){
     ev_ctx.cb.swap(cb);
   }else{
-        // ev_ctx.coro = Coroutine::GetCurCoro();
-        // GAIYA_ASSERT2(ev_ctx.coro->getState() == Coroutine::EXECU
-        //               ,"state=" << ev_ctx.coro->getState());
+    ev_ctx.coro = gaiya::Coroutine::GetCurCoro();
+    GAIYA_ASSERT2(ev_ctx.coro->getState() == gaiya::Coroutine::State::EXECU
+                  ,"state=" << ev_ctx.coro->getState());
   }
   
   return true;
@@ -215,7 +216,7 @@ bool IOmanager::delEvent(int fd,EventType event){
 }
 
 IOmanager* IOmanager::GetThis(){
-  return dynamic_cast<IOmanager*>(Scheduler::GetThis().get());
+  return dynamic_cast<IOmanager*>(Scheduler::GetThis());
 }
 void IOmanager::idle() {
   const uint64_t MAX_EVENTS = 256;
@@ -229,19 +230,19 @@ void IOmanager::idle() {
   while(true){
     uint64_t nextTime = getNextTime();
     if(GAIYA_UNLIKELY(stopping(nextTime))){
-      LOG_INFO(logger) <<"name = " <<getName() <<"idle stoped";
+      LOG_INFO(logger) <<"name = " <<getName() <<" idle stoped";
       break;
     }
 
     int res = 0;
     do{
-      static const int MAX_TIMEOUT = 3000;
+      static const int MAX_TIMEOUT = 5000;
       if(nextTime != ~0ull){
         nextTime = nextTime > MAX_TIMEOUT ? MAX_TIMEOUT : nextTime;
       }else{
         nextTime = MAX_TIMEOUT;
       }
-      res = epoll_wait(m_epfd,evs,MAX_EVENTS,(nextTime ? nextTime : 2000));
+      res = epoll_wait(m_epfd,evs,MAX_EVENTS,nextTime);
       // LOG_INFO(logger) <<"epoll_wait res = " <<res;
 
       //返回0表示发生错误，如果是中断，那就继续执行wait
@@ -254,9 +255,9 @@ void IOmanager::idle() {
 
     std::vector<std::function<void()>> cbs;
     TimerMng::getTriggerableCB(cbs);
-    for(auto& it : cbs){
+    if(!cbs.empty()){
       // LOG_INFO(logger) <<"add timer cb";
-      schedule(std::move(it));
+      schedule(cbs.begin(),cbs.end());
       cbs.clear();
     }
 
@@ -307,11 +308,7 @@ void IOmanager::idle() {
       }
       
     }
-    if(!stopping()){
-      Coroutine::YieldToHold();
-    }else{
-      break;
-    }
+    Coroutine::YieldToHold();
   }
 }
 
@@ -325,6 +322,7 @@ void IOmanager::tickle() {
 }
 
 void IOmanager::onTimersInsertedAtFront(){
+  // LOG_INFO(logger) <<"onTimersInsertedAtFront";
   tickle();
 }
 
@@ -340,7 +338,6 @@ bool IOmanager::stopping(uint64_t& nextTime){
 
 bool IOmanager::cancelEvent(int fd, EventType event){
   MutexType::ReadLock lock(m_mutex);
-  LOG_INFO(logger) <<m_fdctxs.size() <<" <= " <<fd;
   if(m_fdctxs.size() <= (size_t)fd){
     return false;
   }
@@ -349,7 +346,7 @@ bool IOmanager::cancelEvent(int fd, EventType event){
 
   FdContext::MutexType::Lock lock2(fd_ctx->mutex);
   if(GAIYA_UNLIKELY(!(fd_ctx->events & event))){
-    LOG_ERROR(logger) << "IOmanager::cancelEvent(): event is different from fdctxs[fd]->event";
+    LOG_ERROR(logger) << "IOmanager::cancelEvent():" <<(EPOLL_EVENTS)event <<" is different from fdctxs[fd]->event: "<<(EPOLL_EVENTS)(fd_ctx->events);
     GAIYA_ASSERT(!(event & fd_ctx->events));
   }
 
@@ -448,11 +445,11 @@ void IOmanager::FdContext::triggerEvent(const EventType& event){
   events = (EventType)(events & ~event);
   EventContext& ev_ctx = getContext(event);
   if(ev_ctx.cb){
-    ev_ctx.scheduler->schedule(ev_ctx.cb);
+    ev_ctx.scheduler->schedule(&ev_ctx.cb);
   }else{
-    ev_ctx.scheduler->schedule(ev_ctx.coro);
+    ev_ctx.scheduler->schedule(&ev_ctx.coro);
   }
-  ev_ctx.scheduler = nullptr;
+  resetContext(ev_ctx);
 }
 
 }

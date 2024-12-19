@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/luo/cplus/gaiya/src/Config/config.cpp" "CMakeFiles/gaiya.dir/src/Config/config.cpp.o" "gcc" "CMakeFiles/gaiya.dir/src/Config/config.cpp.o.d"
   "/home/luo/cplus/gaiya/src/Coroutine/coroutine.cpp" "CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.o" "gcc" "CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.o.d"
+  "/home/luo/cplus/gaiya/src/Hook/fdMng.cpp" "CMakeFiles/gaiya.dir/src/Hook/fdMng.cpp.o" "gcc" "CMakeFiles/gaiya.dir/src/Hook/fdMng.cpp.o.d"
   "/home/luo/cplus/gaiya/src/Hook/hook.cpp" "CMakeFiles/gaiya.dir/src/Hook/hook.cpp.o" "gcc" "CMakeFiles/gaiya.dir/src/Hook/hook.cpp.o.d"
   "/home/luo/cplus/gaiya/src/IOmanager/iomanager.cpp" "CMakeFiles/gaiya.dir/src/IOmanager/iomanager.cpp.o" "gcc" "CMakeFiles/gaiya.dir/src/IOmanager/iomanager.cpp.o.d"
   "/home/luo/cplus/gaiya/src/Lock/lock.cpp" "CMakeFiles/gaiya.dir/src/Lock/lock.cpp.o" "gcc" "CMakeFiles/gaiya.dir/src/Lock/lock.cpp.o.d"

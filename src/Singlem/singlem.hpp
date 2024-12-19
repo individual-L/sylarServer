@@ -14,7 +14,7 @@ class Singlem {
       if(!instance){
         instance = new T();
       }
-      return &instance;
+      return instance;
     }
   private:
     static T* instance;

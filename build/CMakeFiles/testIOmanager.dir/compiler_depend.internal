@@ -5,6 +5,7 @@ CMakeFiles/testIOmanager.dir/tester/testIOmanager.cpp.o
  /home/luo/cplus/gaiya/tester/testIOmanager.cpp
  /home/luo/cplus/gaiya/src/Config/config.hpp
  /home/luo/cplus/gaiya/src/Coroutine/coroutine.hpp
+ /home/luo/cplus/gaiya/src/Hook/hook.hpp
  /home/luo/cplus/gaiya/src/IOmanager/iomanager.hpp
  /home/luo/cplus/gaiya/src/Lock/Noncopyable.hpp
  /home/luo/cplus/gaiya/src/Lock/lock.hpp

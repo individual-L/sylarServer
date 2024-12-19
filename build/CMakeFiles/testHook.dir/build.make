@@ -72,28 +72,28 @@ include CMakeFiles/testHook.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/testHook.dir/flags.make
 
-CMakeFiles/testHook.dir/tester/testHook.cpp.o: CMakeFiles/testHook.dir/flags.make
-CMakeFiles/testHook.dir/tester/testHook.cpp.o: /home/luo/cplus/gaiya/tester/testHook.cpp
-CMakeFiles/testHook.dir/tester/testHook.cpp.o: CMakeFiles/testHook.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testHook.dir/tester/testHook.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/testHook.dir/tester/testHook.cpp.o -MF CMakeFiles/testHook.dir/tester/testHook.cpp.o.d -o CMakeFiles/testHook.dir/tester/testHook.cpp.o -c /home/luo/cplus/gaiya/tester/testHook.cpp
+CMakeFiles/testHook.dir/tester/testIOmanager.cpp.o: CMakeFiles/testHook.dir/flags.make
+CMakeFiles/testHook.dir/tester/testIOmanager.cpp.o: /home/luo/cplus/gaiya/tester/testIOmanager.cpp
+CMakeFiles/testHook.dir/tester/testIOmanager.cpp.o: CMakeFiles/testHook.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testHook.dir/tester/testIOmanager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/testHook.dir/tester/testIOmanager.cpp.o -MF CMakeFiles/testHook.dir/tester/testIOmanager.cpp.o.d -o CMakeFiles/testHook.dir/tester/testIOmanager.cpp.o -c /home/luo/cplus/gaiya/tester/testIOmanager.cpp
 
-CMakeFiles/testHook.dir/tester/testHook.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/testHook.dir/tester/testHook.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luo/cplus/gaiya/tester/testHook.cpp > CMakeFiles/testHook.dir/tester/testHook.cpp.i
+CMakeFiles/testHook.dir/tester/testIOmanager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/testHook.dir/tester/testIOmanager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luo/cplus/gaiya/tester/testIOmanager.cpp > CMakeFiles/testHook.dir/tester/testIOmanager.cpp.i
 
-CMakeFiles/testHook.dir/tester/testHook.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/testHook.dir/tester/testHook.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luo/cplus/gaiya/tester/testHook.cpp -o CMakeFiles/testHook.dir/tester/testHook.cpp.s
+CMakeFiles/testHook.dir/tester/testIOmanager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/testHook.dir/tester/testIOmanager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luo/cplus/gaiya/tester/testIOmanager.cpp -o CMakeFiles/testHook.dir/tester/testIOmanager.cpp.s
 
 # Object files for target testHook
 testHook_OBJECTS = \
-"CMakeFiles/testHook.dir/tester/testHook.cpp.o"
+"CMakeFiles/testHook.dir/tester/testIOmanager.cpp.o"
 
 # External object files for target testHook
 testHook_EXTERNAL_OBJECTS =
 
-/home/luo/cplus/gaiya/bin/testHook: CMakeFiles/testHook.dir/tester/testHook.cpp.o
+/home/luo/cplus/gaiya/bin/testHook: CMakeFiles/testHook.dir/tester/testIOmanager.cpp.o
 /home/luo/cplus/gaiya/bin/testHook: CMakeFiles/testHook.dir/build.make
 /home/luo/cplus/gaiya/bin/testHook: /home/luo/cplus/gaiya/lib/libgaiya.so
 /home/luo/cplus/gaiya/bin/testHook: CMakeFiles/testHook.dir/link.txt

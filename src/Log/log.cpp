@@ -184,7 +184,7 @@ Logger::Logger(const std::string name)
   ,m_level(LogLevel::Level::INFO){
   //时间，日志级别,线程号,协程号,文件路径,行号,消息,回车
   m_logformater.reset(new gaiya::LogFormater(
-    "%d{%Y-%m-%d %H:%M:%S}%T%p%T%t%T%C%T%f%T%l%T%m%n"));
+    "%d{%Y-%m-%d %H:%M:%S}%T%lN%T%p%T%t%T%tN%T%C%T%f%T%l%T%m%n"));
 }
 
 void Logger::clearAppenders(){
@@ -666,7 +666,7 @@ class lexicalCast<LoggerConfig,std::string>{
     }
 };
 
-gaiya::ConfigVar<std::set<gaiya::LoggerConfig>>::ptr config_loggers =   gaiya::Config::lookup("logs","日志器的配置参数",std::set<gaiya::LoggerConfig>{});
+static gaiya::ConfigVar<std::set<gaiya::LoggerConfig>>::ptr config_loggers =   gaiya::Config::lookup("logs","日志器的配置参数",std::set<gaiya::LoggerConfig>{});
 
 // 全局静态变量在程序启动时，也就是main函数执行之前就会被初始化
 class Configloggerinit{
@@ -732,11 +732,11 @@ class Configloggerinit{
         }
       }
       );
-      std::filesystem::path filePath(__FILE__);
-      filePath = filePath.parent_path().parent_path();
-      //如果以/为开头，他会把filePath设置为 /configTest.yaml
-      filePath.append("configuration.yaml");
-      gaiya::Config::loadYamlFile(filePath.c_str());
+      // std::filesystem::path filePath(__FILE__);
+      // filePath = filePath.parent_path().parent_path();
+      // //如果以/为开头，他会把filePath设置为 /configTest.yaml
+      // filePath.append("configuration.yaml");
+      // gaiya::Config::loadYamlFile(filePath.c_str());
     }
 };
 static Configloggerinit config_logger_init;

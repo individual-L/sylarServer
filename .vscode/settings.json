@@ -84,6 +84,12 @@
     "stacktrace": "cpp",
     "*.ipp": "cpp",
     "future": "cpp",
-    "scoped_allocator": "cpp"
+    "scoped_allocator": "cpp",
+    "coroutine": "cpp",
+    "io_context": "cpp",
+    "socket": "cpp",
+    "buffer": "cpp",
+    "executor": "cpp",
+    "netfwd": "cpp"
   }
 }

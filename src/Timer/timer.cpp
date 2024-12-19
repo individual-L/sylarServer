@@ -1,5 +1,7 @@
 #include"timer.hpp"
+#include"log.hpp"
 
+static gaiya::Logger::ptr logger =LOG_GET_LOGGER("master");
 namespace gaiya{
 
 Timer::Timer(uint64_t period,std::function<void()> cb,bool recur,TimerMng* Mng)
@@ -7,7 +9,7 @@ Timer::Timer(uint64_t period,std::function<void()> cb,bool recur,TimerMng* Mng)
 ,m_recur(recur)
 ,m_timerMng(Mng){
   m_cb.swap(cb);
-  Timer(gaiya::GetCurrentTime() + period);
+  m_goTime = gaiya::GetCurrentTime() + period;
 }
 
 Timer::Timer(uint64_t goTime){
@@ -140,6 +142,8 @@ uint64_t TimerMng::getNextTime(){
     return ~0ull;
   }
   const auto first = m_timers.begin();
+  // LOG_INFO(logger) <<"gaiya::GetCurrentTime(): "<<gaiya::GetCurrentTime()
+  //                   <<"m_goTime: " <<(*first)->m_goTime;
   if((*first)->m_goTime <= gaiya::GetCurrentTime()){
     return 0;
   }
@@ -148,6 +152,7 @@ uint64_t TimerMng::getNextTime(){
                       
 
 void TimerMng::getTriggerableCB(std::vector<std::function<void()>>& cbs){
+  uint64_t nowTime = gaiya::GetCurrentTime();
   {
     MutexType::ReadLock lock(m_mutex);
     if(m_timers.empty()){
@@ -158,21 +163,18 @@ void TimerMng::getTriggerableCB(std::vector<std::function<void()>>& cbs){
   if(m_timers.empty()){
     return;
   }
-  uint64_t nowTime = gaiya::GetCurrentTime();
-  auto begin = m_timers.begin();
-  if(!detectClockRollover(nowTime) && (*begin)->m_goTime > nowTime){
+  if(!detectClockRollover(nowTime) && ((*m_timers.begin())->m_goTime > nowTime)){
     return;
   }
 
   std::vector<Timer::ptr> timers;
   Timer::ptr now_ptr(new Timer(nowTime));
   auto end = m_timers.lower_bound(now_ptr);
-  while(end != m_timers.end() && (*end)->m_goTime >= nowTime){
+  while(end != m_timers.end() && (*end)->m_goTime == nowTime){
     ++end;
   }
-
-  timers.insert(timers.begin(),begin,end);
-  m_timers.erase(begin,end);
+  timers.insert(timers.begin(),m_timers.begin(),end);
+  m_timers.erase(m_timers.begin(),end);
   cbs.reserve(timers.size());
 
   for(auto& it : timers){
