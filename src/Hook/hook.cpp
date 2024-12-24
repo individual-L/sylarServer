@@ -89,9 +89,23 @@ struct timerCond{
   int cancelled = 0;
 };
 
+template<typename T>
+static void printArgs(std::stringstream& ss, const T& arg){
+  ss << "type: " << typeid(arg).name() << " value: " <<arg <<std::endl;
+}
+
+template<typename T, typename... Args>
+static void printArgs(std::stringstream& ss,const T& arg,const Args& ... args){
+  ss << "type: " << typeid(arg).name() << " value: " <<arg <<std::endl;
+  printArgs(ss,args...);
+}
+
 template<typename OriginFunc,typename... Args>
 static ssize_t do_io(int fd,OriginFunc fun,const char * name_f,uint32_t event,int so_timeOut,Args&&... args){
-  GAIYA_ASSERT2((!!fun),"fun not exist");
+
+  // std::stringstream ss;
+  // printArgs(ss,args...);
+  // LOG_INFO(logger) <<ss.str();
 
   if(!gaiya::isHook()){
     return fun(fd,std::forward<Args>(args)...);
@@ -115,10 +129,8 @@ static ssize_t do_io(int fd,OriginFunc fun,const char * name_f,uint32_t event,in
   ssize_t n = 0;
 
   uint64_t timeOut = fdctx->getTimeout(so_timeOut);
-  gaiya::Timer::ptr timer;
   std::shared_ptr<timerCond> tcond(new timerCond());
-  std::weak_ptr<timerCond> wcond(tcond);
-  gaiya::IOmanager* iom = gaiya::IOmanager::GetThis();
+
 
 retry:
   n = fun(fd,std::forward<Args>(args)...);
@@ -127,7 +139,9 @@ retry:
     n = fun(fd,std::forward<Args>(args)...);
   }
   if(n == -1 && errno == EAGAIN){
-
+  gaiya::Timer::ptr timer;
+  std::weak_ptr<timerCond> wcond(tcond);
+  gaiya::IOmanager* iom = gaiya::IOmanager::GetThis();
     //是否设置超时时间
     if(timeOut != (uint64_t)-1){
       timer = iom->addConditionTimer(timeOut,[fd,wcond,iom](){
@@ -151,7 +165,8 @@ retry:
         errno = ETIMEDOUT;
         return -1;
       }
-      LOG_INFO(logger) <<"读事件触发";
+      LOG_INFO(logger) <<"重新recv";
+      goto retry;
     }else{
       LOG_ERROR(logger) <<"name_f::iom->addEvent(" <<fd <<",gaiya::IOmanager::READ) error";
       if(timer){
@@ -159,7 +174,6 @@ retry:
       }
       return -1;
     }
-    goto retry;
   }
   return n;
 }
@@ -274,10 +288,8 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
   int res = connect_f(fd,addr,addrlen);
   if(res == 0){
     return 0;
-  }else if(errno != EINPROGRESS){
+  }else if(res != -1 || errno != EINPROGRESS){
     return res;
-  }else if(errno == EINPROGRESS){
-    LOG_INFO(logger) <<"正在连接中";
   }
 
   gaiya::IOmanager* iom = gaiya::IOmanager::GetThis();
@@ -300,13 +312,11 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
   }
 
   bool rt = iom->addEvent(fd,gaiya::IOmanager::WRITE);
-  if(rt){
-    LOG_INFO(logger) <<"添加write事件成功";
+  if(GAIYA_LIKELY(rt)){
     gaiya::Coroutine::YieldToHold();
     if(timer){
       timer->cancelTimer();
     }
-    LOG_INFO(logger) <<"重新回到connect";
     //判断是否是超时触发
     if(tcond->cancelled){
       LOG_INFO(logger) <<"链接超时";
@@ -328,8 +338,10 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
   }
   
   if(!err){
+    LOG_INFO(logger) <<"无错误";
     return 0;
   }else{
+    LOG_INFO(logger) <<"发生错误";
     errno = err;
     return -1;
   }

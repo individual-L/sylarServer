@@ -86,12 +86,12 @@ clean: CMakeFiles/testIOmanager.dir/clean
 CMakeFiles/gaiya.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target gaiya"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target gaiya"
 .PHONY : CMakeFiles/gaiya.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/gaiya.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/gaiya.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 0
 .PHONY : CMakeFiles/gaiya.dir/rule
@@ -112,12 +112,12 @@ CMakeFiles/gaiya.dir/clean:
 CMakeFiles/testIOmanager.dir/all: CMakeFiles/gaiya.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/testIOmanager.dir/build.make CMakeFiles/testIOmanager.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/testIOmanager.dir/build.make CMakeFiles/testIOmanager.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=13,14 "Built target testIOmanager"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=14,15 "Built target testIOmanager"
 .PHONY : CMakeFiles/testIOmanager.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/testIOmanager.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/testIOmanager.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 0
 .PHONY : CMakeFiles/testIOmanager.dir/rule

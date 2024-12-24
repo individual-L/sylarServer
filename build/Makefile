@@ -145,6 +145,30 @@ testIOmanager/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/testIOmanager.dir/build.make CMakeFiles/testIOmanager.dir/build
 .PHONY : testIOmanager/fast
 
+src/Address/address.o: src/Address/address.cpp.o
+.PHONY : src/Address/address.o
+
+# target to build an object file
+src/Address/address.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Address/address.cpp.o
+.PHONY : src/Address/address.cpp.o
+
+src/Address/address.i: src/Address/address.cpp.i
+.PHONY : src/Address/address.i
+
+# target to preprocess a source file
+src/Address/address.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Address/address.cpp.i
+.PHONY : src/Address/address.cpp.i
+
+src/Address/address.s: src/Address/address.cpp.s
+.PHONY : src/Address/address.s
+
+# target to generate assembly for a file
+src/Address/address.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Address/address.cpp.s
+.PHONY : src/Address/address.cpp.s
+
 src/Config/config.o: src/Config/config.cpp.o
 .PHONY : src/Config/config.o
 
@@ -443,6 +467,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... gaiya"
 	@echo "... testIOmanager"
+	@echo "... src/Address/address.o"
+	@echo "... src/Address/address.i"
+	@echo "... src/Address/address.s"
 	@echo "... src/Config/config.o"
 	@echo "... src/Config/config.i"
 	@echo "... src/Config/config.s"

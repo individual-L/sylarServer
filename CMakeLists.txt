@@ -15,7 +15,8 @@ set(COROUTINE_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Coroutine)
 set(SCHEDULER_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Scheduler)
 set(IOMANAGER_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/IOmanager)
 set(TIMER_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Timer)
-set(Hook_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Hook)
+set(HOOK_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Hook)
+set(ADDRESS_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Address)
 
 
 set(LIB_SRC 
@@ -30,8 +31,10 @@ set(LIB_SRC
   ${SCHEDULER_INCLUDE_DIR}/schedule.cpp
   ${IOMANAGER_INCLUDE_DIR}/iomanager.cpp
   ${TIMER_INCLUDE_DIR}/timer.cpp
-  ${Hook_INCLUDE_DIR}/hook.cpp
-  ${Hook_INCLUDE_DIR}/fdMng.cpp
+  ${HOOK_INCLUDE_DIR}/hook.cpp
+  ${HOOK_INCLUDE_DIR}/fdMng.cpp
+  ${ADDRESS_INCLUDE_DIR}/address.cpp
+  ${UTIL_INCLUDE_DIR}/byteSwapGaiya.hpp
 )
 include_directories(
   ${LOG_INCLUDE_DIR}
@@ -44,7 +47,8 @@ include_directories(
   ${SCHEDULER_INCLUDE_DIR}
   ${IOMANAGER_INCLUDE_DIR}
   ${TIMER_INCLUDE_DIR}
-  ${Hook_INCLUDE_DIR}
+  ${HOOK_INCLUDE_DIR}
+  ${ADDRESS_INCLUDE_DIR}
 )
 add_library(gaiya SHARED ${LIB_SRC})
 

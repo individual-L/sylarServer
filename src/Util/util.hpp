@@ -11,6 +11,9 @@
 #include<filesystem>
 #include<string>
 #include<vector>
+#include<stdint.h>
+#include <type_traits>
+#include <arpa/inet.h>
 #include<execinfo.h>
 
 #include"log.hpp"
@@ -58,9 +61,6 @@ std::string TypeName(){
   }
   return {};
 }
-
-
-
 
 }
 #endif

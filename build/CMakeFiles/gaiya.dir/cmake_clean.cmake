@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "/home/luo/cplus/gaiya/lib/libgaiya.pdb"
   "/home/luo/cplus/gaiya/lib/libgaiya.so"
+  "CMakeFiles/gaiya.dir/src/Address/address.cpp.o"
+  "CMakeFiles/gaiya.dir/src/Address/address.cpp.o.d"
   "CMakeFiles/gaiya.dir/src/Config/config.cpp.o"
   "CMakeFiles/gaiya.dir/src/Config/config.cpp.o.d"
   "CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.o"

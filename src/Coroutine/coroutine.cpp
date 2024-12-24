@@ -115,11 +115,9 @@ void Coroutine::reset(std::function<void()> func){
 }
 
 void Coroutine::swapIn(){
-  LOG_INFO(logger) <<"swapIn==> coroId: " <<m_id <<" coroState: "<<m_state;
   SetCurCoro(this);
   GAIYA_ASSERT2(m_state != EXECU,"coroId: " + std::to_string(m_id));
   m_state = EXECU; 
-  LOG_INFO(logger) <<"swapIn==> coroId: " <<m_id <<" coroState: "<<m_state;
 
   if(::swapcontext(&(gaiya::Scheduler::GetMasterCoro()->m_context),&m_context)){
     GAIYA_ASSERT2(false,"swapcontext");
@@ -183,8 +181,6 @@ void Coroutine::YieldToReady(){
 void Coroutine::YieldToHold(){
   Coroutine::ptr cur = GetCurCoro();
   GAIYA_ASSERT(cur->getState() == EXECU);
-  LOG_INFO(logger)<<"YieldToHold()===> coroId: "<<cur->getId() <<" coroState: "<<cur->getState()
-                  <<" yield to CoroId: " <<gaiya::Scheduler::GetMasterCoro()->getId() <<" coroState: " <<gaiya::Scheduler::GetMasterCoro()->getState();
   cur->m_state = HOLD;
 
   cur->swapOut();
