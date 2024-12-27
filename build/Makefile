@@ -133,17 +133,17 @@ gaiya/fast:
 .PHONY : gaiya/fast
 
 #=============================================================================
-# Target rules for targets named testIOmanager
+# Target rules for targets named testAddress
 
 # Build rule for target.
-testIOmanager: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testIOmanager
-.PHONY : testIOmanager
+testAddress: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testAddress
+.PHONY : testAddress
 
 # fast build rule for target.
-testIOmanager/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testIOmanager.dir/build.make CMakeFiles/testIOmanager.dir/build
-.PHONY : testIOmanager/fast
+testAddress/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testAddress.dir/build.make CMakeFiles/testAddress.dir/build
+.PHONY : testAddress/fast
 
 src/Address/address.o: src/Address/address.cpp.o
 .PHONY : src/Address/address.o
@@ -361,6 +361,30 @@ src/Scheduler/schedule.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.s
 .PHONY : src/Scheduler/schedule.cpp.s
 
+src/Socket/socket.o: src/Socket/socket.cpp.o
+.PHONY : src/Socket/socket.o
+
+# target to build an object file
+src/Socket/socket.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Socket/socket.cpp.o
+.PHONY : src/Socket/socket.cpp.o
+
+src/Socket/socket.i: src/Socket/socket.cpp.i
+.PHONY : src/Socket/socket.i
+
+# target to preprocess a source file
+src/Socket/socket.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Socket/socket.cpp.i
+.PHONY : src/Socket/socket.cpp.i
+
+src/Socket/socket.s: src/Socket/socket.cpp.s
+.PHONY : src/Socket/socket.s
+
+# target to generate assembly for a file
+src/Socket/socket.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Socket/socket.cpp.s
+.PHONY : src/Socket/socket.cpp.s
+
 src/Thread/thread.o: src/Thread/thread.cpp.o
 .PHONY : src/Thread/thread.o
 
@@ -433,29 +457,29 @@ src/Util/util.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Util/util.cpp.s
 .PHONY : src/Util/util.cpp.s
 
-tester/testIOmanager.o: tester/testIOmanager.cpp.o
-.PHONY : tester/testIOmanager.o
+tester/testAddress.o: tester/testAddress.cpp.o
+.PHONY : tester/testAddress.o
 
 # target to build an object file
-tester/testIOmanager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testIOmanager.dir/build.make CMakeFiles/testIOmanager.dir/tester/testIOmanager.cpp.o
-.PHONY : tester/testIOmanager.cpp.o
+tester/testAddress.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testAddress.dir/build.make CMakeFiles/testAddress.dir/tester/testAddress.cpp.o
+.PHONY : tester/testAddress.cpp.o
 
-tester/testIOmanager.i: tester/testIOmanager.cpp.i
-.PHONY : tester/testIOmanager.i
+tester/testAddress.i: tester/testAddress.cpp.i
+.PHONY : tester/testAddress.i
 
 # target to preprocess a source file
-tester/testIOmanager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testIOmanager.dir/build.make CMakeFiles/testIOmanager.dir/tester/testIOmanager.cpp.i
-.PHONY : tester/testIOmanager.cpp.i
+tester/testAddress.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testAddress.dir/build.make CMakeFiles/testAddress.dir/tester/testAddress.cpp.i
+.PHONY : tester/testAddress.cpp.i
 
-tester/testIOmanager.s: tester/testIOmanager.cpp.s
-.PHONY : tester/testIOmanager.s
+tester/testAddress.s: tester/testAddress.cpp.s
+.PHONY : tester/testAddress.s
 
 # target to generate assembly for a file
-tester/testIOmanager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testIOmanager.dir/build.make CMakeFiles/testIOmanager.dir/tester/testIOmanager.cpp.s
-.PHONY : tester/testIOmanager.cpp.s
+tester/testAddress.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testAddress.dir/build.make CMakeFiles/testAddress.dir/tester/testAddress.cpp.s
+.PHONY : tester/testAddress.cpp.s
 
 # Help Target
 help:
@@ -466,7 +490,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... gaiya"
-	@echo "... testIOmanager"
+	@echo "... testAddress"
 	@echo "... src/Address/address.o"
 	@echo "... src/Address/address.i"
 	@echo "... src/Address/address.s"
@@ -494,6 +518,9 @@ help:
 	@echo "... src/Scheduler/schedule.o"
 	@echo "... src/Scheduler/schedule.i"
 	@echo "... src/Scheduler/schedule.s"
+	@echo "... src/Socket/socket.o"
+	@echo "... src/Socket/socket.i"
+	@echo "... src/Socket/socket.s"
 	@echo "... src/Thread/thread.o"
 	@echo "... src/Thread/thread.i"
 	@echo "... src/Thread/thread.s"
@@ -503,9 +530,9 @@ help:
 	@echo "... src/Util/util.o"
 	@echo "... src/Util/util.i"
 	@echo "... src/Util/util.s"
-	@echo "... tester/testIOmanager.o"
-	@echo "... tester/testIOmanager.i"
-	@echo "... tester/testIOmanager.s"
+	@echo "... tester/testAddress.o"
+	@echo "... tester/testAddress.i"
+	@echo "... tester/testAddress.s"
 .PHONY : help
 
 

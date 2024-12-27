@@ -12,5 +12,6 @@
 #include"iomanager.hpp"
 #include"hook.hpp"
 #include"byteSwapGaiya.hpp"
+#include"address.hpp"
 
 #endif

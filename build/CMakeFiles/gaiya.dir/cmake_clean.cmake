@@ -19,6 +19,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/gaiya.dir/src/Log/log.cpp.o.d"
   "CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.o"
   "CMakeFiles/gaiya.dir/src/Scheduler/schedule.cpp.o.d"
+  "CMakeFiles/gaiya.dir/src/Socket/socket.cpp.o"
+  "CMakeFiles/gaiya.dir/src/Socket/socket.cpp.o.d"
   "CMakeFiles/gaiya.dir/src/Thread/thread.cpp.o"
   "CMakeFiles/gaiya.dir/src/Thread/thread.cpp.o.d"
   "CMakeFiles/gaiya.dir/src/Timer/timer.cpp.o"

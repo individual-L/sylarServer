@@ -99,10 +99,8 @@ class IPAddress : public Address{
    public:
       typedef std::shared_ptr<IPAddress> ptr;
    public:
-      static IPAddress::ptr Create(const char* address,uint16_t port);
-   public:
       virtual IPAddress::ptr getBroadcastAddress(uint32_t prefix_len) = 0;
-      virtual IPAddress::ptr getsubnetAddress(uint32_t prefix_len) = 0;
+      virtual IPAddress::ptr getnetworkAddress(uint32_t prefix_len) = 0;
       virtual IPAddress::ptr getnetMask(uint32_t prefix_len) = 0;
       virtual uint16_t getPort() const = 0;
       virtual void setPort(uint16_t port) = 0;
@@ -111,8 +109,6 @@ class IPAddress : public Address{
 class IPv4Address : public IPAddress{
    public:
       typedef std::shared_ptr<IPv4Address> ptr;
-
-      static IPv4Address::ptr Create(const char* address, uint16_t port = 0);
 
       IPv4Address(const sockaddr_in & addr);
 
@@ -127,7 +123,7 @@ class IPv4Address : public IPAddress{
 
       IPAddress::ptr getBroadcastAddress(uint32_t prefix_len) override;
 
-      IPAddress::ptr getsubnetAddress(uint32_t prefix_len) override;
+      IPAddress::ptr getnetworkAddress(uint32_t prefix_len) override;
 
       IPAddress::ptr getnetMask(uint32_t prefix_len) override;
 
@@ -144,7 +140,6 @@ class IPv4Address : public IPAddress{
 class IPv6Address : public IPAddress{
    public:
       typedef std::shared_ptr<IPv6Address> ptr;
-      static IPv6Address::ptr Create(const char* address, uint16_t port = 0);
 
       IPv6Address();
       IPv6Address(const sockaddr_in6& addr);
@@ -159,7 +154,7 @@ class IPv6Address : public IPAddress{
 
          IPAddress::ptr getBroadcastAddress(uint32_t prefix_len) override;
 
-         IPAddress::ptr getsubnetAddress(uint32_t prefix_len) override;
+         IPAddress::ptr getnetworkAddress(uint32_t prefix_len) override;
 
          IPAddress::ptr getnetMask(uint32_t prefix_len) override;
 
@@ -170,10 +165,11 @@ class IPv6Address : public IPAddress{
       sockaddr_in6 m_addr;
 };
 
+
+//用于同一计算机中进程间通信
 class UnixAddress : public IPAddress {
    public:
       typedef std::shared_ptr<UnixAddress> ptr;
-      static UnixAddress::ptr Create(const char* address, uint16_t port = 0);
 
       UnixAddress();
       UnixAddress(const std::string& path);
@@ -185,15 +181,9 @@ class UnixAddress : public IPAddress {
 
          std::ostream& insert(std::ostream& os) const override;
 
-         IPAddress::ptr getBroadcastAddress(uint32_t prefix_len) override;
+         void setAddrLen(const uint32_t len);
 
-         IPAddress::ptr getsubnetAddress(uint32_t prefix_len) override;
-
-         IPAddress::ptr getnetMask(uint32_t prefix_len) override;
-
-         uint16_t getPort() const override;
-         
-         void setPort(uint16_t port) override;
+         std::string getPath() const ;
    private:
       sockaddr_un m_addr;
       socklen_t m_len;
@@ -203,9 +193,9 @@ class UnixAddress : public IPAddress {
 class UknownAddress: public Address{
    public:
       typedef std::shared_ptr<UknownAddress> ptr;
-      UknownAddress();
-      UknownAddress(const sockaddr& addr);
+      UknownAddress(){}
       UknownAddress(int family);
+      UknownAddress(const sockaddr& addr);
    public:
       const sockaddr* getAddr() const override;
 
@@ -217,7 +207,7 @@ class UknownAddress: public Address{
 };
 
 
-std::ostream& operator << (std::ostream& os,const Address& addr);
+std::ostream& operator<< (std::ostream& os,const Address& addr);
 }
 
 #endif
