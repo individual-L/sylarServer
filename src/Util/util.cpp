@@ -46,4 +46,9 @@ std::string GetThreadName(){
   return gaiya::Thread::GetName();
 }
 
+//删除path文件
+bool Unlink(std::string path){
+  return ::unlink(path.c_str()) == 0;
+}
+
 }

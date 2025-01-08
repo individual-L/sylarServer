@@ -25,7 +25,7 @@ bool FdCtx::init(){
     return false;
   }
   struct stat fdStat;
-  //检测此fd是否为sockfd
+  //检测此文件句柄是否存在
   if(fstat(m_fd,&fdStat) == -1){
     m_isSocket = false;
     m_isInit = false;

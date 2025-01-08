@@ -62,5 +62,7 @@ std::string TypeName(){
   return {};
 }
 
+bool Unlink(std::string path);
+
 }
 #endif

@@ -7,7 +7,7 @@
 #include"log.hpp"
 #include"address.hpp"
 #include"util.hpp"
-#include"byteSwapGaiya.hpp"
+#include"endian.hpp"
 #include"macro.hpp"
 
 static gaiya::Logger::ptr logger = LOG_M()->getLogger("master");
@@ -233,10 +233,41 @@ std::string Address::toString() const {
   return ss.str();
 }
 
+IPAddress::ptr IPAddress::Create(const char* address, uint16_t port){
+  struct addrinfo hint,*result;
+  //address必须是字符数字串，而不是域名
+  hint.ai_flags = AI_NUMERICHOST;
+  hint.ai_family = AF_UNSPEC;
+
+  int res = ::getaddrinfo(address,NULL,&hint,&result);
+  if(res){
+    LOG_ERROR(logger) << "IPAddress::Create(" << address
+        << ", " << port << ") error=" << res
+        << " errno=" << errno << " errstr=" << strerror(errno);
+    return nullptr;
+  }
+  try{
+    IPAddress::ptr addr = std::dynamic_pointer_cast<IPAddress>(Address::Create(result->ai_addr,result->ai_addrlen));
+    if(addr){
+      addr->setPort(port);
+    }
+    freeaddrinfo(result);
+    return addr;
+  }catch(...){
+    freeaddrinfo(result);
+    return nullptr;
+  }
+
+
+}
+
 IPv4Address::IPv4Address(const sockaddr_in & addr)
 :m_addr(addr){
 
 }
+
+
+
 
 IPv4Address::IPv4Address(uint32_t addr,uint16_t port){
   memset(&m_addr,0,sizeof(m_addr));
@@ -249,7 +280,7 @@ const sockaddr* IPv4Address::getAddr() const{
   return (sockaddr*) &m_addr;
 }
 
-const socklen_t IPv4Address::getAddrSize() const {
+socklen_t IPv4Address::getAddrSize() const {
   return sizeof(m_addr);
 }
 
@@ -310,7 +341,7 @@ const sockaddr* IPv6Address::getAddr() const{
   return (sockaddr*) &m_addr;
 }
 
-const socklen_t IPv6Address::getAddrSize() const {
+socklen_t IPv6Address::getAddrSize() const {
   return sizeof(m_addr);
 }
 
@@ -427,7 +458,7 @@ const sockaddr* UnixAddress::getAddr() const{
   return (const sockaddr*)&m_addr;
 }
 
-const socklen_t UnixAddress::getAddrSize() const {
+socklen_t UnixAddress::getAddrSize() const {
   return m_len;
 }
 
@@ -470,7 +501,7 @@ const sockaddr* UknownAddress::getAddr() const {
   return &m_addr;
 }
 
-const socklen_t UknownAddress::getAddrSize() const {
+socklen_t UknownAddress::getAddrSize() const {
   return sizeof(m_addr);
 }
 
@@ -482,4 +513,21 @@ std::ostream& UknownAddress::insert(std::ostream& os) const {
 std::ostream& operator<< (std::ostream& os,const Address& addr){
   return addr.insert(os);
 }
+
+sockaddr* IPv4Address::getAddr() {
+  return (sockaddr*)&m_addr;
+}
+
+sockaddr* IPv6Address::getAddr() {
+  return (sockaddr*)&m_addr;
+}
+
+sockaddr* UnixAddress::getAddr() {
+  return (sockaddr*)&m_addr;
+}
+
+sockaddr* UknownAddress::getAddr() {
+  return (sockaddr*)&m_addr;
+}
+
 }

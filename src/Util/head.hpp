@@ -11,7 +11,8 @@
 #include"schedule.hpp"
 #include"iomanager.hpp"
 #include"hook.hpp"
-#include"byteSwapGaiya.hpp"
+#include"endian.hpp"
 #include"address.hpp"
+#include"bytearray.hpp"
 
 #endif

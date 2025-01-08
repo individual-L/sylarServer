@@ -318,6 +318,6 @@ CMakeFiles/gaiya.dir/src/Address/address.cpp.o: \
  /home/luo/cplus/gaiya/src/Singlem/singlem.hpp \
  /home/luo/cplus/gaiya/src/Address/address.hpp \
  /usr/include/x86_64-linux-gnu/sys/un.h /usr/include/string.h \
- /usr/include/strings.h /home/luo/cplus/gaiya/src/Util/byteSwapGaiya.hpp \
+ /usr/include/strings.h /home/luo/cplus/gaiya/src/Util/endian.hpp \
  /usr/include/byteswap.h /home/luo/cplus/gaiya/src/Util/macro.hpp \
  /usr/include/assert.h /home/luo/cplus/gaiya/src/Util/util.hpp

@@ -61,7 +61,9 @@ class Address{
 
       virtual const sockaddr* getAddr() const = 0;
 
-      virtual const socklen_t getAddrSize() const = 0;
+      virtual sockaddr* getAddr() = 0;
+
+      virtual socklen_t getAddrSize() const = 0;
 
       virtual std::ostream& insert(std::ostream& os) const = 0;
 
@@ -98,6 +100,7 @@ class Address{
 class IPAddress : public Address{
    public:
       typedef std::shared_ptr<IPAddress> ptr;
+      static IPAddress::ptr Create(const char* address, uint16_t port = 0);
    public:
       virtual IPAddress::ptr getBroadcastAddress(uint32_t prefix_len) = 0;
       virtual IPAddress::ptr getnetworkAddress(uint32_t prefix_len) = 0;
@@ -115,9 +118,11 @@ class IPv4Address : public IPAddress{
       IPv4Address(uint32_t addr = INADDR_ANY,uint16_t port = 0);
 
    public:
+      sockaddr* getAddr() override;
+
       const sockaddr* getAddr() const override;
 
-      const socklen_t getAddrSize() const override;
+      socklen_t getAddrSize() const override;
 
       std::ostream& insert(std::ostream& os) const override;
 
@@ -146,9 +151,12 @@ class IPv6Address : public IPAddress{
       IPv6Address(const uint8_t addr[16],uint16_t port = 0);
 
       public:
+
+         sockaddr* getAddr() override;
+
          const sockaddr* getAddr() const override;
 
-         const socklen_t getAddrSize() const override;
+         socklen_t getAddrSize() const override;
 
          std::ostream& insert(std::ostream& os) const override;
 
@@ -167,7 +175,7 @@ class IPv6Address : public IPAddress{
 
 
 //用于同一计算机中进程间通信
-class UnixAddress : public IPAddress {
+class UnixAddress : public Address {
    public:
       typedef std::shared_ptr<UnixAddress> ptr;
 
@@ -175,9 +183,11 @@ class UnixAddress : public IPAddress {
       UnixAddress(const std::string& path);
 
       public:
+         sockaddr* getAddr() override;
+
          const sockaddr* getAddr() const override;
 
-         const socklen_t getAddrSize() const override;
+         socklen_t getAddrSize() const override;
 
          std::ostream& insert(std::ostream& os) const override;
 
@@ -197,9 +207,11 @@ class UknownAddress: public Address{
       UknownAddress(int family);
       UknownAddress(const sockaddr& addr);
    public:
+      sockaddr* getAddr() override;
+
       const sockaddr* getAddr() const override;
 
-      const socklen_t getAddrSize() const override;
+      socklen_t getAddrSize() const override;
 
       std::ostream& insert(std::ostream& os) const override;
    private:

@@ -18,6 +18,7 @@ set(TIMER_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Timer)
 set(HOOK_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Hook)
 set(ADDRESS_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Address)
 set(SOCKET_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Socket)
+set(BYTEARRAY_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/ByteArray)
 
 
 set(LIB_SRC 
@@ -35,8 +36,9 @@ set(LIB_SRC
   ${HOOK_INCLUDE_DIR}/hook.cpp
   ${HOOK_INCLUDE_DIR}/fdMng.cpp
   ${ADDRESS_INCLUDE_DIR}/address.cpp
-  ${UTIL_INCLUDE_DIR}/byteSwapGaiya.hpp
+  ${UTIL_INCLUDE_DIR}/endian.hpp
   ${SOCKET_INCLUDE_DIR}/socket.cpp
+  ${BYTEARRAY_INCLUDE_DIR}/bytearray.cpp
 )
 include_directories(
   ${LOG_INCLUDE_DIR}
@@ -52,26 +54,15 @@ include_directories(
   ${HOOK_INCLUDE_DIR}
   ${ADDRESS_INCLUDE_DIR}
   ${SOCKET_INCLUDE_DIR}
+  ${BYTEARRAY_INCLUDE_DIR}
 )
 add_library(gaiya SHARED ${LIB_SRC})
 
-# set(LIBS
-#       gaiya
-#       yaml-cpp
-# )
-# add_executable(testThread tester/testThread.cpp)
-# add_dependencies(testThread gaiya)
-# target_link_libraries(testThread gaiya)
-
-# add_executable(testLog tester/testLog.cpp)
-# add_dependencies(testLog gaiya)
-# target_link_libraries(testLog gaiya)
-
-add_executable(testAddress tester/testAddress.cpp)
-target_link_libraries(testAddress pthread)
-target_link_libraries(testAddress gaiya)
-target_link_libraries(testAddress yaml-cpp)
-add_dependencies(testAddress gaiya)
+add_executable(testByteArray tester/testByteArray.cpp)
+target_link_libraries(testByteArray pthread)
+target_link_libraries(testByteArray gaiya)
+target_link_libraries(testByteArray yaml-cpp)
+add_dependencies(testByteArray gaiya)
 
 #这个命令确保在构建目标之前，先构建它所依赖的其他目标。
 

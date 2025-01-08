@@ -133,17 +133,17 @@ gaiya/fast:
 .PHONY : gaiya/fast
 
 #=============================================================================
-# Target rules for targets named testAddress
+# Target rules for targets named testByteArray
 
 # Build rule for target.
-testAddress: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testAddress
-.PHONY : testAddress
+testByteArray: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testByteArray
+.PHONY : testByteArray
 
 # fast build rule for target.
-testAddress/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testAddress.dir/build.make CMakeFiles/testAddress.dir/build
-.PHONY : testAddress/fast
+testByteArray/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testByteArray.dir/build.make CMakeFiles/testByteArray.dir/build
+.PHONY : testByteArray/fast
 
 src/Address/address.o: src/Address/address.cpp.o
 .PHONY : src/Address/address.o
@@ -168,6 +168,30 @@ src/Address/address.s: src/Address/address.cpp.s
 src/Address/address.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Address/address.cpp.s
 .PHONY : src/Address/address.cpp.s
+
+src/ByteArray/bytearray.o: src/ByteArray/bytearray.cpp.o
+.PHONY : src/ByteArray/bytearray.o
+
+# target to build an object file
+src/ByteArray/bytearray.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/ByteArray/bytearray.cpp.o
+.PHONY : src/ByteArray/bytearray.cpp.o
+
+src/ByteArray/bytearray.i: src/ByteArray/bytearray.cpp.i
+.PHONY : src/ByteArray/bytearray.i
+
+# target to preprocess a source file
+src/ByteArray/bytearray.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/ByteArray/bytearray.cpp.i
+.PHONY : src/ByteArray/bytearray.cpp.i
+
+src/ByteArray/bytearray.s: src/ByteArray/bytearray.cpp.s
+.PHONY : src/ByteArray/bytearray.s
+
+# target to generate assembly for a file
+src/ByteArray/bytearray.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/ByteArray/bytearray.cpp.s
+.PHONY : src/ByteArray/bytearray.cpp.s
 
 src/Config/config.o: src/Config/config.cpp.o
 .PHONY : src/Config/config.o
@@ -457,29 +481,29 @@ src/Util/util.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Util/util.cpp.s
 .PHONY : src/Util/util.cpp.s
 
-tester/testAddress.o: tester/testAddress.cpp.o
-.PHONY : tester/testAddress.o
+tester/testByteArray.o: tester/testByteArray.cpp.o
+.PHONY : tester/testByteArray.o
 
 # target to build an object file
-tester/testAddress.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testAddress.dir/build.make CMakeFiles/testAddress.dir/tester/testAddress.cpp.o
-.PHONY : tester/testAddress.cpp.o
+tester/testByteArray.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testByteArray.dir/build.make CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.o
+.PHONY : tester/testByteArray.cpp.o
 
-tester/testAddress.i: tester/testAddress.cpp.i
-.PHONY : tester/testAddress.i
+tester/testByteArray.i: tester/testByteArray.cpp.i
+.PHONY : tester/testByteArray.i
 
 # target to preprocess a source file
-tester/testAddress.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testAddress.dir/build.make CMakeFiles/testAddress.dir/tester/testAddress.cpp.i
-.PHONY : tester/testAddress.cpp.i
+tester/testByteArray.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testByteArray.dir/build.make CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.i
+.PHONY : tester/testByteArray.cpp.i
 
-tester/testAddress.s: tester/testAddress.cpp.s
-.PHONY : tester/testAddress.s
+tester/testByteArray.s: tester/testByteArray.cpp.s
+.PHONY : tester/testByteArray.s
 
 # target to generate assembly for a file
-tester/testAddress.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testAddress.dir/build.make CMakeFiles/testAddress.dir/tester/testAddress.cpp.s
-.PHONY : tester/testAddress.cpp.s
+tester/testByteArray.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testByteArray.dir/build.make CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.s
+.PHONY : tester/testByteArray.cpp.s
 
 # Help Target
 help:
@@ -490,10 +514,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... gaiya"
-	@echo "... testAddress"
+	@echo "... testByteArray"
 	@echo "... src/Address/address.o"
 	@echo "... src/Address/address.i"
 	@echo "... src/Address/address.s"
+	@echo "... src/ByteArray/bytearray.o"
+	@echo "... src/ByteArray/bytearray.i"
+	@echo "... src/ByteArray/bytearray.s"
 	@echo "... src/Config/config.o"
 	@echo "... src/Config/config.i"
 	@echo "... src/Config/config.s"
@@ -530,9 +557,9 @@ help:
 	@echo "... src/Util/util.o"
 	@echo "... src/Util/util.i"
 	@echo "... src/Util/util.s"
-	@echo "... tester/testAddress.o"
-	@echo "... tester/testAddress.i"
-	@echo "... tester/testAddress.s"
+	@echo "... tester/testByteArray.o"
+	@echo "... tester/testByteArray.i"
+	@echo "... tester/testByteArray.s"
 .PHONY : help
 
 
