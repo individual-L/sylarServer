@@ -70,6 +70,7 @@ class ByteArray
     void writeStringF64(const std::string& val);
     void writeStringVint(const std::string& val);
     void writeStringWithnotLength(const std::string& val);
+    std::string readStringWithnotLength();
 
     std::string readStringF16();
     std::string readStringF32();

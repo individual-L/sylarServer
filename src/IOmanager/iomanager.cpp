@@ -332,6 +332,9 @@ bool IOmanager::stopping() {
 }
 bool IOmanager::stopping(uint64_t& nextTime){
   nextTime = getNextTime();
+  // LOG_INFO(logger)<<"pendEvent: " <<m_pendingEventCount 
+  //                 <<" nextTime: " <<(nextTime == ~0ull)
+  //                 <<" stopping: " <<Scheduler::stopping();
   return m_pendingEventCount == 0 && Scheduler::stopping()
         && nextTime == ~0ull;
 }

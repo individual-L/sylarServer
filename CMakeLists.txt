@@ -19,6 +19,7 @@ set(HOOK_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Hook)
 set(ADDRESS_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Address)
 set(SOCKET_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Socket)
 set(BYTEARRAY_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/ByteArray)
+set(HTTP_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/Http)
 
 
 set(LIB_SRC 
@@ -39,6 +40,7 @@ set(LIB_SRC
   ${UTIL_INCLUDE_DIR}/endian.hpp
   ${SOCKET_INCLUDE_DIR}/socket.cpp
   ${BYTEARRAY_INCLUDE_DIR}/bytearray.cpp
+  ${HTTP_INCLUDE_DIR}/http.cpp
 )
 include_directories(
   ${LOG_INCLUDE_DIR}
@@ -55,14 +57,15 @@ include_directories(
   ${ADDRESS_INCLUDE_DIR}
   ${SOCKET_INCLUDE_DIR}
   ${BYTEARRAY_INCLUDE_DIR}
+  ${HTTP_INCLUDE_DIR}
 )
 add_library(gaiya SHARED ${LIB_SRC})
 
-add_executable(testByteArray tester/testByteArray.cpp)
-target_link_libraries(testByteArray pthread)
-target_link_libraries(testByteArray gaiya)
-target_link_libraries(testByteArray yaml-cpp)
-add_dependencies(testByteArray gaiya)
+add_executable(main tester/main.cpp)
+target_link_libraries(main pthread)
+target_link_libraries(main gaiya)
+target_link_libraries(main yaml-cpp)
+add_dependencies(main gaiya)
 
 #这个命令确保在构建目标之前，先构建它所依赖的其他目标。
 

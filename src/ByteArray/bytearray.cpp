@@ -83,7 +83,6 @@ void ByteArray::write(const void *buf, size_t size){
   if(size == 0){
     return;
   }
-
   //扩容到能写入size大小
   addCapacity(size);
   // lOG_INFO_ROOT() <<"capacity: " <<m_capacity;
@@ -122,8 +121,7 @@ void ByteArray::write(const void *buf, size_t size){
 
 void ByteArray::read(void *buf, size_t size){
   if(size > getReadSize()){
-    LOG_ERROR(logger) <<"size: "<<size <<" m_size: "<<m_size;
-    throw std::out_of_range("not enough length");
+    throw std::out_of_range("ByteArray::read::not enough length");
   }
 
   size_t npos = m_position % m_baseSize;
@@ -374,12 +372,20 @@ void ByteArray::writeStringF64(const std::string& val){
   write(val.c_str(),val.size());
 }
 void ByteArray::writeStringVint(const std::string& val){
-  writeUint64(val.size());
+  writeInt64(val.size());
   write(val.c_str(),val.size());
 }
 void ByteArray::writeStringWithnotLength(const std::string& val){
   write(val.c_str(),val.size());
 }
+
+std::string ByteArray::readStringWithnotLength(){
+  std::string buff;
+  buff.resize(getReadSize());
+  read(buff.data(),getReadSize());
+  return buff;
+}
+
 
 std::string ByteArray::readStringF16(){
   uint16_t len = readFuint16();
@@ -396,14 +402,14 @@ std::string ByteArray::readStringF32(){
   return buff;
 }
 std::string ByteArray::readStringF64(){
-  uint64_t len = readFuint32();
+  uint64_t len = readFuint64();
   std::string buff;
   buff.resize(len);
   read(buff.data(),len);
   return buff;
 }
 std::string ByteArray::readStringVint(){
-  uint64_t len = readUint64();
+  uint64_t len = readInt64();
   std::string buff;
   buff.resize(len);
   read(buff.data(),len);
@@ -413,16 +419,15 @@ void ByteArray::clear(){
   m_position = 0;
   m_size = 0;
   m_capacity = m_baseSize;
-  Node* tmp = m_cur->next;
+  Node* tmp = m_root->next;
   while(tmp){
     m_cur = tmp;
     tmp = tmp->next;
-    delete []m_cur;
+    delete m_cur;
   }
   m_cur = m_root;
   m_root->next = nullptr;
   memset(m_root->ptr,0,m_root->size);
-
 }
 void ByteArray::setPosition(size_t len){
   if(len > m_capacity){
@@ -615,12 +620,11 @@ uint64_t ByteArray::getWriteBuffers(std::vector<iovec>& buffers, uint64_t len){
 }
 
 bool ByteArray::writeToFile(const std::string& fileName) const{
-  std::fstream fo;
+  std::ofstream fo;
   fo.open(fileName,std::ios::trunc | std::ios::binary);
 
-  if(!fo){
-    LOG_ERROR(logger) <<"ByteArray::writeToFile::fo.open() error, fileName: " <<fileName
-                      <<" error: " <<errno <<"(" <<strerror(errno) <<")";
+  if(!fo.is_open()){
+    LOG_ERROR(logger) <<"ByteArray::writeToFile::fo.open() error, fileName: " <<fileName <<" error: " <<errno <<"(" <<strerror(errno) <<")";
     return false;
   }
   size_t readSize = getReadSize();
@@ -630,7 +634,7 @@ bool ByteArray::writeToFile(const std::string& fileName) const{
 
   while(readSize > 0){
     cap = (readSize > m_cur->size ? m_cur->size : readSize) - pos;
-    fo.write(m_cur->ptr + pos,cap);
+    fo.write(tmp->ptr + pos,cap);
     readSize -= cap;
     tmp = tmp->next;
     pos = 0;
@@ -639,7 +643,7 @@ bool ByteArray::writeToFile(const std::string& fileName) const{
 }
 
 bool ByteArray::readFromFile(const std::string& fileName){
-  std::fstream fi;
+  std::ifstream fi;
   fi.open(fileName,std::ios::binary);
   if(!fi){
     LOG_ERROR(logger) <<"ByteArray::readFromFile::fi.open() error, fileName: " <<fileName

@@ -14,5 +14,7 @@
 #include"endian.hpp"
 #include"address.hpp"
 #include"bytearray.hpp"
+#include"socket.hpp"
+#include"http.hpp"
 
 #endif

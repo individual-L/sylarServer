@@ -65,7 +65,7 @@ bool Address::operator!=(const Address& addr) const {
 }
 
 //返回host的所有符合条件的Address
-bool Address::Lookup(std::vector<Address::ptr>& addresses, const std::string& host,int family,int type,int protocol){
+bool Address::Lookup(std::vector<Address::ptr>& addresses, const std::string& host,int family,int type,int protocol,std::string service){
   struct addrinfo hints , *res , *next;
 
   hints.ai_family = family;
@@ -78,7 +78,7 @@ bool Address::Lookup(std::vector<Address::ptr>& addresses, const std::string& ho
   hints.ai_next = nullptr;
 
   std::string node;
-  const char* port = nullptr;
+  const char* port = NULL;
 
   //ipv6格式: [ip]:port
   if(!host.empty() && host[0] == '['){
@@ -104,7 +104,9 @@ bool Address::Lookup(std::vector<Address::ptr>& addresses, const std::string& ho
   //host为域名
   if(node.empty()){
     node = host;
+    port = service.c_str();
   }
+  LOG_INFO(logger) <<"getaddrinfo port: " <<port;
   int error = getaddrinfo(node.c_str(),port,&hints,&res);
 
   if(error){
@@ -114,6 +116,7 @@ bool Address::Lookup(std::vector<Address::ptr>& addresses, const std::string& ho
 
   next = res;
   while(next){
+    LOG_INFO(logger) <<"port: " <<((sockaddr_in*)next->ai_addr)->sin_port;
     addresses.push_back(Create(next->ai_addr,next->ai_addrlen));
     next = next->ai_next;
   }
@@ -122,9 +125,9 @@ bool Address::Lookup(std::vector<Address::ptr>& addresses, const std::string& ho
 }
 
 //返回host的任意符合条件的Address
-Address::ptr Address::LookupAny(const std::string& hostName,int family,int type,int protocol){
+Address::ptr Address::LookupAny(const std::string& hostName,int family,int type,int protocol,std::string service){
   std::vector<Address::ptr> addresses;
-  if(Lookup(addresses,hostName,family,type,protocol)){
+  if(Lookup(addresses,hostName,family,type,protocol,service)){
     return addresses[0];
   }
   return nullptr;
@@ -221,7 +224,6 @@ bool Address::GetInterfaceAddress(std::vector<std::pair<Address::ptr,uint32_t>>&
   }
   return true;
 }
-
 
 int Address::getFamily() const {
   return getAddr()->sa_family;

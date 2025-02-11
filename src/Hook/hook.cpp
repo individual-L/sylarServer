@@ -64,6 +64,12 @@ void hook_init(){
     LOG_INFO(logger) <<" timeout_ms changed to newData: "<< newData <<" from oldData: "<<oldData;
     s_timeout = newData;
   });
+
+  // std::filesystem::path filePath(__FILE__);
+  // filePath = filePath.parent_path().parent_path();
+  // //如果以/为开头，他会把filePath设置为 /configTest.yaml
+  // filePath.append("configuration.yaml");
+  // gaiya::Config::loadYamlFile(filePath.c_str());
   if(isInit){
     return;
   }
@@ -293,7 +299,6 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
   }
 
   gaiya::IOmanager* iom = gaiya::IOmanager::GetThis();
-
 
   std::shared_ptr<timerCond> tcond(new timerCond());
   gaiya::Timer::ptr timer;

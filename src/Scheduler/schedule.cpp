@@ -242,6 +242,10 @@ void Scheduler::idle(){
 
 bool Scheduler::stopping(){
   MuteType::Lock lock(m_mutex);
+  // LOG_INFO(logger) <<"m_autoStop: " <<m_autoStop
+  //                   <<" m_stopping: " <<m_stopping
+  //                   <<" m_coros.empty: " <<m_coros.empty()
+  //                   <<" m_activeThreadCount: " <<(m_activeThreadCount == 0);
   return m_autoStop && m_stopping
         && m_coros.empty() && m_activeThreadCount == 0;
 }

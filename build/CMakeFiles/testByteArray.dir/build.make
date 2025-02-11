@@ -72,28 +72,28 @@ include CMakeFiles/testByteArray.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/testByteArray.dir/flags.make
 
-CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.o: CMakeFiles/testByteArray.dir/flags.make
-CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.o: /home/luo/cplus/gaiya/tester/testByteArray.cpp
-CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.o: CMakeFiles/testByteArray.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.o -MF CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.o.d -o CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.o -c /home/luo/cplus/gaiya/tester/testByteArray.cpp
+CMakeFiles/testByteArray.dir/tester/main.cpp.o: CMakeFiles/testByteArray.dir/flags.make
+CMakeFiles/testByteArray.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp
+CMakeFiles/testByteArray.dir/tester/main.cpp.o: CMakeFiles/testByteArray.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testByteArray.dir/tester/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/testByteArray.dir/tester/main.cpp.o -MF CMakeFiles/testByteArray.dir/tester/main.cpp.o.d -o CMakeFiles/testByteArray.dir/tester/main.cpp.o -c /home/luo/cplus/gaiya/tester/main.cpp
 
-CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luo/cplus/gaiya/tester/testByteArray.cpp > CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.i
+CMakeFiles/testByteArray.dir/tester/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/testByteArray.dir/tester/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luo/cplus/gaiya/tester/main.cpp > CMakeFiles/testByteArray.dir/tester/main.cpp.i
 
-CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luo/cplus/gaiya/tester/testByteArray.cpp -o CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.s
+CMakeFiles/testByteArray.dir/tester/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/testByteArray.dir/tester/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luo/cplus/gaiya/tester/main.cpp -o CMakeFiles/testByteArray.dir/tester/main.cpp.s
 
 # Object files for target testByteArray
 testByteArray_OBJECTS = \
-"CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.o"
+"CMakeFiles/testByteArray.dir/tester/main.cpp.o"
 
 # External object files for target testByteArray
 testByteArray_EXTERNAL_OBJECTS =
 
-/home/luo/cplus/gaiya/bin/testByteArray: CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.o
+/home/luo/cplus/gaiya/bin/testByteArray: CMakeFiles/testByteArray.dir/tester/main.cpp.o
 /home/luo/cplus/gaiya/bin/testByteArray: CMakeFiles/testByteArray.dir/build.make
 /home/luo/cplus/gaiya/bin/testByteArray: /home/luo/cplus/gaiya/lib/libgaiya.so
 /home/luo/cplus/gaiya/bin/testByteArray: CMakeFiles/testByteArray.dir/link.txt

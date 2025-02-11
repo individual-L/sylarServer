@@ -1,0 +1,1 @@
+/usr/bin/c++  -ggdb -lstdc++fs -Wall -rdynamic  -std=c++17 -Wno-deprecated -Werror -Wno-unused-function -g CMakeFiles/main.dir/tester/main.cpp.o -o /home/luo/cplus/gaiya/bin/main  -Wl,-rpath,/home/luo/cplus/gaiya/lib -lpthread /home/luo/cplus/gaiya/lib/libgaiya.so -lyaml-cpp 

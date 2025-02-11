@@ -48,6 +48,8 @@ class FdCtx : public std::enable_shared_from_this<FdCtx> {
     uint64_t m_readTimeOut = -1;
     uint64_t m_writeTimeOut = -1;
 };
+
+
 class FdMng{
   public:
     typedef gaiya::RWMutex mutexType; 

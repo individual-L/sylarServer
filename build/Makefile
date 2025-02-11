@@ -133,17 +133,17 @@ gaiya/fast:
 .PHONY : gaiya/fast
 
 #=============================================================================
-# Target rules for targets named testByteArray
+# Target rules for targets named main
 
 # Build rule for target.
-testByteArray: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testByteArray
-.PHONY : testByteArray
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-testByteArray/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testByteArray.dir/build.make CMakeFiles/testByteArray.dir/build
-.PHONY : testByteArray/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 src/Address/address.o: src/Address/address.cpp.o
 .PHONY : src/Address/address.o
@@ -288,6 +288,30 @@ src/Hook/hook.s: src/Hook/hook.cpp.s
 src/Hook/hook.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Hook/hook.cpp.s
 .PHONY : src/Hook/hook.cpp.s
+
+src/Http/http.o: src/Http/http.cpp.o
+.PHONY : src/Http/http.o
+
+# target to build an object file
+src/Http/http.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http.cpp.o
+.PHONY : src/Http/http.cpp.o
+
+src/Http/http.i: src/Http/http.cpp.i
+.PHONY : src/Http/http.i
+
+# target to preprocess a source file
+src/Http/http.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http.cpp.i
+.PHONY : src/Http/http.cpp.i
+
+src/Http/http.s: src/Http/http.cpp.s
+.PHONY : src/Http/http.s
+
+# target to generate assembly for a file
+src/Http/http.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http.cpp.s
+.PHONY : src/Http/http.cpp.s
 
 src/IOmanager/iomanager.o: src/IOmanager/iomanager.cpp.o
 .PHONY : src/IOmanager/iomanager.o
@@ -481,29 +505,29 @@ src/Util/util.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Util/util.cpp.s
 .PHONY : src/Util/util.cpp.s
 
-tester/testByteArray.o: tester/testByteArray.cpp.o
-.PHONY : tester/testByteArray.o
+tester/main.o: tester/main.cpp.o
+.PHONY : tester/main.o
 
 # target to build an object file
-tester/testByteArray.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testByteArray.dir/build.make CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.o
-.PHONY : tester/testByteArray.cpp.o
+tester/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/tester/main.cpp.o
+.PHONY : tester/main.cpp.o
 
-tester/testByteArray.i: tester/testByteArray.cpp.i
-.PHONY : tester/testByteArray.i
+tester/main.i: tester/main.cpp.i
+.PHONY : tester/main.i
 
 # target to preprocess a source file
-tester/testByteArray.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testByteArray.dir/build.make CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.i
-.PHONY : tester/testByteArray.cpp.i
+tester/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/tester/main.cpp.i
+.PHONY : tester/main.cpp.i
 
-tester/testByteArray.s: tester/testByteArray.cpp.s
-.PHONY : tester/testByteArray.s
+tester/main.s: tester/main.cpp.s
+.PHONY : tester/main.s
 
 # target to generate assembly for a file
-tester/testByteArray.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testByteArray.dir/build.make CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.s
-.PHONY : tester/testByteArray.cpp.s
+tester/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/tester/main.cpp.s
+.PHONY : tester/main.cpp.s
 
 # Help Target
 help:
@@ -514,7 +538,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... gaiya"
-	@echo "... testByteArray"
+	@echo "... main"
 	@echo "... src/Address/address.o"
 	@echo "... src/Address/address.i"
 	@echo "... src/Address/address.s"
@@ -533,6 +557,9 @@ help:
 	@echo "... src/Hook/hook.o"
 	@echo "... src/Hook/hook.i"
 	@echo "... src/Hook/hook.s"
+	@echo "... src/Http/http.o"
+	@echo "... src/Http/http.i"
+	@echo "... src/Http/http.s"
 	@echo "... src/IOmanager/iomanager.o"
 	@echo "... src/IOmanager/iomanager.i"
 	@echo "... src/IOmanager/iomanager.s"
@@ -557,9 +584,9 @@ help:
 	@echo "... src/Util/util.o"
 	@echo "... src/Util/util.i"
 	@echo "... src/Util/util.s"
-	@echo "... tester/testByteArray.o"
-	@echo "... tester/testByteArray.i"
-	@echo "... tester/testByteArray.s"
+	@echo "... tester/main.o"
+	@echo "... tester/main.i"
+	@echo "... tester/main.s"
 .PHONY : help
 
 

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "/home/luo/cplus/gaiya/bin/testByteArray"
   "/home/luo/cplus/gaiya/bin/testByteArray.pdb"
-  "CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.o"
-  "CMakeFiles/testByteArray.dir/tester/testByteArray.cpp.o.d"
+  "CMakeFiles/testByteArray.dir/tester/main.cpp.o"
+  "CMakeFiles/testByteArray.dir/tester/main.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

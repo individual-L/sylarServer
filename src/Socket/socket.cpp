@@ -98,8 +98,10 @@ bool Socket::getSockOption(int level, int optname, void *optval, ssize_t *optlen
 bool Socket::setSockOption(int level, int optname, const void *optval, ssize_t optlen){
   bool res = setsockopt(m_sockfd,level,optname,optval,(socklen_t)optlen);
   if(res){
-    LOG_ERROR(logger) <<"getsockopt(" <<m_sockfd<<"," <<level << "," <<optname <<","
-                      <<optval<<"," <<optlen <<") errno: " <<errno <<"("<<strerror(errno)<<")";
+    LOG_ERROR(logger) <<"setSockOption(" <<m_sockfd<<"," <<level << "," <<optname 
+                      <<","<<optval<<"," <<optlen <<") errno: " <<errno 
+                      <<"("<<strerror(errno)<<")";
+    GAIYA_ASSERT(false);
     return false;
   }
   return true;
@@ -110,12 +112,12 @@ void Socket::initSock(){
   setSockOption(SOL_SOCKET,SO_REUSEADDR,val);
 
   if(m_type == SOCK_STREAM){
-    setSockOption(SOL_SOCKET,TCP_NODELAY,val);
+    setSockOption(IPPROTO_TCP,TCP_NODELAY,val);
   }
 }
 
 void Socket::newSock(){
-  m_sockfd = socket(m_family,m_type,m_protocol);
+  m_sockfd = ::socket(m_family,m_type,m_protocol);
   if(GAIYA_LIKELY(m_sockfd != -1)){
     initSock();
   }else{

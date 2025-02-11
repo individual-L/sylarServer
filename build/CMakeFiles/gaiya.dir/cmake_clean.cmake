@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/gaiya.dir/src/Hook/fdMng.cpp.o.d"
   "CMakeFiles/gaiya.dir/src/Hook/hook.cpp.o"
   "CMakeFiles/gaiya.dir/src/Hook/hook.cpp.o.d"
+  "CMakeFiles/gaiya.dir/src/Http/http.cpp.o"
+  "CMakeFiles/gaiya.dir/src/Http/http.cpp.o.d"
   "CMakeFiles/gaiya.dir/src/IOmanager/iomanager.cpp.o"
   "CMakeFiles/gaiya.dir/src/IOmanager/iomanager.cpp.o.d"
   "CMakeFiles/gaiya.dir/src/Lock/lock.cpp.o"

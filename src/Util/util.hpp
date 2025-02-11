@@ -64,5 +64,20 @@ std::string TypeName(){
 
 bool Unlink(std::string path);
 
+class StringUrl{
+  public:
+  static std::string UrlEncode(const std::string& str, bool space_as_plus = true);
+  static std::string UrlDecode(const std::string& str, bool space_as_plus = true);
+
+  static std::string Trim(const std::string& str, const std::string& delimit = " \t\r\n");
+
+};
+
+class TimeUtil{
+  public:
+    static std::string TimeToStr(time_t t,const char* format);
+    static time_t StrToTime(const char* str,const char* format);
+};
+
 }
 #endif
