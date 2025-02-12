@@ -16,5 +16,6 @@
 #include"bytearray.hpp"
 #include"socket.hpp"
 #include"http.hpp"
+#include"http_parser.h"
 
 #endif

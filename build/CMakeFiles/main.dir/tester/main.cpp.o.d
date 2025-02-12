@@ -732,4 +732,9 @@ CMakeFiles/main.dir/tester/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/sys/uio.h \
  /usr/include/x86_64-linux-gnu/bits/uio-ext.h \
  /home/luo/cplus/gaiya/src/Socket/socket.hpp \
+ /home/luo/cplus/gaiya/src/Http/http.hpp \
+ /home/luo/cplus/gaiya/src/Http/http_parser.h \
+ /home/luo/cplus/gaiya/src/Http/http11_parser.h \
+ /home/luo/cplus/gaiya/src/Http/http11_common.h \
+ /home/luo/cplus/gaiya/src/Http/httpclient_parser.h \
  /home/luo/cplus/gaiya/src/Http/http.hpp

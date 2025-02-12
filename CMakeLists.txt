@@ -41,6 +41,11 @@ set(LIB_SRC
   ${SOCKET_INCLUDE_DIR}/socket.cpp
   ${BYTEARRAY_INCLUDE_DIR}/bytearray.cpp
   ${HTTP_INCLUDE_DIR}/http.cpp
+  ${HTTP_INCLUDE_DIR}/http11_parser.cpp
+  ${HTTP_INCLUDE_DIR}/httpclient_parser.cpp
+  ${HTTP_INCLUDE_DIR}/http_parser.cpp
+  
+  
 )
 include_directories(
   ${LOG_INCLUDE_DIR}

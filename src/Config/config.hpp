@@ -307,6 +307,7 @@ class ConfigVar :public ConfigVarBase{
     typedef gaiya::RWMutex MutexType;
     typedef std::function<void(const T& oldData,const T& newData)> cb_func;
     typedef std::shared_ptr<ConfigVar<T> > ptr;
+
     ConfigVar(const std::string name,const std::string description
     ,const T& default_val)
     :ConfigVarBase(name,description)
@@ -420,7 +421,7 @@ class Config{
         LOG_ERROR(LOG_ROOT()) << "configuration parameter have upper word";
         throw std::invalid_argument(name);
       }
-      typename ConfigVar<T>::ptr v(new ConfigVar<T>(name,description,val));
+      typename ConfigVar<T>::ptr v(new ConfigVar<T>(name,description,std::forward<T>(val)));
       GetDatas()[name] = v;
       return v;
     }

@@ -16,3 +16,10 @@ coroutine:
 tcp:
   connect: 
     timeout_ms: 5000
+http:
+  request:
+    buffer_size: 4090
+    body_maxsize: 67108864
+  response:
+    buffer_size: 4090
+    body_maxsize: 67108864

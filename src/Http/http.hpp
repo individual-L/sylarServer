@@ -1,5 +1,5 @@
-#ifndef __GAIYA_HTTP_H__
-#define __GAIYA_HTTP_H__
+#ifndef __HTTP_H__
+#define __HTTP_H__
 
 #include<stdint.h>
 #include<string>
@@ -118,7 +118,6 @@ namespace http{
   XX(510, NOT_EXTENDED,                    Not Extended)                    \
   XX(511, NETWORK_AUTHENTICATION_REQUIRED, Network Authentication Required) \
 
-#endif
 
 
 //enum class：此声明意味着该枚举类型变量不能和整型相比较
@@ -133,7 +132,7 @@ enum class HttpMethod{
   #define XX(key,flag,title) flag = key,
     HTTP_METHOD_MAP(XX)
   #undef XX
-  INVAILD_STATE
+  INVAILD_METHOD
 };
 
 HttpMethod StringToHttpMethod(const std::string& m);
@@ -168,7 +167,7 @@ bool checkGetAs(const TypeMap& m, const std::string& key, T& val, const T& def =
 
 //获取map中的val值，将其转换成相应类型并返回
 template<class TypeMap, class T>
-T checkGetAs(const TypeMap& m, const std::string& key,const T& def = T()) {
+T getAs(const TypeMap& m, const std::string& key,const T& def = T()) {
     auto it = m.find(key);
     if(it == m.end()) {
       return def;
@@ -427,4 +426,6 @@ std::ostream& operator<<(std::ostream& os, const HttpRequest& reqst);
 std::ostream& operator<<(std::ostream& os, const HttpResponse& resps);
 
 }
+
 }
+#endif

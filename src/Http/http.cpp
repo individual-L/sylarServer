@@ -7,13 +7,13 @@ namespace http{
 
 HttpMethod CharsToHttpMethod(const char* m){
   #define XX(code,flags,title) \
-    if(strncasecmp(m,#title,strlen(#title)) == 0){ \
+    if(strncasecmp(#title,m,strlen(#title)) == 0){ \
       return HttpMethod::flags; \
-    } \
+    }
   HTTP_METHOD_MAP(XX)
   #undef XX
 
-  return HttpMethod::INVAILD_STATE;
+  return HttpMethod::INVAILD_METHOD;
 }
 
 HttpMethod StringToHttpMethod(const std::string& m){

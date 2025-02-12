@@ -282,6 +282,48 @@ CMakeFiles/gaiya.dir/src/Http/http.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gaiya.dir/src/Http/http.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luo/cplus/gaiya/src/Http/http.cpp -o CMakeFiles/gaiya.dir/src/Http/http.cpp.s
 
+CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.o: CMakeFiles/gaiya.dir/flags.make
+CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.o: /home/luo/cplus/gaiya/src/Http/http11_parser.cpp
+CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.o: CMakeFiles/gaiya.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.o -MF CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.o.d -o CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.o -c /home/luo/cplus/gaiya/src/Http/http11_parser.cpp
+
+CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luo/cplus/gaiya/src/Http/http11_parser.cpp > CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.i
+
+CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luo/cplus/gaiya/src/Http/http11_parser.cpp -o CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.s
+
+CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.o: CMakeFiles/gaiya.dir/flags.make
+CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.o: /home/luo/cplus/gaiya/src/Http/httpclient_parser.cpp
+CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.o: CMakeFiles/gaiya.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.o -MF CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.o.d -o CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.o -c /home/luo/cplus/gaiya/src/Http/httpclient_parser.cpp
+
+CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luo/cplus/gaiya/src/Http/httpclient_parser.cpp > CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.i
+
+CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luo/cplus/gaiya/src/Http/httpclient_parser.cpp -o CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.s
+
+CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.o: CMakeFiles/gaiya.dir/flags.make
+CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.o: /home/luo/cplus/gaiya/src/Http/http_parser.cpp
+CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.o: CMakeFiles/gaiya.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.o -MF CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.o.d -o CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.o -c /home/luo/cplus/gaiya/src/Http/http_parser.cpp
+
+CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luo/cplus/gaiya/src/Http/http_parser.cpp > CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.i
+
+CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luo/cplus/gaiya/src/Http/http_parser.cpp -o CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.s
+
 # Object files for target gaiya
 gaiya_OBJECTS = \
 "CMakeFiles/gaiya.dir/src/Util/util.cpp.o" \
@@ -298,7 +340,10 @@ gaiya_OBJECTS = \
 "CMakeFiles/gaiya.dir/src/Address/address.cpp.o" \
 "CMakeFiles/gaiya.dir/src/Socket/socket.cpp.o" \
 "CMakeFiles/gaiya.dir/src/ByteArray/bytearray.cpp.o" \
-"CMakeFiles/gaiya.dir/src/Http/http.cpp.o"
+"CMakeFiles/gaiya.dir/src/Http/http.cpp.o" \
+"CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.o" \
+"CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.o" \
+"CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.o"
 
 # External object files for target gaiya
 gaiya_EXTERNAL_OBJECTS =
@@ -318,9 +363,12 @@ gaiya_EXTERNAL_OBJECTS =
 /home/luo/cplus/gaiya/lib/libgaiya.so: CMakeFiles/gaiya.dir/src/Socket/socket.cpp.o
 /home/luo/cplus/gaiya/lib/libgaiya.so: CMakeFiles/gaiya.dir/src/ByteArray/bytearray.cpp.o
 /home/luo/cplus/gaiya/lib/libgaiya.so: CMakeFiles/gaiya.dir/src/Http/http.cpp.o
+/home/luo/cplus/gaiya/lib/libgaiya.so: CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.o
+/home/luo/cplus/gaiya/lib/libgaiya.so: CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.o
+/home/luo/cplus/gaiya/lib/libgaiya.so: CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.o
 /home/luo/cplus/gaiya/lib/libgaiya.so: CMakeFiles/gaiya.dir/build.make
 /home/luo/cplus/gaiya/lib/libgaiya.so: CMakeFiles/gaiya.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX shared library /home/luo/cplus/gaiya/lib/libgaiya.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX shared library /home/luo/cplus/gaiya/lib/libgaiya.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gaiya.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

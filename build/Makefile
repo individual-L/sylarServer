@@ -313,6 +313,78 @@ src/Http/http.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http.cpp.s
 .PHONY : src/Http/http.cpp.s
 
+src/Http/http11_parser.o: src/Http/http11_parser.cpp.o
+.PHONY : src/Http/http11_parser.o
+
+# target to build an object file
+src/Http/http11_parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.o
+.PHONY : src/Http/http11_parser.cpp.o
+
+src/Http/http11_parser.i: src/Http/http11_parser.cpp.i
+.PHONY : src/Http/http11_parser.i
+
+# target to preprocess a source file
+src/Http/http11_parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.i
+.PHONY : src/Http/http11_parser.cpp.i
+
+src/Http/http11_parser.s: src/Http/http11_parser.cpp.s
+.PHONY : src/Http/http11_parser.s
+
+# target to generate assembly for a file
+src/Http/http11_parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http11_parser.cpp.s
+.PHONY : src/Http/http11_parser.cpp.s
+
+src/Http/http_parser.o: src/Http/http_parser.cpp.o
+.PHONY : src/Http/http_parser.o
+
+# target to build an object file
+src/Http/http_parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.o
+.PHONY : src/Http/http_parser.cpp.o
+
+src/Http/http_parser.i: src/Http/http_parser.cpp.i
+.PHONY : src/Http/http_parser.i
+
+# target to preprocess a source file
+src/Http/http_parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.i
+.PHONY : src/Http/http_parser.cpp.i
+
+src/Http/http_parser.s: src/Http/http_parser.cpp.s
+.PHONY : src/Http/http_parser.s
+
+# target to generate assembly for a file
+src/Http/http_parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.s
+.PHONY : src/Http/http_parser.cpp.s
+
+src/Http/httpclient_parser.o: src/Http/httpclient_parser.cpp.o
+.PHONY : src/Http/httpclient_parser.o
+
+# target to build an object file
+src/Http/httpclient_parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.o
+.PHONY : src/Http/httpclient_parser.cpp.o
+
+src/Http/httpclient_parser.i: src/Http/httpclient_parser.cpp.i
+.PHONY : src/Http/httpclient_parser.i
+
+# target to preprocess a source file
+src/Http/httpclient_parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.i
+.PHONY : src/Http/httpclient_parser.cpp.i
+
+src/Http/httpclient_parser.s: src/Http/httpclient_parser.cpp.s
+.PHONY : src/Http/httpclient_parser.s
+
+# target to generate assembly for a file
+src/Http/httpclient_parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/httpclient_parser.cpp.s
+.PHONY : src/Http/httpclient_parser.cpp.s
+
 src/IOmanager/iomanager.o: src/IOmanager/iomanager.cpp.o
 .PHONY : src/IOmanager/iomanager.o
 
@@ -560,6 +632,15 @@ help:
 	@echo "... src/Http/http.o"
 	@echo "... src/Http/http.i"
 	@echo "... src/Http/http.s"
+	@echo "... src/Http/http11_parser.o"
+	@echo "... src/Http/http11_parser.i"
+	@echo "... src/Http/http11_parser.s"
+	@echo "... src/Http/http_parser.o"
+	@echo "... src/Http/http_parser.i"
+	@echo "... src/Http/http_parser.s"
+	@echo "... src/Http/httpclient_parser.o"
+	@echo "... src/Http/httpclient_parser.i"
+	@echo "... src/Http/httpclient_parser.s"
 	@echo "... src/IOmanager/iomanager.o"
 	@echo "... src/IOmanager/iomanager.i"
 	@echo "... src/IOmanager/iomanager.s"

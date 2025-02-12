@@ -8,6 +8,10 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
   /home/luo/cplus/gaiya/src/Coroutine/coroutine.hpp \
   /home/luo/cplus/gaiya/src/Hook/hook.hpp \
   /home/luo/cplus/gaiya/src/Http/http.hpp \
+  /home/luo/cplus/gaiya/src/Http/http11_common.h \
+  /home/luo/cplus/gaiya/src/Http/http11_parser.h \
+  /home/luo/cplus/gaiya/src/Http/http_parser.h \
+  /home/luo/cplus/gaiya/src/Http/httpclient_parser.h \
   /home/luo/cplus/gaiya/src/IOmanager/iomanager.hpp \
   /home/luo/cplus/gaiya/src/Lock/Noncopyable.hpp \
   /home/luo/cplus/gaiya/src/Lock/lock.hpp \
@@ -1149,12 +1153,6 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 
 /usr/include/c++/13/cstring:
 
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
-
-/usr/include/math.h:
-
-/usr/include/c++/13/cstdio:
-
 /usr/include/c++/13/cstddef:
 
 /usr/include/c++/13/codecvt:
@@ -1179,9 +1177,15 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 
 /usr/include/c++/13/bits/uniform_int_dist.h:
 
-/usr/include/boost/preprocessor/array/elem.hpp:
+/usr/include/c++/13/bits/streambuf.tcc:
 
-/usr/include/boost/range/functions.hpp:
+/usr/include/c++/13/bits/stream_iterator.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+/usr/include/c++/13/bits/stl_vector.h:
+
+/usr/include/c++/13/bits/stl_uninitialized.h:
 
 /usr/include/boost/core/snprintf.hpp:
 
@@ -1287,10 +1291,6 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 
 /usr/include/boost/mpl/aux_/config/use_preprocessed.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
-
-/usr/include/c++/13/bits/stl_vector.h:
-
 /usr/include/boost/preprocessor/repetition/enum_trailing_params.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/template_arity.hpp:
@@ -1339,10 +1339,6 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 
 /usr/include/boost/mpl/aux_/na_assert.hpp:
 
-/usr/include/boost/mpl/aux_/na.hpp:
-
-/usr/include/boost/type_traits/conjunction.hpp:
-
 /usr/include/boost/config/user.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
@@ -1375,10 +1371,6 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 
 /usr/include/boost/mpl/aux_/common_name_wknd.hpp:
 
-/usr/include/boost/mpl/int.hpp:
-
-/usr/include/boost/preprocessor/seq/limits/enum_256.hpp:
-
 /usr/include/boost/mpl/aux_/preprocessor/default_params.hpp:
 
 /usr/include/c++/13/bit:
@@ -1398,6 +1390,12 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 /usr/include/boost/type_traits/remove_const.hpp:
 
 /usr/include/c++/13/bits/quoted_string.h:
+
+/usr/include/boost/preprocessor/seq/limits/enum_256.hpp:
+
+/usr/include/boost/mpl/int.hpp:
+
+/usr/include/boost/range/functions.hpp:
 
 /usr/include/c++/13/bits/string_view.tcc:
 
@@ -1449,11 +1447,9 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 
 /usr/include/boost/config/workaround.hpp:
 
-/usr/local/include/yaml-cpp/node/parse.h:
+/usr/include/boost/mpl/aux_/config/eti.hpp:
 
-/usr/include/boost/mpl/aux_/config/gcc.hpp:
-
-/usr/include/boost/mpl/aux_/config/ttp.hpp:
+/usr/include/boost/mpl/aux_/config/compiler.hpp:
 
 /usr/include/boost/config/stdlib/libstdcpp3.hpp:
 
@@ -1483,8 +1479,6 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 
 /usr/include/boost/mpl/next_prior.hpp:
 
-/usr/include/boost/mpl/aux_/config/eti.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
 /usr/include/boost/concept/usage.hpp:
@@ -1502,20 +1496,6 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 /usr/include/boost/mpl/aux_/arithmetic_op.hpp:
 
 /usr/include/boost/type_traits/is_const.hpp:
-
-/usr/include/boost/preprocessor/arithmetic/detail/maximum_number.hpp:
-
-/usr/include/c++/13/bits/parse_numbers.h:
-
-/usr/include/linux/errno.h:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/quote.hpp:
-
-/usr/include/c++/13/bits/std_abs.h:
-
-/usr/include/boost/concept/detail/has_constraints.hpp:
-
-/usr/include/boost/mpl/aux_/config/compiler.hpp:
 
 /usr/include/boost/concept/detail/general.hpp:
 
@@ -1535,63 +1515,13 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 
 /usr/include/boost/assert/source_location.hpp:
 
-/home/luo/cplus/gaiya/src/Thread/thread.hpp:
+/usr/include/boost/concept_check.hpp:
 
-/usr/include/boost/type_traits/is_signed.hpp:
+/usr/include/c++/13/bits/fs_ops.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+/usr/include/boost/concept/detail/concept_def.hpp:
 
-/usr/include/boost/assert.hpp:
-
-/usr/include/boost/preprocessor/arithmetic/sub.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp:
-
-/usr/include/boost/mpl/aux_/is_msvc_eti_arg.hpp:
-
-/usr/include/boost/type_traits/add_pointer.hpp:
-
-/home/luo/cplus/gaiya/src/IOmanager/iomanager.hpp:
-
-/usr/include/boost/container/container_fwd.hpp:
-
-/usr/include/boost/next_prior.hpp:
-
-/usr/include/boost/type_traits/add_lvalue_reference.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-
-/usr/include/boost/preprocessor/arithmetic/detail/is_1_number.hpp:
-
-/usr/include/c++/13/pstl/glue_memory_defs.h:
-
-/usr/include/c++/13/bits/memory_resource.h:
-
-/usr/include/boost/config/helper_macros.hpp:
-
-/usr/include/boost/lexical_cast/detail/lcast_char_constants.hpp:
-
-/usr/include/boost/range/detail/common.hpp:
-
-/usr/include/boost/limits.hpp:
-
-/usr/include/boost/numeric/conversion/converter.hpp:
-
-/usr/include/boost/config/no_tr1/cmath.hpp:
-
-/usr/include/c++/13/bits/stl_multimap.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
-
-/usr/include/boost/iterator/detail/enable_if.hpp:
-
-/usr/include/c++/13/bits/stl_algo.h:
-
-/usr/include/boost/config/detail/posix_features.hpp:
-
-/usr/include/boost/preprocessor/arithmetic/add.hpp:
-
-/home/luo/cplus/gaiya/src/Lock/lock.hpp:
+/usr/include/boost/preprocessor/tuple/elem.hpp:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
 
@@ -1607,23 +1537,117 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 
 /usr/include/boost/mpl/aux_/na_spec.hpp:
 
-/usr/include/boost/concept_check.hpp:
-
-/usr/include/c++/13/bits/fs_ops.h:
-
-/usr/include/boost/concept/detail/concept_def.hpp:
-
-/usr/include/boost/mpl/integral_c_tag.hpp:
-
-/usr/include/boost/preprocessor/punctuation/comma.hpp:
-
-/usr/include/boost/preprocessor/tuple/elem.hpp:
-
 /usr/include/boost/iterator/reverse_iterator.hpp:
 
 /usr/include/boost/mpl/aux_/config/dtp.hpp:
 
 /usr/include/boost/preprocessor/seq/size.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/full_lambda.hpp:
+
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+
+/usr/include/boost/assert.hpp:
+
+/usr/include/boost/preprocessor/arithmetic/sub.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp:
+
+/usr/include/boost/mpl/aux_/is_msvc_eti_arg.hpp:
+
+/usr/include/boost/type_traits/add_pointer.hpp:
+
+/home/luo/cplus/gaiya/src/IOmanager/iomanager.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
+/usr/include/boost/preprocessor/arithmetic/detail/is_1_number.hpp:
+
+/usr/include/c++/13/pstl/glue_memory_defs.h:
+
+/usr/include/c++/13/bits/memory_resource.h:
+
+/usr/include/boost/config/detail/select_platform_config.hpp:
+
+/usr/include/boost/lexical_cast/detail/widest_char.hpp:
+
+/usr/include/boost/preprocessor/control/deduce_d.hpp:
+
+/home/luo/cplus/gaiya/src/Thread/thread.hpp:
+
+/usr/include/boost/type_traits/is_signed.hpp:
+
+/usr/include/boost/mpl/aux_/na.hpp:
+
+/usr/include/boost/type_traits/conjunction.hpp:
+
+/usr/include/boost/preprocessor/punctuation/comma.hpp:
+
+/usr/include/boost/mpl/integral_c_tag.hpp:
+
+/home/luo/cplus/gaiya/src/Http/http11_parser.h:
+
+/usr/include/c++/13/limits:
+
+/usr/include/boost/mpl/arg_fwd.hpp:
+
+/usr/include/boost/mpl/aux_/static_cast.hpp:
+
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/usr/include/boost/preprocessor/arithmetic/limits/inc_256.hpp:
+
+/usr/include/boost/mpl/aux_/arity.hpp:
+
+/usr/include/boost/iterator/iterator_concepts.hpp:
+
+/home/luo/cplus/gaiya/src/ByteArray/bytearray.hpp:
+
+/home/luo/cplus/gaiya/src/Config/config.hpp:
+
+/home/luo/cplus/gaiya/src/Timer/timer.hpp:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/asm-generic/socket.h:
+
+/usr/include/boost/numeric/conversion/detail/conversion_traits.hpp:
+
+/usr/include/boost/preprocessor/facilities/empty.hpp:
+
+/usr/local/include/yaml-cpp/node/parse.h:
+
+/usr/include/boost/mpl/aux_/config/gcc.hpp:
+
+/usr/include/boost/mpl/aux_/config/ttp.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+
+/usr/include/math.h:
+
+/usr/include/c++/13/cstdio:
+
+/home/luo/cplus/gaiya/src/Http/http11_common.h:
+
+/usr/include/boost/type_traits/conversion_traits.hpp:
+
+/usr/include/c++/13/bits/mask_array.h:
+
+/usr/include/boost/preprocessor/arithmetic/detail/maximum_number.hpp:
+
+/usr/include/c++/13/bits/parse_numbers.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/quote.hpp:
+
+/usr/include/c++/13/bits/std_abs.h:
+
+/usr/include/boost/concept/detail/has_constraints.hpp:
 
 /usr/local/include/yaml-cpp/node/node.h:
 
@@ -1641,43 +1665,7 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 
 /usr/include/boost/preprocessor/logical/limits/bool_256.hpp:
 
-/usr/include/boost/mpl/aux_/static_cast.hpp:
-
-/home/luo/cplus/gaiya/src/Config/config.hpp:
-
-/home/luo/cplus/gaiya/src/ByteArray/bytearray.hpp:
-
-/usr/include/boost/config/detail/select_platform_config.hpp:
-
-/usr/include/boost/lexical_cast/detail/widest_char.hpp:
-
-/usr/include/boost/preprocessor/control/deduce_d.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/times.hpp:
-
-/usr/include/c++/13/bits/basic_ios.tcc:
-
-/home/luo/cplus/gaiya/src/Socket/socket.hpp:
-
-/usr/include/boost/current_function.hpp:
-
-/usr/include/x86_64-linux-gnu/sys/types.h:
-
-/usr/include/asm-generic/socket.h:
-
-/home/luo/cplus/gaiya/src/Timer/timer.hpp:
-
-/usr/include/boost/numeric/conversion/detail/conversion_traits.hpp:
-
-/usr/include/boost/preprocessor/facilities/empty.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
-
-/usr/include/c++/13/tuple:
-
-/usr/include/boost/mpl/apply.hpp:
-
-/usr/include/boost/config/detail/select_compiler_config.hpp:
+/home/luo/cplus/gaiya/src/Http/httpclient_parser.h:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/bind.hpp:
 
@@ -1693,11 +1681,57 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 
 /usr/include/boost/mpl/aux_/config/adl.hpp:
 
-/usr/include/boost/type_traits/is_integral.hpp:
-
 /usr/include/c++/13/bits/stl_relops.h:
 
 /usr/include/asm-generic/sockios.h:
+
+/usr/include/boost/type_traits/is_integral.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/times.hpp:
+
+/usr/include/c++/13/bits/basic_ios.tcc:
+
+/usr/include/boost/config/helper_macros.hpp:
+
+/usr/include/boost/lexical_cast/detail/lcast_char_constants.hpp:
+
+/usr/include/boost/range/detail/common.hpp:
+
+/usr/include/boost/limits.hpp:
+
+/usr/include/boost/numeric/conversion/converter.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+
+/usr/include/c++/13/tuple:
+
+/usr/include/boost/config/detail/select_compiler_config.hpp:
+
+/usr/include/boost/mpl/apply.hpp:
+
+/usr/include/boost/config/no_tr1/cmath.hpp:
+
+/usr/include/boost/core/use_default.hpp:
+
+/usr/include/boost/config.hpp:
+
+/usr/include/c++/13/bits/stl_multimap.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
+
+/usr/include/boost/iterator/detail/enable_if.hpp:
+
+/usr/include/c++/13/bits/stl_algo.h:
+
+/usr/include/boost/config/detail/posix_features.hpp:
+
+/usr/include/boost/preprocessor/arithmetic/add.hpp:
+
+/home/luo/cplus/gaiya/src/Lock/lock.hpp:
+
+/home/luo/cplus/gaiya/src/Socket/socket.hpp:
+
+/usr/include/boost/current_function.hpp:
 
 /home/luo/cplus/gaiya/src/Hook/hook.hpp:
 
@@ -1706,24 +1740,6 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 /usr/include/asm-generic/bitsperlong.h:
 
 /usr/include/boost/mpl/apply_fwd.hpp:
-
-/usr/include/boost/core/checked_delete.hpp:
-
-/usr/include/boost/preprocessor/punctuation/comma_if.hpp:
-
-/usr/include/boost/mpl/aux_/full_lambda.hpp:
-
-/usr/include/boost/integer.hpp:
-
-/usr/include/boost/detail/workaround.hpp:
-
-/usr/include/c++/13/bits/gslice.h:
-
-/usr/include/boost/lexical_cast.hpp:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
-
-/usr/include/c++/13/bits/ostream.tcc:
 
 /usr/local/include/yaml-cpp/parser.h:
 
@@ -1759,19 +1775,33 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 
 /usr/include/boost/mpl/limits/arity.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+/usr/include/boost/numeric/conversion/detail/bounds.hpp:
 
-/usr/include/boost/mpl/aux_/preprocessed/gcc/full_lambda.hpp:
+/usr/include/boost/range/concepts.hpp:
 
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+/usr/include/boost/container/container_fwd.hpp:
 
-/usr/include/boost/preprocessor/arithmetic/limits/inc_256.hpp:
+/usr/include/boost/next_prior.hpp:
 
-/usr/include/boost/iterator/iterator_concepts.hpp:
+/usr/include/boost/type_traits/add_lvalue_reference.hpp:
 
-/usr/include/boost/mpl/aux_/arity.hpp:
+/usr/include/boost/lexical_cast.hpp:
 
-/usr/include/asm-generic/posix_types.h:
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
+
+/usr/include/c++/13/bits/ostream.tcc:
+
+/usr/include/boost/core/checked_delete.hpp:
+
+/usr/include/boost/preprocessor/punctuation/comma_if.hpp:
+
+/usr/include/boost/mpl/aux_/full_lambda.hpp:
+
+/usr/include/boost/integer.hpp:
+
+/usr/include/boost/detail/workaround.hpp:
+
+/usr/include/c++/13/bits/gslice.h:
 
 /usr/include/boost/core/noncopyable.hpp:
 
@@ -1780,16 +1810,6 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 /usr/include/boost/type_traits/remove_volatile.hpp:
 
 /usr/include/c++/13/bits/std_thread.h:
-
-/usr/include/boost/config.hpp:
-
-/usr/include/boost/core/use_default.hpp:
-
-/usr/include/boost/preprocessor/array/size.hpp:
-
-/usr/include/boost/numeric/conversion/detail/bounds.hpp:
-
-/usr/include/boost/range/concepts.hpp:
 
 /usr/include/boost/detail/indirect_traits.hpp:
 
@@ -1818,6 +1838,8 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 /usr/include/boost/config/compiler/gcc.hpp:
 
 /usr/include/boost/iterator/interoperable.hpp:
+
+/home/luo/cplus/gaiya/src/Http/http_parser.h:
 
 /home/luo/cplus/gaiya/src/Util/endian.hpp:
 
@@ -1853,6 +1875,12 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 
 /usr/include/c++/13/bits/stl_map.h:
 
+/usr/include/boost/lexical_cast/try_lexical_convert.hpp:
+
+/usr/include/boost/mpl/integral_c_fwd.hpp:
+
+/usr/include/boost/preprocessor/logical/bool.hpp:
+
 /usr/local/include/yaml-cpp/node/impl.h:
 
 /usr/include/boost/move/detail/std_ns_begin.hpp:
@@ -1880,10 +1908,6 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 /usr/include/c++/13/bits/sstream.tcc:
 
 /usr/include/boost/mpl/arg.hpp:
-
-/usr/include/c++/13/limits:
-
-/usr/include/boost/mpl/arg_fwd.hpp:
 
 /usr/include/boost/preprocessor/arithmetic/dec.hpp:
 
@@ -1913,11 +1937,9 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 
 /usr/include/boost/mpl/aux_/config/bind.hpp:
 
-/usr/include/boost/lexical_cast/try_lexical_convert.hpp:
+/usr/include/boost/preprocessor/array/elem.hpp:
 
-/usr/include/boost/mpl/integral_c_fwd.hpp:
-
-/usr/include/boost/preprocessor/logical/bool.hpp:
+/usr/include/boost/preprocessor/array/size.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/arg.hpp:
 
@@ -1974,8 +1996,6 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 /usr/include/boost/type_traits/is_abstract.hpp:
 
 /usr/include/c++/13/bits/new_allocator.h:
-
-/usr/include/c++/13/bits/stl_uninitialized.h:
 
 /usr/include/boost/mpl/aux_/largest_int.hpp:
 
@@ -2216,10 +2236,6 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
 /usr/include/boost/type_traits/conditional.hpp:
-
-/usr/include/boost/type_traits/conversion_traits.hpp:
-
-/usr/include/c++/13/bits/mask_array.h:
 
 /usr/include/boost/type_traits/declval.hpp:
 
@@ -2475,8 +2491,6 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 
 /usr/include/c++/13/bits/specfun.h:
 
-/usr/include/c++/13/bits/streambuf.tcc:
-
 /usr/include/c++/13/bits/stl_algobase.h:
 
 /usr/include/c++/13/bits/stl_construct.h:
@@ -2484,5 +2498,3 @@ CMakeFiles/main.dir/tester/main.cpp.o: /home/luo/cplus/gaiya/tester/main.cpp \
 /usr/include/c++/13/bits/stl_multiset.h:
 
 /usr/include/c++/13/bits/stl_raw_storage_iter.h:
-
-/usr/include/c++/13/bits/stream_iterator.h:
