@@ -173,9 +173,8 @@ CMakeFiles/gaiya.dir/src/IOmanager/iomanager.cpp.o: \
  /usr/include/c++/13/backward/auto_ptr.h \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
  /usr/include/c++/13/pstl/execution_defs.h \
- /home/luo/cplus/gaiya/src/Lock/Noncopyable.hpp \
- /home/luo/cplus/gaiya/src/Lock/lock.hpp \
- /home/luo/cplus/gaiya/src/Lock/Noncopyable.hpp /usr/include/semaphore.h \
+ /home/luo/cplus/gaiya/src/Util/Noncopyable.hpp \
+ /home/luo/cplus/gaiya/src/Lock/lock.hpp /usr/include/semaphore.h \
  /usr/include/x86_64-linux-gnu/bits/semaphore.h \
  /usr/include/c++/13/stdexcept /usr/include/c++/13/atomic \
  /usr/include/c++/13/thread /usr/include/c++/13/bits/std_thread.h \

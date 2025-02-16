@@ -51,7 +51,7 @@ bool Unlink(std::string path){
   return ::unlink(path.c_str()) == 0;
 }
 
-//保留字符map
+//非保留字符map
 //-.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~
 //上述字符对应的ascall码为下标
 static const unsigned char reservedChar[256] = {
@@ -78,7 +78,7 @@ static const unsigned char reservedChar[256] = {
 };
 
 
-static const unsigned char CharToDigital[256] = {
+static const unsigned char ChartoHex[256] = {
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -121,7 +121,7 @@ std::string StringUrl::UrlEncode(const std::string& str, bool space_as_plus){
           res->append(1, hexChars[(uint8_t)*c >> 4]);
           res->append(1, hexChars[*c & 0x0f]);
       }  
-    }else{
+    }else if(res){
       res->append(1, *c);
     }
   }
@@ -133,7 +133,13 @@ std::string StringUrl::UrlEncode(const std::string& str, bool space_as_plus){
       return rt;
   }
 }
-
+void LoadConfigrationFile(){
+  std::filesystem::path filePath(__FILE__);
+  filePath = filePath.parent_path().parent_path();
+  //如果以/为开头，他会把filePath设置为 /configTest.yaml
+  filePath.append("configuration.yaml");
+  gaiya::Config::loadYamlFile(filePath.c_str());
+}
 
 //处理按照url格式处理特殊字符的字符串
 std::string StringUrl::UrlDecode(const std::string& str, bool space_as_plus){
@@ -154,7 +160,8 @@ std::string StringUrl::UrlDecode(const std::string& str, bool space_as_plus){
           res = new std::string;
           res->append(str.c_str(), c - str.c_str());
       }
-      res->append(1, (char)(CharToDigital[(int)*(c + 1)] << 4 | CharToDigital[(int)*(c + 2)]));
+      //将字符映射到相应的十六进制数字
+      res->append(1, (char)((ChartoHex[(int)*(c + 1)]) << 4 | (ChartoHex[(int)*(c + 2)] & 0x0f)));
       c += 2;
     } else if(res) {
       res->append(1, *c);

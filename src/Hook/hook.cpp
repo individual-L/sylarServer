@@ -135,6 +135,7 @@ static ssize_t do_io(int fd,OriginFunc fun,const char * name_f,uint32_t event,in
   ssize_t n = 0;
 
   uint64_t timeOut = fdctx->getTimeout(so_timeOut);
+  LOG_INFO(logger)<<"fd: "<<fdctx->getSockfd()<<" timeOut = " <<timeOut;
   std::shared_ptr<timerCond> tcond(new timerCond());
 
 
@@ -145,9 +146,9 @@ retry:
     n = fun(fd,std::forward<Args>(args)...);
   }
   if(n == -1 && errno == EAGAIN){
-  gaiya::Timer::ptr timer;
-  std::weak_ptr<timerCond> wcond(tcond);
-  gaiya::IOmanager* iom = gaiya::IOmanager::GetThis();
+    gaiya::Timer::ptr timer;
+    std::weak_ptr<timerCond> wcond(tcond);
+    gaiya::IOmanager* iom = gaiya::IOmanager::GetThis();
     //是否设置超时时间
     if(timeOut != (uint64_t)-1){
       timer = iom->addConditionTimer(timeOut,[fd,wcond,iom](){
@@ -171,7 +172,7 @@ retry:
         errno = ETIMEDOUT;
         return -1;
       }
-      LOG_INFO(logger) <<"重新recv";
+      // LOG_INFO(logger) <<"重新recv";
       goto retry;
     }else{
       LOG_ERROR(logger) <<"name_f::iom->addEvent(" <<fd <<",gaiya::IOmanager::READ) error";

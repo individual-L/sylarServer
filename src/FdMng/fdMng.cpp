@@ -56,10 +56,11 @@ bool FdCtx::init(){
 void FdCtx::setTimeout(int type, uint64_t v){
   switch (type)
   {
-  case 0x1:
+  case SO_RCVTIMEO:
+  // lOG_INFO_ROOT()<<"v: "<<v;
     m_readTimeOut = v;
     break;
-  case 0x04:
+  case SO_SNDTIMEO:
     m_writeTimeOut = v;
   }
 }

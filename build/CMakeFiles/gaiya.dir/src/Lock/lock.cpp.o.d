@@ -1,7 +1,7 @@
 CMakeFiles/gaiya.dir/src/Lock/lock.cpp.o: \
  /home/luo/cplus/gaiya/src/Lock/lock.cpp /usr/include/stdc-predef.h \
  /home/luo/cplus/gaiya/src/Lock/lock.hpp \
- /home/luo/cplus/gaiya/src/Lock/Noncopyable.hpp /usr/include/semaphore.h \
+ /home/luo/cplus/gaiya/src/Util/Noncopyable.hpp /usr/include/semaphore.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \

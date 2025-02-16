@@ -482,6 +482,7 @@ Logger::ptr LoggerManager::getLogger(const std::string& name) {
     return it->second;
   }else{
     //创建新的logger
+    lOG_INFO_ROOT()<<"not find " <<name <<" logger";
     Logger::ptr logger(new Logger(name));
     logger->m_root = m_root;
     m_loggers[name] = logger;

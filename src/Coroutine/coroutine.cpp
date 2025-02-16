@@ -145,7 +145,6 @@ void Coroutine::call(){
 //让出给主协程
 void Coroutine::back(){
   SetCurCoro(t_threadCoro.get());
-
   if(::swapcontext(&m_context,&(t_threadCoro->m_context))){
       GAIYA_ASSERT2(false,"swapcontext");
   }
@@ -205,13 +204,13 @@ void Coroutine::toMasterFunc(){
     cur->m_state = END;
   }catch(std::exception& ex){
     cur->m_state = EXCEPT;
-    LOG_ERROR(logger) <<"Coroutine::MainFunc() error:" << ex.what() 
+    LOG_ERROR(logger) <<"Coroutine::toMasterFunc() error:" << ex.what() 
     << " coroutine id: " << cur->getId()
     <<std::endl
     <<backTraceToString();
   }catch(...){
     cur->m_state = EXCEPT;
-    LOG_ERROR(logger) <<"Coroutine::MainFunc() error"
+    LOG_ERROR(logger) <<"Coroutine::toMasterFunc() error"
     << " coroutine id: " << cur->getId()
     <<std::endl
     <<backTraceToString();
@@ -229,13 +228,13 @@ void Coroutine::toOriginalFunc(){
     cur->m_state = END;
   }catch(std::exception& ex){
     cur->m_state = EXCEPT;
-    LOG_ERROR(logger) <<"Coroutine::MainFunc() error:" << ex.what() 
+    LOG_ERROR(logger) <<"Coroutine::toOriginalFunc() error:" << ex.what() 
     << " coroutine id: " << cur->getId()
     <<std::endl
     <<backTraceToString();
   }catch(...){
     cur->m_state = EXCEPT;
-    LOG_ERROR(logger) <<"Coroutine::MainFunc() error"
+    LOG_ERROR(logger) <<"Coroutine::toOriginalFunc() error"
     << " coroutine id: " << cur->getId()
     <<std::endl
     <<backTraceToString();

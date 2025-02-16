@@ -72,10 +72,10 @@ class Address{
       static Address::ptr Create(const sockaddr* sockaddr,const socklen_t sockLen);
 
       //返回host的所有符合条件的Address
-      static bool Lookup(std::vector<Address::ptr>& addresses, const std::string& host,int family = AF_INET,int type = 0,int protocol = 0,std::string service = NULL);
+      static bool Lookup(std::vector<Address::ptr>& addresses, const std::string& host,int family = AF_INET,int type = 0,int protocol = 0,std::string service =  "");
 
       //返回host的任意符合条件的Address
-      static Address::ptr LookupAny(const std::string& hostName,int family = AF_INET,int type = 0,int protocol = 0,std::string service = NULL);
+      static Address::ptr LookupAny(const std::string& hostName,int family = AF_INET,int type = 0,int protocol = 0,std::string service = "");
 
       //返回host的任意符合条件的Address
       static std::shared_ptr<IPAddress> LookupAnyIPAddress(const std::string& hostName,int family = AF_INET,int type = 0,int protocol = 0);
@@ -85,8 +85,10 @@ class Address{
 
       static bool GetInterfaceAddress(std::vector<std::pair<Address::ptr,uint32_t>>& res,const std::string& ifname,int family = AF_INET);
 
+      static Address::ptr GetInterfaceAnyAddress();
    public:
       int getFamily() const ;
+
       std::string toString() const ;
 
       bool operator==(const Address& addr) const ;

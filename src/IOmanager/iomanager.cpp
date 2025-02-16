@@ -317,7 +317,7 @@ void IOmanager::tickle() {
   if(!hasThread()){
     return;
   }
-  int res = write(m_tickleFds[1],"T",1);
+  int res = write(m_tickleFds[1],"1",1);
   GAIYA_ASSERT(res == 1);
 }
 

@@ -61,12 +61,4 @@ void Config::loadYamlFile(const char * file){
   }
 }
 
-// void Config::visit(std::function<void(ConfigVarBase::ptr)> func){
-//   MutexType::ReadLock lock(GetMutex());
-//   configVarMap& m = GetDatas();
-//   for(auto& it : m){
-//     func(it.second);
-//   }
-// }
-
 }

@@ -106,7 +106,7 @@ bool Address::Lookup(std::vector<Address::ptr>& addresses, const std::string& ho
     node = host;
     port = service.c_str();
   }
-  LOG_INFO(logger) <<"getaddrinfo port: " <<port;
+  // LOG_INFO(logger) <<"getaddrinfo port: " <<port;
   int error = getaddrinfo(node.c_str(),port,&hints,&res);
 
   if(error){
@@ -116,7 +116,7 @@ bool Address::Lookup(std::vector<Address::ptr>& addresses, const std::string& ho
 
   next = res;
   while(next){
-    LOG_INFO(logger) <<"port: " <<((sockaddr_in*)next->ai_addr)->sin_port;
+    // LOG_INFO(logger) <<"port: " <<((sockaddr_in*)next->ai_addr)->sin_port;
     addresses.push_back(Create(next->ai_addr,next->ai_addrlen));
     next = next->ai_next;
   }
@@ -147,6 +147,17 @@ IPAddress::ptr Address::LookupAnyIPAddress(const std::string& hostName,int famil
   }
   return nullptr;
 }
+
+Address::ptr Address::GetInterfaceAnyAddress(){
+  std::multimap<std::string,std::pair<gaiya::Address::ptr,uint32_t>> vec;
+  gaiya::Address::GetInterfaceAddress(vec);
+  if(!vec.empty()){
+    return vec.begin()->second.first;
+  }else{
+    return nullptr;
+  }
+}
+
 
 //
 bool Address::GetInterfaceAddress(std::multimap<std::string,std::pair<Address::ptr,uint32_t>>& results,int family){

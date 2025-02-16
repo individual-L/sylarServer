@@ -146,7 +146,7 @@ CMakeFiles/gaiya.dir/src/Timer/timer.cpp.o: \
  /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_set.h \
  /usr/include/c++/13/bits/stl_multiset.h \
  /home/luo/cplus/gaiya/src/Lock/lock.hpp \
- /home/luo/cplus/gaiya/src/Lock/Noncopyable.hpp /usr/include/semaphore.h \
+ /home/luo/cplus/gaiya/src/Util/Noncopyable.hpp /usr/include/semaphore.h \
  /usr/include/x86_64-linux-gnu/bits/semaphore.h \
  /usr/include/c++/13/stdexcept /usr/include/c++/13/string \
  /usr/include/c++/13/bits/char_traits.h \

@@ -36,6 +36,8 @@ class FdCtx : public std::enable_shared_from_this<FdCtx> {
     void setTimeout(int type, uint64_t v);
 
     uint64_t getTimeout(int type);
+
+    int getSockfd()const {return m_fd;};
   private:
     bool init();
   private:

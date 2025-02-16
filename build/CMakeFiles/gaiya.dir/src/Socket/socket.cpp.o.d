@@ -204,10 +204,9 @@ CMakeFiles/gaiya.dir/src/Socket/socket.cpp.o: \
  /usr/include/linux/close_range.h /usr/include/netinet/in.h \
  /usr/include/x86_64-linux-gnu/bits/in.h \
  /usr/include/x86_64-linux-gnu/sys/un.h /usr/include/string.h \
- /usr/include/strings.h /home/luo/cplus/gaiya/src/Lock/Noncopyable.hpp \
- /home/luo/cplus/gaiya/src/Hook/fdMng.hpp \
- /home/luo/cplus/gaiya/src/Lock/lock.hpp \
- /home/luo/cplus/gaiya/src/Lock/Noncopyable.hpp /usr/include/semaphore.h \
+ /usr/include/strings.h /home/luo/cplus/gaiya/src/Util/Noncopyable.hpp \
+ /home/luo/cplus/gaiya/src/FdMng/fdMng.hpp \
+ /home/luo/cplus/gaiya/src/Lock/lock.hpp /usr/include/semaphore.h \
  /usr/include/x86_64-linux-gnu/bits/semaphore.h \
  /usr/include/c++/13/atomic /usr/include/c++/13/thread \
  /usr/include/c++/13/bits/std_thread.h \

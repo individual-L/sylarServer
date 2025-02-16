@@ -309,7 +309,7 @@ CMakeFiles/gaiya.dir/src/Hook/hook.cpp.o: \
  /usr/local/include/yaml-cpp/node/parse.h \
  /usr/local/include/yaml-cpp/node/emit.h \
  /home/luo/cplus/gaiya/src/Lock/lock.hpp \
- /home/luo/cplus/gaiya/src/Lock/Noncopyable.hpp /usr/include/semaphore.h \
+ /home/luo/cplus/gaiya/src/Util/Noncopyable.hpp /usr/include/semaphore.h \
  /usr/include/x86_64-linux-gnu/bits/semaphore.h \
  /usr/include/c++/13/thread /usr/include/c++/13/bits/std_thread.h \
  /usr/include/c++/13/bits/this_thread_sleep.h \
@@ -717,9 +717,8 @@ CMakeFiles/gaiya.dir/src/Hook/hook.cpp.o: \
  /home/luo/cplus/gaiya/src/IOmanager/iomanager.hpp \
  /home/luo/cplus/gaiya/src/Scheduler/schedule.hpp \
  /home/luo/cplus/gaiya/src/Thread/thread.hpp \
- /home/luo/cplus/gaiya/src/Lock/Noncopyable.hpp \
  /home/luo/cplus/gaiya/src/Timer/timer.hpp \
- /home/luo/cplus/gaiya/src/Hook/fdMng.hpp /usr/include/dlfcn.h \
+ /home/luo/cplus/gaiya/src/FdMng/fdMng.hpp /usr/include/dlfcn.h \
  /usr/include/x86_64-linux-gnu/bits/dlfcn.h \
  /usr/include/x86_64-linux-gnu/bits/dl_find_object.h /usr/include/fcntl.h \
  /usr/include/x86_64-linux-gnu/bits/fcntl.h \

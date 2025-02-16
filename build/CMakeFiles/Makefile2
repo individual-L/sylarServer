@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = /home/luo/cplus/gaiya/build
 
 # The main recursive "all" target.
 all: CMakeFiles/gaiya.dir/all
-all: CMakeFiles/main.dir/all
+all: CMakeFiles/testHttpServFunc.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -76,7 +76,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/gaiya.dir/clean
-clean: CMakeFiles/main.dir/clean
+clean: CMakeFiles/testHttpServFunc.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -86,12 +86,12 @@ clean: CMakeFiles/main.dir/clean
 CMakeFiles/gaiya.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 "Built target gaiya"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25 "Built target gaiya"
 .PHONY : CMakeFiles/gaiya.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/gaiya.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/gaiya.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 0
 .PHONY : CMakeFiles/gaiya.dir/rule
@@ -106,30 +106,30 @@ CMakeFiles/gaiya.dir/clean:
 .PHONY : CMakeFiles/gaiya.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/main.dir
+# Target rules for target CMakeFiles/testHttpServFunc.dir
 
 # All Build rule for target.
-CMakeFiles/main.dir/all: CMakeFiles/gaiya.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=20,21 "Built target main"
-.PHONY : CMakeFiles/main.dir/all
+CMakeFiles/testHttpServFunc.dir/all: CMakeFiles/gaiya.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testHttpServFunc.dir/build.make CMakeFiles/testHttpServFunc.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testHttpServFunc.dir/build.make CMakeFiles/testHttpServFunc.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luo/cplus/gaiya/build/CMakeFiles --progress-num=26,27 "Built target testHttpServFunc"
+.PHONY : CMakeFiles/testHttpServFunc.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 21
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
+CMakeFiles/testHttpServFunc.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 27
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/testHttpServFunc.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/luo/cplus/gaiya/build/CMakeFiles 0
-.PHONY : CMakeFiles/main.dir/rule
+.PHONY : CMakeFiles/testHttpServFunc.dir/rule
 
 # Convenience name for target.
-main: CMakeFiles/main.dir/rule
-.PHONY : main
+testHttpServFunc: CMakeFiles/testHttpServFunc.dir/rule
+.PHONY : testHttpServFunc
 
 # clean rule for target.
-CMakeFiles/main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
-.PHONY : CMakeFiles/main.dir/clean
+CMakeFiles/testHttpServFunc.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testHttpServFunc.dir/build.make CMakeFiles/testHttpServFunc.dir/clean
+.PHONY : CMakeFiles/testHttpServFunc.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

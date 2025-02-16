@@ -120,6 +120,7 @@ class Socket :public std::enable_shared_from_this<Socket>, Noncopyable
 
     virtual std::string toString() const;
   protected:
+    //将sockfd设为so_reuseaddr
     void initSock();
 
     void newSock();
@@ -142,7 +143,7 @@ class Socket :public std::enable_shared_from_this<Socket>, Noncopyable
   
 };
 
-
+std::ostream& operator<<(std::ostream& os , Socket::ptr sock);
 
 
 

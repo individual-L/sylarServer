@@ -133,17 +133,17 @@ gaiya/fast:
 .PHONY : gaiya/fast
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named testHttpServFunc
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
+testHttpServFunc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testHttpServFunc
+.PHONY : testHttpServFunc
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+testHttpServFunc/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testHttpServFunc.dir/build.make CMakeFiles/testHttpServFunc.dir/build
+.PHONY : testHttpServFunc/fast
 
 src/Address/address.o: src/Address/address.cpp.o
 .PHONY : src/Address/address.o
@@ -241,29 +241,29 @@ src/Coroutine/coroutine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Coroutine/coroutine.cpp.s
 .PHONY : src/Coroutine/coroutine.cpp.s
 
-src/Hook/fdMng.o: src/Hook/fdMng.cpp.o
-.PHONY : src/Hook/fdMng.o
+src/FdMng/fdMng.o: src/FdMng/fdMng.cpp.o
+.PHONY : src/FdMng/fdMng.o
 
 # target to build an object file
-src/Hook/fdMng.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Hook/fdMng.cpp.o
-.PHONY : src/Hook/fdMng.cpp.o
+src/FdMng/fdMng.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/FdMng/fdMng.cpp.o
+.PHONY : src/FdMng/fdMng.cpp.o
 
-src/Hook/fdMng.i: src/Hook/fdMng.cpp.i
-.PHONY : src/Hook/fdMng.i
+src/FdMng/fdMng.i: src/FdMng/fdMng.cpp.i
+.PHONY : src/FdMng/fdMng.i
 
 # target to preprocess a source file
-src/Hook/fdMng.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Hook/fdMng.cpp.i
-.PHONY : src/Hook/fdMng.cpp.i
+src/FdMng/fdMng.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/FdMng/fdMng.cpp.i
+.PHONY : src/FdMng/fdMng.cpp.i
 
-src/Hook/fdMng.s: src/Hook/fdMng.cpp.s
-.PHONY : src/Hook/fdMng.s
+src/FdMng/fdMng.s: src/FdMng/fdMng.cpp.s
+.PHONY : src/FdMng/fdMng.s
 
 # target to generate assembly for a file
-src/Hook/fdMng.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Hook/fdMng.cpp.s
-.PHONY : src/Hook/fdMng.cpp.s
+src/FdMng/fdMng.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/FdMng/fdMng.cpp.s
+.PHONY : src/FdMng/fdMng.cpp.s
 
 src/Hook/hook.o: src/Hook/hook.cpp.o
 .PHONY : src/Hook/hook.o
@@ -360,6 +360,78 @@ src/Http/http_parser.s: src/Http/http_parser.cpp.s
 src/Http/http_parser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.s
 .PHONY : src/Http/http_parser.cpp.s
+
+src/Http/http_serv_function.o: src/Http/http_serv_function.cpp.o
+.PHONY : src/Http/http_serv_function.o
+
+# target to build an object file
+src/Http/http_serv_function.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http_serv_function.cpp.o
+.PHONY : src/Http/http_serv_function.cpp.o
+
+src/Http/http_serv_function.i: src/Http/http_serv_function.cpp.i
+.PHONY : src/Http/http_serv_function.i
+
+# target to preprocess a source file
+src/Http/http_serv_function.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http_serv_function.cpp.i
+.PHONY : src/Http/http_serv_function.cpp.i
+
+src/Http/http_serv_function.s: src/Http/http_serv_function.cpp.s
+.PHONY : src/Http/http_serv_function.s
+
+# target to generate assembly for a file
+src/Http/http_serv_function.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http_serv_function.cpp.s
+.PHONY : src/Http/http_serv_function.cpp.s
+
+src/Http/http_server.o: src/Http/http_server.cpp.o
+.PHONY : src/Http/http_server.o
+
+# target to build an object file
+src/Http/http_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http_server.cpp.o
+.PHONY : src/Http/http_server.cpp.o
+
+src/Http/http_server.i: src/Http/http_server.cpp.i
+.PHONY : src/Http/http_server.i
+
+# target to preprocess a source file
+src/Http/http_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http_server.cpp.i
+.PHONY : src/Http/http_server.cpp.i
+
+src/Http/http_server.s: src/Http/http_server.cpp.s
+.PHONY : src/Http/http_server.s
+
+# target to generate assembly for a file
+src/Http/http_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http_server.cpp.s
+.PHONY : src/Http/http_server.cpp.s
+
+src/Http/http_session.o: src/Http/http_session.cpp.o
+.PHONY : src/Http/http_session.o
+
+# target to build an object file
+src/Http/http_session.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http_session.cpp.o
+.PHONY : src/Http/http_session.cpp.o
+
+src/Http/http_session.i: src/Http/http_session.cpp.i
+.PHONY : src/Http/http_session.i
+
+# target to preprocess a source file
+src/Http/http_session.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http_session.cpp.i
+.PHONY : src/Http/http_session.cpp.i
+
+src/Http/http_session.s: src/Http/http_session.cpp.s
+.PHONY : src/Http/http_session.s
+
+# target to generate assembly for a file
+src/Http/http_session.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Http/http_session.cpp.s
+.PHONY : src/Http/http_session.cpp.s
 
 src/Http/httpclient_parser.o: src/Http/httpclient_parser.cpp.o
 .PHONY : src/Http/httpclient_parser.o
@@ -505,6 +577,78 @@ src/Socket/socket.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Socket/socket.cpp.s
 .PHONY : src/Socket/socket.cpp.s
 
+src/Stream/socket_stream.o: src/Stream/socket_stream.cpp.o
+.PHONY : src/Stream/socket_stream.o
+
+# target to build an object file
+src/Stream/socket_stream.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Stream/socket_stream.cpp.o
+.PHONY : src/Stream/socket_stream.cpp.o
+
+src/Stream/socket_stream.i: src/Stream/socket_stream.cpp.i
+.PHONY : src/Stream/socket_stream.i
+
+# target to preprocess a source file
+src/Stream/socket_stream.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Stream/socket_stream.cpp.i
+.PHONY : src/Stream/socket_stream.cpp.i
+
+src/Stream/socket_stream.s: src/Stream/socket_stream.cpp.s
+.PHONY : src/Stream/socket_stream.s
+
+# target to generate assembly for a file
+src/Stream/socket_stream.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Stream/socket_stream.cpp.s
+.PHONY : src/Stream/socket_stream.cpp.s
+
+src/Stream/stream.o: src/Stream/stream.cpp.o
+.PHONY : src/Stream/stream.o
+
+# target to build an object file
+src/Stream/stream.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Stream/stream.cpp.o
+.PHONY : src/Stream/stream.cpp.o
+
+src/Stream/stream.i: src/Stream/stream.cpp.i
+.PHONY : src/Stream/stream.i
+
+# target to preprocess a source file
+src/Stream/stream.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Stream/stream.cpp.i
+.PHONY : src/Stream/stream.cpp.i
+
+src/Stream/stream.s: src/Stream/stream.cpp.s
+.PHONY : src/Stream/stream.s
+
+# target to generate assembly for a file
+src/Stream/stream.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Stream/stream.cpp.s
+.PHONY : src/Stream/stream.cpp.s
+
+src/TcpServer/tcp_server.o: src/TcpServer/tcp_server.cpp.o
+.PHONY : src/TcpServer/tcp_server.o
+
+# target to build an object file
+src/TcpServer/tcp_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/TcpServer/tcp_server.cpp.o
+.PHONY : src/TcpServer/tcp_server.cpp.o
+
+src/TcpServer/tcp_server.i: src/TcpServer/tcp_server.cpp.i
+.PHONY : src/TcpServer/tcp_server.i
+
+# target to preprocess a source file
+src/TcpServer/tcp_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/TcpServer/tcp_server.cpp.i
+.PHONY : src/TcpServer/tcp_server.cpp.i
+
+src/TcpServer/tcp_server.s: src/TcpServer/tcp_server.cpp.s
+.PHONY : src/TcpServer/tcp_server.s
+
+# target to generate assembly for a file
+src/TcpServer/tcp_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/TcpServer/tcp_server.cpp.s
+.PHONY : src/TcpServer/tcp_server.cpp.s
+
 src/Thread/thread.o: src/Thread/thread.cpp.o
 .PHONY : src/Thread/thread.o
 
@@ -577,29 +721,29 @@ src/Util/util.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gaiya.dir/build.make CMakeFiles/gaiya.dir/src/Util/util.cpp.s
 .PHONY : src/Util/util.cpp.s
 
-tester/main.o: tester/main.cpp.o
-.PHONY : tester/main.o
+tester/testHttpServFunc.o: tester/testHttpServFunc.cpp.o
+.PHONY : tester/testHttpServFunc.o
 
 # target to build an object file
-tester/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/tester/main.cpp.o
-.PHONY : tester/main.cpp.o
+tester/testHttpServFunc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testHttpServFunc.dir/build.make CMakeFiles/testHttpServFunc.dir/tester/testHttpServFunc.cpp.o
+.PHONY : tester/testHttpServFunc.cpp.o
 
-tester/main.i: tester/main.cpp.i
-.PHONY : tester/main.i
+tester/testHttpServFunc.i: tester/testHttpServFunc.cpp.i
+.PHONY : tester/testHttpServFunc.i
 
 # target to preprocess a source file
-tester/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/tester/main.cpp.i
-.PHONY : tester/main.cpp.i
+tester/testHttpServFunc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testHttpServFunc.dir/build.make CMakeFiles/testHttpServFunc.dir/tester/testHttpServFunc.cpp.i
+.PHONY : tester/testHttpServFunc.cpp.i
 
-tester/main.s: tester/main.cpp.s
-.PHONY : tester/main.s
+tester/testHttpServFunc.s: tester/testHttpServFunc.cpp.s
+.PHONY : tester/testHttpServFunc.s
 
 # target to generate assembly for a file
-tester/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/tester/main.cpp.s
-.PHONY : tester/main.cpp.s
+tester/testHttpServFunc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testHttpServFunc.dir/build.make CMakeFiles/testHttpServFunc.dir/tester/testHttpServFunc.cpp.s
+.PHONY : tester/testHttpServFunc.cpp.s
 
 # Help Target
 help:
@@ -610,7 +754,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... gaiya"
-	@echo "... main"
+	@echo "... testHttpServFunc"
 	@echo "... src/Address/address.o"
 	@echo "... src/Address/address.i"
 	@echo "... src/Address/address.s"
@@ -623,9 +767,9 @@ help:
 	@echo "... src/Coroutine/coroutine.o"
 	@echo "... src/Coroutine/coroutine.i"
 	@echo "... src/Coroutine/coroutine.s"
-	@echo "... src/Hook/fdMng.o"
-	@echo "... src/Hook/fdMng.i"
-	@echo "... src/Hook/fdMng.s"
+	@echo "... src/FdMng/fdMng.o"
+	@echo "... src/FdMng/fdMng.i"
+	@echo "... src/FdMng/fdMng.s"
 	@echo "... src/Hook/hook.o"
 	@echo "... src/Hook/hook.i"
 	@echo "... src/Hook/hook.s"
@@ -638,6 +782,15 @@ help:
 	@echo "... src/Http/http_parser.o"
 	@echo "... src/Http/http_parser.i"
 	@echo "... src/Http/http_parser.s"
+	@echo "... src/Http/http_serv_function.o"
+	@echo "... src/Http/http_serv_function.i"
+	@echo "... src/Http/http_serv_function.s"
+	@echo "... src/Http/http_server.o"
+	@echo "... src/Http/http_server.i"
+	@echo "... src/Http/http_server.s"
+	@echo "... src/Http/http_session.o"
+	@echo "... src/Http/http_session.i"
+	@echo "... src/Http/http_session.s"
 	@echo "... src/Http/httpclient_parser.o"
 	@echo "... src/Http/httpclient_parser.i"
 	@echo "... src/Http/httpclient_parser.s"
@@ -656,6 +809,15 @@ help:
 	@echo "... src/Socket/socket.o"
 	@echo "... src/Socket/socket.i"
 	@echo "... src/Socket/socket.s"
+	@echo "... src/Stream/socket_stream.o"
+	@echo "... src/Stream/socket_stream.i"
+	@echo "... src/Stream/socket_stream.s"
+	@echo "... src/Stream/stream.o"
+	@echo "... src/Stream/stream.i"
+	@echo "... src/Stream/stream.s"
+	@echo "... src/TcpServer/tcp_server.o"
+	@echo "... src/TcpServer/tcp_server.i"
+	@echo "... src/TcpServer/tcp_server.s"
 	@echo "... src/Thread/thread.o"
 	@echo "... src/Thread/thread.i"
 	@echo "... src/Thread/thread.s"
@@ -665,9 +827,9 @@ help:
 	@echo "... src/Util/util.o"
 	@echo "... src/Util/util.i"
 	@echo "... src/Util/util.s"
-	@echo "... tester/main.o"
-	@echo "... tester/main.i"
-	@echo "... tester/main.s"
+	@echo "... tester/testHttpServFunc.o"
+	@echo "... tester/testHttpServFunc.i"
+	@echo "... tester/testHttpServFunc.s"
 .PHONY : help
 
 

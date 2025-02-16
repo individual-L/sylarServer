@@ -26,6 +26,8 @@ inline uint64_t GetCurrentTime(){
   return tv.tv_sec * 1000ul + tv.tv_usec / 1000;
 }
 
+void LoadConfigrationFile();
+
 pid_t GetThreadId();
 
 int32_t GetCoroutineId();
@@ -54,8 +56,9 @@ std::string TypeName(){
   char * demangle_name = abi::__cxa_demangle(mangle_name,nullptr,nullptr,&status);
 
   if(demangle_name && status == 0){
-    return std::string(demangle_name);
+    std::string ans(mangle_name);
     free(demangle_name);
+    return ans;
   }else{
     std::cerr<<"demangle fail with status " << status << std::endl;
   }
@@ -66,9 +69,11 @@ bool Unlink(std::string path);
 
 class StringUrl{
   public:
+  //转换url格式的非保留字符(ascall 码)
   static std::string UrlEncode(const std::string& str, bool space_as_plus = true);
   static std::string UrlDecode(const std::string& str, bool space_as_plus = true);
 
+  //清除str两边的delimit字符串
   static std::string Trim(const std::string& str, const std::string& delimit = " \t\r\n");
 
 };

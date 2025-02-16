@@ -52,6 +52,10 @@ void test_response_parser(){
 
 int main(){
   // test_request_parser();
-  test_response_parser();
+  // test_response_parser();
+  const char* url = "12345: ?#[]1234";
+  lOG_INFO_ROOT()<<gaiya::StringUrl::UrlEncode(url,false);
+  std::string str = gaiya::StringUrl::UrlEncode(url,false);
+  lOG_INFO_ROOT()<<gaiya::StringUrl::UrlDecode(str,false);
   return 1;
 }

@@ -1,4 +1,4 @@
-#include"http_parser.h"
+#include"http_parser.hpp"
 #include"log.hpp"
 #include"http.hpp"
 #include"config.hpp"
@@ -156,6 +156,7 @@ int HttpRequestParser::isFinished(){
 //>0: 成功，已处理的字节数，且data中的有效数据为len - v;
 size_t HttpRequestParser::execute(char* data, size_t len){
   //返回已经解析的字节数
+  // LOG_INFO(logger)<<"len: " <<len <<"data: " <<data;
   size_t offset = http_parser_execute(&m_parser, data, len, 0);
   memmove(data, data + offset, (len - offset));
   return offset;

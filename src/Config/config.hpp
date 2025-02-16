@@ -158,7 +158,7 @@ class lexicalCast<std::unordered_map<std::string,T>,std::string>{
       for(auto it = node.begin();it != node.end();++it){
         ss.str(std::string());
         ss << it->second;
-        res.insert(std::unordered_map<std::string,T>::value_type(it->first.Scalar(),lexicalCast<std::string,T>()(ss.str())));
+        res.insert(typename std::unordered_map<std::string,T>::value_type(it->first.Scalar(),lexicalCast<std::string,T>()(ss.str())));
       }
       return res;
     }
@@ -444,7 +444,6 @@ class Config{
     }
   
 
-    // static void visit(std::function<void(ConfigVarBase::ptr)> func);
   private:
     static MutexType& GetMutex(){
       static MutexType s_mutex;

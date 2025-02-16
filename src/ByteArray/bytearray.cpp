@@ -150,7 +150,7 @@ void ByteArray::read(void *buf, size_t size){
 }
 
 void ByteArray::read(void* buf, size_t size, size_t position) const{
-  if(size > m_size - position){
+  if(size > (m_size - position)){
     throw std::out_of_range("not enough length");
   }
 
@@ -161,7 +161,7 @@ void ByteArray::read(void* buf, size_t size, size_t position) const{
   Node* node = m_cur;
   while(size > 0){
     if(ncap >= size){
-      memcpy((char*)buf + bpos,node + npos,size);
+      memcpy((char*)buf + bpos,node->ptr + npos,size);
       if((size + npos) == node->size){
         node = node->next;
       }
@@ -169,13 +169,13 @@ void ByteArray::read(void* buf, size_t size, size_t position) const{
       bpos += size;
       size = 0;
     }else{
-      memcpy((char*)buf + bpos,node + npos,ncap);
-      node = node->next;
-      ncap = node->size;
+      memcpy((char*)buf + bpos,node->ptr + npos,ncap);
       bpos += ncap;
       npos = 0;
       position += ncap;
       size -= ncap;
+      node = node->next;
+      ncap = node->size;
     }
   }
 }
@@ -497,7 +497,7 @@ std::string ByteArray::toString()const{
   if(str.empty()){
     return str;
   }
-  read(str.data(),str.size(),m_position);
+  read(&str[0],str.size(),m_position);
   return str;
 }
 std::string ByteArray::toHexString()const{
@@ -508,7 +508,8 @@ std::string ByteArray::toHexString()const{
     if(i > 0 && i % 32 == 0){
       ss << std::endl;
     }
-    ss << std::setw(2) << std::setfill('0') <<std::hex << int ((uint8_t)buff[i]) <<" ";
+    ss << std::setw(2) << std::setfill('0') <<std::hex << int ((uint8_t)buff[i]) 
+      <<" ";
   }
   return ss.str();
 };

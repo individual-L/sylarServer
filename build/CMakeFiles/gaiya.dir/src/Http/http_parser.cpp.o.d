@@ -1,6 +1,7 @@
 CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.o: \
  /home/luo/cplus/gaiya/src/Http/http_parser.cpp \
- /usr/include/stdc-predef.h /home/luo/cplus/gaiya/src/Http/http_parser.h \
+ /usr/include/stdc-predef.h \
+ /home/luo/cplus/gaiya/src/Http/http_parser.hpp \
  /home/luo/cplus/gaiya/src/Http/http11_parser.h \
  /home/luo/cplus/gaiya/src/Http/http11_common.h \
  /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/features.h \
@@ -677,7 +678,7 @@ CMakeFiles/gaiya.dir/src/Http/http_parser.cpp.o: \
  /usr/local/include/yaml-cpp/node/parse.h \
  /usr/local/include/yaml-cpp/node/emit.h \
  /home/luo/cplus/gaiya/src/Lock/lock.hpp \
- /home/luo/cplus/gaiya/src/Lock/Noncopyable.hpp /usr/include/semaphore.h \
+ /home/luo/cplus/gaiya/src/Util/Noncopyable.hpp /usr/include/semaphore.h \
  /usr/include/x86_64-linux-gnu/bits/semaphore.h \
  /usr/include/c++/13/thread /usr/include/c++/13/bits/std_thread.h \
  /usr/include/c++/13/bits/this_thread_sleep.h \

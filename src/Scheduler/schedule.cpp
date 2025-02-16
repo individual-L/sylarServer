@@ -220,7 +220,7 @@ void Scheduler::run(){
       }
       //进入idle协程
       ++m_idleThreadCount;
-      LOG_INFO(logger) <<"enter idleCoro id: " <<idleCoro->getId();
+      // LOG_INFO(logger) <<"enter idleCoro id: " <<idleCoro->getId();
       idleCoro->swapIn();
       --m_idleThreadCount;
       // if(idleCoro->getState() != gaiya::Coroutine::END 

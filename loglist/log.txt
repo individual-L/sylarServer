@@ -412,3 +412,1068 @@
 2025-01-16 21:09:20	master	INFO	5256	main_1	0	"src/Coroutine/coroutine.cpp"	74	Coroutine::~Coroutine() id: 3 total: 2
 2025-01-16 21:09:20	master	INFO	5256	main_1	0	"src/Coroutine/coroutine.cpp"	74	Coroutine::~Coroutine() id: 1 total: 1
 2025-01-16 21:09:20	master	INFO	5256	main_1	0	"src/Coroutine/coroutine.cpp"	74	Coroutine::~Coroutine() id: 0 total: 0
+2025-02-16 17:20:01	master	INFO	20033	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 17:20:01	master	INFO	20033	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2025-02-16 17:20:01	master	INFO	20033	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 17:20:01	master	INFO	20033	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 17:20:01	master	INFO	20033	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 17:20:01	master	INFO	20033	main_1	2	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 17:20:01	master	INFO	20033	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 17:20:01	master	INFO	20033	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 17:20:01	master	INFO	20033	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 17:20:01	master	INFO	20033	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 17:20:01	master	INFO	20033	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 17:20:01	master	INFO	20033	main_1	2	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 17:20:01	master	INFO	20033	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 17:20:01	master	INFO	20034	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 17:20:01	master	INFO	20034	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 17:20:01	master	INFO	20034	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 17:20:04	master	INFO	20033	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 17:20:04	master	INFO	20033	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 5 coroutine count: 7
+2025-02-16 17:57:03	master	INFO	21537	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 17:57:03	master	INFO	21537	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2025-02-16 17:57:03	master	INFO	21537	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 17:57:03	master	INFO	21537	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 17:57:03	master	INFO	21537	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 17:57:03	master	INFO	21537	main_1	2	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 17:57:03	master	INFO	21537	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 17:57:03	master	INFO	21537	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 17:57:03	master	INFO	21537	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 17:57:03	master	INFO	21537	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 17:57:03	master	INFO	21537	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 17:57:03	master	INFO	21537	main_1	2	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 17:57:03	master	INFO	21537	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 17:57:03	master	INFO	21538	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 17:57:03	master	INFO	21538	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 17:57:03	master	INFO	21538	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 17:57:06	master	INFO	21537	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 17:57:06	master	INFO	21537	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 5 coroutine count: 7
+2025-02-16 17:57:33	master	ERROR	21537	main_1	4	"src/Http/http_server.cpp"	23	recv http request fail, errno=11 errstr=Resource temporarily unavailable cliet:
+[Socket sock: -1 is_connected: 1 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030 remote_address: 192.168.80.1:56035] keep_alive=1
+2025-02-16 17:57:33	master	INFO	21537	main_1	0	"src/Coroutine/coroutine.cpp"	74	Coroutine::~Coroutine() id: 4 total: 6
+2025-02-16 17:57:33	master	INFO	21538	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 6 coroutine count: 7
+2025-02-16 17:57:56	master	ERROR	21538	main_2	5	"src/Http/http_server.cpp"	23	recv http request fail, errno=11 errstr=Resource temporarily unavailable cliet:
+[Socket sock: -1 is_connected: 1 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030 remote_address: 192.168.80.1:56036] keep_alive=1
+2025-02-16 17:57:56	master	INFO	21538	main_2	0	"src/Coroutine/coroutine.cpp"	74	Coroutine::~Coroutine() id: 5 total: 6
+2025-02-16 17:57:56	master	INFO	21537	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 7 coroutine count: 7
+2025-02-16 18:01:50	master	INFO	21894	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:01:50	master	INFO	21894	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2025-02-16 18:01:50	master	INFO	21894	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:01:50	master	INFO	21894	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:01:50	master	INFO	21894	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:01:50	master	INFO	21894	main_1	2	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:01:50	master	INFO	21894	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:01:50	master	INFO	21894	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:01:50	master	INFO	21894	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:01:50	master	INFO	21894	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:01:50	master	INFO	21894	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:01:50	master	INFO	21894	main_1	2	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:01:50	master	INFO	21894	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:01:50	master	INFO	21895	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:01:50	master	INFO	21895	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:01:50	master	INFO	21895	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:02:26	master	INFO	22030	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:02:26	master	INFO	22030	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:02:26	master	INFO	22030	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:02:26	master	INFO	22031	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:02:26	master	INFO	22031	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:02:26	master	INFO	22031	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 2
+2025-02-16 18:02:26	master	INFO	22030	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:02:26	master	INFO	22030	main_1	3	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:02:26	master	INFO	22030	main_1	3	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:02:26	master	INFO	22030	main_1	3	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:02:26	master	INFO	22030	main_1	3	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:02:26	master	INFO	22030	main_1	3	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:02:26	master	INFO	22030	main_1	3	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:02:26	master	INFO	22030	main_1	3	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:02:26	master	INFO	22030	main_1	3	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:02:26	master	INFO	22030	main_1	3	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:02:26	master	INFO	22031	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 18:03:15	master	INFO	22360	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:03:15	master	INFO	22360	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:03:15	master	INFO	22360	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:03:15	master	INFO	22360	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 3
+2025-02-16 18:03:15	master	INFO	22360	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:03:15	master	INFO	22360	main_1	2	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:03:15	master	INFO	22360	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:03:15	master	INFO	22360	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:03:15	master	INFO	22360	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:03:15	master	INFO	22360	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:03:15	master	INFO	22360	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:03:15	master	INFO	22360	main_1	2	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:03:15	master	INFO	22360	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:03:15	master	INFO	22361	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:03:15	master	INFO	22361	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:03:15	master	INFO	22361	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:05:08	master	INFO	22515	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:05:08	master	INFO	22515	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:05:08	master	INFO	22515	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:05:08	master	INFO	22515	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:05:08	master	INFO	22515	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:05:08	master	INFO	22515	main_1	2	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:05:08	master	INFO	22515	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:05:08	master	INFO	22515	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:05:08	master	INFO	22515	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:05:08	master	INFO	22515	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:05:08	master	INFO	22515	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:05:08	master	INFO	22515	main_1	2	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:05:08	master	INFO	22515	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:05:08	master	INFO	22516	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:05:08	master	INFO	22516	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:05:08	master	INFO	22516	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:05:26	master	INFO	22609	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:05:26	master	INFO	22609	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:05:26	master	INFO	22609	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:05:26	master	INFO	22609	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:05:26	master	INFO	22609	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:05:26	master	INFO	22609	main_1	2	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:05:26	master	INFO	22609	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:05:26	master	INFO	22609	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:05:26	master	INFO	22609	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:05:26	master	INFO	22609	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:05:26	master	INFO	22609	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:05:26	master	INFO	22609	main_1	2	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:05:26	master	INFO	22609	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:05:26	master	INFO	22610	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:05:26	master	INFO	22610	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:05:26	master	INFO	22610	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:06:01	master	INFO	22797	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:06:01	master	INFO	22797	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:06:01	master	INFO	22797	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:06:01	master	INFO	22797	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:06:01	master	INFO	22797	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:06:01	master	INFO	22797	main_1	2	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:06:01	master	INFO	22797	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:06:01	master	INFO	22797	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:06:01	master	INFO	22797	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:06:01	master	INFO	22797	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:06:01	master	INFO	22797	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:06:01	master	INFO	22797	main_1	2	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:06:01	master	INFO	22797	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:06:01	master	INFO	22798	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:06:01	master	INFO	22798	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:06:01	master	INFO	22798	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:06:39	master	INFO	23017	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:06:39	master	INFO	23017	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2025-02-16 18:06:39	master	INFO	23017	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:06:39	master	INFO	23017	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:06:39	master	INFO	23017	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:06:39	master	INFO	23017	main_1	2	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:06:39	master	INFO	23017	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:06:39	master	INFO	23017	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:06:39	master	INFO	23017	main_1	2	"src/Address/address.cpp"	119	port: 24095
+2025-02-16 18:06:39	master	INFO	23017	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:06:39	master	INFO	23017	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:06:39	master	INFO	23017	main_1	2	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:06:39	master	INFO	23017	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:06:39	master	INFO	23018	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:06:39	master	INFO	23018	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:06:39	master	INFO	23018	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:07:38	master	INFO	23227	UNKONWN	0	"src/Http/http_serv_function.cpp"	14	init html: <!DOCTYPE html>
+2025-02-16 18:07:38	master	INFO	23227	UNKONWN	0	"src/Http/http_serv_function.cpp"	15	init html22: 
+2025-02-16 18:07:38	master	INFO	23227	UNKONWN	0	"src/Http/http_serv_function.cpp"	17	init html22: <!DOCTYPE html>
+2025-02-16 18:07:38	master	INFO	23228	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:07:38	master	INFO	23228	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:07:38	master	INFO	23228	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:07:38	master	INFO	23228	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:07:38	master	INFO	23228	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:07:38	master	INFO	23228	main_1	2	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:07:38	master	INFO	23228	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:07:38	master	INFO	23228	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:07:38	master	INFO	23228	main_1	2	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:07:38	master	INFO	23228	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:07:38	master	INFO	23229	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:07:38	master	INFO	23229	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:07:38	master	INFO	23229	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:10:17	master	INFO	23675	UNKONWN	0	"src/Http/http_serv_function.cpp"	14	init html: <!DOCTYPE html>
+2025-02-16 18:10:17	master	INFO	23675	UNKONWN	0	"src/Http/http_serv_function.cpp"	15	init html22: 
+2025-02-16 18:10:17	master	INFO	23675	UNKONWN	0	"src/Http/http_serv_function.cpp"	17	init html22: <!DOCTYPE html>
+2025-02-16 18:10:17	master	INFO	23676	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:10:17	master	INFO	23676	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:10:17	master	INFO	23676	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:10:17	master	INFO	23677	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:10:17	master	INFO	23677	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:10:17	master	INFO	23677	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 2
+2025-02-16 18:10:17	master	INFO	23676	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:10:17	master	INFO	23676	main_1	3	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:10:17	master	INFO	23676	main_1	3	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:10:17	master	INFO	23676	main_1	3	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:10:17	master	INFO	23676	main_1	3	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:10:17	master	INFO	23676	main_1	3	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:10:17	master	INFO	23676	main_1	3	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:12:43	master	INFO	24377	UNKONWN	0	"src/Http/http_serv_function.cpp"	14	init html: <!DOCTYPE html>
+2025-02-16 18:12:43	master	INFO	24377	UNKONWN	0	"src/Http/http_serv_function.cpp"	15	init html22: 
+2025-02-16 18:12:43	master	INFO	24377	UNKONWN	0	"src/Http/http_serv_function.cpp"	17	init html22: <!DOCTYPE html>
+2025-02-16 18:12:43	master	INFO	24378	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:12:43	master	INFO	24378	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:12:43	master	INFO	24378	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:12:43	master	INFO	24378	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:12:43	master	INFO	24378	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:12:43	master	INFO	24378	main_1	2	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:12:43	master	INFO	24378	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:12:43	master	INFO	24378	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:12:43	master	INFO	24378	main_1	2	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:12:43	master	INFO	24378	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:12:43	master	INFO	24379	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:12:43	master	INFO	24379	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:12:43	master	INFO	24379	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:15:03	master	INFO	25052	UNKONWN	0	"src/Http/http_serv_function.cpp"	14	init html: <!DOCTYPE html>
+2025-02-16 18:15:03	master	INFO	25052	UNKONWN	0	"src/Http/http_serv_function.cpp"	15	init html22: 
+2025-02-16 18:15:03	master	INFO	25052	UNKONWN	0	"src/Http/http_serv_function.cpp"	17	init html22: <!DOCTYPE html>
+2025-02-16 18:15:03	master	INFO	25053	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:15:03	master	INFO	25053	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2025-02-16 18:15:03	master	INFO	25053	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:15:03	master	INFO	25053	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:15:03	master	INFO	25053	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:15:03	master	INFO	25053	main_1	2	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:15:03	master	INFO	25054	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:15:03	master	INFO	25054	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:15:03	master	INFO	25054	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:15:03	master	INFO	25053	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:15:03	master	INFO	25053	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:15:03	master	INFO	25053	main_1	2	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:15:03	master	INFO	25053	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:15:03	master	INFO	25054	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 18:15:36	master	INFO	25188	UNKONWN	0	"src/Http/http_serv_function.cpp"	14	init html: <!DOCTYPE html>
+2025-02-16 18:15:36	master	INFO	25188	UNKONWN	0	"src/Http/http_serv_function.cpp"	15	init html22: 
+2025-02-16 18:15:36	master	INFO	25188	UNKONWN	0	"src/Http/http_serv_function.cpp"	17	init html22: <!DOCTYPE html>
+2025-02-16 18:15:36	master	INFO	25189	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:15:36	master	INFO	25189	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:15:36	master	INFO	25189	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:15:36	master	INFO	25190	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:15:36	master	INFO	25190	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:15:36	master	INFO	25190	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 2
+2025-02-16 18:15:36	master	INFO	25189	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:15:36	master	INFO	25189	main_1	3	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:15:36	master	INFO	25189	main_1	3	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:15:36	master	INFO	25189	main_1	3	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:15:36	master	INFO	25189	main_1	3	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:15:36	master	INFO	25189	main_1	3	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:15:36	master	INFO	25189	main_1	3	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:16:29	master	INFO	25290	UNKONWN	0	"src/Http/http_serv_function.cpp"	14	init html: <!DOCTYPE html>
+2025-02-16 18:16:29	master	INFO	25290	UNKONWN	0	"src/Http/http_serv_function.cpp"	15	init html22: 
+2025-02-16 18:16:29	master	INFO	25290	UNKONWN	0	"src/Http/http_serv_function.cpp"	17	init html22: <!DOCTYPE html>
+2025-02-16 18:16:29	master	INFO	25291	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:16:29	master	INFO	25291	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:16:29	master	INFO	25291	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:16:29	master	INFO	25291	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:16:29	master	INFO	25291	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:16:29	master	INFO	25291	main_1	2	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:16:29	master	INFO	25291	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:16:29	master	INFO	25291	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:16:29	master	INFO	25291	main_1	2	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:16:29	master	INFO	25291	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:16:29	master	INFO	25292	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:16:29	master	INFO	25292	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:16:29	master	INFO	25292	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:16:59	master	INFO	25509	UNKONWN	0	"src/Http/http_serv_function.cpp"	15	init html22: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        .container {
+            background: #fff;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #c00;
+            font-size: 3em;
+        }
+        p {
+            color: #666;
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        a:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>抱歉，您请求的页面不存在...</p>
+        <a href="/">返回首页</a>
+    </div>
+</body>
+</html>
+
+2025-02-16 18:16:59	master	INFO	25510	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:16:59	master	INFO	25510	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:16:59	master	INFO	25510	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:16:59	master	INFO	25511	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:16:59	master	INFO	25511	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:16:59	master	INFO	25511	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:16:59	master	INFO	25510	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:16:59	master	INFO	25510	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:16:59	master	INFO	25510	main_1	2	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:16:59	master	INFO	25510	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:16:59	master	INFO	25510	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:16:59	master	INFO	25510	main_1	2	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:16:59	master	INFO	25510	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:17:23	master	INFO	25706	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:17:23	master	INFO	25706	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2025-02-16 18:17:23	master	INFO	25706	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:17:23	master	INFO	25706	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:17:23	master	INFO	25706	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:17:23	master	INFO	25706	main_1	2	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:17:23	master	INFO	25706	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:17:23	master	INFO	25706	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:17:23	master	INFO	25706	main_1	2	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:17:23	master	INFO	25706	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:17:23	master	INFO	25707	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:17:23	master	INFO	25707	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:17:23	master	INFO	25707	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:17:26	master	INFO	25707	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 18:17:26	master	INFO	25707	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 5 coroutine count: 7
+2025-02-16 18:17:44	master	ERROR	25706	main_1	4	"src/Http/http_server.cpp"	23	recv http request fail, errno=11 errstr=Resource temporarily unavailable cliet:
+[Socket sock: -1 is_connected: 1 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030 remote_address: 192.168.80.1:57115] keep_alive=1
+2025-02-16 18:17:44	master	INFO	25706	main_1	0	"src/Coroutine/coroutine.cpp"	74	Coroutine::~Coroutine() id: 4 total: 6
+2025-02-16 18:17:44	master	INFO	25706	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 6 coroutine count: 7
+2025-02-16 18:18:53	master	INFO	25946	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:18:53	master	INFO	25946	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:18:53	master	INFO	25946	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:18:53	master	INFO	25946	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:18:53	master	INFO	25946	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:18:53	master	INFO	25946	main_1	2	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:18:53	master	INFO	25946	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:18:53	master	INFO	25946	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:18:53	master	INFO	25946	main_1	2	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:18:53	master	INFO	25946	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:18:53	master	INFO	25947	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:18:53	master	INFO	25947	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:18:53	master	INFO	25947	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:18:56	master	INFO	25947	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 18:18:56	master	INFO	25947	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 5 coroutine count: 7
+2025-02-16 18:18:56	master	INFO	25946	main_1	4	"src/Http/http_serv_function.cpp"	64	使用默认处理函数
+2025-02-16 18:19:35	master	INFO	26105	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:19:35	master	INFO	26105	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:19:35	master	INFO	26105	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:19:35	master	INFO	26106	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:19:35	master	INFO	26106	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:19:35	master	INFO	26106	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 2
+2025-02-16 18:19:35	master	INFO	26105	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:19:35	master	INFO	26105	main_1	3	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:19:35	master	INFO	26105	main_1	3	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:19:35	master	INFO	26105	main_1	3	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:19:35	master	INFO	26105	main_1	3	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:19:35	master	INFO	26105	main_1	3	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:19:35	master	INFO	26105	main_1	3	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:19:35	master	INFO	26106	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 18:19:38	master	INFO	26106	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 5 coroutine count: 7
+2025-02-16 18:19:38	master	INFO	26106	main_2	3	"src/Http/http_serv_function.cpp"	51	使用默认处理函数
+2025-02-16 18:20:22	master	INFO	26262	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:20:22	master	INFO	26262	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:20:22	master	INFO	26262	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:20:22	master	INFO	26262	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:20:22	master	INFO	26262	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:20:22	master	INFO	26262	main_1	2	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:20:22	master	INFO	26262	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:20:22	master	INFO	26262	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:20:22	master	INFO	26262	main_1	2	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:20:22	master	INFO	26262	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:20:22	master	INFO	26263	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:20:22	master	INFO	26263	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:20:22	master	INFO	26263	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:20:24	master	INFO	26263	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 18:20:24	master	INFO	26263	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 5 coroutine count: 7
+2025-02-16 18:20:24	master	INFO	26262	main_1	5	"src/Http/http_serv_function.cpp"	51	使用默认处理函数
+2025-02-16 18:20:24	master	INFO	26262	main_1	5	"src/Http/http_server.cpp"	30	
+2025-02-16 18:22:16	master	INFO	26516	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:22:16	master	INFO	26516	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:22:16	master	INFO	26517	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:22:16	master	INFO	26517	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:22:16	master	INFO	26517	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 2
+2025-02-16 18:22:16	master	INFO	26517	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:22:16	master	INFO	26517	main_2	3	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:22:16	master	INFO	26517	main_2	3	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:22:16	master	INFO	26517	main_2	3	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:22:16	master	INFO	26517	main_2	3	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:22:16	master	INFO	26517	main_2	3	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:22:16	master	INFO	26517	main_2	3	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:22:16	master	INFO	26516	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:22:18	master	INFO	26516	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 18:22:18	master	INFO	26516	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 5 coroutine count: 7
+2025-02-16 18:22:18	master	INFO	26517	main_2	4	"src/Http/http_serv_function.cpp"	54	使用默认处理函数
+2025-02-16 18:22:18	master	INFO	26517	main_2	4	"src/Http/http_server.cpp"	30	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        .container {
+            background: #fff;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #c00;
+            font-size: 3em;
+        }
+        p {
+            color: #666;
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        a:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>抱歉，您请求的页面不存在...</p>
+        <a href="/">返回首页</a>
+    </div>
+</body>
+</html>
+
+2025-02-16 18:22:18	master	INFO	26516	main_1	4	"src/Http/http_serv_function.cpp"	54	使用默认处理函数
+2025-02-16 18:22:18	master	INFO	26516	main_1	4	"src/Http/http_server.cpp"	30	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        .container {
+            background: #fff;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #c00;
+            font-size: 3em;
+        }
+        p {
+            color: #666;
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        a:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>抱歉，您请求的页面不存在...</p>
+        <a href="/">返回首页</a>
+    </div>
+</body>
+</html>
+
+2025-02-16 18:23:03	master	INFO	26738	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:23:03	master	INFO	26738	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2025-02-16 18:23:03	master	INFO	26738	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:23:03	master	INFO	26738	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:23:03	master	INFO	26738	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:23:03	master	INFO	26738	main_1	2	"src/Address/address.cpp"	109	getaddrinfo port: 8030
+2025-02-16 18:23:03	master	INFO	26738	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:23:03	master	INFO	26738	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:23:03	master	INFO	26738	main_1	2	"src/TcpServer/tcp_server.cpp"	85	1
+2025-02-16 18:23:03	master	INFO	26738	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:23:03	master	INFO	26739	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:23:03	master	INFO	26739	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:23:03	master	INFO	26739	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:23:05	master	INFO	26738	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 18:23:05	master	INFO	26738	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 5 coroutine count: 7
+2025-02-16 18:24:38	master	INFO	26962	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:24:38	master	INFO	26962	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2025-02-16 18:24:38	master	INFO	26962	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:24:38	master	INFO	26962	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:24:38	master	INFO	26962	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:24:38	master	INFO	26962	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:24:38	master	INFO	26962	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:24:38	master	INFO	26962	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:24:38	master	INFO	26963	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:24:38	master	INFO	26963	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:24:38	master	INFO	26963	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:24:50	master	INFO	26963	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 18:24:50	master	INFO	26963	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 5 coroutine count: 7
+2025-02-16 18:28:32	master	INFO	27073	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:28:32	master	INFO	27073	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:28:32	master	INFO	27073	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:28:32	master	INFO	27073	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:28:32	master	INFO	27073	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:28:32	master	INFO	27073	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:28:32	master	INFO	27073	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:28:32	master	INFO	27073	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:28:32	master	INFO	27074	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:28:32	master	INFO	27074	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:28:32	master	INFO	27074	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:28:32	master	INFO	27074	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 18:28:32	master	INFO	27074	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 5 coroutine count: 7
+2025-02-16 18:28:32	master	INFO	27073	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 6 coroutine count: 8
+2025-02-16 18:29:32	master	ERROR	27073	main_1	5	"src/Http/http_server.cpp"	23	recv http request fail, errno=11 errstr=Resource temporarily unavailable cliet:
+[Socket sock: -1 is_connected: 1 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030 remote_address: 192.168.80.1:57656] keep_alive=1
+2025-02-16 18:29:32	master	INFO	27073	main_1	0	"src/Coroutine/coroutine.cpp"	74	Coroutine::~Coroutine() id: 5 total: 7
+2025-02-16 18:29:32	master	ERROR	27073	main_1	6	"src/Http/http_server.cpp"	23	recv http request fail, errno=11 errstr=Resource temporarily unavailable cliet:
+[Socket sock: -1 is_connected: 1 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030 remote_address: 192.168.80.1:57655] keep_alive=1
+2025-02-16 18:29:32	master	INFO	27073	main_1	0	"src/Coroutine/coroutine.cpp"	74	Coroutine::~Coroutine() id: 6 total: 6
+2025-02-16 18:29:40	master	INFO	27073	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 7 coroutine count: 7
+2025-02-16 18:30:40	master	ERROR	27073	main_1	7	"src/Http/http_server.cpp"	23	recv http request fail, errno=11 errstr=Resource temporarily unavailable cliet:
+[Socket sock: -1 is_connected: 1 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030 remote_address: 192.168.80.1:57719] keep_alive=1
+2025-02-16 18:30:40	master	INFO	27073	main_1	0	"src/Coroutine/coroutine.cpp"	74	Coroutine::~Coroutine() id: 7 total: 6
+2025-02-16 18:30:40	master	INFO	27073	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 8 coroutine count: 7
+2025-02-16 18:31:47	master	ERROR	27073	main_1	8	"src/Http/http_server.cpp"	23	recv http request fail, errno=11 errstr=Resource temporarily unavailable cliet:
+[Socket sock: -1 is_connected: 1 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030 remote_address: 192.168.80.1:57736] keep_alive=1
+2025-02-16 18:31:47	master	INFO	27073	main_1	0	"src/Coroutine/coroutine.cpp"	74	Coroutine::~Coroutine() id: 8 total: 6
+2025-02-16 18:33:12	master	INFO	27074	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 9 coroutine count: 7
+2025-02-16 18:38:11	master	INFO	27579	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:38:11	master	INFO	27579	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:38:11	master	INFO	27579	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:38:11	master	INFO	27579	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:38:11	master	INFO	27579	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:38:11	master	INFO	27579	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:38:11	master	INFO	27579	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:38:11	master	INFO	27579	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:38:11	master	INFO	27580	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:38:11	master	INFO	27580	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:38:11	master	INFO	27580	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:38:13	master	INFO	27579	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 18:38:13	master	INFO	27580	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 5 coroutine count: 7
+2025-02-16 18:39:25	master	INFO	27580	main_2	5	"src/Socket/socket.cpp"	412	fd: 9 closed
+2025-02-16 18:39:25	master	ERROR	27580	main_2	5	"src/Http/http_server.cpp"	23	recv http request fail, errno=11 errstr=Resource temporarily unavailable cliet:
+[Socket sock: -1 is_connected: 1 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030 remote_address: 192.168.80.1:58177] keep_alive=1
+2025-02-16 18:39:25	master	INFO	27580	main_2	0	"src/Coroutine/coroutine.cpp"	74	Coroutine::~Coroutine() id: 5 total: 6
+2025-02-16 18:41:15	master	INFO	27791	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:41:15	master	INFO	27791	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2025-02-16 18:41:15	master	INFO	27791	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:41:15	master	INFO	27791	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:41:15	master	INFO	27791	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:41:15	master	INFO	27791	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:41:15	master	INFO	27791	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:41:15	master	INFO	27791	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:41:15	master	INFO	27792	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:41:15	master	INFO	27792	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:41:15	master	INFO	27792	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:41:24	master	INFO	27792	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 18:41:24	master	INFO	27791	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 5 coroutine count: 7
+2025-02-16 18:42:36	master	INFO	27791	main_1	5	"src/Socket/socket.cpp"	412	fd: 9 closed
+2025-02-16 18:42:36	master	ERROR	27791	main_1	5	"src/Http/http_server.cpp"	23	recv http request fail, errno=11 errstr=Resource temporarily unavailable cliet:
+[Socket sock: -1 is_connected: 1 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030 remote_address: 192.168.80.1:58310] keep_alive=1
+2025-02-16 18:42:36	master	INFO	27791	main_1	0	"src/Coroutine/coroutine.cpp"	74	Coroutine::~Coroutine() id: 5 total: 6
+2025-02-16 18:45:57	master	INFO	28138	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:45:57	master	INFO	28138	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2025-02-16 18:45:57	master	INFO	28138	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:45:57	master	INFO	28138	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:45:57	master	INFO	28138	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:45:57	master	INFO	28138	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:45:57	master	INFO	28138	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:45:57	master	INFO	28139	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:45:57	master	INFO	28139	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:45:57	master	INFO	28139	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:45:57	master	INFO	28138	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:45:57	master	INFO	28138	main_1	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 18446744073709551615
+2025-02-16 18:47:48	master	INFO	28308	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:47:48	master	INFO	28308	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:47:48	master	INFO	28308	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:47:48	master	INFO	28309	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:47:48	master	INFO	28309	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:47:48	master	INFO	28309	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:47:48	master	INFO	28308	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:47:48	master	INFO	28308	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:47:48	master	INFO	28308	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:47:48	master	INFO	28308	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:47:48	master	INFO	28308	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:47:48	master	INFO	28309	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 18:47:48	master	INFO	28309	main_2	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 18446744073709551615
+2025-02-16 18:49:45	master	INFO	28424	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:49:45	master	INFO	28424	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 18:49:45	master	INFO	28424	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:49:45	master	INFO	28425	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:49:45	master	INFO	28425	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:49:45	master	INFO	28425	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 2
+2025-02-16 18:49:45	master	INFO	28425	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:49:45	master	INFO	28425	main_2	3	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:49:45	master	INFO	28425	main_2	3	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:49:45	master	INFO	28425	main_2	3	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:49:45	master	INFO	28425	main_2	3	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:49:45	master	INFO	28425	main_2	3	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 18446744073709551615
+2025-02-16 18:52:56	master	INFO	28895	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:52:56	master	INFO	28895	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2025-02-16 18:52:56	master	INFO	28895	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:52:56	master	INFO	28895	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:52:56	master	INFO	28895	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:52:56	master	INFO	28895	main_1	2	"src/Hook/hook.cpp"	363	ishooked
+2025-02-16 18:52:56	master	INFO	28895	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:52:56	master	INFO	28895	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:52:56	master	INFO	28895	main_1	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 18446744073709551615
+2025-02-16 18:52:56	master	INFO	28895	main_1	2	"src/Hook/hook.cpp"	156	======-
+2025-02-16 18:52:56	master	INFO	28896	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:52:56	master	INFO	28896	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:52:56	master	INFO	28896	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:54:00	master	INFO	29131	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:54:00	master	INFO	29131	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2025-02-16 18:54:00	master	INFO	29131	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:54:00	master	INFO	29131	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:54:00	master	INFO	29131	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:54:00	master	INFO	29131	main_1	2	"src/Hook/hook.cpp"	363	ishooked
+2025-02-16 18:54:00	master	INFO	29131	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:54:00	master	INFO	29131	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:54:00	master	INFO	29131	main_1	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 18446744073709551615
+2025-02-16 18:54:00	master	INFO	29131	main_1	2	"src/Hook/hook.cpp"	156	======-18446744073709551615
+2025-02-16 18:54:00	master	INFO	29132	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:54:00	master	INFO	29132	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:54:00	master	INFO	29132	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:56:38	master	INFO	29416	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:56:38	master	INFO	29416	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2025-02-16 18:56:38	master	INFO	29416	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:56:38	master	INFO	29416	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:56:38	master	INFO	29416	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:56:38	master	INFO	29416	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:56:38	master	INFO	29416	main_1	2	"src/TcpServer/tcp_server.cpp"	60	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:56:38	master	INFO	29416	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:56:38	master	INFO	29417	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:56:38	master	INFO	29417	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:56:38	master	INFO	29417	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:57:05	master	INFO	29416	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 18:57:36	master	INFO	29568	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:57:36	master	INFO	29568	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2025-02-16 18:57:36	master	INFO	29568	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 18:57:36	master	INFO	29568	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:57:36	master	INFO	29568	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:57:36	master	INFO	29568	main_1	2	"src/TcpServer/tcp_server.cpp"	37	6000
+2025-02-16 18:57:36	master	INFO	29568	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:57:36	master	INFO	29568	main_1	2	"src/TcpServer/tcp_server.cpp"	61	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:57:36	master	INFO	29568	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:57:36	master	INFO	29569	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:57:36	master	INFO	29569	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:57:36	master	INFO	29569	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 18:57:57	master	INFO	29732	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:57:57	master	INFO	29733	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 18:57:57	master	INFO	29733	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 18:57:57	master	INFO	29733	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 2
+2025-02-16 18:57:57	master	INFO	29733	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 18:57:57	master	INFO	29733	main_2	3	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 18:57:57	master	INFO	29733	main_2	3	"src/TcpServer/tcp_server.cpp"	37	6000
+2025-02-16 18:57:57	master	INFO	29733	main_2	3	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 18:57:57	master	INFO	29733	main_2	3	"src/TcpServer/tcp_server.cpp"	61	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 18:57:57	master	INFO	29733	main_2	3	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 18:57:57	master	INFO	29733	main_2	3	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 18446744073709551615
+2025-02-16 18:57:57	master	INFO	29732	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 4
+2025-02-16 18:57:57	master	INFO	29732	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 19:00:04	master	INFO	29898	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:00:04	master	INFO	29898	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2025-02-16 19:00:04	master	INFO	29898	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 19:00:04	master	INFO	29898	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 19:00:04	master	INFO	29898	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 19:00:04	master	INFO	29898	main_1	2	"src/TcpServer/tcp_server.cpp"	37	6000
+2025-02-16 19:00:04	master	INFO	29898	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 19:00:04	master	INFO	29898	main_1	2	"src/TcpServer/tcp_server.cpp"	61	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 19:00:04	master	INFO	29898	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 19:00:04	master	INFO	29898	main_1	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 18446744073709551615
+2025-02-16 19:00:04	master	INFO	29899	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:00:04	master	INFO	29899	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 19:00:04	master	INFO	29899	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 19:01:00	master	INFO	30101	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:01:00	master	INFO	30101	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 19:01:00	master	INFO	30101	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 19:01:00	master	INFO	30102	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:01:00	master	INFO	30102	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 19:01:00	master	INFO	30102	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 2
+2025-02-16 19:01:00	master	INFO	30102	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 19:01:00	master	INFO	30102	main_2	3	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 19:01:00	master	INFO	30102	main_2	3	"src/TcpServer/tcp_server.cpp"	37	6000
+2025-02-16 19:01:48	master	INFO	30332	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:01:48	master	INFO	30332	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 19:01:48	master	INFO	30332	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 19:01:48	master	INFO	30332	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 19:01:48	master	INFO	30332	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 19:01:48	master	INFO	30332	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 19:01:48	master	INFO	30332	main_1	2	"src/TcpServer/tcp_server.cpp"	60	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 19:01:48	master	INFO	30332	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 19:01:48	master	INFO	30332	main_1	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 18446744073709551615
+2025-02-16 19:01:48	master	INFO	30333	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:01:48	master	INFO	30333	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 19:01:48	master	INFO	30333	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 19:02:21	master	INFO	30485	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:02:21	master	INFO	30485	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 19:02:21	master	INFO	30485	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 19:02:21	master	INFO	30486	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:02:21	master	INFO	30486	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 19:02:21	master	INFO	30486	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 2
+2025-02-16 19:02:21	master	INFO	30486	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 19:02:21	master	INFO	30486	main_2	3	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 19:02:21	master	INFO	30486	main_2	3	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 19:02:26	master	INFO	30486	main_2	3	"src/TcpServer/tcp_server.cpp"	60	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 19:02:26	master	INFO	30485	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 19:02:26	master	INFO	30485	main_1	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 18446744073709551615
+2025-02-16 19:02:26	master	INFO	30486	main_2	3	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 19:02:37	master	INFO	30564	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:02:37	master	INFO	30564	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 19:02:37	master	INFO	30564	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 19:02:37	master	INFO	30565	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:02:37	master	INFO	30565	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 19:02:37	master	INFO	30565	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 2
+2025-02-16 19:02:37	master	INFO	30564	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 19:02:37	master	INFO	30564	main_1	3	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 19:02:37	master	INFO	30564	main_1	3	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 19:03:08	master	INFO	30698	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:03:08	master	INFO	30698	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 19:03:08	master	INFO	30698	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 19:03:08	master	INFO	30699	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:03:08	master	INFO	30699	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 19:03:08	master	INFO	30699	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 2
+2025-02-16 19:03:08	master	INFO	30698	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 19:03:08	master	INFO	30698	main_1	3	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 19:03:08	master	INFO	30698	main_1	3	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 19:03:24	master	INFO	30812	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:03:24	master	INFO	30812	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 19:03:24	master	INFO	30812	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 19:03:24	master	INFO	30813	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:03:24	master	INFO	30813	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 19:03:24	master	INFO	30813	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 2
+2025-02-16 19:03:24	master	INFO	30813	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 19:03:24	master	INFO	30813	main_2	3	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 19:03:24	master	INFO	30813	main_2	3	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 19:03:34	master	INFO	30813	main_2	3	"src/TcpServer/tcp_server.cpp"	60	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 19:03:34	master	INFO	30813	main_2	3	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 19:03:34	master	INFO	30812	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 19:03:34	master	INFO	30812	main_1	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 18446744073709551615
+2025-02-16 19:03:40	master	INFO	30937	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:03:40	master	INFO	30937	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 19:03:40	master	INFO	30937	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 19:03:40	master	INFO	30938	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:03:40	master	INFO	30938	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 19:03:40	master	INFO	30938	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 2
+2025-02-16 19:03:40	master	INFO	30938	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 19:03:40	master	INFO	30938	main_2	3	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 19:03:40	master	INFO	30938	main_2	3	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 19:05:14	master	INFO	31289	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:05:14	master	INFO	31290	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:05:14	master	INFO	31290	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 19:05:14	master	INFO	31290	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 2
+2025-02-16 19:05:14	master	INFO	31290	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 19:05:14	master	INFO	31290	main_2	3	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 19:05:14	master	INFO	31290	main_2	3	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 19:05:14	master	INFO	31289	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 4
+2025-02-16 19:05:14	master	INFO	31289	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 19:05:14	master	INFO	31290	main_2	3	"src/TcpServer/tcp_server.cpp"	60	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 19:05:14	master	INFO	31289	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 19:05:14	master	INFO	31289	main_1	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:05:14	master	INFO	31290	main_2	3	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 19:05:20	master	INFO	31289	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 5 coroutine count: 7
+2025-02-16 19:05:20	master	ERROR	31289	main_1	4	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:05:20	master	ERROR	31289	main_1	4	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:05:20	master	INFO	31289	main_1	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:05:26	master	ERROR	31289	main_1	4	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:05:26	master	ERROR	31289	main_1	4	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:05:26	master	INFO	31289	main_1	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:05:32	master	ERROR	31290	main_2	4	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:05:32	master	ERROR	31290	main_2	4	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:05:32	master	INFO	31290	main_2	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:08:52	master	INFO	31630	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:08:52	master	INFO	31630	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2025-02-16 19:08:52	master	INFO	31630	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 19:08:52	master	INFO	31630	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 19:08:52	master	INFO	31630	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 19:08:52	master	INFO	31630	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 19:08:52	master	INFO	31631	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:08:52	master	INFO	31631	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 19:08:52	master	INFO	31631	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 19:08:52	master	INFO	31630	main_1	2	"src/TcpServer/tcp_server.cpp"	60	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 19:08:52	master	INFO	31631	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 19:08:52	master	INFO	31631	main_2	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:08:52	master	INFO	31630	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 19:08:58	master	ERROR	31630	main_1	4	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:08:58	master	ERROR	31630	main_1	4	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:08:58	master	INFO	31630	main_1	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:09:23	master	INFO	31792	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:09:23	master	INFO	31792	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 19:09:23	master	INFO	31792	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 19:09:23	master	INFO	31792	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 19:09:23	master	INFO	31792	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 19:09:23	master	INFO	31792	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 19:09:23	master	INFO	31792	main_1	2	"src/TcpServer/tcp_server.cpp"	60	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 19:09:23	master	INFO	31792	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 19:09:23	master	INFO	31792	main_1	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:09:23	master	INFO	31793	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:09:23	master	INFO	31793	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 19:09:23	master	INFO	31793	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 19:09:29	master	INFO	31792	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 19:09:29	master	ERROR	31793	main_2	2	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:09:29	master	ERROR	31793	main_2	2	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:09:29	master	INFO	31793	main_2	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:09:35	master	INFO	31793	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 5 coroutine count: 7
+2025-02-16 19:09:35	master	ERROR	31793	main_2	2	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:09:35	master	ERROR	31793	main_2	2	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:09:35	master	INFO	31793	main_2	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:09:41	master	ERROR	31792	main_1	2	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:09:41	master	ERROR	31792	main_1	2	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:09:41	master	INFO	31792	main_1	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:09:47	master	ERROR	31793	main_2	2	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:09:47	master	ERROR	31793	main_2	2	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:09:47	master	INFO	31793	main_2	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:09:53	master	ERROR	31792	main_1	2	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:09:53	master	ERROR	31792	main_1	2	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:09:53	master	INFO	31792	main_1	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:09:59	master	ERROR	31793	main_2	2	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:09:59	master	ERROR	31793	main_2	2	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:09:59	master	INFO	31793	main_2	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:10:05	master	ERROR	31792	main_1	2	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:10:05	master	ERROR	31792	main_1	2	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:10:05	master	INFO	31792	main_1	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:10:11	master	ERROR	31793	main_2	2	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:10:11	master	ERROR	31793	main_2	2	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:10:11	master	INFO	31793	main_2	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:10:17	master	ERROR	31792	main_1	2	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:10:17	master	ERROR	31792	main_1	2	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:10:17	master	INFO	31792	main_1	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:10:23	master	ERROR	31792	main_1	2	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:10:23	master	ERROR	31792	main_1	2	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:10:23	master	INFO	31792	main_1	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:10:29	master	ERROR	31793	main_2	2	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:10:29	master	ERROR	31793	main_2	2	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:10:29	master	INFO	31793	main_2	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:10:35	master	ERROR	31793	main_2	2	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:10:35	master	ERROR	31793	main_2	2	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:10:35	master	INFO	31793	main_2	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:10:41	master	ERROR	31793	main_2	2	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:10:41	master	ERROR	31793	main_2	2	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:10:41	master	INFO	31793	main_2	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:10:47	master	ERROR	31792	main_1	2	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:10:47	master	ERROR	31792	main_1	2	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:10:47	master	INFO	31792	main_1	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:10:53	master	ERROR	31793	main_2	2	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:10:53	master	ERROR	31793	main_2	2	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:10:53	master	INFO	31793	main_2	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:10:59	master	ERROR	31792	main_1	2	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:10:59	master	ERROR	31792	main_1	2	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:10:59	master	INFO	31792	main_1	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:11:05	master	ERROR	31793	main_2	2	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:11:05	master	ERROR	31793	main_2	2	"src/TcpServer/tcp_server.cpp"	75	accept errno=110 errstr=Connection timed out
+2025-02-16 19:11:05	master	INFO	31793	main_2	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:13:29	master	INFO	32616	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:13:29	master	INFO	32616	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 19:13:29	master	INFO	32616	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 19:13:29	master	INFO	32617	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:13:29	master	INFO	32617	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 19:13:29	master	INFO	32617	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 2
+2025-02-16 19:13:29	master	INFO	32616	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 19:13:29	master	INFO	32616	main_1	3	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 19:13:29	master	INFO	32616	main_1	3	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 19:13:29	master	INFO	32616	main_1	3	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 19:13:29	master	INFO	32617	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 19:13:29	master	INFO	32617	main_2	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:13:29	master	INFO	32616	main_1	3	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 19:13:35	master	INFO	32617	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 5 coroutine count: 7
+2025-02-16 19:13:35	master	ERROR	32617	main_2	4	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:13:35	master	ERROR	32617	main_2	4	"src/TcpServer/tcp_server.cpp"	74	accept errno=110 errstr=Connection timed out
+2025-02-16 19:13:35	master	INFO	32617	main_2	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:13:41	master	ERROR	32616	main_1	4	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:13:41	master	ERROR	32616	main_1	4	"src/TcpServer/tcp_server.cpp"	74	accept errno=110 errstr=Connection timed out
+2025-02-16 19:13:41	master	INFO	32616	main_1	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:14:34	master	INFO	32798	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:14:34	master	INFO	32798	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 19:14:34	master	INFO	32798	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 19:14:34	master	INFO	32799	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:14:34	master	INFO	32799	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 19:14:34	master	INFO	32799	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 2
+2025-02-16 19:14:34	master	INFO	32799	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 19:14:34	master	INFO	32799	main_2	3	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 19:14:34	master	INFO	32799	main_2	3	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 19:14:34	master	INFO	32799	main_2	3	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 19:14:34	master	INFO	32799	main_2	3	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 19:14:34	master	INFO	32798	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 19:14:34	master	INFO	32798	main_1	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:14:40	master	ERROR	32799	main_2	4	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:14:40	master	ERROR	32799	main_2	4	"src/TcpServer/tcp_server.cpp"	74	accept errno=110 errstr=Connection timed out
+2025-02-16 19:14:40	master	INFO	32799	main_2	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:14:42	master	INFO	32798	main_1	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:14:42	master	INFO	32798	main_1	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:14:42	master	INFO	32798	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 5 coroutine count: 7
+2025-02-16 19:14:42	master	INFO	32798	main_1	5	"src/Hook/hook.cpp"	138	fd: 9 timeOut = 5000
+2025-02-16 19:14:42	master	INFO	32799	main_2	3	"src/Hook/hook.cpp"	138	fd: 8 timeOut = 5000
+2025-02-16 19:14:42	master	INFO	32799	main_2	3	"src/Hook/hook.cpp"	138	fd: 8 timeOut = 18446744073709551615
+2025-02-16 19:14:42	master	INFO	32799	main_2	3	"src/Hook/hook.cpp"	138	fd: 8 timeOut = 5000
+2025-02-16 19:14:47	master	INFO	32799	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 6 coroutine count: 8
+2025-02-16 19:14:47	master	INFO	32799	main_2	5	"src/Socket/socket.cpp"	412	fd: 9 closed
+2025-02-16 19:14:47	master	ERROR	32799	main_2	5	"src/Http/http_server.cpp"	22	recv http request fail, errno=110 errstr=Connection timed out cliet:
+[Socket sock: -1 is_connected: 1 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030 remote_address: 192.168.80.1:58938] keep_alive=1
+2025-02-16 19:14:47	master	INFO	32799	main_2	0	"src/Coroutine/coroutine.cpp"	74	Coroutine::~Coroutine() id: 5 total: 7
+2025-02-16 19:14:47	master	INFO	32799	main_2	3	"src/Socket/socket.cpp"	412	fd: 8 closed
+2025-02-16 19:14:47	master	ERROR	32799	main_2	3	"src/Http/http_server.cpp"	22	recv http request fail, errno=110 errstr=Connection timed out cliet:
+[Socket sock: -1 is_connected: 1 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030 remote_address: 192.168.80.1:58937] keep_alive=1
+2025-02-16 19:14:47	master	INFO	32799	main_2	0	"src/Coroutine/coroutine.cpp"	74	Coroutine::~Coroutine() id: 3 total: 6
+2025-02-16 19:14:48	master	INFO	32798	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 7 coroutine count: 7
+2025-02-16 19:14:48	master	ERROR	32798	main_1	4	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:14:48	master	ERROR	32798	main_1	4	"src/TcpServer/tcp_server.cpp"	74	accept errno=110 errstr=Connection timed out
+2025-02-16 19:14:48	master	INFO	32798	main_1	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:14:54	master	ERROR	32798	main_1	4	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:14:54	master	ERROR	32798	main_1	4	"src/TcpServer/tcp_server.cpp"	74	accept errno=110 errstr=Connection timed out
+2025-02-16 19:14:54	master	INFO	32798	main_1	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:15:00	master	ERROR	32799	main_2	4	"src/Socket/socket.cpp"	220	accept(7) errno=110 errstr=Connection timed out
+2025-02-16 19:15:00	master	ERROR	32799	main_2	4	"src/TcpServer/tcp_server.cpp"	74	accept errno=110 errstr=Connection timed out
+2025-02-16 19:15:00	master	INFO	32799	main_2	4	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 6000
+2025-02-16 19:15:47	master	INFO	33032	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:15:47	master	INFO	33032	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 19:15:47	master	INFO	33032	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 19:15:47	master	INFO	33032	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 19:15:47	master	INFO	33032	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 19:15:47	master	INFO	33032	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 19:15:47	master	INFO	33032	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 19:15:47	master	INFO	33032	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 19:15:47	master	INFO	33032	main_1	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 120000
+2025-02-16 19:15:47	master	INFO	33033	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:15:47	master	INFO	33033	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 19:15:47	master	INFO	33033	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 19:17:12	master	INFO	33147	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:17:12	master	INFO	33147	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 2
+2025-02-16 19:17:12	master	INFO	33147	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 19:17:12	master	INFO	33147	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 19:17:12	master	INFO	33147	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 19:17:12	master	INFO	33147	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 19:17:12	master	INFO	33147	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 19:17:12	master	INFO	33147	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 19:17:12	master	INFO	33147	main_1	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 120000
+2025-02-16 19:17:12	master	INFO	33148	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 19:17:12	master	INFO	33148	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 19:17:12	master	INFO	33148	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 20:44:14	master	INFO	2844	main_1	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 20:44:14	master	INFO	2844	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 1 coroutine count: 3
+2025-02-16 20:44:14	master	INFO	2844	main_1	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 1
+2025-02-16 20:44:14	master	INFO	2844	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 2 coroutine count: 4
+2025-02-16 20:44:14	master	INFO	2844	main_1	2	"tester/testHttpServFunc.cpp"	6	start
+2025-02-16 20:44:14	master	INFO	2844	main_1	2	"src/Hook/hook.cpp"	358	ishooked
+2025-02-16 20:44:14	master	INFO	2844	main_1	2	"src/TcpServer/tcp_server.cpp"	59	 ServerName=gaiya/1.0.0 server bind success: 
+[Socket sock: 7 is_connected: 0 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030]
+2025-02-16 20:44:14	master	INFO	2844	main_1	2	"tester/testHttpServFunc.cpp"	19	end
+2025-02-16 20:44:14	master	INFO	2844	main_1	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 120000
+2025-02-16 20:44:14	master	INFO	2845	main_2	0	"src/Coroutine/coroutine.cpp"	39	Thread Main Coroutine() coroutine id: 0
+2025-02-16 20:44:14	master	INFO	2845	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 3 coroutine count: 5
+2025-02-16 20:44:14	master	INFO	2845	main_2	0	"src/Scheduler/schedule.cpp"	143	idleCoro id: 3
+2025-02-16 20:44:24	master	INFO	2845	main_2	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 120000
+2025-02-16 20:44:24	master	INFO	2845	main_2	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 4 coroutine count: 6
+2025-02-16 20:44:24	master	INFO	2845	main_2	4	"src/Hook/hook.cpp"	138	fd: 8 timeOut = 5000
+2025-02-16 20:44:24	master	INFO	2845	main_2	4	"src/Hook/hook.cpp"	138	fd: 8 timeOut = 18446744073709551615
+2025-02-16 20:44:24	master	INFO	2845	main_2	4	"src/Hook/hook.cpp"	138	fd: 8 timeOut = 5000
+2025-02-16 20:44:24	master	INFO	2844	main_1	2	"src/Hook/hook.cpp"	138	fd: 7 timeOut = 120000
+2025-02-16 20:44:24	master	INFO	2844	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 5 coroutine count: 7
+2025-02-16 20:44:24	master	INFO	2844	main_1	5	"src/Hook/hook.cpp"	138	fd: 9 timeOut = 5000
+2025-02-16 20:44:24	master	INFO	2845	main_2	4	"src/Hook/hook.cpp"	138	fd: 8 timeOut = 18446744073709551615
+2025-02-16 20:44:24	master	INFO	2845	main_2	4	"src/Hook/hook.cpp"	138	fd: 8 timeOut = 5000
+2025-02-16 20:44:29	master	INFO	2844	main_1	0	"src/Coroutine/coroutine.cpp"	69	Coroutine() Coroutine::m_id: 6 coroutine count: 8
+2025-02-16 20:44:29	master	INFO	2844	main_1	5	"src/Socket/socket.cpp"	412	fd: 9 closed
+2025-02-16 20:44:29	master	ERROR	2844	main_1	5	"src/Http/http_server.cpp"	22	recv http request fail, errno=110 errstr=Connection timed out cliet:
+[Socket sock: -1 is_connected: 1 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030 remote_address: 192.168.80.1:60864] keep_alive=1
+2025-02-16 20:44:29	master	INFO	2844	main_1	0	"src/Coroutine/coroutine.cpp"	74	Coroutine::~Coroutine() id: 5 total: 7
+2025-02-16 20:44:29	master	INFO	2845	main_2	4	"src/Socket/socket.cpp"	412	fd: 8 closed
+2025-02-16 20:44:29	master	ERROR	2845	main_2	4	"src/Http/http_server.cpp"	22	recv http request fail, errno=110 errstr=Connection timed out cliet:
+[Socket sock: -1 is_connected: 1 family: 2 type: 1 protocol: 0 local_address: 192.168.80.135:8030 remote_address: 192.168.80.1:60863] keep_alive=1
+2025-02-16 20:44:29	master	INFO	2845	main_2	0	"src/Coroutine/coroutine.cpp"	74	Coroutine::~Coroutine() id: 4 total: 6

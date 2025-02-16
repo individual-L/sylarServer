@@ -16,6 +16,11 @@
 #include"bytearray.hpp"
 #include"socket.hpp"
 #include"http.hpp"
-#include"http_parser.h"
+#include"http_parser.hpp"
+#include"tcp_server.hpp"
+#include"socket_stream.hpp"
+#include"http_session.hpp"
+#include"http_server.hpp"
+#include"http_serv_function.hpp"
 
 #endif

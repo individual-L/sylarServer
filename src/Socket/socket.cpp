@@ -245,6 +245,7 @@ bool Socket::bind(const Address::ptr addr){
     //addr为unix套接字
     UnixAddress::ptr un = std::dynamic_pointer_cast<UnixAddress>(addr);
     if(un){
+      LOG_INFO(logger)<<"unixSocket created";
       Socket::ptr sock = CreateUnixTCPScoket();
       if(sock->connect(un)){
         return false;
@@ -266,11 +267,10 @@ bool Socket::bind(const Address::ptr addr){
 bool Socket::connect(const Address::ptr addr,uint64_t timeout_ms ){
   if(!isValid()){
     newSock();
-    if(GAIYA_LIKELY(isValid())) {
+    if(!GAIYA_LIKELY(isValid())) {
         return false;
     }
   }
-
   if(GAIYA_UNLIKELY(addr->getFamily() != m_family)){
     LOG_ERROR(logger) << "connect sock.family("
         << m_family << ") addr.family(" << addr->getFamily()
@@ -409,6 +409,7 @@ bool Socket::close(){
     return false;
   }
   if(m_sockfd != -1){
+    LOG_INFO(logger)<<"fd: "<<m_sockfd<<" closed";
     ::close(m_sockfd);
     m_sockfd = -1;
   }
@@ -462,6 +463,10 @@ std::string Socket::toString() const{
   std::stringstream ss;
   insert(ss);
   return ss.str();
+}
+
+std::ostream& operator<<(std::ostream& os , Socket::ptr sock){
+  return sock->insert(os);
 }
 
 }
