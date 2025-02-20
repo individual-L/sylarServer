@@ -1,6 +1,7 @@
 #include"tcp_server.hpp"
 #include"config.hpp"
 #include"log.hpp"
+#include"fdMng.hpp"
 namespace gaiya{
 
 static gaiya::Logger::ptr logger = LOG_M()->getLogger("master");
@@ -8,8 +9,9 @@ static gaiya::Logger::ptr logger = LOG_M()->getLogger("master");
 static gaiya::ConfigVar<uint64_t>::ptr g_tcp_server_recv_timeout =
     gaiya::Config::lookup("tcp_server.recv_timeout","tcp server read timeout", (uint64_t)(60 * 1000 * 2));
 
-TcpServer::TcpServer(IOmanager* iom)
+TcpServer::TcpServer(IOmanager* iom,IOmanager* accept_iom)
 :m_worker(iom)
+,m_accept(accept_iom)
 ,m_name("gaiya/1.0.0")
 ,m_isStop(true)
 ,m_recvTimeout(g_tcp_server_recv_timeout->getValue()){
@@ -65,10 +67,10 @@ bool TcpServer::bind(const std::vector<Address::ptr>& addrs,std::vector<Address:
 }
 void TcpServer::startAccept(Socket::ptr sock){
   while(!m_isStop){
-    // LOG_INFO(logger)<<"start accept...";
+    LOG_INFO(logger)<<sock->getSockfd()<<" start accept...";
     Socket::ptr client = sock->accept();
     if(client) {
-        client->setRecvTimeout(5000);
+        client->setRecvTimeout(100);
         m_worker->schedule(std::bind(&TcpServer::handleClient,shared_from_this(),client));
     } else {
         LOG_ERROR(logger) << "accept errno=" << errno
@@ -94,7 +96,7 @@ void TcpServer::stop(){
   }
   //在close掉监听fd之前，保证tcpserver不会被销毁
   auto self = shared_from_this();
-  m_worker->schedule([self,this](){
+  m_accept->schedule([self,this](){
     for(auto& it : m_socks){
       it->cancelAll();
       it->close();

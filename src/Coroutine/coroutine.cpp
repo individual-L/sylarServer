@@ -36,7 +36,7 @@ Coroutine::Coroutine()
   m_id = 0;
   s_coro_count += 1;
 
-  LOG_INFO(logger) << "Thread Main Coroutine() coroutine id: " << m_id;
+  // LOG_INFO(logger) << "Thread Main Coroutine() coroutine id: " << m_id;
 
 }
 
@@ -66,12 +66,12 @@ Coroutine::Coroutine(std::function<void()> func,size_t stacksize,bool retnSche)
 
   }
 
-  LOG_INFO(logger) << "Coroutine() Coroutine::m_id: " << m_id <<" coroutine count: " <<s_coro_count;
+  // LOG_INFO(logger) << "Coroutine() Coroutine::m_id: " << m_id <<" coroutine count: " <<s_coro_count;
 }
 
 Coroutine::~Coroutine(){
   s_coro_count -= 1;
-  LOG_INFO(logger) << "Coroutine::~Coroutine() id: " << m_id << " total: " << s_coro_count;
+  // LOG_INFO(logger) << "Coroutine::~Coroutine() id: " << m_id << " total: " << s_coro_count;
 
   if(m_stack){
     GAIYA_ASSERT(m_state == INIT

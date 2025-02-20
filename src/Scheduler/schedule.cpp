@@ -140,11 +140,12 @@ void Scheduler::run(){
     t_masterCoro = Coroutine::GetCurCoro().get();
   }
   Coroutine::ptr idleCoro(new Coroutine(std::bind(&Scheduler::idle,this),0,true));
-  LOG_INFO(logger)<<"idleCoro id: " <<idleCoro->getId();
+  // LOG_INFO(logger)<<"idleCoro id: " <<idleCoro->getId();
   Coroutine::ptr coro;
   CorFType corf;
 
   while(true){
+    corf.reset();
     //
     bool tickle_me = false;
     //此线程是否获取到任务需要执行
@@ -171,6 +172,7 @@ void Scheduler::run(){
       // LOG_INFO(logger) <<" get mission";
       break;
       }
+      tickle_me |= it != m_coros.end();
     }
           
     if(tickle_me){
@@ -193,7 +195,7 @@ void Scheduler::run(){
       if(coro){
         coro->reset(corf.m_func);
       }else{
-        coro.reset(new Coroutine(corf.m_func,0,true));
+        coro.reset(new Coroutine(corf.m_func));
       }
       corf.reset();  
       coro->swapIn();
@@ -223,10 +225,10 @@ void Scheduler::run(){
       // LOG_INFO(logger) <<"enter idleCoro id: " <<idleCoro->getId();
       idleCoro->swapIn();
       --m_idleThreadCount;
-      // if(idleCoro->getState() != gaiya::Coroutine::END 
-      //   && idleCoro->getState() != gaiya::Coroutine::EXCEPT){
-      //     idleCoro->m_state = gaiya::Coroutine::HOLD;
-      // }
+      if(idleCoro->getState() != gaiya::Coroutine::END 
+        && idleCoro->getState() != gaiya::Coroutine::EXCEPT){
+          idleCoro->m_state = gaiya::Coroutine::HOLD;
+      }
 
     }
   }

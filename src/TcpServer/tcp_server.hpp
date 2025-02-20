@@ -13,7 +13,8 @@ namespace gaiya{
 class TcpServer :public std::enable_shared_from_this<TcpServer>,public Noncopyable{
   public: 
     typedef std::shared_ptr<TcpServer> ptr;
-    TcpServer(IOmanager* iom = gaiya::IOmanager::GetThis());
+    TcpServer(IOmanager* iom = gaiya::IOmanager::GetThis(),
+              IOmanager* accept_iom = gaiya::IOmanager::GetThis());
     virtual ~TcpServer();
     virtual bool bind(Address::ptr addr);
     virtual bool bind(const std::vector<Address::ptr>& addrs,std::vector<Address::ptr>& fails);
@@ -34,6 +35,7 @@ protected:
   private:
     IOmanager* m_worker;
     // IOmanager* m_acceptWorker;
+    IOmanager* m_accept;
     std::string m_name;
     //监听sockfd
     std::vector<Socket::ptr> m_socks;

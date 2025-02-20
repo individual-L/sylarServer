@@ -11816,6 +11816,7 @@ CMakeFiles/gaiya.dir/src/TcpServer/tcp_server.cpp.o: /home/luo/cplus/gaiya/src/T
   /home/luo/cplus/gaiya/src/Address/address.hpp \
   /home/luo/cplus/gaiya/src/Config/config.hpp \
   /home/luo/cplus/gaiya/src/Coroutine/coroutine.hpp \
+  /home/luo/cplus/gaiya/src/FdMng/fdMng.hpp \
   /home/luo/cplus/gaiya/src/IOmanager/iomanager.hpp \
   /home/luo/cplus/gaiya/src/Lock/lock.hpp \
   /home/luo/cplus/gaiya/src/Log/log.hpp \

@@ -19,9 +19,9 @@ void HttpServer::handleClient(Socket::ptr client){
   while(true){
     HttpRequest::ptr request = session->recvRequest();
     if(!request) {
-        LOG_ERROR(logger) << "recv http request fail, errno="
-            << errno << " errstr=" << strerror(errno)
-            << " cliet:" << client << " keep_alive=" << m_isKeepalive;
+        // LOG_ERROR(logger) << "recv http request fail, errno="
+        //     << errno << " errstr=" << strerror(errno)
+        //     << " cliet:" << client << " keep_alive=" << m_isKeepalive;
         break;
     }
     HttpResponse::ptr response(new HttpResponse(request->getVersion(),request->isClose() || !m_isKeepalive));
@@ -29,8 +29,7 @@ void HttpServer::handleClient(Socket::ptr client){
     // LOG_INFO(logger) <<response->getBody();
     session->sendResponse(response);
   }
-
-
+  session->close();
 }
 
 

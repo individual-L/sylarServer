@@ -41,14 +41,14 @@ class FdCtx : public std::enable_shared_from_this<FdCtx> {
   private:
     bool init();
   private:
-    int m_fd = -1;
-    bool m_isInit = false;
-    bool m_isSocket = false;
-    bool m_isClosed = true;
-    bool m_sysNonBlock = false;
-    bool m_userNonBlock = false;
-    uint64_t m_readTimeOut = -1;
-    uint64_t m_writeTimeOut = -1;
+    int m_fd;
+    bool m_isInit;
+    bool m_isSocket;
+    bool m_isClosed;
+    bool m_sysNonBlock;
+    bool m_userNonBlock;
+    uint64_t m_readTimeOut;
+    uint64_t m_writeTimeOut;
 };
 
 

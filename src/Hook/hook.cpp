@@ -132,36 +132,34 @@ static ssize_t do_io(int fd,OriginFunc fun,const char * name_f,uint32_t event,in
     return fun(fd,std::forward<Args>(args)...);
   }
 
-  ssize_t n = 0;
 
   uint64_t timeOut = fdctx->getTimeout(so_timeOut);
-  LOG_INFO(logger)<<"fd: "<<fdctx->getSockfd()<<" timeOut = " <<timeOut;
+  // LOG_INFO(logger)<<"fd: "<<fdctx->getSockfd()<<" timeOut = " <<timeOut;
   std::shared_ptr<timerCond> tcond(new timerCond());
 
 
 retry:
-  n = fun(fd,std::forward<Args>(args)...);
-
+  ssize_t n = fun(fd,std::forward<Args>(args)...);
   while(n == -1 && errno ==  EINTR){
     n = fun(fd,std::forward<Args>(args)...);
   }
-  if(n == -1 && errno == EAGAIN){
+  if(n == -1 && (errno == EAGAIN || errno == EWOULDBLOCK )){
     gaiya::Timer::ptr timer;
     std::weak_ptr<timerCond> wcond(tcond);
     gaiya::IOmanager* iom = gaiya::IOmanager::GetThis();
     //是否设置超时时间
     if(timeOut != (uint64_t)-1){
-      timer = iom->addConditionTimer(timeOut,[fd,wcond,iom](){
+      timer = iom->addConditionTimer(timeOut,[fd,wcond,iom,event](){
       auto it = wcond.lock();
       if(!it || it->cancelled){
         return;
       }
       it->cancelled = ETIMEDOUT;
-      iom->cancelEvent(fd,gaiya::IOmanager::READ);
+      iom->cancelEvent(fd,(gaiya::IOmanager::EventType)event);
       },wcond,false);
     }
     //添加监听事件，回调函数为此协程
-    bool ok = iom->addEvent(fd,gaiya::IOmanager::READ);
+    bool ok = iom->addEvent(fd,(gaiya::IOmanager::EventType)event);
 
     if(GAIYA_LIKELY(ok)){
       gaiya::Coroutine::YieldToHold();
@@ -172,7 +170,8 @@ retry:
         errno = ETIMEDOUT;
         return -1;
       }
-      // LOG_INFO(logger) <<"重新recv";
+
+      LOG_INFO(logger)<<"fd: "<<fd <<" 重新recv";
       goto retry;
     }else{
       LOG_ERROR(logger) <<"name_f::iom->addEvent(" <<fd <<",gaiya::IOmanager::READ) error";
@@ -355,7 +354,7 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
 }
 
 int socket(int domain, int type, int protocol){
-  LOG_INFO(logger) <<"ishooked";
+  // LOG_INFO(logger) <<"ishooked";
   if(!gaiya::isHook()){
     return socket_f(domain,type,protocol);
   }
@@ -376,6 +375,7 @@ int close(int fd){
   gaiya::IOmanager* iom = gaiya::IOmanager::GetThis();
   gaiya::FdCtx::ptr ctx = gaiya::fdMng::getInstance()->get(fd);
   if(ctx){
+    LOG_INFO(logger) <<"close: "<<fd;
     gaiya::fdMng::getInstance()->del(fd);
     iom->cancelAll(fd);
   }

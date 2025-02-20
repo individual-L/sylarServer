@@ -9,21 +9,25 @@ static gaiya::Logger::ptr logger = LOG_GET_LOGGER("master");
 
 namespace gaiya{
 
-FdCtx::FdCtx(int fd):
-m_fd(fd)
+FdCtx::FdCtx(int fd)
+:m_fd(fd)
 ,m_isInit(false)
 ,m_isSocket(false)
 ,m_isClosed(false)
+,m_sysNonBlock(false)
+,m_userNonBlock(false)
+,m_readTimeOut(-1)
+,m_writeTimeOut(-1)
 {
   init();
 }
 
 bool FdCtx::init(){
-  m_writeTimeOut = -1;
-  m_readTimeOut = -1;
   if(m_isInit){
     return false;
   }
+  m_writeTimeOut = -1;
+  m_readTimeOut = -1;
   struct stat fdStat;
   //检测此文件句柄是否存在
   if(fstat(m_fd,&fdStat) == -1){

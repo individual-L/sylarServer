@@ -49,6 +49,39 @@ bool first = true;
   return os;
 }
 
+static std::ostream& operator <<(std::ostream& os, const IOmanager::EventType& events){
+  if(!events){
+    os <<"0";
+    return os;
+  }
+bool first = true;
+#define XX(E) \
+  if(E & events){ \
+    if(!first){ \
+      os << " | "; \
+    } \
+    os << #E; \
+    first = false; \
+  } 
+  XX(EPOLL_EVENTS::EPOLLIN);
+  XX(EPOLL_EVENTS::EPOLLPRI);
+  XX(EPOLL_EVENTS::EPOLLOUT);
+  XX(EPOLL_EVENTS::EPOLLRDNORM);
+  XX(EPOLL_EVENTS::EPOLLRDBAND);
+  XX(EPOLL_EVENTS::EPOLLWRNORM);
+  XX(EPOLL_EVENTS::EPOLLWRBAND);
+  XX(EPOLL_EVENTS::EPOLLMSG);
+  XX(EPOLL_EVENTS::EPOLLERR);
+  XX(EPOLL_EVENTS::EPOLLHUP);
+  XX(EPOLL_EVENTS::EPOLLRDHUP);
+  XX(EPOLL_EVENTS::EPOLLEXCLUSIVE);
+  XX(EPOLL_EVENTS::EPOLLONESHOT);
+  XX(EPOLL_EVENTS::EPOLLET);
+
+#undef XX
+  return os;
+}
+
 static std::ostream& operator <<(std::ostream& os, const EPCTLOP& op){
   if(!op){
     os <<"0";
@@ -89,10 +122,8 @@ IOmanager::IOmanager(uint32_t threadSize,bool useSche,const std::string& name)
   event.data.fd = m_tickleFds[0];
 
   //设置此文件描述符为非阻塞模式
-  int flags = fcntl(m_tickleFds[0],F_GETFL,0);
-  flags |= O_NONBLOCK;
-  res = fcntl(m_tickleFds[0],F_SETFL,flags);
-  GAIYA_ASSERT(res != -1);
+  res = fcntl(m_tickleFds[0],F_SETFL,O_NONBLOCK);
+  GAIYA_ASSERT(!res);
 
   res = epoll_ctl(m_epfd,EPOLL_CTL_ADD,m_tickleFds[0],&event);
   GAIYA_ASSERT(!res);
@@ -141,11 +172,11 @@ bool IOmanager::addEvent(int fd,EventType event,std::function<void()> cb){
   int op = fd_ctx->events ? EPOLL_CTL_MOD : EPOLL_CTL_ADD;
 
   epoll_event ev;
-  memset(&ev,0,sizeof(epoll_event));
   ev.events = fd_ctx->events | event | EPOLLET;
   ev.data.ptr = fd_ctx;
 
   int res = epoll_ctl(m_epfd,op,fd,&ev);
+  // LOG_INFO(logger)<<"fd: "<<fd<<" " << ((EventType)event);
 
   if(res){
     LOG_ERROR(logger) << "epoll_ctl(" << m_epfd <<"," << (EPCTLOP)op <<"," <<fd <<"," 
@@ -199,6 +230,7 @@ bool IOmanager::delEvent(int fd,EventType event){
   ev.data.fd = fd;
   ev.events = EPOLLET | remained_event;
   int res = epoll_ctl(m_epfd,op,fd,&ev);
+  LOG_INFO(logger) <<"del event: "<<event;
 
   if(res){
     LOG_ERROR(logger) << "epoll_ctl(" << m_epfd <<"," << (EPCTLOP)op <<"," <<fd <<"," 
@@ -219,6 +251,7 @@ IOmanager* IOmanager::GetThis(){
   return dynamic_cast<IOmanager*>(Scheduler::GetThis());
 }
 void IOmanager::idle() {
+  LOG_INFO(logger)<<"idle";
   const uint64_t MAX_EVENTS = 256;
   //epoll_event类型的数组，创建智能指针去管理它
   epoll_event* evs = new epoll_event[MAX_EVENTS]();
@@ -236,15 +269,14 @@ void IOmanager::idle() {
 
     int res = 0;
     do{
-      static const int MAX_TIMEOUT = 5000;
+      static const int MAX_TIMEOUT = 12000;
       if(nextTime != ~0ull){
         nextTime = nextTime > MAX_TIMEOUT ? MAX_TIMEOUT : nextTime;
       }else{
         nextTime = MAX_TIMEOUT;
       }
-      res = epoll_wait(m_epfd,evs,MAX_EVENTS,nextTime);
+      res = epoll_wait(m_epfd,evs,MAX_EVENTS,(int)nextTime);
       // LOG_INFO(logger) <<"epoll_wait res = " <<res;
-
       //返回0表示发生错误，如果是中断，那就继续执行wait
       if(res < 0 && errno == EINTR){
       }else{
@@ -276,7 +308,8 @@ void IOmanager::idle() {
       
       int real_event = NONE;
       if(event.events & (EPOLLERR | EPOLLHUP)){
-        event.events |= (READ | WRITE);
+        LOG_INFO(logger) <<"EPOLLERR | EPOLLHUP";
+        event.events |= (READ | WRITE) & fd_ctx->events;
       }
       if(event.events & READ){
         real_event |= READ;
@@ -288,10 +321,12 @@ void IOmanager::idle() {
         continue;
       }
 
-      EventType remained_ev = (EventType)(fd_ctx->events & ~event.events);
+      int remained_ev = (fd_ctx->events & ~event.events);
       int op = remained_ev ? EPOLL_CTL_MOD : EPOLL_CTL_DEL;
       event.events = remained_ev | EPOLLET;
       int res = epoll_ctl(m_epfd,op,fd_ctx->fd,&event);
+
+      // LOG_INFO(logger)<<"fd: "<<fd_ctx->fd <<" del event to: "<<(EPOLL_EVENTS)remained_ev;
       if(res){
         LOG_ERROR(logger) <<"epoll_ctl(" <<m_epfd <<", "<<(EPCTLOP)op <<", " <<event.data.fd <<", "
                           << (EPOLL_EVENTS)event.events <<";" 
@@ -308,7 +343,11 @@ void IOmanager::idle() {
       }
       
     }
-    Coroutine::YieldToHold();
+    Coroutine::ptr cur = Coroutine::GetCurCoro();
+    auto raw_ptr = cur.get();
+    cur.reset();
+
+    raw_ptr->swapOut();
   }
 }
 
@@ -363,6 +402,9 @@ bool IOmanager::cancelEvent(int fd, EventType event){
   ev.data.ptr = fd_ctx;
 
   int res = epoll_ctl(m_epfd,op,fd,&ev);
+
+  // LOG_INFO(logger) <<"del event: "<<event;
+
   if(res){
     LOG_ERROR(logger) << "epoll_ctl(" << m_epfd <<"," << (EPCTLOP)op <<"," <<fd <<"," 
     << (EPOLL_EVENTS)ev.events <<");"
@@ -452,7 +494,7 @@ void IOmanager::FdContext::triggerEvent(const EventType& event){
   }else{
     ev_ctx.scheduler->schedule(&ev_ctx.coro);
   }
-  resetContext(ev_ctx);
+  ev_ctx.scheduler = nullptr;
 }
 
 }

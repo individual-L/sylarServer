@@ -80,4 +80,4 @@ http:
     </body>
     </html>
 tcp_server:
-  recv_timeout: 120000
+  recv_timeout: -1

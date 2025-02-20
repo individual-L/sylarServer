@@ -108,12 +108,13 @@ bool Socket::setSockOption(int level, int optname, const void *optval, ssize_t o
 }
 
 void Socket::initSock(){
-  const int val = 1;
-  setSockOption(SOL_SOCKET,SO_REUSEADDR,val);
-
+  int val = 1;
+  // setSockOption(SOL_SOCKET,SO_REUSEADDR,val);
+  
   if(m_type == SOCK_STREAM){
     setSockOption(IPPROTO_TCP,TCP_NODELAY,val);
   }
+
 }
 
 void Socket::newSock(){
@@ -128,14 +129,13 @@ void Socket::newSock(){
 }
 
 bool Socket::init(int sock){
-
   gaiya::FdCtx::ptr ctx = gaiya::fdMng::getInstance()->get(sock);
   if(ctx && ctx->isSocket() && !ctx->isClose()){
     m_sockfd = sock;
     m_isConnected = true;
+    initSock();
     getRemoteAddress();
     getLocalAddress();
-    initSock();
     return true;
   }
   return false;
@@ -216,11 +216,13 @@ Socket::~Socket()
 Socket::ptr Socket::accept(){
   Socket::ptr sock(new Socket(m_family, m_type, m_protocol));
   int newsock = ::accept(m_sockfd, nullptr, nullptr);
+  // LOG_INFO(logger)
   if(newsock == -1) {
       LOG_ERROR(logger) << "accept(" << m_sockfd << ") errno="
           << errno << " errstr=" << strerror(errno);
       return nullptr;
   }
+  LOG_INFO(logger) <<"accept client fd: "<<newsock;
   if(sock->init(newsock)) {
       return sock;
   }
@@ -409,7 +411,7 @@ bool Socket::close(){
     return false;
   }
   if(m_sockfd != -1){
-    LOG_INFO(logger)<<"fd: "<<m_sockfd<<" closed";
+    // LOG_INFO(logger)<<"fd: "<<m_sockfd<<" closed";
     ::close(m_sockfd);
     m_sockfd = -1;
   }

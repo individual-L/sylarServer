@@ -13,7 +13,6 @@ class Socket :public std::enable_shared_from_this<Socket>, Noncopyable
 {
   public:
     typedef std::shared_ptr<Socket> ptr;
-    typedef std::weak_ptr<Socket> weak_ptr;
 
     enum FamilyType{
       IPv4 = AF_INET,
@@ -72,7 +71,7 @@ class Socket :public std::enable_shared_from_this<Socket>, Noncopyable
 
     virtual bool reconnect(uint64_t timeout_ms = -1);
 
-    virtual bool listen(int backlog = SOMAXCONN);
+    virtual bool listen(int backlog = 1024);
 
     virtual bool close();
 
@@ -119,6 +118,7 @@ class Socket :public std::enable_shared_from_this<Socket>, Noncopyable
     virtual std::ostream& insert(std::ostream& os) const;
 
     virtual std::string toString() const;
+    int getSockfd()const{return m_sockfd;};
   protected:
     //将sockfd设为so_reuseaddr
     void initSock();
