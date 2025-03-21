@@ -199,8 +199,8 @@ bool IOmanager::addEvent(int fd,EventType event,std::function<void()> cb){
     ev_ctx.cb.swap(cb);
   }else{
     ev_ctx.coro = gaiya::Coroutine::GetCurCoro();
-    GAIYA_ASSERT2(ev_ctx.coro->getState() == gaiya::Coroutine::State::EXECU
-                  ,"state=" << ev_ctx.coro->getState());
+    // GAIYA_ASSERT2(ev_ctx.coro->getState() == gaiya::Coroutine::State::EXECU
+    //               ,"state=" << ev_ctx.coro->getState());
   }
   
   return true;
@@ -308,7 +308,7 @@ void IOmanager::idle() {
       
       int real_event = NONE;
       if(event.events & (EPOLLERR | EPOLLHUP)){
-        LOG_INFO(logger) <<"EPOLLERR | EPOLLHUP";
+        // LOG_INFO(logger) <<"EPOLLERR | EPOLLHUP";
         event.events |= (READ | WRITE) & fd_ctx->events;
       }
       if(event.events & READ){
@@ -343,11 +343,7 @@ void IOmanager::idle() {
       }
       
     }
-    Coroutine::ptr cur = Coroutine::GetCurCoro();
-    auto raw_ptr = cur.get();
-    cur.reset();
-
-    raw_ptr->swapOut();
+    gaiya::Coroutine::YieldToHold();
   }
 }
 

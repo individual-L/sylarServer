@@ -225,11 +225,10 @@ void Scheduler::run(){
       // LOG_INFO(logger) <<"enter idleCoro id: " <<idleCoro->getId();
       idleCoro->swapIn();
       --m_idleThreadCount;
-      if(idleCoro->getState() != gaiya::Coroutine::END 
-        && idleCoro->getState() != gaiya::Coroutine::EXCEPT){
-          idleCoro->m_state = gaiya::Coroutine::HOLD;
+      if(idleCoro->getState() != Coroutine::END
+              && idleCoro->getState() != Coroutine::EXCEPT) {
+          idleCoro->m_state = Coroutine::HOLD;
       }
-
     }
   }
 

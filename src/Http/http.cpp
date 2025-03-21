@@ -272,9 +272,9 @@ void HttpResponse::delHeader(const std::string& key){
 
 std::ostream& HttpResponse::dump(std::ostream& os) const{
   os << "HTTP/"
-    << ((uint8_t)(m_version >> 4))
+    << ((uint32_t)(m_version >> 4))
     << "."
-    << ((uint8_t)(m_version & 0x0F))
+    << ((uint32_t)(m_version & 0x0F))
     << " "
     << (uint32_t)m_status
     << " "

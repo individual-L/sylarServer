@@ -1,5 +1,5 @@
 #include"stream.hpp"
-
+#include"log.hpp"
 
 namespace gaiya{
 

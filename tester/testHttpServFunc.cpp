@@ -22,6 +22,6 @@ void testHttpServer(){
 
 int main(int argc,char** argv){
   gaiya::LoadConfigrationFile();
-  gaiya::IOmanager iom(1);
+  gaiya::IOmanager iom(2);
   iom.schedule(&testHttpServer); 
 }

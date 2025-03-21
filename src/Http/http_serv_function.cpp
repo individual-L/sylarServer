@@ -4,7 +4,7 @@ namespace gaiya{
 
 static gaiya::Logger::ptr logger = LOG_M()->getLogger("master");
 
-static gaiya::ConfigVar<std::string>::ptr g_content = gaiya::Config::lookup("http.default_html","http default_html",std::string("404"));
+static gaiya::ConfigVar<std::string>::ptr g_content = gaiya::Config::lookup("http.default_html","http default_html",std::string("200"));
 static std::string s_content;
 namespace{
 
@@ -32,12 +32,17 @@ void ServCallBack::handle(gaiya::http::HttpRequest::ptr request
 }
 ServDefault::ServDefault()
 :ServBase("DefaultServ"){
-  m_content = s_content;
+    // m_content = "<html><head><title>404 Not Found"
+    //     "</title></head><body><center><h1>404 Not Found</h1></center>"
+    //     "<hr><center>" + m_name + "</center></body></html>";
+    m_content = s_content;
+    // LOG_INFO(logger) <<m_content;
 }
 
 ServDefault::ServDefault(std::string& content)
 :ServBase("DefaultServ")
 ,m_content(content){
+  
 }
 
 ServHoldCreator::ServHoldCreator(ServBase::ptr val)
@@ -48,7 +53,7 @@ ServHoldCreator::ServHoldCreator(ServBase::ptr val)
 void ServDefault::handle(gaiya::http::HttpRequest::ptr request
       , gaiya::http::HttpResponse::ptr response
       ){
-  response->setStatus(gaiya::http::HttpStatus::NOT_FOUND);
+  response->setStatus(gaiya::http::HttpStatus::OK);
   response->setHeader("Content-Type", "text/html");
   response->setBody(m_content);
   // LOG_INFO(logger) <<"使用默认处理函数";

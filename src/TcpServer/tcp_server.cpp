@@ -42,7 +42,7 @@ bool TcpServer::bind(const std::vector<Address::ptr>& addrs,std::vector<Address:
       fails.push_back(it);
       continue;
     }
-    sock->setRecvTimeout(m_recvTimeout);
+    sock->setRecvTimeout(-1);
     if(!sock->listen()){
       LOG_ERROR(logger) << "listen fail errno="
                           << errno << " errstr=" << strerror(errno)
@@ -67,10 +67,10 @@ bool TcpServer::bind(const std::vector<Address::ptr>& addrs,std::vector<Address:
 }
 void TcpServer::startAccept(Socket::ptr sock){
   while(!m_isStop){
-    LOG_INFO(logger)<<sock->getSockfd()<<" start accept...";
+    // LOG_INFO(logger)<<sock->getSockfd()<<" start accept...";
     Socket::ptr client = sock->accept();
     if(client) {
-        client->setRecvTimeout(100);
+        client->setRecvTimeout(m_recvTimeout);
         m_worker->schedule(std::bind(&TcpServer::handleClient,shared_from_this(),client));
     } else {
         LOG_ERROR(logger) << "accept errno=" << errno

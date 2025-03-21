@@ -26,7 +26,7 @@ void HttpServer::handleClient(Socket::ptr client){
     }
     HttpResponse::ptr response(new HttpResponse(request->getVersion(),request->isClose() || !m_isKeepalive));
     gaiya::s_servDispatch::getInstance()->handle(request,response);
-    // LOG_INFO(logger) <<response->getBody();
+    // LOG_INFO(logger) <<*response;
     session->sendResponse(response);
   }
   session->close();

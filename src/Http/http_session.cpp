@@ -23,8 +23,8 @@ HttpRequest::ptr HttpSession::recvRequest(){
   while(true){
     int64_t rt = read(buff + offset,maxSize - offset);
     if(rt <= 0) {
-        close();
-        return nullptr;
+      close();
+      return nullptr;
     }
     rt += offset;
     size_t parser_len = parser->execute(buff,rt);
@@ -39,7 +39,6 @@ HttpRequest::ptr HttpSession::recvRequest(){
     }
   }
   
-
   size_t length = parser->getContentLength();
   if(length > 0) {
     std::string body;

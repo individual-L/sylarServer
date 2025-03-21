@@ -171,7 +171,7 @@ retry:
         return -1;
       }
 
-      LOG_INFO(logger)<<"fd: "<<fd <<" 重新recv";
+      // LOG_INFO(logger)<<"fd: "<<fd <<" 重新recv";
       goto retry;
     }else{
       LOG_ERROR(logger) <<"name_f::iom->addEvent(" <<fd <<",gaiya::IOmanager::READ) error";
@@ -235,12 +235,13 @@ int nanosleep(const struct timespec *duration,struct timespec *rem){
 }
 
 ssize_t read(int fd, void* buf, size_t count){
-
   return do_io(fd,read_f,"read",gaiya::IOmanager::READ,SO_RCVTIMEO,buf,count);
 }
 
 ssize_t recv(int sockfd, void* buf, size_t len,int flags){
-  return do_io(sockfd,recv_f,"recv",gaiya::IOmanager::READ,SO_RCVTIMEO,buf,len,flags);
+  size_t rt = do_io(sockfd,recv_f,"recv",gaiya::IOmanager::READ,SO_RCVTIMEO,buf,len,flags);
+  // LOG_INFO(logger) <<"recv: " <<rt;
+  return rt;
 }
 
 ssize_t recvfrom(int sockfd, void* buf, size_t len, int flags, struct sockaddr *src_addr, socklen_t *addrlen){
@@ -265,7 +266,9 @@ ssize_t writev(int fd, const struct iovec *iov, int iovcnt) {
 }
 
 ssize_t send(int s, const void *msg, size_t len, int flags) {
-    return do_io(s, send_f, "send", gaiya::IOmanager::WRITE, SO_SNDTIMEO, msg, len, flags);
+    ssize_t rt = do_io(s, send_f, "send", gaiya::IOmanager::WRITE, SO_SNDTIMEO, msg, len, flags);
+    // LOG_INFO(logger) <<"write: "<<(char*)msg;
+    return rt;
 }
 
 ssize_t sendto(int s, const void *msg, size_t len, int flags, const struct sockaddr *to, socklen_t tolen) {
@@ -375,9 +378,9 @@ int close(int fd){
   gaiya::IOmanager* iom = gaiya::IOmanager::GetThis();
   gaiya::FdCtx::ptr ctx = gaiya::fdMng::getInstance()->get(fd);
   if(ctx){
-    LOG_INFO(logger) <<"close: "<<fd;
-    gaiya::fdMng::getInstance()->del(fd);
+    // LOG_INFO(logger) <<"close: "<<fd;
     iom->cancelAll(fd);
+    gaiya::fdMng::getInstance()->del(fd);
   }
   return close_f(fd);
 }
@@ -396,91 +399,178 @@ int connect(int sockfd, const struct sockaddr *addr,socklen_t addrlen){
   return connect_with_timeout(sockfd,addr,addrlen,gaiya::s_timeout);
 }
 
-int fcntl(int fd, int cmd, ... /* arg */ ){
-  va_list va;
-  va_start(va,cmd);
-  switch(cmd)
-  {
-  case F_SETFL: {
-    int op = va_arg(va,int);
-    va_end(va);
-    gaiya::FdCtx::ptr ctx = gaiya::fdMng::getInstance()->get(fd);
-    if(!ctx || ctx->isClose() || !ctx->isSocket()){
-      return fcntl_f(fd,cmd,op);
-    }
-    if(op & O_NONBLOCK){
-      ctx->SetUserNonBlock(true);
-    }
-    op |= ctx->getSysNonBlock() ? O_NONBLOCK : 0;
-    return fcntl_f(fd,cmd,op);
-    }
-    break;
-  case F_GETFL:{
-    va_end(va);
-    int op = fcntl_f(fd,cmd,0);
-    gaiya::FdCtx::ptr ctx = gaiya::fdMng::getInstance()->get(fd);
-    if(!ctx || ctx->isClose() || !ctx->isSocket()){
-      return op;
-    }
-    op |= ctx->getSysNonBlock() ? O_NONBLOCK : 0;
-    return op;
-    }
-    break;
-    case F_DUPFD: //复制一个文件描述符。需要一个参数，指定要复制到的文件描述符编号。
-    case F_DUPFD_CLOEXEC: //设置或清除close-on-exec标志。如果FD_CLOEXEC位是0，执行execve的过程中，文件保持打开。反之则关闭。
-    case F_SETFD://设置文件描述符的标志。需要一个参数，指定要设置的标志
-    case F_SETOWN: //设置进程或线程接收到信号的文件描述符。不需要额外参数
-    case F_SETSIG://设置文件描述符上的信号号。需要一个参数，指定信号号。
-
-    /*
-    F_SETLEASE:
-    这个命令用于建立或删除文件租约。文件租约提供了一个机制，当一个进程（称为“租约持有者”）试图打开或截断文件时，如果该文件已经被另一个进程（称为“租约破坏者”）设置了租约，系统会通知租约持有者。
-    */
-    case F_SETLEASE:
-    case F_NOTIFY: 
+int fcntl(int fd, int cmd, ... /* arg */ ) {
+    va_list va;
+    va_start(va, cmd);
+    switch(cmd) {
+        case F_SETFL:
+            {
+                int arg = va_arg(va, int);
+                va_end(va);
+                gaiya::FdCtx::ptr ctx = gaiya::fdMng::getInstance()->get(fd);
+                if(!ctx || ctx->isClose() || !ctx->isSocket()) {
+                    return fcntl_f(fd, cmd, arg);
+                }
+                ctx->SetUserNonBlock(arg & O_NONBLOCK);
+                if(ctx->getSysNonBlock()) {
+                    arg |= O_NONBLOCK;
+                } else {
+                    arg &= ~O_NONBLOCK;
+                }
+                return fcntl_f(fd, cmd, arg);
+            }
+            break;
+        case F_GETFL:
+            {
+                va_end(va);
+                int arg = fcntl_f(fd, cmd);
+                gaiya::FdCtx::ptr ctx = gaiya::fdMng::getInstance()->get(fd);
+                if(!ctx || ctx->isClose() || !ctx->isSocket()) {
+                    return arg;
+                }
+                if(ctx->getUserNonBlock()) {
+                    return arg | O_NONBLOCK;
+                } else {
+                    return arg & ~O_NONBLOCK;
+                }
+            }
+            break;
+        case F_DUPFD:
+        case F_DUPFD_CLOEXEC:
+        case F_SETFD:
+        case F_SETOWN:
+        case F_SETSIG:
+        case F_SETLEASE:
+        case F_NOTIFY:
 #ifdef F_SETPIPE_SZ
-    case F_SETPIPE_SZ:
+        case F_SETPIPE_SZ:
 #endif
-    { //请求通知，当文件状态改变时。需要一个参数，指定通知选项。
-      int arg = va_arg(va, int);
-      va_end(va);
-      return fcntl_f(fd, cmd, arg); 
-    }
-    break;
-    case F_GETSIG:
-    case F_GETOWN:
-    case F_GETFD:
-    //获取文件租约，当进程要打开文件时，会通知文件租约拥有者
-    case F_GETLEASE:
-
+            {
+                int arg = va_arg(va, int);
+                va_end(va);
+                return fcntl_f(fd, cmd, arg); 
+            }
+            break;
+        case F_GETFD:
+        case F_GETOWN:
+        case F_GETSIG:
+        case F_GETLEASE:
 #ifdef F_GETPIPE_SZ
-    case F_GETPIPE_SZ:
+        case F_GETPIPE_SZ:
 #endif
-    {
-      va_end(va);
-      return fcntl_f(fd, cmd); 
+            {
+                va_end(va);
+                return fcntl_f(fd, cmd);
+            }
+            break;
+        case F_SETLK:
+        case F_SETLKW:
+        case F_GETLK:
+            {
+                struct flock* arg = va_arg(va, struct flock*);
+                va_end(va);
+                return fcntl_f(fd, cmd, arg);
+            }
+            break;
+        case F_GETOWN_EX:
+        case F_SETOWN_EX:
+            {
+                struct f_owner_exlock* arg = va_arg(va, struct f_owner_exlock*);
+                va_end(va);
+                return fcntl_f(fd, cmd, arg);
+            }
+            break;
+        default:
+            va_end(va);
+            return fcntl_f(fd, cmd);
     }
-    break;
-    case F_GETLK:
-    case F_SETLKW:
-    case F_SETLK:{
-      struct flock* arg = va_arg(va,struct flock*);
-      va_end(va);
-      return fcntl_f(fd, cmd,arg);
-    }
-    break;
-    case F_GETOWN_EX:
-    case F_SETOWN_EX:{
-      struct f_owner_ex* arg = va_arg(va,struct f_owner_ex*);
-      va_end(va);
-      return fcntl_f(fd,cmd,arg);
-    }
-    default:{
-      va_end(va);
-      return fcntl_f(fd, cmd); 
-    }
-  }
 }
+
+// int fcntl(int fd, int cmd, ... /* arg */ ){
+//   va_list va;
+//   va_start(va,cmd);
+//   switch(cmd)
+//   {
+//   case F_SETFL: {
+//     int op = va_arg(va,int);
+//     va_end(va);
+//     gaiya::FdCtx::ptr ctx = gaiya::fdMng::getInstance()->get(fd);
+//     if(!ctx || ctx->isClose() || !ctx->isSocket()){
+//       return fcntl_f(fd,cmd,op);
+//     }
+//     if(op & O_NONBLOCK){
+//       ctx->SetUserNonBlock(true);
+//     }
+//     op |= ctx->getSysNonBlock() ? O_NONBLOCK : 0;
+//     return fcntl_f(fd,cmd,op);
+//     }
+//     break;
+//   case F_GETFL:{
+//     va_end(va);
+//     int op = fcntl_f(fd,cmd,0);
+//     gaiya::FdCtx::ptr ctx = gaiya::fdMng::getInstance()->get(fd);
+//     if(!ctx || ctx->isClose() || !ctx->isSocket()){
+//       return op;
+//     }
+//     op |= ctx->getSysNonBlock() ? O_NONBLOCK : 0;
+//     return op;
+//     }
+//     break;
+//     case F_DUPFD: //复制一个文件描述符。需要一个参数，指定要复制到的文件描述符编号。
+//     case F_DUPFD_CLOEXEC: //设置或清除close-on-exec标志。如果FD_CLOEXEC位是0，执行execve的过程中，文件保持打开。反之则关闭。
+//     case F_SETFD://设置文件描述符的标志。需要一个参数，指定要设置的标志
+//     case F_SETOWN: //设置进程或线程接收到信号的文件描述符。不需要额外参数
+//     case F_SETSIG://设置文件描述符上的信号号。需要一个参数，指定信号号。
+
+//     /*
+//     F_SETLEASE:
+//     这个命令用于建立或删除文件租约。文件租约提供了一个机制，当一个进程（称为“租约持有者”）试图打开或截断文件时，如果该文件已经被另一个进程（称为“租约破坏者”）设置了租约，系统会通知租约持有者。
+//     */
+//     case F_SETLEASE:
+//     case F_NOTIFY: 
+// #ifdef F_SETPIPE_SZ
+//     case F_SETPIPE_SZ:
+// #endif
+//     { //请求通知，当文件状态改变时。需要一个参数，指定通知选项。
+//       int arg = va_arg(va, int);
+//       va_end(va);
+//       return fcntl_f(fd, cmd, arg); 
+//     }
+//     break;
+//     case F_GETSIG:
+//     case F_GETOWN:
+//     case F_GETFD:
+//     //获取文件租约，当进程要打开文件时，会通知文件租约拥有者
+//     case F_GETLEASE:
+
+// #ifdef F_GETPIPE_SZ
+//     case F_GETPIPE_SZ:
+// #endif
+//     {
+//       va_end(va);
+//       return fcntl_f(fd, cmd); 
+//     }
+//     break;
+//     case F_GETLK:
+//     case F_SETLKW:
+//     case F_SETLK:{
+//       struct flock* arg = va_arg(va,struct flock*);
+//       va_end(va);
+//       return fcntl_f(fd, cmd,arg);
+//     }
+//     break;
+//     case F_GETOWN_EX:
+//     case F_SETOWN_EX:{
+//       struct f_owner_ex* arg = va_arg(va,struct f_owner_ex*);
+//       va_end(va);
+//       return fcntl_f(fd,cmd,arg);
+//     }
+//     default:{
+//       va_end(va);
+//       return fcntl_f(fd, cmd); 
+//     }
+//   }
+// }
 
 int ioctl(int fd, unsigned long int request, ...){
   va_list va;
@@ -503,21 +593,20 @@ int getsockopt(int sockfd, int level, int optname, void *optval, socklen_t *optl
   return getsockopt_f(sockfd,level,optname,optval,optlen);
 }
 
-int setsockopt(int sockfd, int level, int optname, const void *optval, socklen_t optlen){
-  if(!gaiya::isHook()){
-    return setsockopt_f(sockfd,level,optname,optval,optlen);
+int setsockopt(int sockfd, int level, int optname, const void *optval, socklen_t optlen) {
+  if(!gaiya::isHook()) {
+      return setsockopt_f(sockfd, level, optname, optval, optlen);
   }
-
-  if(level == SOL_SOCKET){
-    if(optname == SO_RCVTIMEO || optname == SO_SNDTIMEO){
-      gaiya::FdCtx::ptr ctx = gaiya::fdMng::getInstance()->get(sockfd);
-      if(ctx){
-        struct timeval* val = (struct timeval*) optval;
-        ctx->setTimeout(optname,val->tv_sec * 1000 + val->tv_usec / 1000);
+  if(level == SOL_SOCKET) {
+      if(optname == SO_RCVTIMEO || optname == SO_SNDTIMEO) {
+          gaiya::FdCtx::ptr ctx = gaiya::fdMng::getInstance()->get(sockfd);
+          if(ctx) {
+              const timeval* v = (const timeval*)optval;
+              ctx->setTimeout(optname, v->tv_sec * 1000 + v->tv_usec / 1000);
+          }
       }
-    }
   }
-  return setsockopt_f(sockfd,level,optname,optval,optlen);
+  return setsockopt_f(sockfd, level, optname, optval, optlen);
 }
 
 

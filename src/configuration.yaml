@@ -7,20 +7,17 @@ logs:
         path: null
         type: StdLogAppender
         format: null
-      - level: info
-        path: log.txt
-        type: FileLogAppender
-        format: "%d%T%lN%T%p%T%t%T%tN%T%C%T%f%T%l%T%m%n"
+    #   - level: info
+    #     path: log.txt
+    #     type: FileLogAppender
+    #     format: "%d%T%lN%T%p%T%t%T%tN%T%C%T%f%T%l%T%m%n"
 coroutine:
-  stacksize: 131072
+  stacksize: 65536
 tcp:
   connect: 
     timeout_ms: 5000
 http:
   request:
-    buffer_size: 4090
-    body_maxsize: 67108864
-  response:
     buffer_size: 4090
     body_maxsize: 67108864
   default_html: |
@@ -29,55 +26,111 @@ http:
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>404 Error</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                background-color: #f0f0f0;
-                text-align: center;
-            }
-            .container {
-                background: #fff;
-                padding: 50px;
-                border-radius: 8px;
-                box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            }
-            h1 {
-                color: #c00;
-                font-size: 3em;
-            }
-            p {
-                color: #666;
-                font-size: 1.2em;
-                margin: 20px 0;
-            }
-            a {
-                display: inline-block;
-                padding: 10px 20px;
-                background: #007BFF;
-                color: white;
-                text-decoration: none;
-                border-radius: 4px;
-                margin-top: 20px;
-            }
-            a:hover {
-                background: #0056b3;
-            }
-        </style>
+        <title>Poster Generator Demo</title>
+        <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
     </head>
     <body>
-        <div class="container">
-            <h1>404</h1>
-            <p>抱歉，您请求的页面不存在...</p>
-            <a href="/">返回首页</a>
-        </div>
+        <canvas id="posterCanvas" width="750" height="1334" style="display:none"></canvas>
+        <script>
+            class PosterGenerator {
+                constructor() {
+                    this.canvas = document.getElementById('posterCanvas');
+                    this.ctx = this.canvas.getContext('2d');
+                    this.basePath = './';
+                }
+
+                async generateMainPoster() {
+                    const bgImg = await this.loadImage(`${this.basePath}test.jpg`);
+                    console.log(`${this.basePath}test.jpg`);
+
+                    this.ctx.drawImage(bgImg, 0, 0, 750, 1334);
+
+                    this.addText({
+                        text: 'AI获客新纪元',
+                        x: 100,
+                        y: 300,
+                        fontSize: 40,
+                        color: '#2D2D2D',
+                        bold: true
+                    });
+
+                    console.log(this.canvas.toDataURL());
+                    return this.canvas.toDataURL();
+                }
+
+                async generateAIPoster() {
+                    const bgImg = await this.loadImage(`${this.basePath}test.jpg`);
+                    this.ctx.drawImage(bgImg, 0, 0, 750, 1334);
+
+                    this.addText({
+                        text: '0成本获客',
+                        x: 150,
+                        y: 450,
+                        fontSize: 36
+                    });
+                    this.addText({
+                        text: '精准率提升300%',
+                        x: 150,
+                        y: 520,
+                        color: '#E93B3B'
+                    });
+
+                    const dsLogo = await this.loadImage(`${this.basePath}test.jpg`);
+                    this.ctx.drawImage(dsLogo, 600, 1200, 120, 50);
+
+                    console.log(this.canvas.toDataURL());
+                    return this.canvas.toDataURL();
+                }
+
+                addText({ text, x, y, fontSize = 24, color = '#333', maxWidth = 600, bold = false }) {
+                    this.ctx.font = `${bold ? 'bold ' : ''}${fontSize}px PingFang SC`;
+                    this.ctx.fillStyle = color;
+
+                    let line = '';
+                    for (let char of text) {
+                        const testLine = line + char;
+                        const metrics = this.ctx.measureText(testLine);
+                        if (metrics.width > maxWidth && line.length > 0) {
+                            this.ctx.fillText(line, x, y);
+                            line = char;
+                            y += fontSize + 10;
+                        } else {
+                            line = testLine;
+                        }
+                    }
+                    this.ctx.fillText(line, x, y);
+                }
+
+                async generateQRCode(url) {
+                    const qrCanvas = document.createElement('canvas');
+                    QRCode.toCanvas(qrCanvas, url, {
+                        width: 200
+                    });
+                    return qrCanvas;
+                }
+
+                loadImage(url) {
+                    return new Promise((resolve, reject) => {
+                        const img = new Image();
+                        img.crossOrigin = 'Anonymous';
+                        img.onload = () => resolve(img);
+                        img.onerror = reject;
+                        img.src = url;
+                    });
+                }
+            }
+
+            const generator = new PosterGenerator();
+            generator.generateMainPoster().then(dataUrl => {
+                const posterImg = new Image();
+                posterImg.src = dataUrl;
+                document.body.appendChild(posterImg);
+            });
+        </script>
     </body>
     </html>
+  response:
+    buffer_size: 4090
+    body_maxsize: 67108864
 tcp_server:
-  recv_timeout: -1
+  recv_timeout: 12000

@@ -109,7 +109,7 @@ bool Socket::setSockOption(int level, int optname, const void *optval, ssize_t o
 
 void Socket::initSock(){
   int val = 1;
-  // setSockOption(SOL_SOCKET,SO_REUSEADDR,val);
+  setSockOption(SOL_SOCKET,SO_REUSEADDR,val);
   
   if(m_type == SOCK_STREAM){
     setSockOption(IPPROTO_TCP,TCP_NODELAY,val);
@@ -216,13 +216,12 @@ Socket::~Socket()
 Socket::ptr Socket::accept(){
   Socket::ptr sock(new Socket(m_family, m_type, m_protocol));
   int newsock = ::accept(m_sockfd, nullptr, nullptr);
-  // LOG_INFO(logger)
   if(newsock == -1) {
       LOG_ERROR(logger) << "accept(" << m_sockfd << ") errno="
           << errno << " errstr=" << strerror(errno);
       return nullptr;
   }
-  LOG_INFO(logger) <<"accept client fd: "<<newsock;
+  // LOG_INFO(logger) <<"accept client fd: "<<newsock;
   if(sock->init(newsock)) {
       return sock;
   }
